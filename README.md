@@ -31,7 +31,7 @@ Command line options:
 * A list of API paths is generated automatically.
 * The 'Internal' tag acts in a special way and those API paths are not included
   by default, use `--include-internal` to include them.
-* You can mark paramteres with `x-internalOnly` to make them "Internal"
+* You can mark parameters with `x-internalOnly` to make them "Internal"
 * API Schema works fairly OK, some features may be missing...
 * We render things in Slate Markdown that fits **our** needs and
   customisations, so this may not work well for you!
