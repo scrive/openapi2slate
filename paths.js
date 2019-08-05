@@ -19,6 +19,15 @@ module.exports = {
       else if(p.get != undefined) {
         pathDetails = p.get;
       }
+      else if(p.put != undefined) {
+        pathDetails = p.put;
+      }
+      else if(p.delete != undefined) {
+        pathDetails = p.delete;
+      }
+      else if(p.patch != undefined) {
+        pathDetails = p.patch;
+      }
       return pathDetails.tags[0];
     });
   },
@@ -30,6 +39,15 @@ module.exports = {
       }
       else if(p.get != undefined) {
         pathDetails = p.get;
+      }
+      else if(p.put != undefined) {
+        pathDetails = p.put;
+      }
+      else if(p.delete != undefined) {
+        pathDetails = p.delete;
+      }
+      else if(p.patch != undefined) {
+        pathDetails = p.patch;
       }
       return ! _.find(pathDetails.tags, function(t) { return t == "Internal"; });
     });
