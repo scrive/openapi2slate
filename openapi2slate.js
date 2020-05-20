@@ -7,19 +7,19 @@ var definitions = require('./definitions.js');
 var paths = require('./paths.js');
 
 module.exports = {
-  printSlateMarkdown: function(api, includeInternal) {
+  printSlateMarkdown: function(api, program) {
     RefParser.dereference(api)
       .then(function(deRefApi) {
         // Info Section
         console.log(info.headerWithInfo(api, false));
         // Paths from dereferenced API
         var epPaths = paths.addEndpointToPaths(deRefApi.basePath, deRefApi.paths);
-        if(!includeInternal) {
+        if(!program.includeInternal) {
           epPaths = paths.filterInternalTag(epPaths);
         }
         var groupedEpPaths = paths.groupPathsByTag(epPaths);
-        console.log(paths.sectionIndexOfGroupedEndpointPaths(groupedEpPaths, includeInternal));
-        console.log(paths.sectionForGroupedEndpointPaths(groupedEpPaths, includeInternal));
+        console.log(paths.sectionIndexOfGroupedEndpointPaths(groupedEpPaths, program.includeInternal));
+        console.log(paths.sectionForGroupedEndpointPaths(groupedEpPaths, program.includeInternal));
         // Responses + Definitions
         console.log(responses.responsesSection(api.responses, 1));
         console.log(definitions.definitionsObject(api.definitions));
