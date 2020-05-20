@@ -40,7 +40,7 @@ const printPathsOnly = (epPaths) => {
       if (!path.hasOwnProperty(method))
         return
       let type = method.toUpperCase().padEnd(10,' ')
-      let paramList = path[method].parameters.filter(el => el.in === 'query' && el.required==true).map(el=>`${el.name}=[${el.name}]`).join('&')
+      let paramList = (path[method].parameters)? path[method].parameters.filter( el => el.in === 'query' && el.required==true ).map(el=>`${el.name}=[${el.name}]`).join('&') : ''
       parameters += util.format(`${type} ${path['endpoint']}?${paramList}\n`)
     })
   });
