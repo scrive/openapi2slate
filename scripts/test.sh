@@ -22,6 +22,10 @@ echo "# $out matches"
 ./main.js $input/scrive-apidocs/scrive_api.yaml > $output/$out
 diff $check/$out $output/$out
 
-# TODO add more example conversions
+out=scrive_api_internal.md
+echo "# $out matches"
+./main.js --include-internal $input/scrive-apidocs/scrive_api.yaml > $output/$out
+diff $check/$out $output/$out
 
-# TODO run with different flags
+# TODO add more example conversions
+# TODO add a run with validate flag
