@@ -2,11 +2,13 @@
 
 var program = require('commander');
 var SwaggerParser = require('swagger-parser');
+var RefParser = require('json-schema-ref-parser');
 
 var openapi2slate = require('./openapi2slate.js');
 
 program
   .arguments('<file>')
+  .option('--dereference', 'Do not generate Markdown, just dereference to single JSON')
   .option('--validate', 'Validate the API')
   .option('--include-internal', 'Include Internal API calls')
   .action(function(file) {
@@ -17,6 +19,18 @@ program.parse(process.argv);
 if(typeof apiFilePath === 'undefined') {
   console.error('No file given!');
   process.exit(1);
+}
+
+if(program.dereference) {
+  RefParser.dereference(apiFilePath)
+    .then(function(deRefApi) {
+      console.log(JSON.stringify(deRefApi));
+      process.exit(0);
+    })
+    .catch(function(err) {
+      console.error('API dereference failed: ' + err);
+      process.exit(1);
+    });
 }
 
 if(program.validate) {
