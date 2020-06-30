@@ -1,13 +1,14 @@
 #!/bin/bash -eux
 
-echo "Hello, world!"
+echo "Running comparison tests"
 
 check=./test/check
-out=./test/output
-mkdir -p $out
+output=./test/output
+mkdir -p $output
 
-./main.js --help > $out/help
-diff $check/help $out/help
+echo "# Help text matches"
+./main.js --help > $output/help
+diff $check/help $output/help
 
 # TODO add some example conversions
 # TODO run with different flags
