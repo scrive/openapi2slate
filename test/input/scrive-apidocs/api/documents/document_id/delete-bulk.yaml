@@ -1,0 +1,38 @@
+---
+post:
+
+  summary: Delete one or more documents
+
+  tags:
+    - Modify
+
+  description: |
+    Delete one or more documents that are in Trash.
+
+    *OAuth Privileges required: `DOC_SEND`*
+
+  parameters:
+    - name: document_ids
+      in: formData
+      type: string
+      format: application/json
+      required: true
+
+      description: |
+        List of document IDs to delete.
+
+      schema:
+        type: array
+        default: []
+        example: ["3","4"]
+        items:
+          type: string
+
+  responses:
+    200:
+      description: |
+        A JSON object containing the total number of `deleted` documents, and an array of documents. 
+    409:
+      description: Pending documents can not be trashed or deleted.
+      # FIXME It is possible to add a schema here, although APIError is too general
+    # TODO Add document_state_error; The document is in Trash already.

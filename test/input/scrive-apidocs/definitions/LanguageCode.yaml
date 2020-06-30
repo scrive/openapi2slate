@@ -1,0 +1,22 @@
+---
+$schema: "http://json-schema.org/draft-04/schema#"
+title: Language Code
+type: string
+description: Currently supported language codes
+enum:
+  - da
+  - de
+  - el
+  - en
+  - es
+  - et
+  - fi
+  - fr
+  - is
+  - it
+  - lt
+  - lv
+  - nl
+  - no
+  - pt
+  - sv

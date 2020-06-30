@@ -1,0 +1,62 @@
+---
+post:
+  summary: Signup Request
+  tags:
+    - User
+  description: |
+    Create a new user signup request.
+    Used to handle submission of the signup form.
+
+    If there is no user associated with the given email address, then a new
+    account will be created, and an activation email will be sent to them.
+
+    If there already is an account, but the user has not yet accepted the
+    Scrive eSign _Terms of Service_, then a new activation email will be sent
+    to them.
+
+    If a user account that has accepted the _Terms of Service_ already exists,
+    no signup request will be created.
+  parameters:
+    - name: email
+      in: formData
+      type: email
+      required: true
+      description: Has to be a valid email address format.
+    - name: firstName
+      in: formData
+      type: string
+      required: false
+      description: Has to be a valid name string.
+    - name: lastName
+      in: formData
+      type: string
+      required: false
+      description: Has to be a valid name string.
+    - name: phone
+      in: formData
+      type: string
+      required: false
+      description: Has to be a valid phone
+    - name: companyName
+      in: formData
+      type: string
+      required: false
+      description: Has to be a valid company name
+    - name: companyPosition
+      in: formData
+      type: string
+      required: false
+      description: Has to be a valid position
+    - name: lang
+      in: formData
+      type: string
+      required: false
+      description: |
+        Has to be a valid lang code [`LanguageCode`](#language-code)
+      $ref: ../../definitions/LanguageCode.yaml
+  responses:
+    200:
+      description: |
+        JSON response, will be one of:
+          * `{ "sent": true }`
+          * `{ "sent": false }`

@@ -1,0 +1,39 @@
+---
+post:
+
+  summary: Reject signing a document
+
+  tags:
+    - Sign
+    - Internal
+
+  description: |
+    Reject signing the document for the given signatory.
+
+    If successful, this will prevent any future signatories from signing and
+    change the document status to `rejected`.
+
+  parameters:
+    - $ref: ../../../../extras/parameters.yaml#/DocumentID
+    - $ref: ../../../../extras/parameters.yaml#/SignatoryID
+    - name: reason
+      in: formData
+      type: string
+      required: false
+      default: '""'
+      description: |
+        The reason for rejection as given by the signatory.
+
+        Note that this value is ignored when `allow_reject_reason` in the
+        Document is set to `false`.
+    - $ref: ../../../../extras/parameters.yaml#/ObjectVersion
+
+  responses:
+    200:
+      $ref: ../../../../extras/responses.yaml#/Document
+    409:
+      description: TODO
+    # TODO
+    # document_state_error: The document status should be `Pending`.
+    # signatory_state_error: The signatory has already signed.
+    # FIXME It is possible to add a schema here, although APIError is too general

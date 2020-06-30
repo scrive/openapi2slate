@@ -7,6 +7,10 @@
     "type" : "git",
     "url" : "https://github.com/scrive/openapi2slate.git"
   },
+  "scripts" : {
+    "main" : "./main.js",
+    "test" : "scripts/test.sh"
+  },
   "author": "Jonathan Jouty",
   "license": "BSD-3-Clause",
   "bin": "main.js",

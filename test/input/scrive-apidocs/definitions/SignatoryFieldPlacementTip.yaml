@@ -1,0 +1,16 @@
+---
+$schema: "http://json-schema.org/draft-04/schema#"
+title: SignatoryFieldPlacementTip
+anyOf:
+  - type: string
+    description: |
+      From which side the arrow on the signing page should point
+      to the field.
+    enum:
+      - left
+      - right
+  - type: "null"
+    description: |
+      Let the signing page default to either `left` or `right`
+      depending on the field type.
+default: null

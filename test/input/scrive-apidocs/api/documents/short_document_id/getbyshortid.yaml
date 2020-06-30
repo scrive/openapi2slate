@@ -1,0 +1,37 @@
+---
+get:
+  summary: Get by short ID
+
+  tags:
+    - Get
+
+  description: |
+    **Get the Document JSON metadata using a short Document ID.**
+
+    This can only be used for documents created within the last 72 hours.
+    It can only be used for documents that are pending.
+    You can only get documents that you have access to.
+
+    *OAuth Privileges required: `DOC_CHECK`*
+
+  parameters:
+    - name: short_document_id
+      in: path
+      required: true
+      description: |
+        Last 6 digits of a regular Document ID.
+        Must be a pending document created within the last 72 hours.
+      type: integer
+      format: int64
+
+  responses:
+    200:
+      $ref: ../../../extras/responses.yaml#/Document
+    400:
+      description: |
+        The parameter `short_document_id` had the following problems: was
+        greater than 6 digits
+    404:
+      description: |
+        The resource was not found. A document matching short id
+        `short_document_id` was not found

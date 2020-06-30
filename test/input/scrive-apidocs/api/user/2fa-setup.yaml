@@ -1,0 +1,16 @@
+---
+post:
+
+  summary: Setup 2FA
+
+  tags:
+    - User
+
+  description: |
+    If already activated, returns true,
+    else triggers QR code generation
+
+  responses:
+    200:
+      description: |
+        A JSON with the `twofactor_active` flag and (if not activated yet) a `qr_code`. If present, the field `qr_code` contains a base64-encoded image of the QR code.

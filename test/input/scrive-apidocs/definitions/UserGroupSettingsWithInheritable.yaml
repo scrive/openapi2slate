@@ -1,0 +1,96 @@
+---
+$schema: "http://json-schema.org/draft-04/schema#"
+title: UserGroupSettingsWithInheritable
+type: object
+example: {
+  "inherited_from": null,
+  "data_retention_policy": {
+    "idle_doc_timeout_preparation": null,
+    "idle_doc_timeout_closed": null,
+    "idle_doc_timeout_canceled": 42,
+    "idle_doc_timeout_timedout": null,
+    "idle_doc_timeout_rejected": null,
+    "idle_doc_timeout_error": null,
+    "immediate_trash": false
+  },
+  "inheritable_preview": {
+    "inherited_from": 1,
+    "data_retention_policy": {
+      "idle_doc_timeout_preparation": null,
+      "idle_doc_timeout_closed": null,
+      "idle_doc_timeout_canceled": null,
+      "idle_doc_timeout_timedout": null,
+      "idle_doc_timeout_rejected": 23,
+      "idle_doc_timeout_error": null,
+      "immediate_trash": true
+    }
+  }
+}
+description: |
+  JSON representation of a User Group's Settings (with Inheritable Preview).
+properties:
+  inherited_from:
+    type: string
+  data_retention_policy:
+    type: object
+    properties:
+      idle_doc_timeout_preparation:
+        type: integer
+        description: |
+          Number of days to retain the document after preparation
+      idle_doc_timeout_closed:
+        type: integer
+        description: |
+          Number of days to retain the document after closed
+      idle_doc_timeout_canceled:
+        type: integer
+        description: |
+          Number of days to retain the document after canceled
+      idle_doc_timeout_timedout:
+        type: integer
+        description: |
+          Number of days to retain the document after timedout
+      idle_doc_timeout_rejected:
+        type: integer
+        description: |
+          Number of days to retain the document after rejected
+      idle_doc_timeout_error:
+        type: integer
+        description: |
+          Number of days to retain the document after error
+      immediate_trash:
+        type: boolean
+  inheritable_preview:
+    type: object
+    properties:
+      inherited_from:
+        type: string
+      data_retention_policy:
+        type: object
+        properties:
+          idle_doc_timeout_preparation:
+            type: integer
+            description: |
+              Number of days to retain the document after preparation
+          idle_doc_timeout_closed:
+            type: integer
+            description: |
+              Number of days to retain the document after closed
+          idle_doc_timeout_canceled:
+            type: integer
+            description: |
+              Number of days to retain the document after canceled
+          idle_doc_timeout_timedout:
+            type: integer
+            description: |
+              Number of days to retain the document after timedout
+          idle_doc_timeout_rejected:
+            type: integer
+            description: |
+              Number of days to retain the document after rejected
+          idle_doc_timeout_error:
+            type: integer
+            description: |
+              Number of days to retain the document after error
+          immediate_trash:
+            type: boolean

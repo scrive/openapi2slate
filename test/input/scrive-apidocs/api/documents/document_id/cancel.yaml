@@ -1,0 +1,23 @@
+---
+post:
+
+  summary: Cancel a pending document
+
+  tags:
+    - Modify
+
+  description: |
+    Cancel a pending document.
+
+    *OAuth Privileges required: `DOC_SEND`*
+
+  parameters:
+    - $ref: ../../../extras/parameters.yaml#/DocumentID
+    - $ref: ../../../extras/parameters.yaml#/ObjectVersion
+
+  responses:
+    200:
+      $ref: ../../../extras/responses.yaml#/Document
+    409:
+      description: The document state is not `Pending`.
+      # FIXME It is possible to add a schema here, although APIError is too general

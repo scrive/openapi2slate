@@ -1,0 +1,6 @@
+Usage: main [options] <file>
+
+Options:
+  --validate          Validate the API
+  --include-internal  Include Internal API calls
+  -h, --help          output usage information

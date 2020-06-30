@@ -1,0 +1,57 @@
+---
+post:
+  summary: Remove pages
+
+  tags:
+    - Prepare
+
+  description: |
+    Remove some pages from main PDF file of a document in `Preparation`.
+
+    Checkboxes and signature areas that are placed on pages to be removed will
+    be removed from their respective signatory.
+    For standard and text fields, only the placements that are on the pages to
+    be removed will be removed, the signatory field will still exist.
+    As a consequence of removing pages, the `page` property of any placements
+    may change to account for any removed pages.
+
+    This operation will update the document’s `file` with a new one, that will
+    have the requested pages removed from its current main file.
+
+    *OAuth Privileges required: `DOC_CREATE`*
+
+  parameters:
+    - $ref: ../../../extras/parameters.yaml#/DocumentID
+    - name: pages
+      in: formData
+      type: array
+      items:
+        type: integer
+      format: "[integer]"
+      required: true
+      description: |
+        List of pages to be removed. Pages are indexed from 1.
+
+        To remove the first and last page, when the main file has 4 pages, set
+        this param to `[1,4]`.
+    - $ref: ../../../extras/parameters.yaml#/ObjectVersion
+
+  responses:
+    200:
+      $ref: ../../../extras/responses.yaml#/Document
+    400:
+      description: |
+        Parameter `pages` could not be parsed or given `pages` can't be removed from PDF:
+
+        * Parameter `pages` could not be parsed.
+        * Pages parameter can't have more then 100 positions.
+        * Pages parameter can't be an empty list.
+        * Pages parameter can't contain duplicates.
+        * Some page indexes lower then 1 or higher then number of pages.
+        * Can't remove all pages from PDF.
+    409:
+      description: |
+        `document_state_error` with error messages:
+
+        * The document status should be `Preparation`.
+        * Document does not have a main file.

@@ -1,0 +1,39 @@
+---
+get:
+  summary: Get the main file
+
+  tags:
+    - Get
+
+  description: |
+    **Get the main PDF file for a document.**
+
+    The optional `filename` parameter in the URL can be set to any valid file name.
+    This allows you to download the file with user-specified file name in the
+    browser.
+
+    *OAuth Privileges required: `DOC_CHECK`*
+
+  parameters:
+    - $ref: ../../../../extras/parameters.yaml#/DocumentID
+    - $ref: ../../../../extras/parameters.yaml#/SignatoryParamForFile
+    - name: filename
+      in: path
+      type: string
+      required: false
+      description: |
+        Optional filename parameter.
+
+  responses:
+    200:
+      description: The PDF file.
+    503:
+      description: |
+        Error message:
+        _The sealed PDF for the document is not ready yet, please wait and try again._
+
+        This happens immediately after all signatories have signed (_i.e._
+        Document status is `closed`), as Scrive eSign is preparing the
+        finalised PDF.
+        It should not take more than ~10 seconds for the finalised PDF to be
+        available.

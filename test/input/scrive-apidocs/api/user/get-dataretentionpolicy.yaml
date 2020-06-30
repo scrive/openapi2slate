@@ -1,0 +1,14 @@
+---
+get:
+
+  summary: Get data retention policies
+
+  tags:
+    - User
+
+  description: |
+    Returns an object with user and company data detention policies
+
+  responses:
+    200:
+      $ref: ../../scrive_api.yaml#/definitions/DataRetentionPolicies

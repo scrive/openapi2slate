@@ -1,0 +1,34 @@
+---
+get:
+
+  summary: Download
+
+  tags:
+    - Attachment
+
+  description: |
+    **Get the attachment's PDF file.**
+
+    The optional `filename` parameter in the URL can be set to any valid file
+    name. This allows you to download the file with user-specified file name in
+    the browser.
+
+  parameters:
+    - name: attachment_id
+      in: path
+      type: integer
+      format: int64
+      required: true
+      description: |
+        Identifier for the attachment.
+    - name: filename
+      in: path
+      type: string
+      required: false
+      description: |
+        Optional filename parameter.
+
+  responses:
+    200:
+      description: |
+        The attachment's PDF file.

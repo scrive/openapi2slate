@@ -1,0 +1,50 @@
+---
+post:
+  summary: Create Folder
+
+  tags:
+    - Folders
+
+  description: |
+    > Example of JSON that could be used create a new Folder:
+
+    ```json
+    {
+      "name": "new child folder of 1",
+      "parent_id": "1"
+    }
+    ```
+
+    This endpoint allows you to create a new Folder. When creating it, you have
+    the option to set the Folder's name and to specify which other Folder it
+    will be a child of.
+
+    The JSON input must be passed, URL-encoded, via the `folder` form data
+    field.
+
+    You must set a `parent_id` since only internal Scrive admins are permitted
+    to create root Folders. In order to create a new child, you must have the
+    requisite permissions upon the parent. `name` will be an empty string if
+    you do not include it.
+
+    A full Folder JSON response is returned which displays the state after the
+    create operation has been performed. Performing `/update` and then using the
+    GET endpoint should produce the same output both times.
+
+  parameters:
+    - name: folder
+      in: formData
+      type: string
+      format: application/json
+      description: |
+        JSON object containing details of the folder to be created.
+      example: { "name": "new child folder of 1", "parent_id": "1" }
+
+  responses:
+    200:
+      $ref: ../../scrive_api.yaml#/definitions/Folder
+    403:
+      description: |
+        Insufficient Permissions error (this means that you don't have enough
+        permissions to create this Folder. In practice this means that you lack
+        Create permissions on the parent Folder).

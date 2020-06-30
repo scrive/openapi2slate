@@ -1,0 +1,106 @@
+---
+get:
+
+  summary: List documents
+
+  tags:
+    - Get
+
+  description: |
+    Fetch a list of documents, with filtering and sorting options.
+
+    *OAuth Privileges required: `DOC_CHECK`*
+
+  parameters:
+
+    - name: offset
+      in: query
+      type: integer
+      format: int32
+      minimum: 0
+      required: false
+      default: 0
+      description: |
+        **Starting offset for documents to return.**
+
+        If offset is larger than the total number of matching documents, an
+        empty list is returned.
+
+    - name: max
+      in: query
+      type: integer
+      format: int32
+      minimum: 1
+      required: false
+      default: 100
+      description: |
+        **Maximum number of documents to return.**
+
+        Server may cap to a lower value.
+
+        Default value may change without notice.
+
+    - name: filter
+      in: query
+      type: string
+      format: application/json
+      required: false
+      default: "[]"
+      description: |
+        **List of filtering options.**
+
+        You can supply a list of filtering options to apply.
+        Only documents that match **all** filters will be returned.
+        Therefore, it is easy to apply a set of filters that will return no
+        documents.
+
+        If not supplied, the default is not to apply any filter, i.e. `[]`.
+
+        Must be of type [List Filter](#list-filter), for example:
+
+        `[ { "filter_by":"status", "statuses": ["preparation","pending"] } ]`
+
+      schema:
+        $ref: ../../scrive_api.yaml#/definitions/ListFilter
+
+    - name: sorting
+      in: query
+      type: string
+      format: application/json
+      required: false
+      default: '[ { "sort_by":"mtime", "order":"descending" } ]'
+      description: |
+        **List of sorting options.**
+
+        You can supply a list of sorting options, which will be applied to list
+        of documents in the order you provided.
+
+        If not supplied, the default is
+        `[ { "sort_by":"mtime", "order":"descending" } ]`,
+        *i.e.*, sort by modification time, newest first.
+
+        Must be of type [List Sorting](#list-sorting).
+
+      schema:
+        $ref: ../../scrive_api.yaml#/definitions/ListSorting
+
+  responses:
+    200:
+      description: |
+        A JSON object containing the total number of matching documents, and an
+        array of documents.
+
+        The `total_matching` value is capped at 1,000 + `offset`.
+        Therefore, further API calls will be needed with a higher `offset` if
+        the `total_matching` is 1,000.
+      schema:
+        type: object
+        properties:
+          total_matching:
+            type: integer
+            minimum: 0
+            description: Up to 1,000 + `offset`
+          documents:
+            type: array
+            items:
+              $ref: ../../definitions/Document.yaml

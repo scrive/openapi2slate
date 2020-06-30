@@ -1,0 +1,137 @@
+---
+get:
+  summary: View Access Roles for User
+
+  tags:
+    - Access Control
+
+  description: |
+    > Example of a User's Access Roles
+
+    ```json
+    [
+      {
+        "id": "8",
+        "is_generated": false,
+        "role_type": "user_group_admin",
+        "source": {
+          "type": "user",
+          "id": "2"
+        },
+        "target": {
+          "type": "user_group",
+          "id": "11"
+        },
+        "allowed_actions": {
+          "document": [
+            "create",
+            "delete",
+            "read",
+            "update"
+          ],
+          "folder_policy": [
+            "create",
+            "delete",
+            "read",
+            "update"
+          ],
+          "user": [
+            "create",
+            "delete",
+            "read",
+            "update"
+          ],
+          "user_group": [
+            "create",
+            "delete",
+            "read",
+            "update"
+          ],
+          "user_group_policy": [
+            "create",
+            "delete",
+            "read",
+            "update"
+          ],
+          "user_personal_token": [
+            "create",
+            "delete",
+            "read",
+            "update"
+          ],
+          "user_policy": [
+            "create",
+            "delete",
+            "read",
+            "update"
+          ]
+        }
+      },
+      {
+        "id": null,
+        "is_generated": true,
+        "role_type": "user_admin",
+        "source": {
+          "type": "user",
+          "id": "2"
+        },
+        "target": {
+          "type": "user_group",
+          "id": "8"
+        },
+        "allowed_actions": {
+          "user": [
+            "create",
+            "delete",
+            "read",
+            "update"
+          ],
+          "user_group": [
+              "read"
+          ],
+          "user_group_policy": [
+            "create",
+            "delete",
+            "read",
+            "update"
+          ],
+          "user_personal_token": [
+            "create",
+            "delete",
+            "read",
+            "update"
+          ],
+          "user_policy": [
+            "create",
+            "delete",
+            "read",
+            "update"
+          ]
+        }
+      }
+    ]
+    ```
+
+    This endpoint is used to view the roles which have been granted to a given
+    user.
+
+  parameters:
+    - name: user_id
+      in: url
+      type: integer
+      description: The ID of the User whose roles you wish to view
+      required: true
+
+  responses:
+    200:
+      description: |
+        A JSON array of Access Role objects.
+      schema:
+        type: array
+        default: []
+        items:
+          $ref: ../../scrive_api.yaml#/definitions/AccessRole
+    403:
+      description: |
+        Insufficient Permissions error (this means that you don't have Read
+        permissions upon the User or the User does not exist).

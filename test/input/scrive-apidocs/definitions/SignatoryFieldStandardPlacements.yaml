@@ -1,0 +1,58 @@
+---
+$schema: "http://json-schema.org/draft-04/schema#"
+title: SignatoryFieldStandardPlacements
+type: array
+default: []
+description: |
+  If set, where this field should be placed on the document.
+  This is both for the signatory to fill out on the signing page, and for
+  the final sealed PDF.
+
+  Note that this is an array, you can have multiple placements for the same
+  field.
+
+  The easiest way to set the `xrel`, `yrel`, etc. values is to create a
+  template in the document UI design view, and use those values.
+items:
+  type: object
+  properties:
+    xrel:
+      type: number
+      description: Position on the x-axis, from 0 to 1.
+      # Note: does not currently work well with openapi2slate
+      #minimum: 0
+      #maximum: 1
+    yrel:
+      type: number
+      description: Position on the y-axis, from 0 to 1.
+      # Note: does not currently work well with openapi2slate
+      #minimum: 0
+      #maximum: 1
+    wrel:
+      type: number
+      description: |
+        Width of placement, as proportion of total width, from 0 to 1.
+    hrel:
+      type: number
+      description: |
+        Height of placement, as proportion of total height, from 0 to 1.
+    fsrel:
+      type: number
+      description: |
+        Font size of placement, as proportion of total width, from 0 to 1.
+    page:
+      description: The page number for this placement, starting from 1.
+      type: integer
+      # Note: does not currently work well with openapi2slate
+      #minimum: 1
+    tip:
+      $ref: ./SignatoryFieldPlacementTip.yaml
+    anchors:
+      $ref: ./SignatoryFieldPlacementAnchor.yaml
+  required:
+    - xrel
+    - yrel
+    - wrel
+    - hrel
+    - fsrel
+    - page

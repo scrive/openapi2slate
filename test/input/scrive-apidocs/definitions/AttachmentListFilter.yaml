@@ -1,0 +1,18 @@
+---
+$schema: "http://json-schema.org/draft-04/schema#"
+title: Attachment List Filter
+description: Parameter used to filter attachments for the `list` API call.
+type: array
+default: []
+example: [ { "filter_by":"text", "text":"keyword" } ]
+items:
+  anyOf:
+  - title: Filter by text
+    type: object
+    properties:
+      filter_by:
+        type: string
+        enum:
+        - text
+      text:
+        type: string

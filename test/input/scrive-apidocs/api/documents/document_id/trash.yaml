@@ -1,0 +1,26 @@
+---
+post:
+
+  summary: Move a document to Trash
+
+  tags:
+    - Modify
+
+  description: |
+    **Note**: In API Version 2 `delete` and `trash` behave differently to Version 1.
+
+    Move a document to Trash.
+
+    *OAuth Privileges required: `DOC_SEND`*
+
+  parameters:
+    - $ref: ../../../extras/parameters.yaml#/DocumentID
+    - $ref: ../../../extras/parameters.yaml#/ObjectVersion
+
+  responses:
+    200:
+      $ref: ../../../extras/responses.yaml#/Document
+    409:
+      description: Pending documents can not be trashed or deleted.
+      # FIXME It is possible to add a schema here, although APIError is too general
+    # TODO Add document_state_error; The document is in Trash already.

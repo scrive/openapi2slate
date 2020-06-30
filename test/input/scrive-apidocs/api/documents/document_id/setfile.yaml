@@ -1,0 +1,45 @@
+---
+post:
+  summary: Set the Main File
+
+  tags:
+    - Prepare
+
+  description: |
+    Set or replace the main PDF file for a document in `Preparation`.
+
+    If the `file` parameter is blank, the main file for the document will be
+    removed (if any).
+
+    _A note about anchors:_
+    Signatory field placements with anchors are only recalculated if a main file
+    was already set on the document, as it requires the relative placement in
+    original file to recalculate placements for the new file.
+    Contact us to learn more about anchors, and discuss advanced features that
+    we may be able to offer you.
+
+    *OAuth Privileges required: `DOC_CREATE`*
+
+  parameters:
+    - $ref: ../../../extras/parameters.yaml#/DocumentID
+    - name: file
+      in: formData
+      type: file
+      format: application/pdf
+      required: false
+      # default not valid here
+      description: |
+        If provided, the PDF will be set as the main file for the document.
+
+        If not provided, the current main file for the document will be removed.
+    - $ref: ../../../extras/parameters.yaml#/ObjectVersion
+
+  responses:
+    200:
+      $ref: ../../../extras/responses.yaml#/Document
+    400:
+      description: The parameter `file` could not be parsed.
+      # FIXME It is possible to add a schema here, although APIError is too general
+    409:
+      description: The document status should be `Preparation`.
+      # FIXME It is possible to add a schema here, although APIError is too general

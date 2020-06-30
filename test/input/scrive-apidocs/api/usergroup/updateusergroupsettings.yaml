@@ -1,0 +1,72 @@
+---
+post:
+  summary: Update User Group Settings
+
+  tags:
+    - User Group
+
+  description: |
+
+    > Example of JSON that could be passed in to update a User Group's Settings:
+
+    > The JSON is URL-encoded and passed in via the `settings` form data field.
+    > It is not necessary to minify the JSON, but also not prohibited.
+
+    > The example below is an example of a partial update.
+
+    ```json
+    {
+      "data_retention_policy": {
+        "idle_doc_timeout_closed": 123
+      }
+    }
+    ```
+
+    > For examples of the JSON output, see 
+    > [View User Group Settings](#view-user-group-settings).
+
+    This endpoint allows you to update the User Group's `settings` object.
+
+    When updating the `settings` object, the following rules are in force:
+
+    Partial updates are permissible (and encouraged). You may only supply the
+    JSON fields that you wish to actually update.
+
+    If you update the settings of a User Group which currently inherits, the
+    inherited settings will be cloned, your update applied, and this will then
+    become the new non-inherited settings object for this User Group.
+
+    The User Group from which the contact_details were previously inherited will
+    be unaffected by the operation.
+
+  parameters:
+    - name: user_group_id
+      in: path
+      type: integer
+      description: |
+        The ID of the User Group whose `settings` object you wish to update
+      required: true
+    - name: settings
+      in: formData
+      type: string
+      format: application/json
+      description: |
+        JSON object containing (partial or full) updates to the settings
+        subtrees (currently only `data_retention_policy` is exposed by the API).
+      example: { "data_retention_policy": { "immediate_trash": false } }
+      required: true
+    - name: include-inheritable
+      in: formData
+      type: boolean
+      description: |
+        Set to `true` to see a preview of which
+        values can be inherited from an ancestor User Group.
+      required: false
+
+  responses:
+    200:
+      $ref: ../../scrive_api.yaml#/definitions/UserGroupSettings
+    403:
+      description: |
+        Insufficient Permissions error (this means that either no User Group
+        exists with this ID or that you do not have permission to update it)

@@ -1,0 +1,18 @@
+---
+get:
+  summary: Get the system status
+
+  tags:
+    - Monitor
+
+  description: |
+    Check the system status, no API credentials required.
+
+  responses:
+    200:
+      description: |
+        A simple JSON response with the system status:
+        `{"status":"ok"}`
+
+        Any other response implies there are system issues.
+        We may add more fields and more details in the future.

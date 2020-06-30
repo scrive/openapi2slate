@@ -1,0 +1,26 @@
+---
+post:
+
+  summary: Trigger an API callback
+
+  tags:
+    - Get
+
+  description: |
+    Explicitly trigger an extra API callback to the URL set for the document.
+    If one is set, no effect otherwise.
+
+    *OAuth Privileges required: `DOC_SEND`*
+
+  parameters:
+    - $ref: ../../../extras/parameters.yaml#/DocumentID
+    - $ref: ../../../extras/parameters.yaml#/ObjectVersion
+
+  responses:
+    202:
+      description: |
+        A callback will be triggered for the document if a User or Document
+        callback URL was set.
+    409:
+      description: Can not send callbacks for documents in Preparation.
+      # FIXME It is possible to add a schema here, although APIError is too general

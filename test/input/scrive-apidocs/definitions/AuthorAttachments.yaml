@@ -1,0 +1,60 @@
+---
+$schema: "http://json-schema.org/draft-04/schema#"
+title: Author Attachments
+description: Attachments that have been added to a document by the author.
+type: array
+items:
+  anyOf:
+    - type: object
+      required:
+        - name
+        - required
+        - add_to_sealed_file
+        - file_param
+      description: Attachment that is uploaded as part of the API call.
+      properties:
+        name:
+          type: string
+        required:
+          type: boolean
+        add_to_sealed_file:
+          type: boolean
+          description: |
+            Whether to add the attachment to the sealed file after signing
+        file_param:
+          type: string
+          description: |
+            The parameter name used in the API call for this attachment.
+    - type: object
+      required:
+        - name
+        - required
+        - add_to_sealed_file
+        - file_id
+      description: Attachment that references a `file_id`.
+      properties:
+        name:
+          type: string
+        required:
+          type: boolean
+        add_to_sealed_file:
+          type: boolean
+          description: |
+            Whether to add the attachment to the sealed file after signing
+        file_id:
+          type: integer
+example:
+  [
+    {
+      "name": "Attachment using ID",
+      "required": false,
+      "add_to_sealed_file": true,
+      "file_id": "36"
+    },
+    {
+      "name": "Attachment using parameter",
+      "required": false,
+      "add_to_sealed_file": true,
+      "file_param": "file_1"
+    }
+  ]

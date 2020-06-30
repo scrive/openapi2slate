@@ -1,0 +1,81 @@
+---
+$schema: "http://json-schema.org/draft-04/schema#"
+title: SignatoryFieldCustomText
+description: |
+  A custom signatory field for text values. Can be used for any
+  text-based information. Must be placed on the document, otherwise
+  the signatory will not be asked to fill in details. Provides an
+  optional regular expression-based validation mechanism via the
+  `custom_validation` field (see below).
+type: object
+properties:
+  type:
+    type: string
+    description: |
+      Used to specify that this is a custom text field.
+    enum:
+      - text
+  name:
+    type: string
+    description: |
+      A name for the custom field.
+
+      The name will be used as a placeholder value on the signing page, it will
+      also be used in the Evidence Log as a reference.
+  value:
+    type: string
+    description: |
+      Either a pre-filled value, or the value entered by the signatory.
+    default: ""
+  is_obligatory:
+    type: boolean
+    default: true
+  should_be_filled_by_sender:
+    type: boolean
+    default: false
+  placements:
+    description: |
+      **Needs to be set, otherwise the signatory will not be asked or presented with this information.**
+
+      Defines where this field should be placed on the document.
+      This is both for the signatory to fill out on the signing page, and for
+      the final sealed PDF.
+
+      Note that this is an array, you can have multiple placements for the same
+      field.
+
+      The easiest way to set the `xrel`, `yrel`, etc. values is to create a
+      template in the document UI design view, and use those values.
+    $ref: ./SignatoryFieldStandardPlacements.yaml
+  custom_validation:
+    oneOf:
+      - type: 'null'
+      - $ref: ./SignatoryFieldCustomValidation.yaml
+required:
+  - type
+  - name
+example:
+  {
+    "type": "text",
+    "name": "Custom Field Name",
+    "value": "",
+    "is_obligatory": true,
+    "should_be_filled_by_sender": true,
+    "placements": [
+      {
+        "xrel": 0.29368421052631577,
+        "yrel": 0.3444940476190476,
+        "wrel": 0.10842105263157895,
+        "hrel": 0.025297619047619048,
+        "fsrel": 0.016842105263157894,
+        "page": 1,
+        "tip": "right",
+        "anchors": []
+      }
+    ],
+    "custom_validation" : {
+      "pattern" : "^foo|bar|baz$",
+      "positive_example" : "foo",
+      "tooltip" : "Must be either 'foo', 'bar', or 'baz'."
+    }
+  }

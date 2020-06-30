@@ -1,0 +1,47 @@
+---
+get:
+
+  summary: Get the list of Evidence Attachments
+
+  tags:
+    - Get
+    - Internal
+
+  description: |
+    Returns the list of evidence attachments for a document.
+
+    Note that the returned list may be empty.
+
+    *OAuth Privileges required: `DOC_CHECK`*
+
+  parameters:
+    - $ref: ../../../extras/parameters.yaml#/DocumentID
+
+  responses:
+    200:
+      description: |
+        The list of evidence attachments for the document.
+
+        As this call succeeds regardless of document status, the list may be
+        empty.
+      examples:
+        'application-json':
+          { "attachments": [
+              {
+                "name": "Appendix 1 Evidence Quality Framework.html",
+                "download_url": "/d/evidenceattachment/5/Appendix 1 Evidence Quality Framework.html"
+              }
+            ]
+          }
+      schema:
+        type: object
+        properties:
+          attachments:
+            type: array
+            items:
+              type: object
+              properties:
+                name:
+                  type: string
+                download_url:
+                  type: string

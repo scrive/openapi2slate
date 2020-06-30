@@ -1,0 +1,47 @@
+---
+post:
+
+  summary: Forward a document
+
+  tags:
+    - Modify
+
+  description: |
+    Forward a signed document to a third party.
+
+    *OAuth Privileges required: `DOC_SEND`*
+
+  parameters:
+    - $ref: ../../../extras/parameters.yaml#/DocumentID
+    - name: email
+      in: formData
+      type: string
+      required: true
+      description: The email address to forward the document to.
+    - name: no_content
+      in: formData
+      type: boolean
+      required: false
+      default: true
+      description: |
+        When set to true only the signed document will be forwarded, with no
+        other email content.
+        Otherwise a template email content is used, with the document attached.
+    - name: no_attachments
+      in: formData
+      type: boolean
+      required: false
+      default: false
+      description: |
+        When set to true, only the main file will be included as email
+        attachments.
+        Any attachments not merged with the main file will not be sent.
+    - $ref: ../../../extras/parameters.yaml#/ObjectVersion
+
+  responses:
+    202:
+      description: |
+        The call succeeded, an email to the given address has been queued.
+    409:
+      description: The document status should be `Closed`.
+      # FIXME It is possible to add a schema here, although APIError is too general

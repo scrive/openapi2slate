@@ -1,0 +1,69 @@
+---
+post:
+  summary: Update Folder
+
+  tags:
+    - Folders
+
+  description: |
+    > Example of JSON that could be used update a Folder:
+
+    ```json
+    {
+      "name": "new child folder of 1",
+      "parent_id": "1"
+    }
+    ```
+
+    > For examples of the JSON output, see details of "View Folder".
+
+    This endpoint allows you to update the Folder's meta data, or to change
+    its parent ID (i.e. to move this Folder so that it is the child of a
+    differnt Folder).
+
+    The JSON input must be passed, URL-encoded, via the `folder` form data
+    field.
+
+    When updating the `parent_id`, the following rules are in force:
+
+    + Only internal Scrive admins can promote a child Folder to a root.
+    + A root Folder may by subordinated to (i.e. made a child of) another
+    Folder if you have permissions to modify the new parent and Folder
+    being moved.
+    + A child Folder may be moved to be a child of another Folder as long
+    as you have permissions to update the Folder being moved, the new parent and
+    the old parent.
+
+    The endpoint supports partial updates. This means that only the fields you
+    supply in your requests will have their values altered. Neither field is
+    required, providing `{}` as your update JSON is essentially a "no op".
+
+    A full Folder JSON response is returned which displays the state _after_
+    the update operation has been performed. Performing `/update` and then
+    using the `GET` endpoint should produce the same output both times.
+
+    **Important Note**: *You cannot move Folders by updating the `children`
+    field, it must be done via `parent_id`*.
+
+  parameters:
+    - name: folder_id
+      in: url
+      type: string
+      description: The ID of the Folder whose contents you wish to list
+      required: true
+    - name: folder
+      in: formData
+      type: string
+      format: application/json
+      description: |
+        JSON object containing details of the folder to be updated.
+      example: { "name": "new child folder of 1", "parent_id": "1" }
+
+  responses:
+    200:
+      $ref: ../../scrive_api.yaml#/definitions/Folder
+    403:
+      description: |
+        Insufficient Permissions error (this means that you don't have enough
+        permissions to update this Folder. In practice this means that you lack
+        Update permissions on the Folder.

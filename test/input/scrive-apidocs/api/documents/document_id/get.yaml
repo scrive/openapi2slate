@@ -1,0 +1,18 @@
+---
+get:
+  summary: Get a document
+
+  tags:
+    - Get
+
+  description: |
+    Get the JSON metadata for a given `document_id`.
+
+    *OAuth Privileges required: `DOC_CHECK`*
+
+  parameters:
+    - $ref: ../../../extras/parameters.yaml#/DocumentID
+
+  responses:
+    200:
+      $ref: ../../../extras/responses.yaml#/Document

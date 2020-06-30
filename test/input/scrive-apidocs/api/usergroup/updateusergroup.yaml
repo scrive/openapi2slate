@@ -1,0 +1,101 @@
+---
+post:
+  summary: Update User Group
+
+  tags:
+    - User Group
+
+  description: |
+    > Example of JSON that could be passed in to update a User Group:
+
+    > The JSON is URL-encoded and passed in via the `usergroup` form data field.
+    > It is not necessary to minify the JSON, but also not prohibited.
+
+    ```json
+    {
+      "parent_id": "1",
+      "name": "UG that's now the child of user group 1"
+      "tags": [
+        {
+          "name": "station",
+          "value": "ISS"
+        },
+        {
+          "name": "lifeform",
+          "value": null
+        }
+      ]
+    }
+    ```
+
+    > For examples of the JSON output, see details of "View User Group".
+
+    This endpoint allows you to update the User Group's meta data, or to change
+    its parent ID (i.e. to move this User Group so that it is the child of a
+    differnt User Group).
+
+    The JSON input must be passed, URL-encoded, via the `usergroup` form data
+    field.
+
+    When updating the `parent_id`, the following rules are in force:
+
+    + Only internal Scrive admins can promote a child User Group to a root.
+    + A root UserGroup may by subordinated to (i.e. made a child of) another User
+    Group if you have permissions to modify the new parent and User Group
+    being moved.
+    + A child User Group may be moved to be a child of another User Group as long
+    as you have permissions to update the group being moved, the new parent and
+    the old parent.
+
+    Tags are updated as follows:
+
+    + Only the provided tags are affected on the server.
+    + If the value of a tag is a string, the name/value pair is stored,
+      overwriting the previous value associated with that name.
+    + If the value of a tag is `null`, the name/value pair is removed.
+    + Other value types lead to 400 Bad Request response.
+
+    The endpoint supports partial updates. This means that only the fields you
+    supply in your requests will have their values altered.
+
+    A full User Group JSON response is returned which displays the state _after_
+    the update operation has been performed. Performing `/update` and then
+    using the `GET` endpoint should produce the same output both times.
+
+    **Important Note**: *You cannot move usergroups by updating the `children`
+    field, it must be done via `parent_id`*.
+
+  parameters:
+    - name: user_group_id
+      in: path
+      type: integer
+      description: The ID of the User Group you wish to update
+      required: true
+    - name: usergroup
+      in: formData
+      type: string
+      format: application/json
+      description: |
+        JSON object containing the new `name`, `parent_id` or `tags` for the User
+        Group.
+      example: {
+          "name": "new user group",
+          "parent_id": 1,
+          "tags": [ {"name": "foo", "value": "bar" } ]
+        }
+      required: true
+    - name: include-inheritable
+      in: formData
+      type: boolean
+      description: |
+        Set to `true` to see a preview of which
+        values can be inherited from an ancestor User Group.
+      required: false
+
+  responses:
+    200:
+      $ref: ../../scrive_api.yaml#/definitions/UserGroup
+    403:
+      description: |
+        Insufficient Permissions error (this means that either no User Group
+        exists with this ID or that you do not have permission to update it)

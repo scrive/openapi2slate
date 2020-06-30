@@ -1,0 +1,33 @@
+---
+post:
+  summary: Delete Folder
+
+  tags:
+    - Folders
+
+  description: |
+
+    This endpoint allows you to delete a Folder.
+
+    It's worth noting that you may only delete child Folders. Root Folders
+    can only deleted by internal Scrive admins. We also do not support recursive
+    deletion. If this is required, it can be implemented client-side by simply
+    working up the tree, deleting the leaves.
+
+  parameters:
+    - name: folder_id
+      in: url
+      type: string
+      description: The ID of the Folder you wish to delete
+      required: true
+
+  responses:
+    200:
+      description: |
+        JSON object showing that a Folder with the given ID has been
+        successfully deleted.
+    403:
+      description: |
+        Insufficient Permissions error (this means that you don't have enough
+        permissions to create this Folder. In practice this means that you lack
+        Delete permissions on the Folder).

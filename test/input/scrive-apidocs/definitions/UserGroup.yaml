@@ -1,0 +1,73 @@
+---
+$schema: "http://json-schema.org/draft-04/schema#"
+title: UserGroup
+type: object
+example: {
+  "id": "1",
+  "parent_id": null,
+  "name": "A Root Usergroup",
+  "children": [
+    {
+      "id": "2",
+      "name": "Some child user group"
+    },
+    {
+      "id": "3",
+      "name": "Yet another child user group"
+    }
+  ],
+  "settings": {
+    "inherited_from": null,
+    "data_retention_policy": {
+      "idle_doc_timeout_preparation": null,
+      "idle_doc_timeout_closed": null,
+      "idle_doc_timeout_canceled": 42,
+      "idle_doc_timeout_timedout": null,
+      "idle_doc_timeout_rejected": null,
+      "idle_doc_timeout_error": null,
+      "immediate_trash": false
+    }
+  },
+  "contact_details": {
+    "inherited_from": null,
+    "address": {
+      "company_number": "5568166804",
+      "company_name": "Scrive",
+      "address": "Grev Turegatan 11A",
+      "zip": "114 46",
+      "city": "Stockholm",
+      "country": "Sweden"
+    }
+  },
+  "tags": [
+    {
+      "name": "alignment",
+      "value": "chaotic good"
+    }
+  ]
+}
+description: |
+  JSON representation of a User Group.
+properties:
+  id:
+    type: string
+  parent_id:
+    type: string
+  name:
+    type: string
+  children:
+    type: array
+    default: []
+    items:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+  settings:
+    $ref: ./UserGroupSettings.yaml
+  contact_details:
+    $ref: ./UserGroupContactDetails.yaml
+  tags:
+    $ref: ./Tags.yaml

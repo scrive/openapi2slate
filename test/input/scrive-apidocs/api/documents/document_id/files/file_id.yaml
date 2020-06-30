@@ -1,0 +1,31 @@
+---
+get:
+  summary: Get a related file
+
+  tags:
+    - Get
+
+  description: |
+    **Get a file related to a document.**
+
+    This can be used to get author or signatory attachments by looking up their
+    respective `file_id` the Document JSON.
+
+    The optional `filename` parameter in the URL can be set to any valid file name.
+    This allows you to download the file with user-specified file name in the
+    browser.
+
+    *OAuth Privileges required: `DOC_CHECK`*
+
+  parameters:
+    - $ref: ../../../../extras/parameters.yaml#/DocumentID
+    - $ref: ../../../../extras/parameters.yaml#/FileID
+    - $ref: ../../../../extras/parameters.yaml#/SignatoryParamForFile
+
+  responses:
+    200:
+      description: |
+        The file
+
+        Usually an image (JPG, PNG) or PDF, but this may change.
+        `Content-Type` header will be set according to the file type.

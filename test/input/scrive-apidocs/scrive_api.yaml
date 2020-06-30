@@ -1,0 +1,1154 @@
+---
+swagger: "2.0"
+
+info:
+  title: Scrive Document API
+  # The document workflow diagram was extracted from:
+  # https://docs.google.com/drawings/d/1r5BeYUtfRlhoyOmG3C8iqhraC0rFuwl1BrKLrtCxWmU/edit
+  description: |
+    # Overview
+
+    The Scrive Document API uses HTTPS methods and RESTful endpoints to create,
+    edit, and manage the life-cycle of documents in the Scrive eSign system.
+    JSON is the data interchange format, but we also use query parameters.
+
+    The API is accessed through a versioned URL.
+    This allows users to clearly identify which API they are using, and to make
+    it easier to upgrade to any newer versions.
+    It also avoids having to use version codes in HTTP headers.
+
+    Any breaking changes to the API will be introduced through a new version
+    number.
+    We aim to keep these changes to a minimum, and when we do so, will support
+    the current API until it is phased out.
+
+    <aside class="success">
+    This document is for Version 2 of the Scrive Document API, which is the
+    latest version of our Document API.
+    </aside>
+
+    <aside class="notice">
+    Non-breaking changes may be introduced without changing version.
+    These may include additional fields to JSON data structures, optional
+    parameters to API calls, new features that can be exposed through existing
+    API calls, or new API calls.
+    </aside>
+
+    <aside class="notice">
+    Always use UTF-8 encoding.
+    This is the only officially supported encoding for our API.
+    </aside>
+
+    ## Changelog
+    We will list any changes to the current version of the API here.
+
+    | Date        | Details of changes                                         |
+    | ----------- | ---------------------------------------------------------- |
+    | 2020-06-29  | Added documentation for custom SMS messages. |
+    | 2020-06-15  | View Folder endpoint: added `recursive` parameter and fields: `home_for_user`, `home_for_user_group`. |
+    | 2020-06-02  | Add Onfido authentication to sign methods, also add missing `fi_tupas` for setauthenticationtosign`. |
+    | 2020-05-08  | Added IP address to [Environments & IP Addresses](#environments-amp-ip-addresses). |
+    | 2020-04-20  | Added `nl_idin` and `fi_tupas` to various `authentication_method_to_*`. |
+    | 2020-04-02  | Updated endpoint list to include missing ip-addresses. |
+    | 2020-03-04  | Add user tags API. |
+    | 2020-02-21  | Change the format of user group tags. |
+    | 2020-01-28  | Add support for tags in the user group API. |
+    | 2020-02-05  | Change `getbyshortid` limit from 24 hours from created/modified time, to 72 hours from created time. |
+    | 2019-11-25  | Add folder API documentation. |
+    | 2019-11-15  | Update production IP addresses. |
+    | 2019-09-30  | Add `verimi` to `authentication_to_view`. |
+    | 2019-08-15  | Add access control API documentation. |
+    | 2019-07-19  | Add user and user group API documentation. |
+    | 2019-04-09  | Documented link confirmation delivery. |
+    | 2019-04-01  | Reordered the changelog - new changes are now on top. |
+    | 2019-03-27  | Clarified cases where fields can also have a null value. |
+    |             | Clarified use of `authentication_method_to_*` |
+    | 2019-02-25  | Add `gettokenforpersonalcredentials` endpoint and update `getpersonaltoken` to accept `login_token`s |
+    | 2019-02-18  | Add monitoring endpoint which was already implemented but missing from this document |
+    | 2019-01-03  | Add `usagestats` endpoints
+    | 2018-12-17  | Add `fi_tupas` (Finnish EID) to `authentication_method_to_view`/`authentication_method_to_view_archived` |
+    |             | Add documentation for `/documents/trash` and `/documents/delete` bulk endpoints |
+    |             | Add documentation for `authentication_method_to_view_archived` |
+    |             | New signatory role: approver. New `Signatory` field `signatory_role`, supercedes `is_signatory`. |
+    | 2018-06-01  | Add `dk_nemid` (Danish NemID) to `authentication_to_sign` |
+    | 2018-04-09  | Add a new field to the [Signatory JSON](#signatory): `consent_module` |
+    | 2018-03-29  | Fix an omission where `no_bankid` (Norwegian BankID) was missing as an Authentication to Sign |
+    | 2018-03-26  | Add `rejection_reason` to the Signatory JSON and an API endpoint to control [template sharing](#share-or-unshare-templates) |
+    | 2018-02-28  | Fix a minor error in the [Quick Start](#quick-start) guide |
+    | 2018-01-29  | Add an endpoint to [change the email and mobile number of a signatory](#change-the-email-and-mobile-number-of-a-signatory) |
+    | 2018-01-08  | Add an endpoint to [get a sign link as a QR code](#get-a-sign-link-as-a-qr-code) |
+    | 2017-11-15  | Custom validations for the `SignatoryFieldCustomField` are now supported |
+    | 2017-08-03  | Revamped definitions of signatory fields, it should now be much clearer |
+    |             | Added `SignatoryFieldRadiogroup`, Scrive now supports radio button fields |
+    |             | Factor out `SignatoryFieldStandard` into `SignatoryFieldEmailMobile` to allow for `editable_by_signatory` property |
+    | 2017-07-04  | Remove a comment about anchoring that was due to a bug, which has now been fixed |
+    | 2017-06-08  | Add `required` field to signatory attachments, optional attachments are now possible |
+    | 2017-05-15  | Add missing `company` standard signatory field             |
+    | 2017-03-11  | Add `dk_nemid` (Danish NemID) to `authentication_to_view`  |
+    | 2017-01-28  | Documentation of `removepages` API call                    |
+    | 2017-01-17  | Add JSON fields related to highlighting                    |
+    | 2016-12-17  | New optional `no_attachments` parameter for the `forward` API call           |
+    | 2016-10-27  | Small improvements to documentation following internal and customer feedback |
+    | 2016-10-14  | Pre-release of Scrive Document API Version 2 |
+
+
+    ## Environments & IP Addresses
+
+    This section provides details on the IP addresses used by the Scrive Service. You may want to whitelist
+    these addresses in your firewalls for outgoing traffic but more importantly for incoming traffic from
+    Scrive eSign when using callbacks.
+
+    <aside class="warning">
+    Do not call the API using these IP addresses directly! Server Name Identification (SNI) is used to
+    route calls to different services on the same IP address and thus hostnames must be used to reliably reach
+    the service you intend to integrate with.
+    </aside>
+
+
+    ### Production
+    The main application is available through the `scrive.com` domain.
+
+    <aside class="notice">
+    This is the live production environment, for testing, please use API Testbed.
+    </aside>
+
+    The IP addresses that may be used as endpoints to and from our system are:
+
+    * 46.51.201.244
+    * 52.208.49.53
+    * 54.229.202.191
+    * 54.246.132.30
+    * 54.72.249.47
+    * 54.72.251.235
+    * 34.251.5.243
+    * 52.208.131.2
+    * 99.80.133.235
+
+    ### API Testbed
+
+    A testing environment is available through the `api-testbed.scrive.com`
+    domain.
+
+    This environment should be used when developing an integration with the
+    Scrive eSign system.
+
+    <aside class="warning">
+    This is not to be used with any critical information.
+    We make no guarantees as to the availability of the server, or the data
+    stored by it.
+    </aside>
+
+    We usually deploy the latest production environment to our API testbed, but
+    may occasionally update it with newer builds, which may not be as reliable
+    or well tested.
+
+    The API testbed uses `54.229.20.170` as its IP address.
+
+    ## API Explorer
+    An interactive API Explorer is available for both environments:
+
+    * [API Testbed](https://api-testbed.scrive.com/api-explorer)
+    * [Production](https://scrive.com/api-explorer)
+
+    This is useful way to test API calls and the OAuth workflow.
+
+    The implementation is in JavaScript and you can use
+    [Firebug](https://getfirebug.com/) or the
+    [Google Chrome DevTools](https://developer.chrome.com/devtools) to inspect
+    HTTP requests.
+
+    ## Upgrading from Version 1
+    There is no change to the Document workflow from Version 1 of the API.
+    The main changes in this version, compared to Version 1, are:
+
+    * A new naming structure for API endpoints
+    * Changes to the JSON data structures
+    * Changes to parameters and their names
+    * More comprehensive documentation
+    * Better error messages
+
+    The root endpoint for Version 1 was `/api/v1`, this has changed to
+    `/api/v2/documents`.
+
+    Most of the parameters have had minor name changes to make it easier for
+    newcomers to use.
+    However, the parameters for the `/list` call have undergone significant
+    structural changes.
+
+    <aside class="notice">
+    The most important things to watch for when upgrading from Version 1, apart
+    from those listed above:
+    </aside>
+
+    * The Document JSON structure has changed, and fields have been renamed
+    * The list call returns the full Document JSON for all documents, make sure
+      you include `gzip` in your `Accept-Encoding` header to avoid large
+      response sizes.
+
+    The following table summarises the changes in naming of the API calls.
+    For details of the new parameters and JSON data structures, please consult
+    the documentation.
+
+    | API endpoint in Version 1 (`/api/v1`)                        | Equivalent API endpoint in Version 2 (`/api/v2/documents`)  |
+    | ------------------------------------------------------------ | ----------------------------------------------------------- |
+    | `/list`                                                      | `/list`                                                     |
+    | `/createfromfile`                                            | `/new`                                                      |
+    | `/createfromtemplate/$template_id$`                          | `/newfromtemplate/{template_id}`                            |
+    | `/changemainfile/$documentid$`                               | `/{document_id}/setfile`                                    |
+    | `/update/$documentid$`                                       | `/{document_id}/update`                                     |
+    | `/ready/$documentid$`                                        | `/{document_id}/start`                                      |
+    | `/cancel/$documentid$`                                       | `/{document_id}/cancel`                                     |
+    | `/get/$documentid$`                                          | `/{document_id}/get`                                        |
+    | `/delete/$documentid$`                                       | `/{document_id}/trash`                                      |
+    | `/reallydelete/$documentid$`                                 | `/{document_id}/delete`                                     |
+    | `/remind/$documentid$`                                       | `/{document_id}/remind`                                     |
+    | `/setattachments/$documentid$`                               | `/{document_id}/setattachments`                             |
+    | `/downloadmainfile/$documentid$/$any_name$.pdf`              | `/{document_id}/files/main/{filename}`                      |
+    | `/downloadfile/$documentid$/$fileid$/$any_name$.pdf`         | `/{document_id}/files/{file_id}/{filename}`                 |
+    | `/changeauthenticationtoview/$documentid$/$signatorylinkid$` | `/{document_id}/{signatory_id}/setauthenticationtoview`     |
+    | `/changeauthentication/$documentid$/$signatorylinkid$`       | `/{document_id}/{signatory_id}/setauthenticationtosign`     |
+
+    # Quick Start
+    To get started using our API it is recommended to first read the
+    [Introduction](#introduction), this will give you an overview of some key
+    concepts in use by the Scrive eSign system.
+
+    Once you are familiar with the basic concepts the simplest document workflow
+    can be achieved by:
+
+    1. Creating a new document using `api/v2/documents/new`
+       (see [New Document](#new-document))
+    2. Updating the document with the desired process options and signatory
+       details using `api/v2/documents/{document_id}/update`
+       (see [Update a document](#update-a-document))
+    3. Start the signing process with `api/v2/documents/{document_id}/start`
+       (see [Start the signing process](#start-the-signing-process))
+
+    # Introduction
+    Scrive eSign is a system for signing documents electronically.
+
+    Users need to create an account with Scrive to create and send Documents,
+    but recipients do not need to have an account.
+
+    Documents in the Scrive eSign system define the parties to the document,
+    including the information these parties parties should fill out, the
+    document workflow, such as delivery and authentication for the parties, and
+    many other features related to the E-signing of documents as provided by
+    Scrive.
+
+    The Scrive Document API uses the Document JSON data structure to represent
+    Documents in the Scrive eSign system.
+    These always include an array of `parties`, which are either signing or
+    non-signing parties to the document, and represent the workflow assigned to
+    that party, and their individual information.
+    These use the Signatory JSON data structure.
+
+    We will first talk about the Document JSON, followed by the Signatory JSON.
+    For the reference documentation about these data structures please see the
+    [Definitions](#definitions).
+
+    ## Documents
+    A core data structure used throughout the API is the Document JSON.
+    The Document JSON is used to create documents, define the workflow for
+    signing and non-signing parties, monitor the progress of the document, etc.
+
+    A key property of a document is its `status` (as defined by
+    [DocumentStatus](#document-status)).
+
+    Newly created documents have `status: "preparation"` and can be easily
+    modified.
+    Most changes to the Document at this stage are done using the Document
+    `update` API call, by passing a Document JSON with values updated as
+    necessary.
+    Not all fields can be updated in this way.
+    For example, the Document’s `id` is auto-generated and cannot be changed.
+    For details of which fields cannot be updated in this way, look for the
+    `readOnly` property in the Document [Definitions](#definitions).
+
+    Once the document signing process has been started, using the `start` API
+    call, the `status` will change to `"pending"` and relatively few
+    modifications by the author are possible.
+    Making the `start` API call will also deliver the document to the parties,
+    depending on the delivery methods set (e.g. by email or SMS).
+
+    After all signing parties have successfully signed the document, its status
+    will change to `"closed"`, after which it cannot be modified.
+
+    A pending document can also be cancelled by the author using the `cancel`
+    API call, or rejected by a signing party, resulting in its status being
+    `"cancelled"` or `"rejected"`, respectively.
+
+    Any actions performed by parties to a document, such as signing, can only
+    be performed in the web application interface.
+    We will not provide an API for such actions.
+
+    **The following diagram provides a rough overview of the document lifecycle:**
+    <img alt="Document workflow diagram" src="data:image/png;base64,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"/>
+
+    Please refer to `Document` in the [Definitions](#definitions) for a
+    detailed description of all the fields available, and their use.
+
+    ## Templates
+    It is possible to set up template documents to be used with the "new
+    document from template" API call.
+
+    Any document in preparation can be made into a template by executing an
+    update call and setting the `"template"` field to be `true`. This cannot be
+    reversed once set, and templates cannot direclty be made into documents for
+    signing.
+
+    Templates have the same JSON structure as regular documents and can also be
+    updated.
+    In particular, their `"id"` can be used to
+    [create a new document from a template](#new-document-from-template).
+    Updating a template will only affect documents created from a template
+    *after* the template was updated.
+
+    Finally, using the list call, it is possible to list all your available
+    templates by setting the appropriate filters.
+
+    ## Parties
+    Every Document has an array field named `parties`.
+    This defines the signing and viewing parties to a document, their details,
+    how the document is to be delivered to them, an extra authentication that
+    must be performed, etc.
+
+    It is possible to add an extra party to a Document in preparation using the
+    `update` call.
+    Simply add an extra empty object (*i.e.* `{ }`) to the list of existing
+    parties and the Scrive API will return an additional party populated using
+    default values.
+
+    Each party has a unique `id`, which we refer to as the `signatory_id`.
+    As with Documents, not all fields may be changed using the `update` call.
+
+    For details of this data structure, please refer to `Signatory` in the
+    [Definitions](#definitions).
+
+    ## Callbacks
+    The Scrive eSign system can trigger API callbacks when some significant
+    property of a Document changes, as for example, when a signing party signs
+    the Document.
+
+    For callbacks to be triggered, you need to set the `api_callback_url` value
+    on the Document.
+    You can also trigger callbacks manually using the `callback` API call (this
+    call has no effect if the `api_callback_url` is not set).
+
+    For certain use cases it is possible to instead have a "User callback
+    scheme" defined.
+    You will need to contact us to set this up, and setting callbacks on
+    Documents is the preferred solution.
+
+    The Scrive eSign system will perform an `HTTP POST` request, with the
+    following `POST` parameters:
+
+    * `document_id`: As the name implies, the unique Document ID
+    * `document_json`: The Document JSON, see [Definitions](#definitions)
+    * `document_signed_and_sealed`: A boolean `true` or `false`, which indicates
+      whether the document has been signed and sealed with a digital signature
+
+    There will generally be two callbacks executed with
+    `document_signed_and_sealed` set to `true`.
+    The first will be shortly after all signing parties have signed the document
+    and Scrive has applied a digital signature, and the second will be
+    issued when a keyless signature has been applied to the document.
+    This usually happens between 15-30 days after the original signing date.
+
+    We guarantee to make *at least* one callback when the Document status
+    changes to one of the following values:
+
+    * `pending`
+    * `closed`
+    * `canceled`
+    * `timedout`
+    * `rejected`
+
+    We cannot guarantee to make only one callback per status change, and we may
+    trigger callbacks for changes not listed here.
+    Furthermore, a callback does not indicate _what_ changed in a document, it
+    simply tells you the current state of a document.
+    Finally, callbacks will not be triggered for documents that have been
+    deleted.
+
+    The Scrive eSign system will look at the HTTP response code returned by the
+    callback URL.
+    If it is not an HTTP `2xx` response, then the callback will be retried in
+    increasing intervals, the first after 5 minutes.
+    After 10 failed attempts, we will no longer attempt the callback.
+
+    We may modify the specifics of this behaviour without notice.
+
+    # Authentication
+    The Scrive Document API supports OAuth 1.0 and personal access credentials
+    based on this.
+
+    Where your application needs to perform actions on behalf of Users, the
+    recommended approach is to use the full OAuth workflow.
+
+    ## Personal Access Credentials
+    > You can retrieve personal access credentials for a user account using a
+    > special endpoint and supplying their login details.
+    >
+    > Using cURL, you can do:
+
+    ```bash
+    curl -X POST 'https://{server_address}/api/v2/getpersonaltoken' \
+      --data-urlencode 'email={user_email}' \
+      --data-urlencode 'password={user_password}'
+    ```
+
+    > Replacing `{server_address}`, `{user_email}` and `{user_password}` to
+    > the appropriate values.
+    >
+    > Or, if you are using the `login_token` method:
+
+    ```bash
+    curl -X POST 'https://{server_address}/api/v2/getpersonaltoken' \
+      --data-urlencode 'login_token={login_token}'
+    ```
+
+    > Replacing `{server_address}`, `{login_token}` to the appropriate values.
+    >
+    > These two methods will both return the personal access tokens as a JSON:
+
+    ```json
+    {
+      "apitoken" : "987dfsd312sd76sh_123"
+    , "apisecret" : "c47b87126dsacbhb"
+    , "accesstoken" : "2d1287dassg22jke_114"
+    , "accesssecret" : "12876adsdhght665"
+    }
+    ```
+
+    > Then, given the following example personal access credentials:
+    >
+    > * Client credentials identifier:
+    >   `apitoken = 123`
+    > * Client credentials secret:
+    >   `apisecret = abc`
+    > * Token credentials identifier:
+    >   `accesstoken = 456`
+    > * Token credentials secret:
+    >   `accesssecret = cde`
+    >
+    > The following authorisation header can be used:
+    >
+    > `Authorization: oauth_signature_method="PLAINTEXT", oauth_consumer_key="123", oauth_token="456",  oauth_signature="abc&cde"`
+
+    Instead of OAuth, clients may access the Scrive API using personal access
+    credentials.
+    A user can create personal access credentials in the [Scrive Account
+    Section](https://scrive.com/account#api-dashboard) through the web
+    interface, or using a dedicated API call, as described in the right column.
+
+    Only one personal token is available per user.
+    Such credentials can be used instead of OAuth client and token credentials
+    in API calls.
+    The personal access credentials are associated with the user and can be
+    used instead of any other OAuth privileges, they are intended for special
+    cases where OAuth is not a viable option, or for getting started quickly in
+    a sandbox environment.
+
+    There are two ways to use this endpoint. One is to provide the username and
+    password of the user you are creating the personal access credentials for.
+    The other is to provide a `login_token`. These are temporary tokens created
+    by the `gettokenforpersonalcredentials` endpoint. These are demonstrated in
+    the sidebar.
+
+    <aside class="warning">
+    Storing personal access tokens outside of the Scrive eSign system is
+    equivalent to storing a user password.
+
+    Due to this, we do recommend using OAuth where possible.
+    </aside>
+
+    ## OAuth
+
+    Managing API access is done through a Scrive user account, and each user
+    account may have zero or more client credentials.
+    These client credentials are managed in the [Integration settings
+    tab](https://scrive.com/account#api-dashboard) of the user account
+    settings.
+
+    These client credentials may be used to request privileges from users.
+    Users, in turn, can approve or deny granting such privileges.
+    They may also remove privileges as they see fit, from the Integration
+    settings tab.
+
+    The OAuth authorisation sequence allows you to request privileges from a
+    user and retrieve token credentials.
+    Once these have been approved, you may use the token credentials to make
+    API requests on behalf of the user.
+
+    ### OAuth privileges
+    The current API version accepts the following privileges names:
+    `DOC_CREATE`, `DOC_CHECK`, and `DOC_SEND`.
+
+    Permission levels required for each API call are described on a per call
+    basis.
+
+    ### OAuth and Cookies
+    As the Scrive eSign web interface uses the Scrive API, all API calls
+    support two modes of authentication: OAuth based, and browser cookie based.
+    If the `Authorization` header is set, any browser cookies are ignored.
+
+    ### OAuth 1.0 Workflow
+    > ### OAuth Workflow using cURL
+    > Here we provide some examples using the cURL command.
+    >
+    > **1. Temporary credentials request using cURL and response:**
+
+    ```bash
+    $ curl 'https://${host}/oauth/temporarycredentials?privileges=DOC_CREATE%2BDOC_SEND' \
+      -H 'Authorization: oauth_realm="Scrive",oauth_signature_method="PLAINTEXT",oauth_consumer_key="4d224b89875b39af_2",oauth_signature="f446cae781995b05&aaaaaa",oauth_callback="http://www.mywebsite.com/scrive"'
+
+    oauth_token=b0d6be3270a2b3ad_8&oauth_token_secret=dac0ec76e037c01d&oauth_callback_confirmed=true
+    ```
+
+    > **2. Now redirect the user to:**
+
+    ```
+    https://${host}/oauth/authorization?oauth_token=b0d6be3270a2b3ad_8
+    ```
+
+    > If the user grants access to your application, they will be redirected to:
+
+    ```
+    http://www.mywebsite.com/scrive?=&oauth_token=b0d6be3270a2b3ad_8&oauth_verifier=6382be3e8fcafd94
+    ```
+
+    > **3. You should now request for an OAuth token using all the information:**
+
+    ```
+    $ curl '${host}/oauth/tokencredentials' \
+      -H 'Authorization: oauth_realm="Scrive",oauth_signature_method="PLAINTEXT",oauth_consumer_key="4d224b89875b39af_2",oauth_signature="f446cae781995b05&dac0ec76e037c01d",oauth_token="b0d6be3270a2b3ad_8",oauth_verifier="6382be3e8fcafd94"'
+
+    oauth_token=0e870aa5ff434d5a_2&oauth_token_secret=22adb49346ba7674
+    ```
+
+    > You should now be able to perform an API call, for example:
+
+    ```
+    curl -X POST '${host}/api/v2/documents/new' \
+      -H 'Authorization: oauth_realm="Scrive",oauth_signature_method="PLAINTEXT",oauth_consumer_key="4d224b89875b39af_2",oauth_signature="f446cae781995b05&22adb49346ba7674",oauth_token="0e870aa5ff434d5a_2"'
+    ```
+
+    The OAuth workflow consists of three steps, which we will describe in turn:
+
+    1. Temporary credentials request and response
+    2. Authorisation redirect
+    3. Token request and response
+
+    **1. Temporary Credentials**
+
+    You must first request temporary credentials using the client credentials
+    identifier and secret from your account’s [Integration settings
+    tab](https://scrive.com/account#api-dashboard).
+
+    To do so you must issue a `GET` request to
+    `https://${host}/oauth/temporarycredentials?privileges=${privileges}` with
+    the following parameters in the `authorization` header:
+
+    * `oauth_signature_method="PLAINTEXT"`
+    * `oauth_consumer_key="${consumer_key}"`
+    * `oauth_signature="${consumer_secret}&aaaaaa"`
+    * `oauth_callback="${oauth_callback_url}"`
+
+    `${privileges}` must be separated by a `+`, for example
+    `"DOC_CREATE+DOC_SEND"` (or `%2B` when URL encoded).
+    You can set `${oauth_callback_url}` to what you like, but it must be set.
+    The `oauth_signature` must be appended with a dummy `&aaaaaa` at this
+    stage, it will be replaced with other tokens later.
+
+    The reponse should include an `oauth_token`, `oauth_token_secret`, and
+    `oauth_callback_confirmed=true`.
+
+    **2. Authorisation redirect**
+
+    You must now redirect the User to
+    `https://${host}/oauth/authorization?oauth_token=${oauth_token}` using the
+    `oauth_token` from the previous step.
+
+    The user will be asked to grant you the requested privileges, displaying
+    your company name.
+
+    If they accept, they will be redirected to:
+
+    * `${oauth_callback}?=&oauth_token=${oauth_token}&oauth_verifier=${oauth_verifier}`
+
+    If they reject, the redirection will be to:
+
+    * `${oauth_callback}?=&oauth_token=${oauth_token}&denied=true`
+
+    Therefore, you should be able to inspect the redirection to the callback
+    URL.
+
+    **3. Token request**
+
+    Now you should have the following pieces of information:
+
+    * `oauth_consumer_key`
+    * `oauth_token`
+    * `oauth_verifier`
+
+    We then use `oauth_signature_method="PLAINTEXT"` and construct a new
+    `oauth_signature` from the client credentials secret and temporary
+    credentials secret:
+
+    * `oauth_signature_method="PLAINTEXT"`
+    * `oauth_signature="${consumer_secret}&${oauth_token_secret}"`
+
+    Finally, we wrap all of this into the `Authorization` header to
+    `https://${host}/oauth/tokencredentials` and get back an `oauth_token` and
+    `oauth_token_secret`.
+
+    We can now make API calls on behalf of the User by including the finalised
+    tokens in the `Authorization` header:
+
+    * `oauth_consumer_key`
+    * `oauth_token`
+    * `oauth_signature_method="PLAINTEXT"`
+    * `oauth_signature`
+
+    # Errors
+
+    > Error responses will contain a JSON response body, structured as follows:
+
+    ```plaintext
+    {
+      "error_type": "$error_type$"
+    , "error_message": "$error_message$"
+    , "http_code": $http_code$
+    }
+    ```
+
+    > For example:
+
+    ```json
+    {
+      "error_type": "resource_not_found"
+    , "error_message": "The resource was not found. A document with id $id$ was not found."
+    , "http_code": 404
+    }
+    ```
+
+    Scrive uses HTTP status codes to indicate the success or failure of an API
+    request.
+
+    HTTP response codes in the `2xx` range indicate that the API call completed
+    successfully.
+    The `4xx` range indicates an error, either due to missing, incomplete, or
+    not applicable information (e.g. missing or invalid parameters, invalid
+    authorisation, etc.).
+
+    When a request is well formed, but does not satisfy necessary conditions,
+    then we will return a `409` code.
+    For example, when trying to start the signing process for a document that
+    has already been signed.
+
+    Codes in the `5xx` range suggest an error with Scrive’s eSign system, they
+    could also indicate planned system downtime, and will be rare.
+
+    The following table of error responses applies to all API calls, there may
+    be additional errors which are specific to the respective API calls, but
+    will follow the same structure.
+
+    <table>
+    <thead>
+      <tr> <th>HTTP code</th> <th>Reason</th> <th>Error Type and Message</th> </tr>
+    </thead>
+    <tbody>
+
+      <tr>
+        <td>400 Bad Request</td>
+        <td>Obligatory parameters were missing</td>
+        <td>
+          <p><code>request_parameters_missing</code><p>
+          <p>
+            The parameter(s) <code>$bad_parameters$</code> were missing.
+            Please refer to our API documentation.
+          </p>
+        </td>
+      </tr>
+
+      <tr>
+        <td>400 Bad Request</td>
+        <td>Parameter(s) could not be parsed</td>
+        <td>
+          <p><code>request_parameters_parse_error</code><p>
+          <p>
+            The parameter(s) <code>$bad_parameters$</code> could not be parsed.
+            Please refer to our API documentation.
+          </p>
+          <p>
+            <em>Some debugging information may also be present, detailing why
+            parsing failed.</em>
+          </p>
+        </td>
+      </tr>
+
+      <tr>
+        <td>400 Bad Request</td>
+        <td>Parameter(s) were present and could be parsed, but were not valid.</td>
+        <td>
+          <p><code>request_parameters_invalid</code><p>
+          <p>
+            <em>Error message should detail what is wrong with the parameter(s).</em>
+          </p>
+        </td>
+      </tr>
+
+      <tr>
+        <td>401 Unauthorised</td>
+        <td>No or invalid access credentials</td>
+        <td>
+          <p><code>invalid_authorisation</code><p>
+          <p>
+            No valid access credentials were provided.
+            Please refer to our API documentation.
+          </p>
+        </td>
+      </tr>
+
+      <tr>
+        <td>403 Forbidden</td>
+        <td>Insufficient access privileges for request</td>
+        <td>
+          <p><code>insufficient_privileges</code><p>
+          <p>
+            The access credentials provided do not have sufficient privileges
+            for this request.
+          </p>
+        </td>
+      </tr>
+
+      <tr>
+        <td>403 Forbidden</td>
+        <td>User doesn’t have permission for a document action or retrieval</td>
+        <td>
+          <p><code>document_action_forbidden</code><p>
+          <p>
+            You do not have permission to perform this action on the document.
+          </p>
+        </td>
+      </tr>
+
+      <tr>
+        <td>404 Not Found</td>
+        <td>Non existent API endpoint</td>
+        <td>
+          <p><code>endpoint_not_found</code><p>
+          <p>
+            The endpoint was not found.
+            See our website for API documentation.
+          </p>
+        </td>
+      </tr>
+
+      <tr>
+        <td>404 Not Found</td>
+        <td>The endpoint exists but the resource was not found.</td>
+        <td>
+          <p><code>resource_not_found</code><p>
+          <p>
+            The resource was not found.
+          </p>
+          <p>
+            <em>We will try to give additional information about what is missing.</em>
+          </p>
+        </td>
+      </tr>
+
+      <tr>
+        <td>409 Conflict</td>
+        <td>The document’s <code>object_version</code> does not match</td>
+        <td>
+          <p><code>document_object_version_mismatch</code><p>
+          <p>
+            The document has a different <code>object_version</code> to the one
+            provided and so the request was not processed.
+          </p>
+        </td>
+      </tr>
+
+      <tr>
+        <td>500 Server Error</td>
+        <td>Other unexpected server error</td>
+        <td>
+          <p><code>server_error</code><p>
+          <p>
+            We encountered an unexpected error.
+            Please contact Scrive support and include as much details about
+            what caused the error, including the <code>document_id</code> and
+            any other details.
+          </p>
+        </td>
+      </tr>
+
+    </tbody>
+    </table>
+
+    <aside class="notice">
+    API version 1 could return HTTP <code>5xx</code> codes for errors that were not due to
+    Scrive eSign.
+    The information presented here thus only applies for the current version of
+    the API.
+    </aside>
+
+    We recommend writing integration code that handles the possibility of the
+    Scrive eSign system returning errors.
+
+  version: 2.0.0
+  contact:
+    name: Scrive AB
+    url: https://scrive.com/
+    email: info@scrive.com
+  termsOfService: |
+    In using this API you agree to be bound by the Scrive Terms of Service,
+    available at [http://scrive.com/en/terms](http://scrive.com/en/terms)
+  license:
+    name: All Rights Reserved
+
+host: scrive.com
+
+basePath: /api/v2
+
+schemes:
+  - https
+
+tags:
+  - name: Monitor
+  - name: Prepare
+  - name: Get
+  - name: Modify
+  - name: Sign
+  - name: Attachment
+  - name: User
+  - name: Internal
+
+paths:
+  # Monitoring
+  /monitor/status:
+    $ref: ./api/monitor/status.yaml
+
+  # Prepare
+
+  /documents/new:
+    $ref: ./api/documents/new.yaml
+
+  /documents/newfromtemplate/{document_id}:
+    $ref: ./api/documents/newfromtemplate.yaml
+
+  /documents/{document_id}/clone:
+    $ref: ./api/documents/document_id/clone.yaml
+
+  /documents/{document_id}/update:
+    $ref: ./api/documents/document_id/update.yaml
+
+  /documents/{document_id}/setfile:
+    $ref: ./api/documents/document_id/setfile.yaml
+
+  /documents/{document_id}/setattachments:
+    $ref: ./api/documents/document_id/setattachments.yaml
+
+  /documents/{document_id}/removepages:
+    $ref: ./api/documents/document_id/removepages.yaml
+
+  /documents/{document_id}/start:
+    $ref: ./api/documents/document_id/start.yaml
+
+  # Get
+
+  /documents/{document_id}/get:
+    $ref: ./api/documents/document_id/get.yaml
+
+  /documents/{short_document_id}/getbyshortid:
+    $ref: ./api/documents/short_document_id/getbyshortid.yaml
+
+  /documents/{document_id}/{signatory_id}/getqrcode:
+    $ref: ./api/documents/document_id/signatory_id/getqrcode.yaml
+
+  /documents/list:
+    $ref: ./api/documents/list.yaml
+
+  /documents/{document_id}/files/main/{filename}:
+    $ref: ./api/documents/document_id/files/main.yaml
+
+  /documents/{document_id}/files/{file_id}/{filename}:
+    $ref: ./api/documents/document_id/files/file_id.yaml
+
+  /documents/{document_id}/texts/{file_id}:
+    $ref: ./api/documents/document_id/texts.yaml
+
+  /documents/{document_id}/history:
+    $ref: ./api/documents/document_id/history.yaml
+
+  /documents/{document_id}/evidenceattachments:
+    $ref: ./api/documents/document_id/evidenceattachments.yaml
+
+  /documents/{document_id}/callback:
+    $ref: ./api/documents/document_id/callback.yaml
+
+  # Modify
+
+  /documents/{document_id}/remind:
+    $ref: ./api/documents/document_id/remind.yaml
+
+  /documents/{document_id}/prolong:
+    $ref: ./api/documents/document_id/prolong.yaml
+
+  /documents/{document_id}/cancel:
+    $ref: ./api/documents/document_id/cancel.yaml
+
+  /documents/{document_id}/trash:
+    $ref: ./api/documents/document_id/trash.yaml
+
+  /documents/trash:
+    $ref: ./api/documents/document_id/trash-bulk.yaml
+
+  /documents/{document_id}/delete:
+    $ref: ./api/documents/document_id/delete.yaml
+
+  /documents/delete:
+    $ref: ./api/documents/document_id/delete-bulk.yaml
+
+  /documents/{document_id}/forward:
+    $ref: ./api/documents/document_id/forward.yaml
+
+  /documents/{document_id}/setautoreminder:
+    $ref: ./api/documents/document_id/setautoreminder.yaml
+
+  /documents/{document_id}/restart:
+    $ref: ./api/documents/document_id/restart.yaml
+
+  /documents/{document_id}/{signatory_id}/setauthenticationtoview:
+    $ref: ./api/documents/document_id/signatory_id/setauthenticationtoview.yaml
+
+  /documents/{document_id}/{signatory_id}/setauthenticationtosign:
+    $ref: ./api/documents/document_id/signatory_id/setauthenticationtosign.yaml
+
+  /documents/{document_id}/{signatory_id}/changeemailandmobile:
+    $ref: ./api/documents/document_id/signatory_id/changeemailandmobile.yaml
+
+  /documents/templates/setsharing:
+    $ref: ./api/documents/templates/setsharing.yaml
+
+  # Sign
+
+  /documents/{document_id}/{signatory_id}/check:
+    $ref: ./api/documents/document_id/signatory_id/check.yaml
+
+  /documents/{document_id}/{signatory_id}/sign:
+    $ref: ./api/documents/document_id/signatory_id/sign.yaml
+
+  /documents/{document_id}/{signatory_id}/reject:
+    $ref: ./api/documents/document_id/signatory_id/reject.yaml
+
+  /documents/{document_id}/{signatory_id}/sendsmspin:
+    $ref: ./api/documents/document_id/signatory_id/sendsmspin.yaml
+
+  /documents/{document_id}/{signatory_id}/setattachment:
+    $ref: ./api/documents/document_id/signatory_id/setattachment.yaml
+
+  /documents/{document_id}/{signatory_id}/highlight:
+    $ref: ./api/documents/document_id/signatory_id/highlight.yaml
+
+  # Attachment
+
+  /attachments/list:
+    $ref: ./api/attachments/list.yaml
+
+  /attachments/{attachment_id}/download/{filename}:
+    $ref: ./api/attachments/download.yaml
+
+  /attachments/new:
+    $ref: ./api/attachments/new.yaml
+
+  /attachments/delete:
+    $ref: ./api/attachments/delete.yaml
+
+  /attachments/setsharing:
+    $ref: ./api/attachments/setsharing.yaml
+
+  # User
+
+  /loginandgetsession:
+    $ref: ./api/user/loginandgetsession.yaml
+
+  /gettokenforpersonalcredentials/{user_id}:
+    $ref: ./api/user/gettokenforpersonalcredentials.yaml
+
+  /2fa/setup:
+    $ref: ./api/user/2fa-setup.yaml
+
+  /2fa/confirm:
+    $ref: ./api/user/2fa-confirm.yaml
+
+  /2fa/disable:
+    $ref: ./api/user/2fa-disable.yaml
+
+  /isuserdeletable:
+    $ref: ./api/user/isuserdeletable.yaml
+
+  /deleteuser:
+    $ref: ./api/user/deleteuser.yaml
+
+  /dataretentionpolicy:
+    $ref: ./api/user/get-dataretentionpolicy.yaml
+
+  /dataretentionpolicy/set:
+    $ref: ./api/user/post-dataretentionpolicy.yaml
+
+  /usertags:
+    $ref: ./api/user/get-tags.yaml
+
+  /usertags/update:
+    $ref: ./api/user/post-tags.yaml
+
+  /usagestats/days:
+    $ref: ./api/user/getusagestatsdays.yaml
+
+  /usagestats/months:
+    $ref: ./api/user/getusagestatsmonths.yaml
+
+  /signup:
+    $ref: ./api/user/signup.yaml
+
+  # User Group
+
+  /usergroups/create:
+    $ref: ./api/usergroup/createusergroup.yaml
+
+  /usergroups/{user_group_id}:
+    $ref: ./api/usergroup/getusergroup.yaml
+
+  /usergroups/{user_group_id}/update:
+    $ref: ./api/usergroup/updateusergroup.yaml
+
+  /usergroups/{user_group_id}/delete:
+    $ref: ./api/usergroup/deleteusergroup.yaml
+
+  /usergroups/{user_group_id}/contact_details:
+    $ref: ./api/usergroup/getusergroupcontactdetails.yaml
+
+  /usergroups/{user_group_id}/contact_details/update:
+    $ref: ./api/usergroup/updateusergroupcontactdetails.yaml
+
+  /usergroups/{user_group_id}/contact_details/delete:
+    $ref: ./api/usergroup/deleteusergroupcontactdetails.yaml
+
+  /usergroups/{user_group_id}/settings:
+    $ref: ./api/usergroup/getusergroupsettings.yaml
+
+  /usergroups/{user_group_id}/settings/update:
+    $ref: ./api/usergroup/updateusergroupsettings.yaml
+
+  /usergroups/{user_group_id}/settings/delete:
+    $ref: ./api/usergroup/deleteusergroupsettings.yaml
+
+  /usergroups/{user_group_id}/users:
+    $ref: ./api/usergroup/listusersinusergroup.yaml
+
+  # Access Control
+
+  /getuserroles/{user_id}:
+    $ref: ./api/accesscontrol/getuserroles.yaml
+
+  /accesscontrol/roles/{role_id}:
+    $ref: ./api/accesscontrol/getrole.yaml
+
+  /accesscontrol/roles/{role_id}/add:
+    $ref: ./api/accesscontrol/createrole.yaml
+
+  /accesscontrol/roles/{role_id}/delete:
+    $ref: ./api/accesscontrol/deleterole.yaml
+
+  # Folders
+
+  /folders/{folder_id}:
+    $ref: ./api/folders/getfolder.yaml
+
+  /folders/create:
+    $ref: ./api/folders/createfolder.yaml
+
+  /folders/{folder_id}/update:
+    $ref: ./api/folders/updatefolder.yaml
+
+  /folders/{folder_id}/delete:
+    $ref: ./api/folders/deletefolder.yaml
+
+  /folders/{folder_id}/list:
+    $ref: ./api/folders/listdocuments.yaml
+
+definitions:
+  Document:
+    $ref: ./definitions/Document.yaml
+  DocumentStatus:
+    $ref: ./definitions/DocumentStatus.yaml
+  Signatory:
+    $ref: ./definitions/Signatory.yaml
+  SignatoryFieldName:
+    $ref: ./definitions/SignatoryFieldName.yaml
+  SignatoryFieldEmailMobile:
+    $ref: ./definitions/SignatoryFieldEmailMobile.yaml
+  SignatoryFieldSignature:
+    $ref: ./definitions/SignatoryFieldSignature.yaml
+  SignatoryFieldStandard:
+    $ref: ./definitions/SignatoryFieldStandard.yaml
+  SignatoryFieldCheckbox:
+    $ref: ./definitions/SignatoryFieldCheckbox.yaml
+  SignatoryFieldRadiogroup:
+    $ref: ./definitions/SignatoryFieldRadiogroup.yaml
+  SignatoryFieldCustomText:
+    $ref: ./definitions/SignatoryFieldCustomText.yaml
+  ListFilter:
+    $ref: ./definitions/ListFilter.yaml
+  ListSorting:
+    $ref: ./definitions/ListSorting.yaml
+  AuthorAttachments:
+    $ref: ./definitions/AuthorAttachments.yaml
+  HistoryItems:
+    $ref: ./definitions/HistoryItems.yaml
+  Attachment:
+    $ref: ./definitions/Attachment.yaml
+  AttachmentListFilter:
+    $ref: ./definitions/AttachmentListFilter.yaml
+  DataRetentionPolicy:
+    $ref: ./definitions/DataRetentionPolicy.yaml
+  DataRetentionPolicies:
+    $ref: ./definitions/DataRetentionPolicies.yaml
+  OAuthAuthorization:
+    $ref: ./definitions/OAuthAuthorization.yaml
+  UserStats:
+    $ref: ./definitions/UserStats.yaml
+  LoginToken:
+    $ref: ./definitions/LoginToken.yaml
+  LanguageCode:
+    $ref: ./definitions/LanguageCode.yaml
+  User:
+    $ref: ./definitions/User.yaml
+  UserGroup:
+    $ref: ./definitions/UserGroup.yaml
+  UserGroupWithInheritable:
+    $ref: ./definitions/UserGroupWithInheritable.yaml
+  UserGroupSettings:
+    $ref: ./definitions/UserGroupSettings.yaml
+  UserGroupSettingsWithInheritable:
+    $ref: ./definitions/UserGroupSettingsWithInheritable.yaml
+  UserGroupContactDetails:
+    $ref: ./definitions/UserGroupContactDetails.yaml
+  UserGroupContactDetailsWithInheritable:
+    $ref: ./definitions/UserGroupContactDetailsWithInheritable.yaml
+  Tags:
+    $ref: ./definitions/Tags.yaml
+  AccessRole:
+    $ref: ./definitions/AccessRole.yaml
+  Folder:
+    $ref: ./definitions/Folder.yaml
+
+parameters:
+  $ref: ./extras/parameters.yaml
+
+responses:
+  $ref: ./extras/responses.yaml

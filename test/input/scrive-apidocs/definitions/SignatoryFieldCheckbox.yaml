@@ -1,0 +1,126 @@
+---
+$schema: "http://json-schema.org/draft-04/schema#"
+title: SignatoryFieldCheckbox
+description: |
+  A signatory field for placing checkboxes on the document.
+type: object
+properties:
+  type:
+    type: string
+    description: |
+      Used to specify that this is a checkbox field.
+    enum:
+      - checkbox
+  name:
+    type: string
+    description: |
+      A name for the checkbox.
+
+      The signatory will not see the name of the checkbox, however it will be
+      used in the Evidence Log as a reference.
+  is_checked:
+    type: boolean
+    default: false
+    description: |
+      `true` when the checkbox is checked, `false` otherwise.
+
+      Setting this to `true` on a document in preparation has the effect of
+      pre-checking the checkbox for the signatory.
+  is_obligatory:
+    type: boolean
+    default: true
+    description: |
+      Whether the signatory is obliged to check this checkbox in order to sign
+      the document.
+  should_be_filled_by_sender:
+    default: false
+    type: boolean
+  placements:
+    type: array
+    description: |
+      **Needs to be set, otherwise there will be no checkbox visible to the signatory.**
+
+      Defines where this field should be placed on the document.
+      This is both for the signatory to fill out on the signing page, and for
+      the final sealed PDF.
+
+      Note that this is an array, you can have multiple placements for the same
+      field.
+
+      The easiest way to set the `xrel`, `yrel`, etc. values is to create a
+      template in the document UI design view, and use those values.
+    items:
+      type: object
+      properties:
+        xrel:
+          type: number
+          description: Position on the x-axis, from 0 to 1.
+          # Note: does not currently work well with openapi2slate
+          #minimum: 0
+          #maximum: 1
+        yrel:
+          type: number
+          description: Position on the y-axis, from 0 to 1.
+          # Note: does not currently work well with openapi2slate
+          #minimum: 0
+          #maximum: 1
+        wrel:
+          type: number
+          description: |
+            Width of placement, as proportion of total width.
+
+            Checkboxes can only be three sizes.
+            The numbers represent _small_, _medium_ and _large_ checkboxes.
+          enum:
+            - 0.011538
+            - 0.021153
+            - 0.0423076
+        hrel:
+          type: number
+          description: Height of placement, not used for checkboxes, must be 0.
+          enum:
+            - 0
+        fsrel:
+          type: number
+          description: Font size of placement, not used for checkboxes, must be 0.
+          enum:
+            - 0
+        page:
+          description: The page number for this placement, starting from 1.
+          type: integer
+          # Note: does not currently work well with openapi2slate
+          #minimum: 0
+        tip:
+          $ref: ./SignatoryFieldPlacementTip.yaml
+        anchors:
+          $ref: ./SignatoryFieldPlacementAnchor.yaml
+      required:
+        - xrel
+        - yrel
+        - wrel
+        - hrel
+        - fsrel
+        - page
+required:
+  - type
+  - name
+example:
+  {
+    "type": "checkbox",
+    "name": "Checkbox Name",
+    "is_checked": true,
+    "is_obligatory": true,
+    "should_be_filled_by_sender": false,
+    "placements": [
+      {
+        "xrel": 0.17526315789473684,
+        "yrel": 0.3382113821138211,
+        "wrel": 0.011538,
+        "hrel": 0,
+        "fsrel": 0,
+        "page": 1,
+        "tip": "left",
+        "anchors": []
+      }
+    ]
+  }

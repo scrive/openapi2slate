@@ -1,0 +1,52 @@
+---
+post:
+
+  summary: Start the signing process
+
+  tags:
+    - Prepare
+
+  description: |
+    > ### Example
+
+    ```bash
+    curl -X POST 'https://{server_address}/api/v2/documents/${document_id}/start' \
+      -H 'Authorization: oauth_signature_method="PLAINTEXT",oauth_consumer_key="${apitoken}",oauth_token="${accesstoken}",oauth_signature="${apisecret}&${accesssecret}"' \
+      --data-urlencode 'document_id=${document_id}'
+    ```
+
+    > The above example uses [personal access credentials](#personal-access-credentials) (see `-H` option), but can be easily updated to use [OAuth](#oauth).
+
+    Start the signing process for a document in preparation.
+
+    *OAuth Privileges required: `DOC_SEND`*
+
+  parameters:
+    - $ref: ../../../extras/parameters.yaml#/DocumentID
+    - name: author_signs_now
+      x-internalOnly: true
+      in: formData
+      type: boolean
+      required: false
+      default: false
+      description: |
+        **Internal use only.**
+
+        Setting to ‘true’ will result in no invitation to sign being sent to the
+        author.
+        This is useful for when the author signs immediately after the ‘start’
+        call.
+    - $ref: ../../../extras/parameters.yaml#/ObjectVersion
+
+  responses:
+    200:
+      $ref: ../../../extras/responses.yaml#/Document
+    409:
+      description: |
+        `document_state_error` with error messages:
+
+        * The document state must be 'Preparation'.
+        * Document is a template, templates can not be started.
+        * Document must have a file before it can be started.
+        * The document has missing or invalid data. Some information about what
+          is missing or invalid in the document is given.

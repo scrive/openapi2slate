@@ -1,0 +1,183 @@
+---
+get:
+  summary: View User Group
+
+  tags:
+    - User Group
+
+  description: |
+    > Example of a User Group without inheritable previews:
+
+    ```json
+    {
+      "id": "5",
+      "parent_id": "1",
+      "name": "A Child Usergroup",
+      "children": [
+        {
+          "id": "2",
+          "name": "Some child user group"
+        },
+        {
+          "id": "3",
+          "name": "Yet another child user group"
+        }
+      ],
+      "settings": {
+        "inherited_from": null,
+        "data_retention_policy": {
+          "idle_doc_timeout_preparation": null,
+          "idle_doc_timeout_closed": null,
+          "idle_doc_timeout_canceled": 42,
+          "idle_doc_timeout_timedout": null,
+          "idle_doc_timeout_rejected": null,
+          "idle_doc_timeout_error": null,
+          "immediate_trash": false
+        }
+      },
+      "contact_details": {
+        "inherited_from": "1",
+        "address": {
+          "company_number": "5568166804",
+          "company_name": "Scrive",
+          "address": "Grev Turegatan 11A",
+          "zip": "114 46",
+          "city": "Stockholm",
+          "country": "Sweden"
+        }
+      },
+      "tags": [
+        {
+          "name": "founded",
+          "value": "1846"
+        },
+        {
+          "name": "status",
+          "value": "busy"
+        }
+      ]
+    }
+    ```
+
+    > Example of a User Group with inheritable previews:
+
+    ```json
+    {
+      "id": "5",
+      "parent_id": "1",
+      "name": "A Child Usergroup",
+      "children": [
+        {
+          "id": "2",
+          "name": "Some child user group"
+        },
+        {
+          "id": "3",
+          "name": "Yet another child user group"
+        }
+      ],
+      "settings": {
+        "inherited_from": null,
+        "data_retention_policy": {
+          "idle_doc_timeout_preparation": null,
+          "idle_doc_timeout_closed": null,
+          "idle_doc_timeout_canceled": 42,
+          "idle_doc_timeout_timedout": null,
+          "idle_doc_timeout_rejected": null,
+          "idle_doc_timeout_error": null,
+          "immediate_trash": false
+        },
+        "inheritable_preview": {
+          "inherited_from": "1",
+          "data_retention_policy": {
+            "idle_doc_timeout_preparation": null,
+            "idle_doc_timeout_closed": null,
+            "idle_doc_timeout_canceled": null,
+            "idle_doc_timeout_timedout": null,
+            "idle_doc_timeout_rejected": 23,
+            "idle_doc_timeout_error": null,
+            "immediate_trash": true
+          }
+        }
+      },
+      "contact_details": {
+        "inherited_from": "1",
+        "address": {
+          "company_number": "5568166804",
+          "company_name": "Scrive",
+          "address": "Grev Turegatan 11A",
+          "zip": "114 46",
+          "city": "Stockholm",
+          "country": "Sweden"
+        },
+        "inheritable_preview": {
+          "inherited_from": "1",
+          "address": {
+            "company_number": "5568166804",
+            "company_name": "Scrive",
+            "address": "Grev Turegatan 11A",
+            "zip": "114 46",
+            "city": "Stockholm",
+            "country": "Sweden"
+          }
+        }
+      },
+      "tags": [
+        {
+          "name": "founded",
+          "value": "1846"
+        },
+        {
+          "name": "status",
+          "value": "busy"
+        }
+      ]
+    }
+    ```
+
+    This endpoint is used to get an overview of a given User Group, including
+    other, related and dependent, objects. At time of writing, those extra
+    objects are `contact_details` and `settings`.
+
+    These dependent objects can be inherited. In this case, their
+    `inherited_from` field will be non-null. The value in this field is the
+    ID of the User Group which the value is inherited from.
+
+    Inheritance works as follows:
+
+    Root User Groups (i.e. those who are not children of other User Groups) may
+    not inherit since there are no ancestors to inherit from.
+
+    A child User Group may inherit or have its own dedicated object. In the case
+    that a User Group chooses to inherit, for example, the `contact_details`
+    object, then that User Group will inherit from the closest direct ancestor
+    with its own `contact_details` object. Since root User Groups cannot
+    inherit, there will always be an ancestor from which a child can inherit.
+
+    If you would like to see what a User Group _would_ inherit then you can
+    append `?include-inheritable` to the URL when making the call. This will add
+    extra `inheritable_preview` subtrees to the objects which perform the
+    inheritance calculation, ignoring whether or not the User Group already
+    inherits.
+
+  parameters:
+    - name: user_group_id
+      in: path
+      type: integer
+      description: The ID of the User Group you wish to view
+      required: true
+    - name: include-inheritable
+      in: query
+      type: boolean
+      description: |
+        Append `?include-inheritable` to the URL to see a preview of which
+        values can be inherited from an ancestor User Group.
+      required: false
+
+  responses:
+    200:
+      $ref: ../../scrive_api.yaml#/definitions/UserGroup
+    403:
+      description: |
+        Insufficient Permissions error (this means that either no User Group
+        exists with this ID or that you do not have permission to view it)

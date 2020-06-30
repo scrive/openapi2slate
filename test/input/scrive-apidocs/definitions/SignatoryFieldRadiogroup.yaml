@@ -1,0 +1,163 @@
+---
+$schema: "http://json-schema.org/draft-04/schema#"
+title: SignatoryFieldRadiogroup
+description: |
+  A signatory field for placing radio buttons on the document.
+type: object
+properties:
+  type:
+    type: string
+    description: |
+      Used to specify that this is a radio button group field.
+    enum:
+      - radiogroup
+  name:
+    type: string
+    description: |
+      A name for the radiogroup.
+
+      The signatory will not see the name of the radiogroup, however it will be
+      used in the Evidence Log as a reference.
+  values:
+    type: array
+    # Note: does not currently work well with openapi2slate
+    #minItems: 2
+    #uniqueItems: true
+    description: |
+      An array of radio button option values.
+      The signatory will not see the name of the radio button values, however
+      they will be used in the Evidence Log as a reference.
+
+      These _must_ correspond one-to-one with the list of `placements`: that is
+      the length of `values` _must_ equal that of `placements` and vice-versa,
+      otherwise an error is returned.
+
+      **Must be equal in length to `placements` and have at least 2 items.
+      Each item must be unique and not an empty string.**
+    items:
+      type: string
+      description: Empty strings are not allowed.
+      # Note: does not currently work well with openapi2slate
+      #minLength: 1
+  placements:
+    type: array
+    # Note: does not currently work well with openapi2slate
+    #minItems: 2
+    description: |
+      Defines where the individual radio buttons should be placed on the
+      document.
+      This is both for the signatory to fill out on the signing page, and for
+      the final sealed PDF.
+
+      These _must_ correspond one-to-one with the list of `values`: that is the
+      length of `placements` _must_ equal that of `vales` and vice-versa,
+      otherwise an error is returned.
+
+      **Must be equal in length to `values` and have at least 2 items.**
+
+      The easiest way to set the `xrel`, `yrel`, etc. values is to create a
+      template in the document UI design view, and use those values.
+    items:
+      type: object
+      properties:
+        xrel:
+          type: number
+          description: Position on the x-axis, from 0 to 1.
+          # Note: does not currently work well with openapi2slate
+          #minimum: 0
+          #maximum: 1
+        yrel:
+          type: number
+          description: Position on the y-axis, from 0 to 1.
+          # Note: does not currently work well with openapi2slate
+          #minimum: 0
+          #maximum: 1
+        wrel:
+          type: number
+          description: |
+            Width of placement, as proportion of total width.
+
+            Radio buttons can only be three sizes.
+            The numbers represent _small_, _medium_ and _large_ radio buttons.
+          enum:
+            - 0.014736
+            - 0.021052
+            - 0.025263
+        hrel:
+          type: number
+          description: Height of placement, not used for radio buttons, must be 0.
+          enum:
+            - 0
+        fsrel:
+          type: number
+          description: Font size of placement, not used for radio buttons, must be 0.
+          enum:
+            - 0
+        page:
+          description: |
+            The page number for this placement, starting from 1.
+
+            **All radio buttons within the same group must be placed on the same page.**
+          type: integer
+          # Note: does not currently work well with openapi2slate
+          #minimum: 0
+        tip:
+          $ref: ./SignatoryFieldPlacementTip.yaml
+        anchors:
+          $ref: ./SignatoryFieldPlacementAnchor.yaml
+      required:
+        - xrel
+        - yrel
+        - wrel
+        - hrel
+        - fsrel
+        - page
+required:
+  - type
+  - name
+  - selected_value
+  - placements
+  - values
+example:
+  {
+    "type": "radiogroup",
+    "name": "Large Radio buttons",
+    "selected_value": "Radio button 2",
+    "placements": [
+      {
+        "xrel": 0.7405263157894737,
+        "yrel": 0.3796747967479675,
+        "wrel": 0.025263,
+        "hrel": 0,
+        "fsrel": 0,
+        "page": 1,
+        "tip": "right",
+        "anchors": []
+      },
+      {
+        "xrel": 0.7405263157894737,
+        "yrel": 0.4008130081300813,
+        "wrel": 0.021052,
+        "hrel": 0,
+        "fsrel": 0,
+        "page": 1,
+        "tip": "right",
+        "anchors": []
+      },
+      {
+        "xrel": 0.7410526315789474,
+        "yrel": 0.4211382113821138,
+        "wrel": 0.014736,
+        "hrel": 0,
+        "fsrel": 0,
+        "page": 1,
+        "tip": "right",
+        "anchors": []
+      }
+    ],
+    "values": [
+      "Radio button 1",
+      "Radio button 2",
+      "Radio button 3"
+    ]
+  }

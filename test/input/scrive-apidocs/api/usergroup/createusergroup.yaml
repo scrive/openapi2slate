@@ -1,0 +1,70 @@
+---
+post:
+  summary: Create User Group
+
+  tags:
+    - User Group
+
+  description: |
+    > Example of JSON that could be passed in to create a User Group:
+
+    > The JSON is URL-encoded and passed in via the `usergroup` form data field.
+    > It is not necessary to minify the JSON, but also not prohibited.
+
+    ```json
+    {
+      "parent_id": "1",
+      "name": "New UG that's the child of user group 1"
+      "tags": [
+        {
+          "name": "side",
+          "value": "dark"
+        }
+      ]
+    }
+    ```
+
+    > For examples of the JSON output, see details of "View User Group".
+
+    This endpoint allows you to create a new User Group. When creating it, you
+    have the option to set the User Group's name and to specify which other User
+    Group it will be a child of.
+
+    The JSON input must be passed, URL-encoded, via the `usergroup` form data
+    field.
+
+    You must set a `parent_id` since only internal Scrive admins are permitted
+    to create root User Groups. In order to create a new child, you must have
+    the requisite permissions upon the parent.
+
+    You can also set `tags`, which are arbitrary name/value pairs.
+
+    A full User Group JSON response is returned which displays the state _after_
+    the create operation has been performed. Performing `/update` and then
+    using the `GET` endpoint should produce the same output both times.
+
+  parameters:
+    - name: usergroup
+      in: formData
+      type: string
+      format: application/json
+      description: |
+        JSON object containing the `name`, `parent_id`, and `tags` of the User
+        Group to be created.
+      example: { "name": "new user group", "parent_id": 1, "tags": [] }
+      required: true
+    - name: include-inheritable
+      in: query
+      type: boolean
+      description: |
+        Append `?include-inheritable` to the URL to see a preview of which
+        values can be inherited from an ancestor User Group.
+      required: false
+
+  responses:
+    200:
+      $ref: ../../scrive_api.yaml#/definitions/UserGroup
+    403:
+      description: |
+        Insufficient Permissions error (this means that either no User Group
+        exists with this ID or that you do not have permission to update it)

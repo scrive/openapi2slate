@@ -1,0 +1,23 @@
+---
+$schema: "http://json-schema.org/draft-04/schema#"
+title: DataRetentionPolicies
+type: object
+description: |
+ An object with data retention policies properties.
+example: {
+  "company_data_retention_policy":{
+    "immediate_trash":false
+  },
+  "data_retention_policy":{
+    "idle_doc_timeout_canceled":45,
+    "immediate_trash":true,
+    "idle_doc_timeout_error":67,
+    "idle_doc_timeout_preparation":32
+  }}
+properties:
+  company_data_retention_policy:
+    type: object
+    $ref: ./DataRetentionPolicy.yaml
+  data_retention_policy:
+    type: object
+    $ref: ./DataRetentionPolicy.yaml

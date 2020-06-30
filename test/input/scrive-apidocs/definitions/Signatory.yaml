@@ -1,0 +1,413 @@
+---
+$schema: "http://json-schema.org/draft-04/schema#"
+title: Signatory
+type: object
+description: |
+ A signatory defines the details and process for each signing or non-signing
+ party to a document.
+properties:
+  id:
+    description: |
+      **Unique identifier for a party.**
+
+      Will not change over time, and cannot be changed.
+    type: string
+    readOnly: true
+  user_id:
+    description: |
+      If this party has an account on the Scrive eSign system, it will be set
+      here.
+    type: ['string', 'null']
+    format: int64
+    readOnly: true
+  is_author:
+    description: Whether this party is the author of the document.
+    type: boolean
+    readOnly: true
+  is_signatory:
+    description: |
+      Deprecated, please use `signatory_role` instead.
+      If true, this party is a signatory to the document, otherwise
+      they are a viewer or an approver and will not sign the
+      document. If both `is_signatory` and `signatory_role` are
+      present, `is_signatory` takes precedence if their values are
+      inconsistent (this is done for backwards compatibility).
+    type: boolean
+  signatory_role:
+    $ref: ./SignatoryRole.yaml
+  fields:
+    description: |
+      The signatory fields represent information requested from, or information
+      about, the signatory.
+      There are different types of fields, and the array can contain multiple
+      instances of the same type.
+
+      Currently, Scrive supports the following field types:
+      * `SignatoryFieldName`: First and last name of the signatory.
+      * `SignatoryFieldEmailMobile`: Email and mobile of the signatory.
+      * `SignatoryFieldSignature`: A signature box placed on the document, for
+        the signatory to draw their signature.
+      * `SignatoryFieldStandard`: Company name and number, and personal number
+        (AKA social security number).
+      * `SignatoryFieldCheckbox`: Checkboxes of varying sizes.
+      * `SignatoryFieldRadiogroup`: Radio buttons of varying sizes.
+      * `SignatoryFieldCustomText`: A text field for any other information
+        about, or requested, from the signatory.
+
+      Please read the detailed definition of each field type for more
+      information.
+      New field types may be added at any point to extend Scrive eSign features.
+
+      Fields can have `placements`, which define where on the document they
+      will appear.
+      Similarly, a single field can have multiple placements on the document.
+
+      **Note:** Some field types have _no effect_ without at least one placement.
+    type: array
+    items:
+      anyOf:
+        - $ref: ./SignatoryFieldName.yaml
+        - $ref: ./SignatoryFieldEmailMobile.yaml
+        - $ref: ./SignatoryFieldSignature.yaml
+        - $ref: ./SignatoryFieldStandard.yaml
+        - $ref: ./SignatoryFieldCheckbox.yaml
+        - $ref: ./SignatoryFieldRadiogroup.yaml
+        - $ref: ./SignatoryFieldCustomText.yaml
+  sign_order:
+    type: integer
+    default: 1
+  sign_time:
+    type: ['string', 'null']
+    format: date-time
+    readOnly: true
+  seen_time:
+    type: ['string', 'null']
+    format: date-time
+    readOnly: true
+  read_invitation_time:
+    type: ['string', 'null']
+    format: date-time
+    readOnly: true
+  rejected_time:
+    type: ['string', 'null']
+    format: date-time
+    readOnly: true
+  rejection_reason:
+    type: ['string', 'null']
+    readOnly: true
+    description: |
+      Will only have a value if the signatory rejected the document, and will
+      contain the message from the signatory to explain rejection.
+      The Document `display_options` needs to allow the signatory to write a
+      reject reason (`allow_reject_reason`).
+  sign_success_redirect_url:
+    description: |
+      The URL to redirect this party after they have signed the document.
+    type: ['string', 'null']
+    format: uri
+  reject_redirect_url:
+    description: |
+      The URL to redirect this party if they reject the document.
+    type: ['string', 'null']
+    format: uri
+  email_delivery_status:
+    $ref: ./SignatoryDeliveryStatus.yaml
+  mobile_delivery_status:
+    $ref: ./SignatoryDeliveryStatus.yaml
+  csv:
+    type: ['array', 'null']
+    items:
+      type: array
+      items:
+        type: string
+  delivery_method:
+    type: string
+    default: email
+    enum:
+      - email
+      - mobile
+      - email_mobile
+      - pad
+      - api
+    description: |
+      Note that `api` delivery is referred to as "Link" delivery in the Scrive Web
+      interface. Furthermore, `pad` delivery is referred to as "In-person".
+  authentication_method_to_view:
+    type: string
+    default: standard
+    enum:
+      - standard
+      - sms_pin
+      - se_bankid
+      - no_bankid
+      - dk_nemid
+      - fi_tupas
+      - verimi
+      - nl_idin
+    description: |
+     This setting forces signatories to authenticate using the supplied identification method to view the document before signing.
+  authentication_method_to_view_archived:
+    type: string
+    default: standard
+    enum:
+      - standard
+      - sms_pin
+      - se_bankid
+      - no_bankid
+      - dk_nemid
+      - fi_tupas
+      - verimi
+      - nl_idin
+    description: |
+     This setting forces signatories to authenticate using the supplied identification method to view the document once it has been signed and resides in the e-archive.
+  authentication_method_to_sign:
+    type: string
+    default: standard
+    enum:
+      - standard
+      - sms_pin
+      - se_bankid
+      - no_bankid
+      - dk_nemid
+      - fi_tupas
+      - onfido_document_check
+      - onfido_document_and_photo_check
+  confirmation_delivery_method:
+    type: string
+    default: email
+    enum:
+      - email
+      - mobile
+      - email_mobile
+      - email_link
+      - email_link_mobile
+      - none
+    description: |
+      Options allow delivery of the signed document as
+      * `email` an attachment in email or
+      * `mobile` a link in a text message or
+      * `email_mobile` both of the two above or
+      * `email_link` a link in an email or
+      * `email_link_mobile` a link in both an email and a text message or
+      * `none` no delivery at all.
+  allows_highlighting:
+    type: boolean
+    default: false
+    description: |
+      Whether the signatory can highlight pages of the PDF when viewing the
+      signing page.
+
+      If any highlights are performed, the evidence log states that they were
+      performed while the signatory was viewing the document.
+
+      The intention of this feature is **not** for the signatory to affect a
+      contract via highlighting, but simply for a point-of-sale situation to
+      assist contract review.
+  hide_personal_number:
+    type: boolean
+    default: false
+    description: |
+      Whether the personal number should be hidden in the final PDF
+      verification page and the Evidence Log.
+
+      This is to be used when the document will be distributed to a wider
+      audience, and the personal number of the signatory should not be
+      available in the final document.
+
+      **If the signatory has a placed field for their personal number, it will
+      be included in the final PDF**. So this solution only works when the
+      field does not have any placements.
+  highlighted_pages:
+    type: array
+    default: []
+    readOnly: true
+    description: |
+      A list of highlights performed by the signatory.
+
+      While a document is pending, highlights may be added, but will not appear
+      in the document file PDF until after the document is closed.
+    items:
+      type: object
+      properties:
+        page:
+          type: integer
+          description: |
+            The page number which is highlighted (starts from `1`).
+            Each signatory can only have one highlight per page.
+        file_id:
+          type: string
+          description: |
+            The `file_id` for an image of the highlights.
+
+            The image dimensions will fit the ratio of the PDF page, and will be
+            of a fixed colour and transparency.
+
+            This will be integrated into the final PDF once the document is
+            closed.
+  attachments:
+    type: array
+    default: []
+    items:
+      type: object
+      description: |
+        An attachment requested from the signing party.
+        Attachments requested from viewing only parties have no effect.
+      properties:
+        name:
+          type: string
+          description: |
+            A name for the requested attachment.
+            Will be visible to the signatory when signing the document.
+        description:
+          type: string
+          description: |
+            A description for the requested attachment.
+            Will be visible to the signatory when signing the document alongside
+            the attachment name.
+        required:
+          type: boolean
+          default: true
+          description: |
+            Whether the signatory must upload this attachment.
+            If `false`, the signatory may choose not to upload this attachment
+            when signing.
+        file_id:
+          type: string
+          description: |
+            Will be present if and when the party uploads this attachment.
+        file_name:
+          type: string
+          description: |
+            Will be present if and when the party uploads this attachment.
+  api_delivery_url:
+    description: |
+      If the `delivery_method` is set to `api`, then this field will hold the
+      relative URL for the party.
+
+      Note that `api` delivery is referred to as "Link" delivery in the Scrive Web
+      interface.
+
+      This will only be available after the signing process has been started,
+      and will only be visible when accessing the document as the author.
+    type: ['string', 'null']
+    format: uri
+  consent_module:
+    oneOf:
+      - type: 'null'
+      - $ref: ./SignatoryConsentModule.yaml
+example:
+  {
+    "id": "189256",
+    "user_id": null,
+    "is_author": false,
+    "is_signatory": true,
+    "signatory_role": "signing_party",
+    "fields": [
+      {
+        "type": "name",
+        "order": 1,
+        "value": "Magnus",
+        "is_obligatory": true,
+        "should_be_filled_by_sender": false,
+        "placements": []
+      },
+      {
+        "type": "name",
+        "order": 2,
+        "value": "Söderholm",
+        "is_obligatory": true,
+        "should_be_filled_by_sender": false,
+        "placements": []
+      },
+      {
+        "type": "email",
+        "value": "noemail@scrive.com",
+        "is_obligatory": false,
+        "should_be_filled_by_sender": false,
+        "editable_by_signatory": false,
+        "placements": []
+      },
+      {
+        "type": "mobile",
+        "value": "",
+        "is_obligatory": false,
+        "should_be_filled_by_sender": false,
+        "placements": []
+      },
+      {
+        "type": "company",
+        "value": "Scrive",
+        "is_obligatory": false,
+        "should_be_filled_by_sender": false,
+        "placements": []
+      },
+      {
+        "type": "company_number",
+        "value": "",
+        "is_obligatory": false,
+        "should_be_filled_by_sender": false,
+        "placements": []
+      },
+      {
+        "type": "signature",
+        "name": "Signature 1",
+        "signature": "195174",
+        "is_obligatory": true,
+        "should_be_filled_by_sender": false,
+        "placements": [
+          {
+            "xrel": 0.07894736842105263,
+            "yrel": 0.09962825278810408,
+            "wrel": 0.2736842105263158,
+            "hrel": 0.0758364312267658,
+            "fsrel": 0.0168,
+            "page": 1,
+            "tip": "right",
+            "anchors": []
+          }
+        ]
+      }
+    ],
+    "sign_order": 1,
+    "sign_time": "2017-01-13T10:38:49.590815Z",
+    "seen_time": "2017-01-13T10:38:33.1783Z",
+    "read_invitation_time": null,
+    "rejected_time": null,
+    "rejection_reason": null,
+    "sign_success_redirect_url": null,
+    "reject_redirect_url": null,
+    "email_delivery_status": "unknown",
+    "mobile_delivery_status": "unknown",
+    "has_authenticated_to_view": false,
+    "csv": null,
+    "delivery_method": "pad",
+    "authentication_method_to_view": "standard",
+    "authentication_method_to_view_archived": "standard",
+    "authentication_method_to_sign": "standard",
+    "confirmation_delivery_method": "none",
+    "allows_highlighting": true,
+    "hide_personal_number": false,
+    "attachments": [],
+    "highlighted_pages": [
+      {
+        "page": 1,
+        "file_id": "195173"
+      }
+    ],
+    "api_delivery_url": null,
+    "consent_module": {
+      "title": "Handling of personal information",
+      "questions": [
+        {
+          "title": "Do you agree for your information to be processed?",
+          "positive_option": "Yes, I agree with the processing of my data.",
+          "negative_option": "No, I do not agree with any processing of my data.",
+          "response": null,
+          "detailed_description": {
+            "title": "More information",
+            "text": "Long extra information regarding the question can go here, and can be separated using newlines.\n\nThis is useful for long terms and conditions that come along with a question."
+          }
+        }
+      ]
+    }
+  }

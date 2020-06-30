@@ -1,0 +1,44 @@
+---
+post:
+  summary: Delete User Group Contact Details
+
+  tags:
+    - User Group
+
+  description: |
+    > For examples of the JSON output, see
+    > [View User Group Contact Details](#view-user-group-contact-details).
+
+    This endpoint is used to delete a given User Group's `contact_details`
+    object. This will cause the contact_details to be inherited rather than the
+    User Group having its own dedicated contact_details object.
+
+    As such, calling delete on a User Group that already inherits will result
+    in no operation being performed. Also, attempting to delete the
+    contact_details object of a root User Group will result in an error.
+
+    For more details on inheritance, see [View User Group Contact Details](#view-user-group-contact-details).
+
+  parameters:
+    - name: user_group_id
+      in: path
+      type: integer
+      description: |
+        The ID of the User Group whose `contact_details` object you wish to
+        delete
+      required: true
+    - name: include-inheritable
+      in: formData
+      type: boolean
+      description: |
+        Set to `true` to see a preview of which
+        values can be inherited from an ancestor User Group.
+      required: false
+
+  responses:
+    200:
+      $ref: ../../scrive_api.yaml#/definitions/UserGroupContactDetails
+    403:
+      description: |
+        Insufficient Permissions error (this means that either no User Group
+        exists with this ID or that you do not have permission to view it)

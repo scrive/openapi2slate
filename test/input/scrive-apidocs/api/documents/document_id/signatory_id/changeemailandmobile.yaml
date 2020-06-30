@@ -1,0 +1,63 @@
+---
+post:
+
+  summary: Change the email and mobile number of a signatory
+
+  tags:
+    - Modify
+
+  description: |
+    Change the email address and mobile number of a signatory after the
+    document has been started.
+
+    **This API call is _meant_ to be used for correcting mistakes that may occur
+    during a manual document preparation process.**
+
+    If you are planning to use it programatically, please be aware that this
+    will result in extra invitation messages being sent, the old invitation
+    links being invalidated, and may therefore not be the approach best suited
+    to your use-case.
+
+    You will only be able to change values for fields that a signatory has.
+    For example, if they have no mobile field set, you will not be able to
+    change it.
+
+    *OAuth Privileges required: `DOC_SEND`*
+
+  parameters:
+    - $ref: ../../../../extras/parameters.yaml#/DocumentID
+    - $ref: ../../../../extras/parameters.yaml#/SignatoryID
+    - name: email
+      in: formData
+      type: string
+      required: false
+      description: |
+        The new email address for the signatory.
+
+        Whilst this field is optional, both `email` and `mobile_number` cannot
+        be blank, you need at least one.
+    - name: mobile_number
+      in: formData
+      type: string
+      required: false
+      description: |
+        The new mobile number for the signatory.
+
+        Whilst this field is optional, both `email` and `mobile_number` cannot
+        be blank, you need at least one.
+    - $ref: ../../../../extras/parameters.yaml#/ObjectVersion
+
+  responses:
+    200:
+      $ref: ../../../../extras/responses.yaml#/Document
+    409:
+      description: |
+        Possible error responses:
+
+        * `document_state_error`: The document status should be 'Pending'.
+        * `signatory_state_error`: The signatory has already signed, is the
+          author, or does not have a mobile or email field already.
+        * `request_parameter_parse_error`: Can happen if the `email` or
+          `mobile_number` is not in the correct format.
+        * `request_parameter_missing`: If neither `email` nor `mobile_number`
+          is provided.

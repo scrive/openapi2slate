@@ -1,0 +1,55 @@
+---
+$schema: "http://json-schema.org/draft-04/schema#"
+title: UserStats
+type: object
+example: {"stats":[{
+  "date":"2019-01-03",
+  "name":"Organisation total",
+  "sent":1,
+  "closed":1,
+  "signatures":1,
+  "user_stats":[{
+    "date":"2019-01-03",
+    "email":"demo@scrive.com",
+    "name":" ",
+    "sent":1,
+    "closed":1,
+    "signatures":1}]
+  }]}
+description: |
+  A JSON object with the statistics on usage:
+    count of documents on different stages of the process
+properties:
+  stats:
+    type: array
+    items:
+      type: object
+      properties:
+        date:
+          type: string
+        sent:
+          type: integer
+        closed:
+          type: integer
+        signatures:
+          type: integer
+        user_stats:
+          type: array
+          required: false
+          description: |
+            Only present when the `withCompany` flag is set
+          items:
+            type: object
+            properties:
+              date:
+                type: string
+              email:
+                type: string
+              name:
+                type: string
+              sent:
+                type: integer
+              closed:
+                type: integer
+              signatures:
+                type: integer

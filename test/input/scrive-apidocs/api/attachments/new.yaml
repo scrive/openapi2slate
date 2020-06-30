@@ -1,0 +1,31 @@
+---
+post:
+  summary: Create
+  tags:
+    - Attachment
+
+  description: |
+    Create a new attachment.
+
+  parameters:
+    - name: title
+      in: formData
+      type: string
+      required: false
+
+      description: |
+        Title of the attachment. If not present, the title will be taken from
+        the file name.
+
+    - name: file
+      in: formData
+      type: file
+      format: application/pdf
+      required: true
+
+      description: |
+        The PDF to use for the attachment.
+
+  responses:
+    201:
+      description: The attachment has been added. The body is empty.

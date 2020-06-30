@@ -1,0 +1,12 @@
+---
+$schema: "http://json-schema.org/draft-04/schema#"
+title: Signatory Role
+description: |
+  Signatory role: viewer, approver, or a signing party. Only signing
+  parties can sign documents, viewers only have view access, and
+  approvers can additionally approve or reject.
+type: string
+enum:
+  - viewer
+  - signing_party
+  - approver

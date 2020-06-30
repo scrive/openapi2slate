@@ -1,0 +1,46 @@
+---
+$schema: "http://json-schema.org/draft-04/schema#"
+title: Attachment
+type: object
+description: |
+  A pre-uploaded attachment which can later be used when creating or signing
+  documents.
+properties:
+  id:
+    description: |
+      **Unique identifier for an attachment.**
+
+      Will not change over time, and cannot be changed.
+    type: string
+    readOnly: true
+  title:
+    type: string
+    description: |
+      **The title of the attachment.**
+
+      The title will be used when listing attachments.
+    readOnly: true
+  file:
+    type: string
+    description: |
+      **The attachment’s file ID.**
+    readOnly: true
+  shared:
+    type: boolean
+    description: |
+      **Sharing status.**
+
+      Whether the attachment is shared with the other members of the company.
+  time:
+    description: Time at which the attachment was added.
+    type: string
+    format: date-time
+    readOnly: true
+example:
+  {
+    "id": "2",
+    "title": "Terms and conditions",
+    "time": "2018-06-21T08:25:22.644059Z",
+    "shared": false,
+    "file": "2"
+  }

@@ -1,0 +1,24 @@
+---
+Document:
+  description: |
+    The document metadata as a JSON.
+  schema:
+    $ref: ../definitions/Document.yaml
+
+UserGroup:
+  description: |
+    The user group metadata as a JSON.
+  schema:
+    $ref: ../definitions/UserGroup.yaml
+
+UserGroupWithInheritable:
+  description: |
+    The user group metadata as a JSON (with Inheritable Previews).
+  schema:
+    $ref: ../definitions/UserGroupWithInheritable.yaml
+
+APIError:
+  description: |
+    The JSON structured errors returned by the API.
+  schema:
+    $ref: ../definitions/ApiError.yaml

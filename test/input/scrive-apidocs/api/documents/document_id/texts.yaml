@@ -1,0 +1,58 @@
+---
+get:
+  summary: Extract text
+
+  tags:
+    - Get
+    - Internal
+
+  description: |
+    Extract text from the main file of a document.
+
+    *OAuth Privileges required: `DOC_CREATE`*
+
+  parameters:
+    - $ref: ../../../extras/parameters.yaml#/DocumentID
+    - name: json
+      in: formData
+      type: string
+      format: application/json
+      required: true
+      description: |
+        A JSON representation of rectangles to extract text from.
+
+        For example:
+        `{"rects": [ { "rect": [0,0,1,1], "page": 1} ] }`
+
+        Please see JSON Schema definition for exact details.
+      schema:
+        $ref: ../../../definitions/FileRects.yaml
+
+  responses:
+    200:
+      description: |
+        A JSON representation of the extracted data.
+
+        Please see the JSON Schema definition for full details.
+      schema:
+        $ref: ../../../definitions/FileRectsResult.yaml
+      examples:
+        'application/json':
+          {
+            "rects": [
+              {
+                "lines": [
+                  "A line from the PDF",
+                  "Another PDF line!",
+                  "That’s it really!"
+                ],
+                "page": 1,
+                "rect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ]
+              }
+            ]
+          }

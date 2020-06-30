@@ -1,0 +1,22 @@
+---
+$schema: "http://json-schema.org/draft-04/schema#"
+title: Document Status
+description: |
+ The current document status.
+
+ A document in "preparation" can be changed using the `update` call and the
+ main file can also be set or changed.
+
+ Once the document signing process has begun, the document will be "pending".
+
+ Once all parties have successfully signed the document is "closed" and cannot
+ be changed.
+type: string
+enum:
+  - preparation
+  - pending
+  - closed
+  - canceled
+  - timedout
+  - rejected
+  - document_error
