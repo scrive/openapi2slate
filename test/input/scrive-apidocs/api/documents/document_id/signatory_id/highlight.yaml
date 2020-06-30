@@ -1,0 +1,35 @@
+---
+post:
+
+  summary: Add a highlight
+
+  tags:
+    - Sign
+    - Internal
+
+  description: |
+    Add highlights to a page while a signatory is signing.
+
+  parameters:
+    - $ref: ../../../../extras/parameters.yaml#/DocumentID
+    - $ref: ../../../../extras/parameters.yaml#/SignatoryID
+    - name: page
+      in: formData
+      type: integer
+      required: true
+      description: The page affected (starts at `1`).
+    - name: image
+      in: formData
+      type: string
+      format: "data:image/png;base64"
+      required: false
+      description: |
+        If included, this sets the image provided as the highlight for that
+        page, replacing any existing highlight image.
+
+        If omitted, clears this page of any highlights.
+    - $ref: ../../../../extras/parameters.yaml#/ObjectVersion
+
+  responses:
+    200:
+      $ref: ../../../../extras/responses.yaml#/Document

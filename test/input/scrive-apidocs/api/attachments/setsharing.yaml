@@ -1,0 +1,38 @@
+---
+post:
+  summary: Share or unshare
+  tags:
+    - Attachment
+
+  description: |
+    Share or unshare the specified attachments with the company's other users.
+
+  parameters:
+    - name: attachment_ids
+      in: formData
+      type: string
+      format: application/json
+      required: true
+
+      description: |
+        List of attachment IDs of attachments to share or unshare.
+
+      schema:
+        type: array
+        default: []
+        example: ["3","4"]
+        items:
+          type: string
+
+    - name: shared
+      in: formData
+      type: string
+      format: application/json
+      required: true
+
+      description: |
+        `true` to share, `false` to unshare.
+
+  responses:
+    202:
+      description: The change has succeeded. The body is empty.

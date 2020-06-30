@@ -1,0 +1,54 @@
+---
+get:
+
+  summary: Get the Document History
+
+  tags:
+    - Get
+
+  description: |
+    **Get the document history to display to the user.**
+
+    Default language for the document history text is the one set for the user
+    making the API call.
+    This can optionally be overridden.
+
+    *OAuth Privileges required: `DOC_CHECK`*
+
+  parameters:
+    - $ref: ../../../extras/parameters.yaml#/DocumentID
+    - name: lang
+      in: query
+      default: User language
+      description: |
+        **The language used to display the document history.**
+
+        Defaults to the language of the User making the API call.
+
+        Has to be a supported language code.
+        Languages may be added or removed without notice.
+      $ref: ../../../definitions/LanguageCode.yaml
+
+  responses:
+    200:
+      description: |
+        The list of history items for this document.
+
+        Will be in reverse-chronological order and an array of
+        [History Items](#history-items).
+      examples:
+        'application-json':
+          { "events": [
+              {
+                "status": "initiated",
+                "time": "2015-06-06T17:50:15Z",
+                "party": "Not named party (1)",
+                "text": "The signing process was initiated."
+              }
+            ]
+          }
+      schema:
+        $ref: ../../../definitions/HistoryItems.yaml
+
+    # TODO add 400 Bad Request response
+    # request_parameters_invalid; The parameter `lang` is not a valid or supported language code.

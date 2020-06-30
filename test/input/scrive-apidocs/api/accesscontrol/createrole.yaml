@@ -1,0 +1,55 @@
+---
+post:
+  summary: Grant Access Role
+
+  tags:
+    - Access Control
+
+  description: |
+    > Example of JSON that could be used to grant a new role:
+
+    ```json
+    {
+      "role_type": "user",
+      "source": {
+        "type": "user",
+        "id": "2"
+      },
+      "target": {
+        "type": "user",
+        "id": "4"
+      }
+    }
+    ```
+
+    This endpoint allows you to grant a new Access Role.
+
+  parameters:
+    - name: role
+      in: formData
+      type: string
+      format: application/json
+      description: |
+        JSON object containing details of the role to be granted.
+      example: {
+        "role_type": "user",
+        "source": {
+          "type": "user",
+          "id": "2"
+        },
+        "target": {
+          "type": "user",
+          "id": "4"
+        }
+      }
+      required: true
+
+  responses:
+    200:
+      $ref: ../../scrive_api.yaml#/definitions/AccessRole
+    403:
+      description: |
+        Insufficient Permissions error (this means that you don't have enough
+        permissions to grant this role. In practice this means that you lack
+        Create permissions on the Policy relation for either the source or the
+        target that the proposed role refers to.

@@ -1,0 +1,444 @@
+---
+$schema: "http://json-schema.org/draft-04/schema#"
+title: Document
+type: object
+description: |
+ Defines the entire structure of a document to be signed, including the
+ parties, the processes to follow, etc.
+ It is a core data structure used throughout the Scrive Document API.
+properties:
+  id:
+    description: |
+      **Unique identifier for a document.**
+
+      Will not change over time, and cannot be changed.
+    type: string
+    readOnly: true
+  title:
+    type: string
+    description: |
+      **The title of the document.**
+
+      Can be modified while a document is in preparation.
+      The title will be used in messages sent to the document’s parties.
+  parties:
+    type: array
+    items:
+      $ref: ./Signatory.yaml
+    description: |
+      **List of signing and viewing parties.**
+
+      Defines their details, how the document is delivered to them, what
+      authentication method they must use, fields they must fill, fields placed
+      on the PDF, etc.
+  file:
+    $ref: ./File.yaml
+    description: |
+      **The document’s main file.**
+
+      Can be `null` while a document is in preparation, but needs a file before
+      the signing process can start.
+  sealed_file:
+    oneOf:
+      - type: 'null'
+      - $ref: ./File.yaml
+    description: |
+      **The cryptographically sealed file.**
+
+      Will only exist for documents that have been closed.
+      This field may be `null` for a short period of time after a document has
+      been signed by all parties, while the Scrive eSign system seals the
+      document.
+  author_attachments:
+    description: |
+      **List of author attachments.**
+
+      Can be updated during document preparation using the "set author
+      attachments" (`/{document_id}/setattachments`) API call.
+    type: array
+    items:
+      type: object
+      properties:
+        name:
+          type: string
+          readOnly: true
+        required:
+          type: boolean
+          readOnly: true
+        add_to_sealed_file:
+          type: boolean
+          readOnly: true
+        file_id:
+          type: string
+    readOnly: true
+  ctime:
+    description: Time at which the document was created.
+    type: string
+    format: date-time
+    readOnly: true
+  mtime:
+    description: Latest time at which the document was modified.
+    type: string
+    format: date-time
+    readOnly: true
+  timeout_time:
+    description: |
+      Time after which the document will timeout if it has not been signed.
+    type: ['string', 'null']
+    format: date-time
+    readOnly: true
+  auto_remind_time:
+    type: ['string', 'null']
+    format: date-time
+    readOnly: true
+  status:
+    $ref: ./DocumentStatus.yaml
+  days_to_sign:
+    type: integer
+    default: 90
+  days_to_remind:
+    type: ['integer', 'null']
+  display_options:
+    type: object
+    properties:
+      show_header:
+        type: boolean
+        description: |
+          Whether to show the Scrive header on the signing page.
+      show_pdf_download:
+        type: boolean
+        description: |
+          Whether to show an option to download the PDF on the signing page.
+      show_reject_option:
+        type: boolean
+        description: |
+          Whether to allow signatories to reject a document.
+      allow_reject_reason:
+        type: boolean
+        description: |
+          Whether to allow signatories to enter a plain text reason for
+          rejecting a document.
+      show_footer:
+        description: |
+          Whether to show the Scrive footer on the signing page.
+        type: boolean
+      document_is_receipt:
+        description: |
+          Whether the document is a receipt to be printed out, and thus should
+          not have the verification footer added.
+
+          _Note:_ This reduces the durability of evidence for a document signed
+          through Scrive eSign, and should only be used when absolutely
+          necessary.
+        type: boolean
+      show_arrow:
+        type: boolean
+        description: |
+          Whether to show the auto-scroll arrow on the signing page.
+  invitation_message:
+    description: |
+      The invitation message to send to all parties at the start of the signing
+      process when using email invitation.
+
+      Default is blank meaning that a default message will be used.
+    type: string
+    default: ""
+  sms_invitation_message:
+    description: |
+      The invitation message to send to all parties at the start of the signing
+      process when using SMS invitation.
+
+      Default is blank meaning that a default message will be used.
+    type: string
+    default: ""
+  confirmation_message:
+    description: |
+      The confirmation message to send to all parties once the document has
+      been signed.
+
+      Default is blank meaning that a default message will be used.
+    type: string
+    default: ""
+  sms_confirmation_message:
+    description: |
+      The confirmation message to send to all parties once the document has
+      been signed when using SMS confirmation.
+
+      Default is blank meaning that a default message will be used.
+    type: string
+    default: ""
+  lang:
+    $ref: ./LanguageCode.yaml
+  api_callback_url:
+    description: |
+      The URL to perform an API callback request.
+
+      Please see [Callbacks](#callbacks) for details.
+    type: ['string', 'null']
+    format: uri
+  object_version:
+    description: |
+      The document object version is auto-incremented by the Scrive eSign
+      system each time an action is performed on it.
+
+      Therefore this can be used as a rudimentary synchronisation mechanism to
+      ensure you are handling a document that has not changed.
+
+      It is not recommended to use this field unless you are building an
+      application with offline capabilities.
+    type: integer
+    readOnly: true
+    minimum: 1
+  access_token:
+    type: string
+    readOnly: true
+  timezone:
+    type: string
+  tags:
+    description: |
+      **User defined set of names and values.**
+
+      Can be used to manage categories of documents.
+      The list API call can filter based on document tags.
+    type: array
+    default: []
+    items:
+      type: object
+      properties:
+        name:
+          type: string
+        value:
+          type: string
+  is_template:
+    type: boolean
+  is_saved:
+    description: |
+      A ‘saved’ document will appear in the E-archive.
+    type: boolean
+  is_shared:
+    type: boolean
+    readOnly: true
+  is_trashed:
+    type: boolean
+    readOnly: true
+  is_deleted:
+    type: boolean
+    readOnly: true
+  viewer:
+    type: object
+    properties:
+      role:
+        type: string
+        enum:
+          - company_shared
+          - company_admin
+          - signatory
+      signatory_id:
+        type: string
+example:
+  {
+    "id": "8222115557375075439",
+    "title": "Contract for Magnus",
+    "parties": [
+      {
+        "id": "189255",
+        "user_id": "1404",
+        "is_author": true,
+        "is_signatory": false,
+        "signatory_role": "viewer",
+        "fields": [
+          {
+            "type": "name",
+            "order": 1,
+            "value": "Gregory",
+            "is_obligatory": true,
+            "should_be_filled_by_sender": false,
+            "placements": []
+          },
+          {
+            "type": "name",
+            "order": 2,
+            "value": "Davids",
+            "is_obligatory": true,
+            "should_be_filled_by_sender": false,
+            "placements": []
+          },
+          {
+            "type": "email",
+            "value": "noreply@scrive.com",
+            "is_obligatory": false,
+            "should_be_filled_by_sender": false,
+            "placements": []
+          },
+          {
+            "type": "company",
+            "value": "Scrive",
+            "is_obligatory": false,
+            "should_be_filled_by_sender": false,
+            "placements": []
+          }
+        ],
+        "sign_order": 1,
+        "sign_time": null,
+        "seen_time": null,
+        "read_invitation_time": null,
+        "rejected_time": null,
+        "rejection_reason": null,
+        "sign_success_redirect_url": null,
+        "reject_redirect_url": null,
+        "email_delivery_status": "unknown",
+        "mobile_delivery_status": "unknown",
+        "has_authenticated_to_view": false,
+        "csv": null,
+        "delivery_method": "pad",
+        "authentication_method_to_view": "standard",
+        "authentication_method_to_view_archived": "standard",
+        "authentication_method_to_sign": "standard",
+        "confirmation_delivery_method": "none",
+        "allows_highlighting": false,
+        "attachments": [],
+        "highlighted_pages": [],
+        "api_delivery_url": null
+      },
+      {
+        "id": "189256",
+        "user_id": null,
+        "is_author": false,
+        "is_signatory": true,
+        "signatory_role": "signing_party",
+        "fields": [
+          {
+            "type": "name",
+            "order": 1,
+            "value": "Magnus",
+            "is_obligatory": true,
+            "should_be_filled_by_sender": false,
+            "placements": []
+          },
+          {
+            "type": "name",
+            "order": 2,
+            "value": "Söderholm",
+            "is_obligatory": true,
+            "should_be_filled_by_sender": false,
+            "placements": []
+          },
+          {
+            "type": "email",
+            "value": "noemail@scrive.com",
+            "is_obligatory": false,
+            "should_be_filled_by_sender": false,
+            "placements": []
+          },
+          {
+            "type": "mobile",
+            "value": "",
+            "is_obligatory": false,
+            "should_be_filled_by_sender": false,
+            "placements": []
+          },
+          {
+            "type": "company",
+            "value": "Scrive",
+            "is_obligatory": false,
+            "should_be_filled_by_sender": false,
+            "placements": []
+          },
+          {
+            "type": "company_number",
+            "value": "",
+            "is_obligatory": false,
+            "should_be_filled_by_sender": false,
+            "placements": []
+          },
+          {
+            "type": "signature",
+            "name": "Signature 1",
+            "signature": "195174",
+            "is_obligatory": true,
+            "should_be_filled_by_sender": false,
+            "placements": [
+              {
+                "xrel": 0.07894736842105263,
+                "yrel": 0.09962825278810408,
+                "wrel": 0.2736842105263158,
+                "hrel": 0.0758364312267658,
+                "fsrel": 0.0168,
+                "page": 1,
+                "tip": "right",
+                "anchors": []
+              }
+            ]
+          }
+        ],
+        "sign_order": 1,
+        "sign_time": "2017-01-13T10:38:49.590815Z",
+        "seen_time": "2017-01-13T10:38:33.1783Z",
+        "read_invitation_time": null,
+        "rejected_time": null,
+        "rejection_reason": null,
+        "sign_success_redirect_url": null,
+        "reject_redirect_url": null,
+        "email_delivery_status": "unknown",
+        "mobile_delivery_status": "unknown",
+        "has_authenticated_to_view": false,
+        "csv": null,
+        "delivery_method": "pad",
+        "authentication_method_to_view": "standard",
+        "authentication_method_to_view_archived": "standard",
+        "authentication_method_to_sign": "standard",
+        "confirmation_delivery_method": "none",
+        "allows_highlighting": true,
+        "attachments": [],
+        "highlighted_pages": [
+          {
+            "page": 1,
+            "file_id": "195173"
+          }
+        ],
+        "api_delivery_url": null
+      }
+    ],
+    "file": {
+      "name": "contract.pdf",
+      "id": "195124"
+    },
+    "sealed_file": {
+      "name": "contract.pdf",
+      "id": "195172"
+    },
+    "author_attachments": [],
+    "ctime": "2017-01-13T10:38:17.916324Z",
+    "mtime": "2017-01-13T10:38:49.590815Z",
+    "timeout_time": "2017-04-13T22:59:59Z",
+    "auto_remind_time": null,
+    "status": "closed",
+    "days_to_sign": 90,
+    "days_to_remind": null,
+    "display_options": {
+      "show_header": true,
+      "show_pdf_download": true,
+      "show_reject_option": true,
+      "allow_reject_reason": true,
+      "show_footer": true,
+      "document_is_receipt": false,
+      "show_arrow": true
+    },
+    "invitation_message": "",
+    "confirmation_message": "",
+    "lang": "en",
+    "api_callback_url": null,
+    "object_version": 26,
+    "access_token": "da675b76d876abda",
+    "timezone": "Europe/London",
+    "tags": [],
+    "is_template": false,
+    "is_saved": true,
+    "is_shared": false,
+    "is_trashed": false,
+    "is_deleted": false,
+    "viewer": {
+      "signatory_id": "189255",
+      "role": "signatory"
+    }
+  }

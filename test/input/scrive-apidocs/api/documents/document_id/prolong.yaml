@@ -1,0 +1,42 @@
+---
+post:
+
+  summary: Prolong a document
+
+  tags:
+    - Modify
+
+  description: |
+    Prolong a document that has timed out.
+
+    *OAuth Privileges required: `DOC_SEND`*
+
+  parameters:
+    - $ref: ../../../extras/parameters.yaml#/DocumentID
+    - name: days
+      in: formData
+      type: integer
+      minimum: 1
+      maximum: 90
+      required: true
+      description: Number of days to prolong the document by.
+    - $ref: ../../../extras/parameters.yaml#/ObjectVersion
+
+  responses:
+    200:
+      $ref: ../../../extras/responses.yaml#/Document
+    400:
+      description: The `days` parameter must be a number between 1 and 90.
+      # FIXME It is possible to add a schema here, although APIError is too general
+    409:
+      description: |
+        The document has not timed out.
+        Only timed out documents can be prolonged.
+      # FIXME It is possible to add a schema here, although APIError is too general
+    # TODO include this error too
+    #409:
+    #  description: |
+    #    The remaining number of days plus the `days` parameter would result in
+    #    > 90 days document lifetime.
+    #    Total has to be <= 90 days.
+    #  # FIXME It is possible to add a schema here, although APIError is too general

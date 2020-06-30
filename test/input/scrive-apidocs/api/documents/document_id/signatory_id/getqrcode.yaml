@@ -1,0 +1,34 @@
+---
+get:
+
+  summary: Get a sign link as a QR code
+
+  tags:
+    - Get
+
+  description: |
+    Get a Scrive eSign link for a given signatory and document ID, encoded as a
+    QR code in PNG format. Only valid for pending documents.
+
+    The encoded link is of the form
+    `scrive://{hostname}/{document_id}/{signatory_id}/{token}` and is intended
+    to be used with our mobile applications available on the Apple App Store
+    and Google Play Store.
+
+    This endpoint will work irrespective of the delivery method set.
+    It will also work for viewing parties.
+
+    *OAuth Privileges required: `DOC_CHECK`*
+
+  parameters:
+    - $ref: ../../../../extras/parameters.yaml#/DocumentID
+    - $ref: ../../../../extras/parameters.yaml#/SignatoryID
+
+  responses:
+    200:
+      description: |
+        PNG image, `content-type: image/png`.
+    409:
+      description: |
+        `document_state_error` with message _The document state must be
+        'Pending'_.

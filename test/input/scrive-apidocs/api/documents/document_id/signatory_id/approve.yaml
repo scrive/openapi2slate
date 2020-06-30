@@ -1,0 +1,33 @@
+---
+post:
+
+  summary: Approve a document
+
+  tags:
+    - Sign
+    - Internal
+
+  description: |
+    Approve the document for the given approver.
+
+    The document status must be `Pending`. If successful, the document
+    will be approved by the given approver, potentially changing the
+    document's status to `Closed` (if all signing parties have already
+    signed). A document can't be approved twice, neither can it be
+    rejected after a succesful approval. This call can only be
+    performed by parties with signatory role "approver".
+
+  parameters:
+    - $ref: ../../../../extras/parameters.yaml#/DocumentID
+    - $ref: ../../../../extras/parameters.yaml#/SignatoryID
+    - $ref: ../../../../extras/parameters.yaml#/ObjectVersion
+
+  responses:
+    200:
+      $ref: ../../../../extras/responses.yaml#/Document
+    409:
+      description: TODO
+    # TODO
+    # document_state_error: The document status should be `Pending`.
+    # signatory_state_error: The approver has already approved.
+    # FIXME It is possible to add a schema here, although APIError is too general

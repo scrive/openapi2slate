@@ -1,0 +1,40 @@
+---
+post:
+  summary: Share or unshare templates
+  tags:
+    - Modify
+
+  description: |
+    Share or unshare the specified templates with the company's other users.
+
+    *OAuth Privileges required: `DOC_CREATE`*
+
+  parameters:
+    - name: document_ids
+      in: formData
+      type: string
+      format: application/json
+      required: true
+
+      description: |
+        List of document IDs of templates to share or unshare.
+
+      schema:
+        type: array
+        default: []
+        example: ["3","4"]
+        items:
+          type: string
+
+    - name: shared
+      in: formData
+      type: string
+      format: application/json
+      required: true
+
+      description: |
+        `true` to share, `false` to unshare.
+
+  responses:
+    202:
+      description: The change has succeeded. The body is empty.

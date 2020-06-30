@@ -1,0 +1,24 @@
+---
+$schema: "http://json-schema.org/draft-04/schema#"
+title: List Sorting
+description: Parameter used to sort documents for the `list` API call.
+type: array
+example: [ { "sort_by":"author", "order":"ascending" } ]
+items:
+  type: object
+  properties:
+    order:
+      default: ascending
+      type: string
+      enum:
+      - ascending
+      - descending
+    sort_by:
+      type: string
+      enum:
+      - title
+      - status
+      - mtime
+      - author
+  required:
+  - sort_by

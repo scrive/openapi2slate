@@ -1,0 +1,41 @@
+---
+post:
+
+  summary: Set an auto-reminder
+
+  tags:
+    - Modify
+
+  description: |
+    Set the number of days in which to send an automatic invitation reminder
+    message to the signatories that have not yet signed by that date.
+
+    *OAuth Privileges required: `DOC_SEND`*
+
+  parameters:
+    - $ref: ../../../extras/parameters.yaml#/DocumentID
+    - name: days
+      in: formData
+      type: integer
+      format: int32
+      minimum: 1
+      required: false
+      # default not valid here
+      description: |
+        Including this parameter sets the number of days in which to send
+        automatic reminders.
+
+        Excluding it will remove automatic reminders from the document.
+    - $ref: ../../../extras/parameters.yaml#/ObjectVersion
+
+  responses:
+    200:
+      $ref: ../../../extras/responses.yaml#/Document
+    409:
+      description: The document status should be `Pending`.
+      # FIXME It is possible to add a schema here, although APIError is too general
+    400:
+      description: |
+        The `days` parameter must a number between 1 and the number of days left
+        before the document expires.
+      # FIXME It is possible to add a schema here, although APIError is too general

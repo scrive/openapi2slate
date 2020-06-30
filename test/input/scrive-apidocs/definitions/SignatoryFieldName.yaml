@@ -1,0 +1,61 @@
+---
+$schema: "http://json-schema.org/draft-04/schema#"
+title: SignatoryFieldName
+description: |
+  A signatory field for the name(s) of the party.
+type: object
+properties:
+  type:
+    type: string
+    description: |
+      Used to specify that this is a name field.
+    enum:
+      - name
+  order:
+    type: integer
+    description: |
+      Whether this is the first name (_i.e._ given name)
+      or second name (_i.e._ last name or surname).
+
+      Please ensure that there is exacatly one first name and one second name
+      field, otherwise the signatory may not be asked for their name on the
+      signing page.
+    enum:
+      - 1
+      - 2
+  value:
+    type: string
+    description: |
+      Either a pre-filled value, or the value entered by the signatory.
+    default: ""
+  is_obligatory:
+    type: boolean
+    default: true
+  should_be_filled_by_sender:
+    type: boolean
+    default: false
+  placements:
+    $ref: ./SignatoryFieldStandardPlacements.yaml
+required:
+  - type
+  - order
+example:
+  {
+    "type": "name",
+    "order": 1,
+    "value": "John",
+    "is_obligatory": true,
+    "should_be_filled_by_sender": false,
+    "placements": [
+      {
+        "xrel": 0.26105263157894737,
+        "yrel": 0.0975609756097561,
+        "wrel": 0.07894736842105263,
+        "hrel": 0.024390243902439025,
+        "fsrel": 0.01263157894736842,
+        "page": 1,
+        "tip": "right",
+        "anchors": []
+      }
+    ]
+  }

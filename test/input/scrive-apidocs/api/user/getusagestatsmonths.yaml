@@ -1,0 +1,22 @@
+---
+get:
+  summary: Get usage stats for months
+
+  tags:
+    - User
+
+  description: |
+    Retrieve usage statistics for the last 6 months
+
+  parameters:
+
+    - name: withCompany
+      in: query
+      type: string
+      required: false
+      description: |
+        Boolean flag for showing company information in the response.
+
+  responses:
+    200:
+      $ref: ../../scrive_api.yaml#/definitions/UserStats

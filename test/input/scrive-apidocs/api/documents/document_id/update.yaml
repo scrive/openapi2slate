@@ -1,0 +1,53 @@
+---
+post:
+  summary: Update a document
+
+  tags:
+    - Prepare
+
+  description: |
+    > ### Example
+
+    ```bash
+    curl -X POST 'https://{server_address}/api/v2/documents/${document_id}/update' \
+      -H 'Authorization: oauth_signature_method="PLAINTEXT",oauth_consumer_key="${apitoken}",oauth_token="${accesstoken}",oauth_signature="${apisecret}&${accesssecret}"' \
+      --data-urlencode 'document={ "id":"${document_id}", "parties": [{}] }' \
+      --data-urlencode 'document_id=${document_id}'
+    ```
+
+    > The above example uses [personal access credentials](#personal-access-credentials) (see `-H` option), but can be easily updated to use [OAuth](#oauth).
+
+    Update the metadata for a document in preparation.
+
+    *OAuth Privileges required: `DOC_CREATE`*
+
+  parameters:
+    - $ref: ../../../extras/parameters.yaml#/DocumentID
+    - name: document
+      in: formData
+      type: string
+      format: application/json
+      required: true
+      description: |
+        **The document metadata**
+
+        Must be of type `Document`, see [Definitions](#definitions).
+
+        Can be a subset of the JSON structure, for example it is possible to
+        just update the title of a document with `{"title": "New title"}`.
+
+        Not all fields can be set this way, please refer to the definitions for
+        details, those marked as read-only cannot be modified using this API
+        call.
+
+      schema:
+        $ref: ../../../definitions/Document.yaml
+    - $ref: ../../../extras/parameters.yaml#/ObjectVersion
+
+  responses:
+    200:
+      $ref: ../../../extras/responses.yaml#/Document
+    # TODO add 400 Bad Request response
+    409:
+      description: The document status should be `Preparation`.
+      # FIXME It is possible to add a schema here, although APIError is too general

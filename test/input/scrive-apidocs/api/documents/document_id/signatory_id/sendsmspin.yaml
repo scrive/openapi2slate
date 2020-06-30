@@ -1,0 +1,39 @@
+---
+post:
+
+  summary: Send an SMS PIN
+
+  tags:
+    - Sign
+    - Internal
+
+  description: |
+    Send an SMS PIN for the signatory to authenticate.
+
+  parameters:
+    - $ref: ../../../../extras/parameters.yaml#/DocumentID
+    - $ref: ../../../../extras/parameters.yaml#/SignatoryID
+    - name: mobile
+      in: formData
+      type: string
+      required: false
+      # default not valid here
+      description: |
+        A mobile number to send the SMS PIN to.
+
+        If the mobile number is not set by the document author, then it must be
+        provided.
+    - $ref: ../../../../extras/parameters.yaml#/ObjectVersion
+
+  responses:
+    202:
+      description: |
+        The call succeed.
+        An SMS PIN will be sent to the mobile number of the signatory.
+    409:
+      description: TODO
+      # TODO
+      # document_state_error; The document status should be 'Pending'.
+      # signatory_state_error; The signatory has already signed.
+      # request_parameters_missing; The document author has not provided a mobile number, please include a ‘mobile’ parameter.
+      # FIXME It is possible to add a schema here, although APIError is too general

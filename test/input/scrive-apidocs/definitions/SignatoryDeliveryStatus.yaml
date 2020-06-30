@@ -1,0 +1,10 @@
+---
+$schema: "http://json-schema.org/draft-04/schema#"
+title: Signatory Delivery Status
+description: The current delivery status.
+type: string
+enum:
+  - unknown
+  - not_delivered
+  - delivered
+  - deferred

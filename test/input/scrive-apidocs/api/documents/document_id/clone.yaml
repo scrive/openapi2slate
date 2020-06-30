@@ -1,0 +1,22 @@
+---
+post:
+  summary: Clone a document
+
+  tags:
+    - Prepare
+
+  description: |
+    Clone an existing document, returning a new document in `Preparation`.
+
+    You can only clone documents for which you are the author, the new document
+    will use the current author details for the author signatory fields.
+
+    *OAuth Privileges required: `DOC_CREATE`*
+
+  parameters:
+    - $ref: ../../../extras/parameters.yaml#/DocumentID
+    - $ref: ../../../extras/parameters.yaml#/ObjectVersion
+
+  responses:
+    201:
+      $ref: ../../../extras/responses.yaml#/Document

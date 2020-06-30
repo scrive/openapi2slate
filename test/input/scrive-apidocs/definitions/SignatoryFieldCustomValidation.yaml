@@ -1,0 +1,25 @@
+---
+$schema: "http://json-schema.org/draft-04/schema#"
+title: SignatoryFieldCustomValidation
+type: object
+description: |
+  Optional. Describes how to validate the input to this field using a
+  custom regular expression.
+
+properties:
+  pattern:
+    type: string
+    description: |
+      Regular expression pattern for field validation.
+  positive_example:
+    type: string
+    description: |
+      Example of an input that matches the pattern.
+  tooltip:
+    type: string
+    description: |
+      Tooltip for the input text field.
+required:
+  - pattern
+  - positive_example
+  - tooltip

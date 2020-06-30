@@ -1,0 +1,74 @@
+---
+post:
+
+  summary: Set the signatory authentication-to-view method
+
+  tags:
+    - Modify
+
+  description: |
+    Set the signatory authentication-to-view method after the document has been
+    started.
+
+    *Side effects of this operation may include adding or modifying fields for the signatory.*
+
+    For example, if the signatory does not have a field for personal number,
+    then setting the authentication method to Swedish BankID will necessitate
+    adding the field to the signatory with a valid personal number.
+
+    *OAuth Privileges required: `DOC_SEND`*
+
+  parameters:
+    - $ref: ../../../../extras/parameters.yaml#/DocumentID
+    - $ref: ../../../../extras/parameters.yaml#/SignatoryID
+    - name: authentication_type
+      in: formData
+      type: string
+      enum:
+        - standard
+        - se_bankid
+        - no_bankid
+        - dk_nemid
+        - fi_tupas
+        - verimi
+      required: true
+      description: |
+        The type of authentication-to-view method to set for the signatory.
+    - name: personal_number
+      in: formData
+      type: string
+      # TODO format?
+      required: false
+      # default not valid here
+      description: |
+        If the `authentication_type` requires a personal number, and the
+        signatory doesn’t have one set already, then it must be provided and
+        valid for the chosen authentication-to-view method.
+    - name: mobile_number
+      in: formData
+      type: string
+      # TODO format?
+      required: false
+      # default not valid here
+      description: |
+        Can be used for `authentication_type` that makes use of a mobile
+        number.
+        Similar requirements as `personal_number`.
+
+        Currently only Norwegian BankID uses this and therefore must be a valid
+        Norwegian mobile number.
+    - $ref: ../../../../extras/parameters.yaml#/ObjectVersion
+
+  responses:
+    200:
+      $ref: ../../../../extras/responses.yaml#/Document
+    409:
+      description: |
+        Possible error responses:
+
+        * `document_state_error`: The document status should be 'Pending'.
+        * `signatory_state_error`: The signatory has already authenticated to view.
+        * `signatory_state_error`: The signatory has already signed.
+        * `signatory_state_error`: You can’t mix different e-legitimation
+           providers (one for viewing and another for signing) for the same
+           signatory.

@@ -1,0 +1,14 @@
+---
+$schema: "http://json-schema.org/draft-04/schema#"
+title: File
+description: |
+  A file that can be accessed using the
+  [API call to download related files](#get-a-related-file).
+type: object
+properties:
+  id:
+    type: string
+    readOnly: true
+  name:
+    type: string
+    readOnly: true

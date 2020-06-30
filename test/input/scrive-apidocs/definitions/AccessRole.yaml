@@ -1,0 +1,114 @@
+---
+$schema: "http://json-schema.org/draft-04/schema#"
+title: AccessRole
+type: object
+example:
+  {
+    "id": "8",
+    "is_generated": false,
+    "role_type": "user_group_admin",
+    "source": { "type": "user", "id": "2" },
+    "target": { "type": "user_group", "id": "11" },
+  }
+description: |
+  JSON representation of an Access Role.
+properties:
+  id:
+    type: string
+  is_generated:
+    type: boolean
+  role_type:
+    type: string
+    enum:
+      - user
+      - user_group_member
+      - user_admin
+      - user_group_admin
+      - document_admin
+  source:
+    type: object
+    properties:
+      type:
+        type: string
+        enum:
+          - user
+          - user_group
+      id:
+        type: string
+  target:
+    type: object
+    properties:
+      type:
+        type: string
+        enum:
+          - user
+          - user_group
+          - folder
+      id:
+        type: string
+  allowed_actions:
+    type: object
+    properties:
+      document:
+        type: array
+        items:
+          type: string
+          enum:
+            - create
+            - delete
+            - read
+            - update
+      folder_policy:
+        type: array
+        items:
+          type: string
+          enum:
+            - create
+            - delete
+            - read
+            - update
+      user:
+        type: array
+        items:
+          type: string
+          enum:
+            - create
+            - delete
+            - read
+            - update
+      user_group:
+        type: array
+        items:
+          type: string
+          enum:
+            - create
+            - delete
+            - read
+            - update
+      user_group_policy:
+        type: array
+        items:
+          type: string
+          enum:
+            - create
+            - delete
+            - read
+            - update
+      user_personal_token:
+        type: array
+        items:
+          type: string
+          enum:
+            - create
+            - delete
+            - read
+            - update
+      user_policy:
+        type: array
+        items:
+          type: string
+          enum:
+            - create
+            - delete
+            - read
+            - update

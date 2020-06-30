@@ -1,0 +1,122 @@
+---
+DocumentID:
+  name: document_id
+  in: path
+  required: true
+  description: |
+    Unique identifier for a document.
+    Will not change.
+  type: integer
+  format: int64
+
+SignatoryID:
+  name: signatory_id
+  in: path
+  required: true
+  # FIXME can this really change? or is that bogus documentation?
+  # Taken from http://scrive.com/en/api
+  description: |
+    Unique identifier for a signatory.
+    This value can change before document is made ready for signing, and should
+    not be used to identify signatories while document is a draft.
+  type: integer
+  format: int64
+
+SignatoryParamForFile:
+  name: signatory_id
+  in: formData
+  required: false
+  x-internalOnly: true
+  description: |
+    **Internal use only**
+
+    Can be supplied to authenticate as a specific signatory using session tokens.
+    *i.e.* to get files from the signing page.
+  type: integer
+  format: int64
+
+FileID:
+  name: file_id
+  in: path
+  required: true
+  description: |
+    Unique identifier for a file available via Scrive.
+  type: integer
+  format: int64
+
+ObjectVersion:
+  name: object_version
+  in: formData
+  type: integer
+  required: false
+  # default not valid here
+  description: |
+    If provided, will check the document `object_version` and only perform the
+    operation if these match.
+    Otherwise you will get a `HTTP 409`.
+
+SignParamFields:
+  internalUseOnly: true
+  name: fields
+  in: formData
+  type: string
+  format: application/json
+  # TODO schema $ref: '#/definitions/SigningFields'
+  required: true
+  description: Updated information as entered by the signatory.
+
+SignParamAuthType:
+  internalUseOnly: true
+  name: authentication_type
+  in: formData
+  type: string
+  enum:
+    - standard
+    - sms_pin
+    - se_bankid
+    - no_bankid
+    - dk_nemid
+    - fi_tupas
+    - onfido_document_check
+    - onfido_document_and_photo_check
+  description: |
+    The authentication method to be used for signing.
+
+    Not including this parameter will omit this check even though signing
+    requires it.
+
+SignParamAuthValue:
+  internalUseOnly: true
+  name: authentication_value
+  in: formData
+  type: string
+  description: |
+    If the `authentication_type` is not `standard`, then the value
+    associated with it (e.g. mobile number for `sms_pin`).
+
+SignParamSMSPIN:
+  internalUseOnly: true
+  name: sms_pin
+  in: formData
+  type: integer
+  description: |
+    If the `authentication_method_to_sign` for the signatory is `sms_pin`
+    then SMS PIN also needs to be included.
+
+    This is independant of other parameters in this call.
+
+SignParamAcceptedAttachments:
+  internalUseOnly: true
+  name: accepted_author_attachments
+  in: formData
+  type: array
+  items:
+    type: integer
+    format: int64
+  required: true
+  description: |
+    The list of author attachments which the signatory has seen and
+    therefore accepted.
+
+    The call will fail if not all author attachments with `required` set to
+    `true` are included here.

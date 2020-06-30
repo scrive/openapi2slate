@@ -1,0 +1,57 @@
+---
+$schema: "http://json-schema.org/draft-04/schema#"
+title: Folder
+type: object
+example:
+  {
+    "id": "1",
+    "name": "Root folder",
+    "home_for_user": null,
+    "home_for_user_group": "10",
+    "parent_id": null,
+    "children": [
+      {
+        "id": "2",
+        "name": "Subfolder of 1",
+        "home_for_user": "33",
+        "home_for_user_group": null,
+        "children": [
+          {
+            "id": "3",
+            "name": "Subfolder of 2",
+            "home_for_user": "44",
+            "home_for_user_group": null
+          }
+        ]
+      }
+    ]
+  }
+description: |
+  JSON representation of a Folder.
+required:
+  - id
+  - name
+properties:
+  id:
+    type: string
+  name:
+    type: string
+  home_for_user:
+    type: string
+    description: |
+      If the folder is a home folder for a user this field contains the ID of that user. Otherwise it's null.
+  home_for_user_group:
+    type: string
+    description: |
+      If the folder is a home folder for a user group this field contains the ID of that group. Otherwise it's null.
+  parent_id:
+    type: string
+    description: |
+      Optional property. If present contains either the ID of the parent folder
+      or null if the requested folder is root.
+  children:
+    type: array
+    items:
+      type: Folder
+    description: |
+      Optional property. If present contains either the immediate children or all descendant folders.

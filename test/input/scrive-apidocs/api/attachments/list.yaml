@@ -1,0 +1,80 @@
+---
+get:
+
+  summary: List
+
+  tags:
+    - Attachment
+
+  description: |
+    Fetch a list of attachments, with filtering and sorting options.
+
+  parameters:
+    - name: domain
+      in: query
+      type: string
+      format: string
+      required: false
+      description: |
+        **Domain in which to search.**
+
+        The list always contains the attachments of the user. If `domain` is set
+        to `All`, it will also return the attachments shared within the company.
+
+    - name: filter
+      in: query
+      type: string
+      format: application/json
+      required: false
+      default: "[]"
+      description: |
+        **List of filtering options.**
+
+        You can supply a list of filtering options to apply.
+        Only attachments that match **all** filters will be returned.
+        Therefore, it is easy to apply a set of filters that will return no
+        documents.
+
+        If not supplied, the default is not to apply any filter, i.e. `[]`.
+
+        Must be of type [Attachment List Filter](#attachment-list-filter), for
+        example:
+
+        `[ { "filter_by":"text", "text":"some keywords"] } ]`
+
+      schema:
+        $ref: ../../scrive_api.yaml#/definitions/AttachmentListFilter
+
+    - name: sorting
+      in: query
+      type: string
+      format: application/json
+      required: false
+      default: '[ { "sort_by":"time", "order":"descending" } ]'
+      description: |
+        **List of sorting options.**
+
+        You can supply a list of sorting options, which will be applied to the
+        list of attachments in the order you provided.
+
+        If not supplied, the default is
+        `[ { "sort_by":"time", "order":"descending" } ]`,
+        *i.e.*, sort by modification time, newest first.
+
+        Must be of type [List Sorting](#list-sorting).
+
+      schema:
+        $ref: ../../scrive_api.yaml#/definitions/ListSorting
+
+  responses:
+    200:
+      description: |
+        A JSON object containing an array of attachments.
+
+      schema:
+        type: object
+        properties:
+          attachments:
+            type: array
+            items:
+              $ref: ../../definitions/Attachment.yaml

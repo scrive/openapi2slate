@@ -1,0 +1,65 @@
+---
+$schema: "http://json-schema.org/draft-04/schema#"
+title: SignatoryFieldEmailMobile
+description: |
+  A signatory field for email addresses and mobile numbers.
+type: object
+properties:
+  type:
+    type: string
+    description: |
+      Used to specify what type of field this is.
+    enum:
+      - email
+      - mobile
+  value:
+    type: string
+    description: |
+      Either a pre-filled value, or the value entered by the signatory.
+
+      **For the author**: the value will revert to that set in the account settings.
+      Trying to set any other value will simply result in this field reverting
+      back to information set in account settings.
+    default: ""
+  is_obligatory:
+    type: boolean
+    default: true
+  should_be_filled_by_sender:
+    type: boolean
+    default: false
+  editable_by_signatory:
+    type: boolean
+    default: false
+    description: |
+      Whether the signatory can edit a pre-filled value for this field.
+      This is useful when you have signatory details on file, but you want them
+      to be able to modify their email or mobile if it has changed.
+
+      **Note:** Setting this to `true` means a signatory will _always_ be able
+      to change the value on the signing page.
+      If you want a signatory to authenticate with SMS PIN, please be aware
+      that this may affect your desired workflow.
+  placements:
+    $ref: ./SignatoryFieldStandardPlacements.yaml
+required:
+  - type
+example:
+  {
+    "type": "mobile",
+    "value": "+461234567890",
+    "is_obligatory": false,
+    "should_be_filled_by_sender": false,
+    "editable_by_signatory": false,
+    "placements": [
+      {
+        "xrel": 0.09052631578947369,
+        "yrel": 0.2700892857142857,
+        "wrel": 0.09157894736842105,
+        "hrel": 0.025297619047619048,
+        "fsrel": 0.016842105263157894,
+        "page": 1,
+        "tip": "right",
+        "anchors": []
+      }
+    ]
+  }

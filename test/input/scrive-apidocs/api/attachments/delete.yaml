@@ -1,0 +1,29 @@
+---
+post:
+  summary: Delete
+  tags:
+    - Attachment
+
+  description: |
+    Delete the specified attachments.
+
+  parameters:
+    - name: attachment_ids
+      in: formData
+      type: string
+      format: application/json
+      required: true
+
+      description: |
+        List of attachment IDs of attachments to delete.
+
+      schema:
+        type: array
+        default: []
+        example: ["3","4"]
+        items:
+          type: string
+
+  responses:
+    200:
+      description: The change has succeeded. The body is empty.

@@ -1,0 +1,114 @@
+---
+post:
+  summary: Set Author Attachments
+
+  tags:
+    - Prepare
+
+  description: |
+    > ### Example
+    >
+    > As this call can be a little tricky to understand, we provide a concrete
+    > example.
+    >
+    > Suppose we wanted to set two author attachments:
+    >
+    > 1. `terms_and_conditions.pdf`
+    > 2. `proof_of_purchase.pdf`
+    >
+    > To do this we would need to include the two files as form data in our
+    > request.
+    > We are then free to chose names for the form data elements, so suppose we
+    > chose `toc_file` for the first, and `proof_file` for the second.
+    >
+    > In this case the `attachments` JSON would need to resemble:
+
+    ```json
+    [
+      {
+        "name": "Terms and Conditions",
+        "required": true,
+        "add_to_sealed_file": false,
+        "file_param": "toc_file"
+      },
+      {
+        "name": "Proof of purchase",
+        "required": false,
+        "add_to_sealed_file": true,
+        "file_param": "proof_file"
+      }
+    ]
+    ```
+
+    > And we would include our files as named form elements.
+
+    Set or remove author attachments for the document.
+
+    By default, it replaces any existing attachments, so all attachments must be
+    set by any use of this call. See the parameter `incremental` to change this
+    behaviour.
+
+    *OAuth Privileges required: `DOC_CREATE`*
+
+  parameters:
+    - $ref: ../../../extras/parameters.yaml#/DocumentID
+    - name: attachments
+      in: formData
+      type: string
+      format: application/json
+      required: true
+      # TODO file_id is not explained very well...
+      description: |
+        **List of author attachments.**
+
+        The list provided will replace any existing attachments (if any).
+        Therefore, to add an attachment to an existing list, you would need to
+        first fetch the existing attachments `file_id` and use it for this
+        call.
+
+        **Note:** The JSON structure has two variants, one with `file_param` and
+        the other with `file_id`.
+
+        * `file_param` refers to a named parameter that must also be included
+          in this API call.
+          This is the suggested way to include files.
+
+        * `file_id` refers to a file in the Scrive system.
+          You must have the rights to access the `file_id` to use it.
+
+        Must be of type [Author Attachments](#author-attachments).
+
+      schema:
+        $ref: ../../../scrive_api.yaml#/definitions/AuthorAttachments
+    - name: "{attachment_name}"
+      in: formData
+      type: file
+      format: application/pdf
+      description: |
+        **The named file parameters**
+
+        Any `file_param` in the `attachments` JSON must be supplied as named
+        file parameters.
+
+        If converting from API version 1, it is convenient to name these
+        parameters `attachment_1`, `attachment_2`, etc, and reference them as
+        such in the `attachments` JSON.
+        Although it is possible to use any HTTP compatible naming scheme.
+    - name: incremental
+      in: formData
+      type: boolean
+      default: false
+      description: |
+        If set to `true`, this will make the API set the given author
+        attachments leaving all already set attachments intact.
+
+        For each given attachment, if there already is one with the same name,
+        it will get overwritten, otherwise, the attachment will be added.
+    - $ref: ../../../extras/parameters.yaml#/ObjectVersion
+
+  responses:
+    200:
+      $ref: ../../../extras/responses.yaml#/Document
+    409:
+      description: The document status should be `Preparation`.
+      # FIXME It is possible to add a schema here, although APIError is too general

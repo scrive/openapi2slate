@@ -1,0 +1,53 @@
+---
+get:
+  summary: List Documents in Folder
+
+  tags:
+    - Folders
+
+  description: |
+    > Example of a Folder Listing
+
+    ```json
+    {
+      "total_matching": 2,
+      "documents": [
+        <Document JSON (see doc endpoints)>,
+        <Document JSON (see doc endpoints)>
+      ]
+    }
+    ```
+
+    This endpoint is used to get the details of the documents in a given folder.
+
+    Other than the JSON fields shown above, which wrap the output data in a list
+    and show a little metadata, the document JSON for each item in `"documents"`
+    is structured the same as it would be for endpoints that display a given
+    document. _(See the [Document Definition](#document-3) documentation for
+    details)._
+
+  parameters:
+    - name: folder_id
+      in: url
+      type: string
+      description: The ID of the Folder whose contents you wish to list
+      required: true
+
+  responses:
+    200:
+      description: |
+        JSON object which states the number of documents in the folder and lists
+        the JSON respresentations of those documents. (See Documents in
+        Definitions)
+      properties:
+        total_matching:
+          type: integer
+        documents:
+          type: array
+          items:
+            $ref: ../../scrive_api.yaml#/definitions/Document
+    403:
+      description: |
+        Insufficient Permissions error (this means that you don't have enough
+        permissions to create this Folder. In practice this means that you lack
+        Read permissions on the Folder)

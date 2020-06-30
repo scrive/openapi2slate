@@ -1,0 +1,77 @@
+---
+post:
+  summary: Update User Group Contact Details
+
+  tags:
+    - User Group
+
+  description: |
+
+    > Example of JSON that could be passed in to update a User Group's Contact
+    > Details:
+
+    > The JSON is URL-encoded and passed in via the `contact_details` form data
+    > field. It is not necessary to minify the JSON, but also not prohibited.
+
+    ```json
+    {
+      "address": {
+        "company_number": "0987654321",
+        "company_name": "Scrive",
+        "address": "123 Other Street",
+        "zip": "00-321",
+        "city": "Warsaw",
+        "country": "Poland"
+      }
+    }
+    ```
+
+    > For examples of the JSON output, see
+    > [View User Group Contact Details](#view-user-group-contact-details).
+
+    This endpoint allows you to update the User Group's `contact_details` object.
+
+    When updating the `contact_details` object, the following rules are in
+    force:
+
+    Partial updates are permissible (and encouraged). You may only supply the
+    JSON fields that you wish to actually update.
+
+    If you update the contact_details of a User Group which currently inherits,
+    a new, blank `contact_details` object will be created and your (partial or
+    full) update applied to it.
+
+    The User Group from which the contact_details were previously inherited will
+    be unaffected by the operation.
+
+  parameters:
+    - name: user_group_id
+      in: path
+      type: integer
+      description: |
+        The ID of the User Group whose `contact_details` object you wish to update
+      required: true
+    - name: contact_details
+      in: formData
+      type: string
+      format: application/json
+      description: |
+        JSON object containing (partial or full) updates to the contact_details
+        subtrees (currently only `data_retention_policy` is exposed by the API).
+      example: { "data_retention_policy": { "immediate_trash": false } }
+      required: true
+    - name: include-inheritable
+      in: formData
+      type: boolean
+      description: |
+        Set to `true` to see a preview of which
+        values can be inherited from an ancestor User Group.
+      required: false
+
+  responses:
+    200:
+      $ref: ../../scrive_api.yaml#/definitions/UserGroupContactDetails
+    403:
+      description: |
+        Insufficient Permissions error (this means that either no User Group
+        exists with this ID or that you do not have permission to update it)

@@ -1,0 +1,152 @@
+---
+get:
+  summary: View User Group Settings
+
+  tags:
+    - User Group
+
+  description: |
+
+    > Example of a User Group Settings without inheritable previews:
+
+    ```json
+    {
+      "inherited_from": "1",
+      "data_retention_policy": {
+        "idle_doc_timeout_preparation": null,
+        "idle_doc_timeout_closed": null,
+        "idle_doc_timeout_canceled": null,
+        "idle_doc_timeout_timedout": null,
+        "idle_doc_timeout_rejected": null,
+        "idle_doc_timeout_error": null,
+        "immediate_trash": false
+      }
+    }
+    ```
+
+    > Example of a User Group Settings with inheritable previews (where the User
+    > Group is root and therefore must have its own Settings object):
+
+    ```json
+    {
+      "inherited_from": null,
+      "data_retention_policy": {
+        "idle_doc_timeout_preparation": null,
+        "idle_doc_timeout_closed": null,
+        "idle_doc_timeout_canceled": null,
+        "idle_doc_timeout_timedout": null,
+        "idle_doc_timeout_rejected": null,
+        "idle_doc_timeout_error": null,
+        "immediate_trash": false
+      },
+      "inheritable_preview": null
+    }
+    ```
+
+    > Example of a User Group Settings with inheritable previews (where the User
+    > Group is a child with its own Settings object):
+
+    ```json
+    {
+      "inherited_from": null,
+      "data_retention_policy": {
+        "idle_doc_timeout_preparation": null,
+        "idle_doc_timeout_closed": null,
+        "idle_doc_timeout_canceled": null,
+        "idle_doc_timeout_timedout": null,
+        "idle_doc_timeout_rejected": null,
+        "idle_doc_timeout_error": null,
+        "immediate_trash": false
+      },
+      "inheritable_preview": {
+        "inherited_from": "1",
+        "data_retention_policy": {
+          "idle_doc_timeout_preparation": null,
+          "idle_doc_timeout_closed": null,
+          "idle_doc_timeout_canceled": null,
+          "idle_doc_timeout_timedout": null,
+          "idle_doc_timeout_rejected": null,
+          "idle_doc_timeout_error": null,
+          "immediate_trash": false
+        }
+      }
+    }
+    ```
+
+    > Example of a User Group Settings with inheritable previews (where the User
+    > Group is a child which inherits, meaning that the  `inheritable_preview`
+    > field is a duplicate):
+
+    ```json
+    {
+      "inherited_from": "1",
+      "data_retention_policy": {
+        "idle_doc_timeout_preparation": null,
+        "idle_doc_timeout_closed": null,
+        "idle_doc_timeout_canceled": null,
+        "idle_doc_timeout_timedout": null,
+        "idle_doc_timeout_rejected": null,
+        "idle_doc_timeout_error": null,
+        "immediate_trash": false
+      },
+      "inheritable_preview": {
+        "inherited_from": "1",
+        "data_retention_policy": {
+          "idle_doc_timeout_preparation": null,
+          "idle_doc_timeout_closed": null,
+          "idle_doc_timeout_canceled": null,
+          "idle_doc_timeout_timedout": null,
+          "idle_doc_timeout_rejected": null,
+          "idle_doc_timeout_error": null,
+          "immediate_trash": false
+        }
+      }
+    }
+    ```
+
+    This endpoint is used to get an overview of a given User Group's `settings`
+    object.
+
+    The `settings` object can be inherited. In this case, the `inherited_from`
+    field will be non-null. The value in this field is the ID of the User Group
+    which the value is inherited from.
+
+    Inheritance works as follows:
+
+    Root User Groups (i.e. those who are not children of other User Groups) may
+    not inherit since there are no ancestors to inherit from.
+
+    A child User Group may inherit or have its own dedicated object. In the case
+    that a User Group chooses to inherit the `settings` object, then that User
+    Group will inherit from the closest direct ancestor with its own
+    `settings` object. Since root User Groups cannot inherit, there will
+    always be an ancestor from which a child can inherit.
+
+    If you would like to see what a User Group _would_ inherit then you can
+    append `?include-inheritable` to the URL when making the call. This will add
+    extra `inheritable_preview` subtrees to the objects which perform the
+    inheritance calculation, ignoring whether or not the User Group already
+    inherits.
+
+  parameters:
+    - name: user_group_id
+      in: path
+      type: integer
+      description: |
+        The ID of the User Group whose `settings` object you wish to view
+      required: true
+    - name: include-inheritable
+      in: query
+      type: boolean
+      description: |
+        Append `?include-inheritable` to the URL to see a preview of which
+        values can be inherited from an ancestor User Group.
+      required: false
+
+  responses:
+    200:
+      $ref: ../../scrive_api.yaml#/definitions/UserGroupSettings
+    403:
+      description: |
+        Insufficient Permissions error (this means that either no User Group
+        exists with this ID or that you do not have permission to view it)

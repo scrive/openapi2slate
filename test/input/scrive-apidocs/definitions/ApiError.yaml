@@ -1,0 +1,42 @@
+---
+$schema: "http://json-schema.org/draft-04/schema#"
+title: API Error
+description: The structure of errors returned by the Scrive Document API.
+type: object
+properties:
+  error_type:
+    type: string
+    enum:
+      - server_error
+      - request_failed
+      - endpoint_not_found
+      - invalid_authorisation
+      - insufficient_privileges
+      - resource_not_found
+      - document_action_forbidden
+      - request_parameters_missing
+      - request_parameters_parse_error
+      - request_parameters_invalid
+      - document_object_version_mismatch
+      - document_state_error
+      - signatory_state_error
+      - action_not_permitted
+      - conflict_error
+  error_message:
+    type: string
+  http_code:
+    type: integer
+    enum:
+      - 400
+      - 401
+      - 403
+      - 404
+      - 409
+      - 500
+      - 603
+example:
+  {
+    "error_type": "request_parameters_parse_error",
+    "error_message": "The parameter 'document' could not be parsed. Please refer to our API documentation. Error details: Invalid JSON",
+    "http_code": 400
+  }

@@ -1,0 +1,40 @@
+---
+$schema: "http://json-schema.org/draft-04/schema#"
+title: DataRetentionPolicy
+type: object
+description: |
+ An object with data retention policy properties.
+example: {
+  "idle_doc_timeout_canceled":45,
+  "immediate_trash":true,
+  "idle_doc_timeout_error":67,
+  "idle_doc_timeout_preparation":32}
+properties:
+  immediate_trash:
+    type: boolean
+    description: |
+      Option to delete documents in trash immediately
+  idle_doc_timeout_preparation:
+    type: integer
+    description: |
+      Number of days before moving documents in preparation to trash
+  idle_doc_timeout_closed:
+    type: integer
+    description: |
+      Number of days before moving closed documents to trash
+  idle_doc_timeout_canceled:
+    type: integer
+    description: |
+      Number of days before moving cancelled documents to trash
+  idle_doc_timeout_timedout:
+    type: integer
+    description: |
+      Number of days before moving timed out documents to trash
+  idle_doc_timeout_rejected:
+    type: integer
+    description: |
+      Number of days before moving rejected documents to trash
+  idle_doc_timeout_error:
+    type: integer
+    description: |
+      Number of days before moving documents with errors to trash

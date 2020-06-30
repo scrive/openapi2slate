@@ -1,0 +1,33 @@
+---
+$schema: "http://json-schema.org/draft-04/schema#"
+title: FileRectsResult
+type: object
+properties:
+  rects:
+    type: array
+    items:
+      type: object
+      properties:
+        lines:
+          type: array
+          items:
+            type: string
+        page:
+          type: integer
+        rect:
+          type: array
+          items:
+            type: integer
+          required:
+            - 0
+            - 1
+            - 2
+            - 3
+      required:
+        - lines
+        - page
+        - rect
+    required:
+      - 0
+required:
+  - rects

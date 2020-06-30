@@ -1,0 +1,118 @@
+---
+$schema: "http://json-schema.org/draft-04/schema#"
+title: List Filter
+description: Parameter used to filter documents for the `list` API call.
+type: array
+default: []
+example: [ { "filter_by":"status", "statuses": ["preparation","pending"] } ]
+items:
+  anyOf:
+  - title: Filter by status
+    type: object
+    properties:
+      filter_by:
+        type: string
+        enum:
+        - status
+      statuses:
+        items:
+          $ref: ./DocumentStatus.yaml
+        type: array
+  - title: Filter by mtime
+    type: object
+    properties:
+      filter_by:
+        type: string
+        enum:
+        - mtime
+      start_time:
+        format: date-time
+        type: string
+      end_time:
+        format: date-time
+        type: string
+  - title: Filter by tag
+    type: object
+    properties:
+      filter_by:
+        type: string
+        enum:
+        - tag
+      value:
+        type: string
+      name:
+        type: string
+  - title: Filter by author
+    description: |
+      Only include documents where the person making the API call is the
+      document author.
+    type: object
+    properties:
+      filter_by:
+        type: string
+        enum:
+        - is_author
+  - title: Signable on pad
+    description: |
+      This implicitly adds an `is_author` filter.
+    type: object
+    properties:
+      filter_by:
+        type: string
+        enum:
+        - is_signable_on_pad
+  - title: Only templates
+    type: object
+    properties:
+      filter_by:
+        type: string
+        enum:
+        - is_template
+  - title: Only non-templates
+    type: object
+    properties:
+      filter_by:
+        type: string
+        enum:
+        - is_not_template
+  - title: In trash
+    type: object
+    properties:
+      filter_by:
+        type: string
+        enum:
+        - is_in_trash
+  - title: Not in trash
+    type: object
+    properties:
+      filter_by:
+        type: string
+        enum:
+        - is_not_in_trash
+  - title: Filter by author id
+    type: object
+    properties:
+      filter_by:
+        type: string
+        enum:
+        - author
+      user_id:
+        type: string
+  - title: Signable by user
+    type: object
+    properties:
+      filter_by:
+        type: string
+        enum:
+        - user_can_sign
+      user_id:
+        type: string
+  - title: Filter by text
+    type: object
+    properties:
+      filter_by:
+        type: string
+        enum:
+        - text
+      text:
+        type: string

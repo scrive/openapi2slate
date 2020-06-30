@@ -1,0 +1,48 @@
+---
+$schema: "http://json-schema.org/draft-04/schema#"
+description: |
+  If present, a section will be shown asking the signatory to answer some
+  questions which must be answered by the signatory with either the positive
+  or the negative option specified.
+type: object
+properties:
+  title:
+    type: string
+    description: |
+      Section title.
+  questions:
+    type: array
+    items:
+      type: object
+      properties:
+        title:
+          type: string
+          description: |
+            Question text.
+        positive_option:
+          type: string
+          desription: |
+            Text for the positive answer.
+        negative_option:
+          type: string
+          desription: |
+            Text for the negative answer.
+        response:
+          type: boolean
+          description: |
+            Will be present when the party has answered the question. `true`
+            when the signatory selected the positive response and `false`
+            when the signatory selected the negative response.
+        detailed_description:
+          type: object
+          description: |
+            Optional additional information to show the signatory.
+          properties:
+            title:
+              type: string
+              description: |
+                Title of the section. Will be shown in a button.
+            text:
+              type: string
+              description: |
+                Explanation of the question. New lines are shown as is.

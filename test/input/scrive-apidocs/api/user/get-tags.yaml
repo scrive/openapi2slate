@@ -1,0 +1,14 @@
+---
+get:
+
+  summary: Get tags
+
+  tags:
+    - User
+
+  description: |
+    Returns tags attached to the user
+
+  responses:
+    200:
+      $ref: ../../scrive_api.yaml#/definitions/Tags

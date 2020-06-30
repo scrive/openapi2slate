@@ -1,0 +1,98 @@
+---
+get:
+  summary: View Access Role
+
+  tags:
+    - Access Control
+
+  description: |
+    > Example of an Access Role
+
+    ```json
+    {
+      "id": "8",
+      "is_generated": false,
+      "role_type": "user_group_admin",
+      "source": {
+        "type": "user",
+        "id": "2"
+      },
+      "target": {
+        "type": "user_group",
+        "id": "11"
+      },
+      "allowed_actions": {
+        "document": [
+          "create",
+          "delete",
+          "read",
+          "update"
+        ],
+        "folder_policy": [
+          "create",
+          "delete",
+          "read",
+          "update"
+        ],
+        "user": [
+          "create",
+          "delete",
+          "read",
+          "update"
+        ],
+        "user_group": [
+          "create",
+          "delete",
+          "read",
+          "update"
+        ],
+        "user_group_policy": [
+          "create",
+          "delete",
+          "read",
+          "update"
+        ],
+        "user_personal_token": [
+          "create",
+          "delete",
+          "read",
+          "update"
+        ],
+        "user_policy": [
+          "create",
+          "delete",
+          "read",
+          "update"
+        ]
+      }
+    }
+    ```
+
+    This endpoint is used to get the details of a given access role. Only
+    explicitly granted roles can be viewed via this endpoint, since implicit
+    roles do not have an ID of their own to reference them by.
+
+    Implicit roles are those roles which are granted automatically as a result
+    of, for example, User Group membership. Implicit roles have `is_generated`
+    set to `true` and `id` set to `null`.
+
+    Explicit roles are those which have been, as the name suggests, explicitly
+    granted. This was also almost done certainly via this API. Explicit roles
+    have `is_generated` set to `false` and a non-`null` `id`.
+
+  parameters:
+    - name: role_id
+      in: url
+      type: integer
+      description: The ID of the Access Role you wish to view
+      required: true
+
+  responses:
+    200:
+      $ref: ../../scrive_api.yaml#/definitions/AccessRole
+    403:
+      description: |
+        Insufficient Permissions error (this means that you don't have enough
+        permissions to view details of the role. In practice this means that
+        you lack Read permissions on either the source or the target that the
+        role refers to.

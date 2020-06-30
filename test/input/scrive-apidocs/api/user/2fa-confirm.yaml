@@ -1,0 +1,26 @@
+---
+post:
+
+  summary: Confirm 2FA
+
+  tags:
+    - User
+
+  description: |
+    Activates 2-factor-authentication if 2-factor code from QR code is valid
+
+  parameters:
+    - name: totp
+      in: formData
+      type: string
+      required: true
+      description: |
+        2-factor code
+
+  responses:
+    200:
+      description: |
+        A JSON with the `twofactor_active` flag and `totp_valid` flag
+    400:
+      description: |
+        2-factor code from QR code is invalid

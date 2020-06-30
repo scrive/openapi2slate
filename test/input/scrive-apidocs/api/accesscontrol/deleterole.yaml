@@ -1,0 +1,32 @@
+---
+post:
+  summary: Delete Access Role
+
+  tags:
+    - Access Control
+
+  description: |
+    The endpoint allows you to delete an explicitly granted access role.
+
+    _Explicitly granted_ in this case generally means "role which was created
+    via the Access Control API" as opposed to an implicit role acquired via, for
+    example, User Group membership. If it has a non-`null` `id` field then it is
+    an explicit role and can be deleted.
+
+  parameters:
+    - name: role_id
+      in: url
+      type: integer
+      description: The ID of the Access Role you wish to view
+      required: true
+
+  responses:
+    200:
+      description: |
+        JSON object showing that an Access Role with the given ID has been
+        successfully deleted.
+    403:
+      description: |
+        Insufficient Permissions error (this means that you don't have Delete
+        permissions upon the Policy relation of either the source or target of
+        the role). Either that, or no Access Role exists with this `id`.

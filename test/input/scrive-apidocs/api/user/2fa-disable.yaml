@@ -1,0 +1,15 @@
+---
+post:
+
+  summary: Disable 2FA
+
+  tags:
+    - User
+
+  description: |
+    Disables 2-factor-authentication
+
+  responses:
+    200:
+      description: |
+        A JSON with the `twofactor_active` flag

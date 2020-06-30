@@ -1,0 +1,24 @@
+---
+post:
+
+  summary: Update tags
+
+  tags:
+    - User
+
+  description: |
+    Updates tags attached to the user.
+
+  parameters:
+    - name: tags
+      in: formData
+      format: application/json
+      required: true
+      description: |
+        Must be of type [`Tags`](#tags)
+      $ref: ../../scrive_api.yaml#/definitions/Tags
+
+  responses:
+    200:
+      description: |
+        The tags have been updated. The body is empty.

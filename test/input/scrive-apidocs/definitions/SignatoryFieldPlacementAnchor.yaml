@@ -1,0 +1,12 @@
+---
+$schema: "http://json-schema.org/draft-04/schema#"
+title: SignatoryFieldPlacementAnchor
+type: array
+default: []
+items:
+  type: object
+  properties:
+    text:
+      type: string
+    index:
+      type: integer

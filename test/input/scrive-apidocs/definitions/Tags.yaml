@@ -1,0 +1,29 @@
+---
+$schema: "http://json-schema.org/draft-04/schema#"
+title: Tags
+type: array
+example: [
+  {
+    "name": "founded",
+    "value": "1846"
+  },
+  {
+    "name": "status",
+    "value": "busy"
+  }
+]
+description: |
+  **User defined set of name/value pairs.**
+
+  Each tag must have `{"name": "some-name", "value": "some-value"}` format.
+  In the responses value is always a string.
+  In the requests you can also provide `null` value to delete a tag.
+  Other value types lead to 400 Bad Request response.
+default: []
+items:
+  type: object
+  properties:
+    name:
+      type: string
+    value:
+      type: string

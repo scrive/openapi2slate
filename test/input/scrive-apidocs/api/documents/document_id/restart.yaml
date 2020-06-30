@@ -1,0 +1,25 @@
+---
+post:
+
+  summary: Restart a document
+
+  tags:
+    - Modify
+
+  description: |
+    Restart a document that has been cancelled, timed out, or rejected.
+
+    *OAuth Privileges required: `DOC_CREATE`*
+
+  parameters:
+    - $ref: ../../../extras/parameters.yaml#/DocumentID
+    - $ref: ../../../extras/parameters.yaml#/ObjectVersion
+
+  responses:
+    201:
+      $ref: ../../../extras/responses.yaml#/Document
+    409:
+      description: |
+        Documents that are in Preparation, Pending, or Closed can not be
+        restarted.
+      # FIXME It is possible to add a schema here, although APIError is too general

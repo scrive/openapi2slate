@@ -1,0 +1,18 @@
+---
+$schema: "http://json-schema.org/draft-04/schema#"
+title: LoginToken
+type: object
+example: {
+  "login_token":"a537e5e43d5b4095",
+  "qr_code":"iVBORw0KGgoAAAANSUhEUgAAAzQAAAM0AQMAAABXvPU0AAAABlBMVEUAAAD///+l2Z/dAAAAAnRSTlP//8i138cAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAL8SURBVHic7dpLbuswDAVQ70D736V34AJFLFKfpJ28B9A9HBiRLd6jIWHnuP5PHRwOh8PhcDgcDofD4XA4HA6Hw+FwOBwOh8PhcP6Cc8zV+oOWL9d15l3fy88BHA6Hw+Fw6jrp/ib9Tno5rQe3DwEcDofD4XDqO9G6ZyP4HkZ+F8DhcDgcDucxTl4ePfgc30608cLhcDgcDufZTsTt9x0bkcPhcDgczsOcXVx+J3F/wnjVmTN3ARwOh8PhcIo7Uw39v7qsARwOh8PhcEo7+4oRZK03mdutHA6Hw+FwKjpTVyzyHxsGNkaQacv6+YPD4XA4HE5JJ1pfdS5xkRnnyQdoPeXISw6Hw+FwOFWdiVjS7/5pyBjiesfxad7hcDgcDodTxckvIebXDD0uDhD7diMIh8PhcDicRzjRPyUty2MM3g4e04DC4XA4HA6npJNDhsxd625LHlWGo3A4HA6Hw6nqTA15GV1TyJl/LQe9OBwOh8PhFHc+zCFn77qD81HOvCWecjgcDofDqe9Mo8UxVo6LA1wLlscSDofD4XA41Z0sRkjL95bpIyqIYTOHw+FwOJz6zkKcY8M9gkzjxpCZH3A4HA6HwyntBJHfSdwhMYJMw0iePoZf7+YQDofD4XA4xZwl6crEMocMbfH0WorD4XA4HE5dZ3kxcTvLr3tzXN62cTgcDofDqevc40bUFJIfDaPKm3QOh8PhcDiPcV7p072rO63HfTrAz3MIh8PhcDicEs6Uvtjn5hSrM+VxOBwOh8Op6uxq15XtH8/I4XA4HA6ntHPMFUPGd8P0ReO+92HzxeFwOBwOp7zThid9mfuvhQh7OW3K43A4HA6HU9eJHctyqpYPMD27luJwOBwOh/Mgp/Xnw7gxvaLIbzGOcR+Hw+FwOJzHOcf49WIIycSVD/Vq43A4HA6H8whnx+6SdnPI7igcDofD4XCKO1Otc0hO31XrR7lPxuFwOBwOp7TzT4vD4XA4HA6Hw+FwOBwOh8PhcDgcDofD4XA4HM5znS/lqLjLlQGH4gAAAABJRU5ErkJggg==",
+  "expiration_time":"2019-02-25 10:50:00.507433116 UTC"
+}
+description: |
+  Returns a JSON containing `login_token`, `qr_code` and `expiration_time`.
+properties:
+  login_token:
+    type: string
+  qr_code:
+    type: string
+  expiration_time:
+    type: string

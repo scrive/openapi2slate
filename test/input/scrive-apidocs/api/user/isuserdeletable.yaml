@@ -1,0 +1,22 @@
+---
+post:
+
+  summary: Is user deletable?
+
+  tags:
+    - User
+
+  description: |
+    Returns an object with boolean flag
+
+  responses:
+    200:
+      description: |
+        A JSON with the `deletable` flag and (if not deletable) a `reason`
+      schema:
+        type: object
+        properties:
+          deletable:
+            type: boolean
+          reason:
+            type: string

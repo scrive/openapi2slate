@@ -1,0 +1,23 @@
+---
+post:
+
+  summary: Delete user
+
+  tags:
+    - User
+
+  parameters:
+    - name: email
+      in: formData
+      type: string
+      required: true
+      description: |
+        User's email
+
+  responses:
+    200:
+      description: |
+        The user was deleted succesfully. The body is empty
+    400:
+      description: |
+        Email parameter isn't provided or doesn't match the user's email

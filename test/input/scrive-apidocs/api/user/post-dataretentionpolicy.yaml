@@ -1,0 +1,24 @@
+---
+post:
+
+  summary: Set data retention policies
+
+  tags:
+    - User
+
+  description: |
+    Returns an object with user and company data detention policies
+
+  parameters:
+    - name: data_retention_policy
+      in: formData
+      format: application/json
+      required: true
+      description: |
+        Must be of type [`DataRetentionPolicy`](#dataretentionpolicy)
+      $ref: ../../scrive_api.yaml#/definitions/DataRetentionPolicy
+
+  responses:
+    200:
+      description: |
+        The data retention policy has been updated. The body is empty.

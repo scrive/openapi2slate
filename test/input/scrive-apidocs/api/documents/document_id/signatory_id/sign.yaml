@@ -1,0 +1,43 @@
+---
+post:
+
+  summary: Sign a document
+
+  tags:
+    - Sign
+    - Internal
+
+  description: |
+    Sign a document for the given signatory.
+
+  parameters:
+    - $ref: ../../../../extras/parameters.yaml#/DocumentID
+    - $ref: ../../../../extras/parameters.yaml#/SignatoryID
+    - $ref: ../../../../extras/parameters.yaml#/SignParamFields
+    - $ref: ../../../../extras/parameters.yaml#/SignParamAuthType
+    - $ref: ../../../../extras/parameters.yaml#/SignParamAuthValue
+    - $ref: ../../../../extras/parameters.yaml#/SignParamSMSPIN
+    - $ref: ../../../../extras/parameters.yaml#/SignParamAcceptedAttachments
+    - name: screenshots
+      in: formData
+      type: string
+      format: application/json
+      # TODO schema $ref: '#/definitions/Screenshots'
+      description: |
+        The screenshots and/or reference screenshots to use for the Evidence of
+        Intent as part of the Evidence Package.
+    - $ref: ../../../../extras/parameters.yaml#/ObjectVersion
+
+  responses:
+    200:
+      $ref: ../../../../extras/responses.yaml#/Document
+    409:
+      description: TODO
+      # TODO
+      # document_state_error; The document is not pending.
+      # signatory_state_error; The signatory has already signed.
+      # request_parameters_invalid; The (‘authentication_type’ and/or the ‘authentication_value’) do not match with values set in the document.
+      # request_parameters_invalid; The SMS PIN is not correct.
+      # signatory_state_error; The signatory has not provided a valid eID signature.
+      # signatory_state_error; Some mandatory author attachments aren't accepted.
+      # FIXME It is possible to add a schema here, although APIError is too general

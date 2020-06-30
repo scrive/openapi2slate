@@ -1,0 +1,48 @@
+---
+post:
+  summary: Delete User Group
+
+  tags:
+    - User Group
+
+  description: |
+    > Example of JSON returned:
+
+    ```json
+    {
+      "id": "1",
+      "resource": "usergroup",
+      "action": "deleted"
+    }
+    ```
+
+    This endpoint allows you to delete a User Group.
+
+    It's worth noting that you may only delete child User Groups. Root User
+    Groups can only deleted by internal Scrive admins. We also do not support
+    recursive deletion. If this is required, it can be implemented client-side
+    by simply working up the tree, deleting the leaves.
+
+  parameters:
+    - name: user_group_id
+      in: path
+      type: integer
+      description: The ID of the User Group you wish to update
+      required: true
+
+  responses:
+    200:
+      type: object
+      description: |
+        Simple JSON showing that a User Group with a given ID has been deleted.
+      properties:
+        id:
+          type: integer
+        resource:
+          type: string
+        action:
+          type: string
+    403:
+      description: |
+        Insufficient Permissions error (this means that either no User Group
+        exists with this ID or that you do not have permission to update it)

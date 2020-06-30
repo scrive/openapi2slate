@@ -1,0 +1,52 @@
+---
+post:
+
+  summary: Login and get session
+
+  tags:
+    - User
+
+  description: |
+    Login as a user by using their OAuth tokens.
+
+    The tokens have to be acquired using `getpersonaltoken` endpoint, see
+    [Personal Access Credentials](#personal-access-credentials).
+
+    Using this endpoint, you can create a link which redirects the user
+    directly to any page on the Scrive eSign system without going through the
+    login page.
+
+    This can be used to create a better user experience for your integration.
+
+    The call returns a _session id_, which can be used to create a link
+    such as:
+    `https://scrive.com/loginwithredirect?session_id=SESSION_ID&url=PATH_INSIDE_SCRIVE_COM`.
+
+    This link will redirect the user to `PATH_INSIDE_SCRIVE_COM`.
+    Remember that all URL query parameters must be URL encoded!
+
+  parameters:
+    - name: personal_token
+      in: formData
+      type: string
+      format: application/json
+      required: true
+      description: |
+        Must be of type [`OAuthAuthorization`](#oauthauthorization)
+      $ref: ../../scrive_api.yaml#/definitions/OAuthAuthorization
+
+  responses:
+    200:
+      description: |
+        JSON response, for example:
+        `{ "session_id" : "12345-a2510867954321d0" }`
+
+        The string format may change at any time, please treat it as an opaque
+        string.
+      schema:
+        $schema: "http://json-schema.org/draft-04/schema#"
+        title: SessionIDObject
+        type: object
+        properties:
+          session_id:
+            type: string

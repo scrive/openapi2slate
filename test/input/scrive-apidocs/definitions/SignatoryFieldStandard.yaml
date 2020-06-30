@@ -1,0 +1,57 @@
+---
+$schema: "http://json-schema.org/draft-04/schema#"
+title: SignatoryFieldStandard
+description: |
+  A signatory field for placing a number of standard text fields on the
+  document:
+  * Company name
+  * Company number
+  * Personal number (AKA social security number)
+type: object
+properties:
+  type:
+    type: string
+    description: |
+      Used to specify what type of field this is.
+    enum:
+      - company
+      - company_number
+      - personal_number
+  value:
+    type: string
+    description: |
+      Either a pre-filled value, or the value entered by the signatory.
+
+      **For the author**: the value will revert to that set in the account settings.
+      Trying to set any other value will simply result in this field reverting
+      back to information set in account settings.
+    default: ""
+  is_obligatory:
+    type: boolean
+    default: true
+  should_be_filled_by_sender:
+    type: boolean
+    default: false
+  placements:
+    $ref: ./SignatoryFieldStandardPlacements.yaml
+required:
+  - type
+example:
+  {
+    "type": "company",
+    "value": "Scrive AB",
+    "is_obligatory": false,
+    "should_be_filled_by_sender": false,
+    "placements": [
+      {
+        "xrel": 0.09052631578947369,
+        "yrel": 0.2700892857142857,
+        "wrel": 0.09157894736842105,
+        "hrel": 0.025297619047619048,
+        "fsrel": 0.016842105263157894,
+        "page": 1,
+        "tip": "right",
+        "anchors": []
+      }
+    ]
+  }

@@ -1,0 +1,62 @@
+---
+get:
+  summary: View Folder
+
+  tags:
+    - Folders
+
+  description: |
+    > Example of a Folder
+
+    ```json
+    {
+      "id": "1",
+      "name": "Root folder",
+      "home_for_user": null,
+      "home_for_user_group": "10",
+      "parent_id": null,
+      "children": [
+        {
+          "id": "2",
+          "name": "Subfolder of 1",
+          "home_for_user": "33",
+          "home_for_user_group": null
+        }
+      ]
+    }
+    ```
+
+    This endpoint is used to get the details of a given folder. Note that the
+    contents of the folder are not displayed, just the metadata about the
+    folder.
+
+    This metadata currently consists of the folder's ID, name, its parent ID (if any),
+    IDs of the user and the user group for whom the folder is a home folder
+    and information about its children. Only the immediate children are
+    included by default (see the `recursive` parameter).
+
+  parameters:
+    - name: folder_id
+      in: url
+      type: string
+      description: The ID of the Folder you wish to view
+      required: true
+    - name: recursive
+      in: query
+      type: boolean
+      description: |
+        Set ?recursive=true to include all descendant folders in the metadata
+        instead of just the immediate children.
+      required: false
+      default: false
+
+  responses:
+    200:
+      $ref: ../../scrive_api.yaml#/definitions/Folder
+    403:
+      description: |
+        Insufficient Permissions error (this means that you don't have enough
+        permissions to view this Folder). In practice this means that you lack
+        Read permissions on the Folder. Uniquely, for this endpoint, it is also
+        possible to acquire Read permissions by being a signatory or approver
+        of a document in that folder.

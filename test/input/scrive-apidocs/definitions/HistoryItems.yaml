@@ -1,0 +1,54 @@
+---
+$schema: "http://json-schema.org/draft-04/schema#"
+title: History Items
+description: |
+  The type returned by the Document History API call.
+
+  This can be used to show the progress of a document to the user.
+type: object
+example:
+  { "events": [
+      {
+        "status": "initiated",
+        "time": "2015-06-06T17:50:15Z",
+        "party": "Not named party (1)",
+        "text": "The signing process was initiated."
+      }
+    ]
+  }
+properties:
+  events:
+    type: array
+    items:
+      type: object
+      properties:
+        status:
+          type: string
+          enum:
+          - initiated
+          - draft
+          - cancelled
+          - rejected
+          - timeouted
+          - problem
+          - deliveryproblem
+          - sent
+          - delivered
+          - read
+          - opened
+          - signed
+          - prolonged
+          - sealed
+          - extended
+          description: |
+            The document status "class", not the same as the statuses
+            available for documents.
+        time:
+          format: date-time
+          type: string
+        text:
+          type: string
+          description: The text describing the action.
+        party:
+          type: string
+          description: The name of the party performing the action.

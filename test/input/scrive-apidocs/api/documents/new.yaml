@@ -1,0 +1,59 @@
+---
+post:
+  summary: New document
+
+  tags:
+    - Prepare
+
+  description: |
+    > ### Example
+
+    ```bash
+    curl -X POST 'https://{server_address}/api/v2/documents/new' \
+      -H 'Authorization: oauth_signature_method="PLAINTEXT",oauth_consumer_key="${apitoken}",oauth_token="${accesstoken}",oauth_signature="${apisecret}&${accesssecret}"'
+    ```
+
+    > The above example uses [personal access credentials](#personal-access-credentials) (see `-H` option), but can be easily updated to use [OAuth](#oauth).
+
+    Create a new document with the given PDF (if any) as the main file.
+    The new document will have state `Preparation`, and will not be a template.
+
+    If no PDF is provided, you can set one using the `{document_id}/setfile`
+    API call.
+
+    *OAuth Privileges required: `DOC_CREATE`*
+
+  parameters:
+    - name: file
+      in: formData
+      type: file
+      format: application/pdf
+      required: false
+      default: No file
+      description: |
+        **The PDF to use for the document.**
+
+        If supplied, the document’s title will be set to the filename (with the
+        extensions removed).
+        Otherwise a default document title will be set, depending on the user
+        language settings.
+    - name: saved
+      in: formData
+      type: boolean
+      required: false
+      default: true
+      description: |
+        Whether the document should start out as being "saved" (*i.e.* appear
+        in the E-archive).
+
+        The document can be "saved" later, by setting the "saved" field to
+        `true` via an `update` call.
+        All API operations are applied immediately, the "saved" flag simply
+        represents visibility in the E-archive.
+
+  responses:
+    201:
+      $ref: ../../extras/responses.yaml#/Document
+    400:
+      description: The parameter `file` could not be parsed.
+      # FIXME It is possible to add a schema here, although APIError is too general

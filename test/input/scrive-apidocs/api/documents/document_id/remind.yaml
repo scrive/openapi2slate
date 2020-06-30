@@ -1,0 +1,26 @@
+---
+post:
+
+  summary: Remind signatories
+
+  tags:
+    - Modify
+
+  description: |
+    Send a reminder invitation message to all signatories that have not yet
+    signed.
+
+    *OAuth Privileges required: `DOC_SEND`*
+
+  parameters:
+    - $ref: ../../../extras/parameters.yaml#/DocumentID
+    - $ref: ../../../extras/parameters.yaml#/ObjectVersion
+
+  responses:
+    202:
+      description: |
+        The call succeeded, reminders have been queued and will be sent to all
+        signatories that have not yet signed.
+    409:
+      description: The document status should be `Pending`.
+      # FIXME It is possible to add a schema here, although APIError is too general
