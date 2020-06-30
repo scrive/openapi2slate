@@ -1,6 +1,7 @@
 Usage: main [options] <file>
 
 Options:
+  --dereference       Do not generate Markdown, just dereference to single JSON
   --validate          Validate the API
   --include-internal  Include Internal API calls
   -h, --help          output usage information
