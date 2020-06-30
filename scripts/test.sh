@@ -7,17 +7,20 @@ check=./test/check
 output=./test/output
 mkdir -p $output
 
-echo "# Help text matches"
-./main.js --help > $output/help
-diff $check/help $output/help
+out=help
+echo "# $out matches"
+./main.js --help > $output/$out
+diff $check/$out $output/$out
 
-echo "# basic.yaml matches"
-./main.js $input/basic.yaml > $output/basic.md
-diff $check/basic.md $output/basic.md
+out=basic.md
+echo "# $out matches"
+./main.js $input/basic.yaml > $output/$out
+diff $check/$out $output/$out
 
-echo "# Scrive API docs match"
-./main.js $input/scrive-apidocs/scrive_api.yaml > $output/scrive_api.md
-diff $check/scrive_api.md $output/scrive_api.md
+out=scrive_api.md
+echo "# $out matches"
+./main.js $input/scrive-apidocs/scrive_api.yaml > $output/$out
+diff $check/$out $output/$out
 
 # TODO add more example conversions
 
