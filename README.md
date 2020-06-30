@@ -1,5 +1,7 @@
 # OpenAPI to Slate Markdown
 
+![CI](https://github.com/scrive/openapi2slate/workflows/CI/badge.svg)
+
 An opinionated and Work in Progress converter from
 [OpenAPI](https://www.openapis.org/specification/repo) to [Slate
 Markdown](https://github.com/lord/slate).
