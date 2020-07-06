@@ -19,7 +19,6 @@ module.exports = {
         if (program.pathsOnly) {
           let output = printPathsOnly(epPaths);
           console.log(output)
-          }
         } else 
           printNormal(epPaths, api, program.includeInternal);
       })
