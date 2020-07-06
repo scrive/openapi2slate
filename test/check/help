@@ -3,4 +3,5 @@ Usage: main [options] <file>
 Options:
   --validate          Validate the API
   --include-internal  Include Internal API calls
+  --no-basepath       do not add basePath to output
   -h, --help          output usage information
