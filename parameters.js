@@ -66,10 +66,24 @@ function parameterObjectAsRow(parameter) {
   }
   rowText += '</td>';
 
+  var description = '';
   if(parameter.description != undefined) {
-    description = Markdown.render(parameter.description);
+    description = `<div class="description">${Markdown.render(parameter.description)}</div>`;
   }
-  rowText += `<td>${description}</td>`;
+
+  var enumeration = '';
+  if(parameter.enum) {
+    enumeration += '<div class="enumeration"><strong>Enum:</strong> ';
+    enumeration += parameter.enum.map(function(enumItem) {
+      return `<code>${enumItem}</code>`;
+    }).join(', ');
+    enumeration += '</div>';
+  }
+
+  rowText += '<td>';
+  rowText += description;
+  rowText += enumeration;
+  rowText += '</td>';
 
   var type = '';
   if(parameter.type != undefined) {
