@@ -3,4 +3,5 @@ Usage: main [options] <file>
 Options:
   --validate          Validate the API
   --include-internal  Include Internal API calls
+  --search-filter     Add the search filter
   -h, --help          output usage information

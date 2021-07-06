@@ -7,11 +7,11 @@ var definitions = require('./definitions.js');
 var paths = require('./paths.js');
 
 module.exports = {
-  printSlateMarkdown: function(api, includeInternal) {
+  printSlateMarkdown: function(api, includeInternal, searchFilter) {
     RefParser.dereference(api)
       .then(function(deRefApi) {
         // Info Section
-        console.log(info.headerWithInfo(api, false));
+        console.log(info.headerWithInfo(api, searchFilter));
         // Paths from dereferenced API
         var epPaths = paths.addEndpointToPaths(deRefApi.basePath, deRefApi.paths);
         if(!includeInternal) {
