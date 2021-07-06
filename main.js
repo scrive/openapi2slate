@@ -9,6 +9,7 @@ program
   .arguments('<file>')
   .option('--validate', 'Validate the API')
   .option('--include-internal', 'Include Internal API calls')
+  .option('--search-filter', 'Add the search filter')
   .action(function(file) {
     apiFilePath = file;
   });
@@ -31,7 +32,7 @@ if(program.validate) {
 
 SwaggerParser.bundle(apiFilePath)
   .then(function(api) {
-    openapi2slate.printSlateMarkdown(api, program.includeInternal);
+    openapi2slate.printSlateMarkdown(api, program.includeInternal, Boolean(program.searchFilter));
   })
   .catch(function(err) {
     if (typeof err === 'object') {

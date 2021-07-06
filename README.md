@@ -22,6 +22,7 @@ Command line options:
 --validate            Validate the API using Swagger-Parser
 --include-internal    By default API paths using an 'Internal' tag will be
                       hidden, this flag includes them too
+--search-filter       Include the search filter
 ```
 
 ## Our formatting choices
