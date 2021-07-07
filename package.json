@@ -3,13 +3,13 @@
   "version": "1.2.0",
   "description": "Convert an Open API (i.e. Swagger) specification to Slate Markdown",
   "homepage": "https://github.com/scrive/openapi2slate",
-  "repository" : {
-    "type" : "git",
-    "url" : "https://github.com/scrive/openapi2slate.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/scrive/openapi2slate.git"
   },
-  "scripts" : {
-    "main" : "./main.js",
-    "test" : "scripts/test.sh"
+  "scripts": {
+    "main": "./main.js",
+    "test": "scripts/test.sh"
   },
   "author": "Jonathan Jouty",
   "license": "BSD-3-Clause",
@@ -18,7 +18,7 @@
     "commander": "^2.9.0",
     "fs": "0.0.2",
     "json-schema-ref-parser": "^3.1.2",
-    "lodash": "^4.13.1",
+    "lodash": "^4.17.21",
     "markdown-it": "^7.0.0",
     "swagger-parser": "^3.4.1"
   }
