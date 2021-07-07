@@ -1,6 +1,6 @@
 {
   "name": "openapi2slate",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Convert an Open API (i.e. Swagger) specification to Slate Markdown",
   "homepage": "https://github.com/scrive/openapi2slate",
   "repository" : {
