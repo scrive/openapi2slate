@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.3.0]
 - Add support for `const` schema attribute
+- Fixed inconsistent schema titles
 
 ## [1.2.0] - 2021-07-07
 - Add the search filter parameter
