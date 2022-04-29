@@ -5817,13 +5817,13 @@ parties can sign documents, viewers only have view access, and
 approvers can additionally approve or reject.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>viewer</code></li>
-<li><code>signing_party</code></li>
-<li><code>approver</code></li>
+<li><code>"viewer"</code></li>
+<li><code>"signing_party"</code></li>
+<li><code>"approver"</code></li>
 
 </ul>
 
@@ -5860,7 +5860,8 @@ Similarly, a single field can have multiple placements on the document.</p>
 <p><strong>Note:</strong> Some field types have <em>no effect</em> without at least one placement.</p>
 
 
-The elements of this array must match *at least one* of the following properties:
+<p>The value of this array must match <em>at least one</em> of the following schemas:</p>
+
 
 <h6>SignatoryFieldName</h6>
 <code>(object)</code>
@@ -5881,11 +5882,11 @@ The elements of this array must match *at least one* of the following properties
 <p>Used to specify that this is a name field.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>name</code></li>
+<li><code>"name"</code></li>
 
 </ul>
 
@@ -5903,7 +5904,7 @@ field, otherwise the signatory may not be asked for their name on the
 signing page.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
@@ -5958,10 +5959,7 @@ field.</p>
 template in the document UI design view, and use those values.</p>
 
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -6039,7 +6037,8 @@ template in the document UI design view, and use those values.</p>
 
 <p>Default: <code>null</code></p>
 
-The elements of this item must match *at least one* of the following properties:
+<p>The value of this property must match <em>at least one</em> of the following schemas:</p>
+
 
 <h6>(string, enum)</h6>
 
@@ -6050,12 +6049,12 @@ The elements of this item must match *at least one* of the following properties:
 to the field.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>left</code></li>
-<li><code>right</code></li>
+<li><code>"left"</code></li>
+<li><code>"right"</code></li>
 
 </ul>
 
@@ -6079,10 +6078,7 @@ depending on the field type.</p>
 
 <div class="json-schema">
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -6136,12 +6132,12 @@ depending on the field type.</p>
 <p>Used to specify what type of field this is.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>email</code></li>
-<li><code>mobile</code></li>
+<li><code>"email"</code></li>
+<li><code>"mobile"</code></li>
 
 </ul>
 
@@ -6212,10 +6208,7 @@ field.</p>
 template in the document UI design view, and use those values.</p>
 
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -6293,7 +6286,8 @@ template in the document UI design view, and use those values.</p>
 
 <p>Default: <code>null</code></p>
 
-The elements of this item must match *at least one* of the following properties:
+<p>The value of this property must match <em>at least one</em> of the following schemas:</p>
+
 
 <h6>(string, enum)</h6>
 
@@ -6304,12 +6298,12 @@ The elements of this item must match *at least one* of the following properties:
 to the field.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>left</code></li>
-<li><code>right</code></li>
+<li><code>"left"</code></li>
+<li><code>"right"</code></li>
 
 </ul>
 
@@ -6333,10 +6327,7 @@ depending on the field type.</p>
 
 <div class="json-schema">
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -6387,11 +6378,11 @@ depending on the field type.</p>
 
 <div class="json-schema">
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>signature</code></li>
+<li><code>"signature"</code></li>
 
 </ul>
 
@@ -6414,7 +6405,8 @@ will be used in the Evidence Log as a reference.</p>
 
 <div class="json-schema">
 
-The elements of this item must match *at least one* of the following properties:
+<p>The value of this property must match <em>at least one</em> of the following schemas:</p>
+
 
 <h6>(null)</h6>
 
@@ -6471,10 +6463,7 @@ field.</p>
 template in the document UI design view, and use those values.</p>
 
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -6552,7 +6541,8 @@ template in the document UI design view, and use those values.</p>
 
 <p>Default: <code>null</code></p>
 
-The elements of this item must match *at least one* of the following properties:
+<p>The value of this property must match <em>at least one</em> of the following schemas:</p>
+
 
 <h6>(string, enum)</h6>
 
@@ -6563,12 +6553,12 @@ The elements of this item must match *at least one* of the following properties:
 to the field.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>left</code></li>
-<li><code>right</code></li>
+<li><code>"left"</code></li>
+<li><code>"right"</code></li>
 
 </ul>
 
@@ -6592,10 +6582,7 @@ depending on the field type.</p>
 
 <div class="json-schema">
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -6655,13 +6642,13 @@ document:</p>
 <p>Used to specify what type of field this is.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>company</code></li>
-<li><code>company_number</code></li>
-<li><code>personal_number</code></li>
+<li><code>"company"</code></li>
+<li><code>"company_number"</code></li>
+<li><code>"personal_number"</code></li>
 
 </ul>
 
@@ -6714,10 +6701,7 @@ field.</p>
 template in the document UI design view, and use those values.</p>
 
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -6795,7 +6779,8 @@ template in the document UI design view, and use those values.</p>
 
 <p>Default: <code>null</code></p>
 
-The elements of this item must match *at least one* of the following properties:
+<p>The value of this property must match <em>at least one</em> of the following schemas:</p>
+
 
 <h6>(string, enum)</h6>
 
@@ -6806,12 +6791,12 @@ The elements of this item must match *at least one* of the following properties:
 to the field.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>left</code></li>
-<li><code>right</code></li>
+<li><code>"left"</code></li>
+<li><code>"right"</code></li>
 
 </ul>
 
@@ -6835,10 +6820,7 @@ depending on the field type.</p>
 
 <div class="json-schema">
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -6892,11 +6874,11 @@ depending on the field type.</p>
 <p>Used to specify that this is a checkbox field.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>checkbox</code></li>
+<li><code>"checkbox"</code></li>
 
 </ul>
 
@@ -7004,7 +6986,7 @@ template in the document UI design view, and use those values.</p>
 The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> checkboxes.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
@@ -7024,7 +7006,7 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> checkbo
 <p>Height of placement, not used for checkboxes, must be 0.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
@@ -7042,7 +7024,7 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> checkbo
 <p>Font size of placement, not used for checkboxes, must be 0.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
@@ -7069,7 +7051,8 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> checkbo
 
 <p>Default: <code>null</code></p>
 
-The elements of this item must match *at least one* of the following properties:
+<p>The value of this property must match <em>at least one</em> of the following schemas:</p>
+
 
 <h6>(string, enum)</h6>
 
@@ -7080,12 +7063,12 @@ The elements of this item must match *at least one* of the following properties:
 to the field.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>left</code></li>
-<li><code>right</code></li>
+<li><code>"left"</code></li>
+<li><code>"right"</code></li>
 
 </ul>
 
@@ -7109,10 +7092,7 @@ depending on the field type.</p>
 
 <div class="json-schema">
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -7166,11 +7146,11 @@ depending on the field type.</p>
 <p>Used to specify that this is a radio button group field.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>radiogroup</code></li>
+<li><code>"radiogroup"</code></li>
 
 </ul>
 
@@ -7273,7 +7253,7 @@ template in the document UI design view, and use those values.</p>
 The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> radio buttons.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
@@ -7293,7 +7273,7 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> radio b
 <p>Height of placement, not used for radio buttons, must be 0.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
@@ -7311,7 +7291,7 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> radio b
 <p>Font size of placement, not used for radio buttons, must be 0.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
@@ -7339,7 +7319,8 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> radio b
 
 <p>Default: <code>null</code></p>
 
-The elements of this item must match *at least one* of the following properties:
+<p>The value of this property must match <em>at least one</em> of the following schemas:</p>
+
 
 <h6>(string, enum)</h6>
 
@@ -7350,12 +7331,12 @@ The elements of this item must match *at least one* of the following properties:
 to the field.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>left</code></li>
-<li><code>right</code></li>
+<li><code>"left"</code></li>
+<li><code>"right"</code></li>
 
 </ul>
 
@@ -7379,10 +7360,7 @@ depending on the field type.</p>
 
 <div class="json-schema">
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -7440,11 +7418,11 @@ optional regular expression-based validation mechanism via the
 <p>Used to specify that this is a custom text field.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>text</code></li>
+<li><code>"text"</code></li>
 
 </ul>
 
@@ -7507,10 +7485,7 @@ field.</p>
 template in the document UI design view, and use those values.</p>
 
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -7588,7 +7563,8 @@ template in the document UI design view, and use those values.</p>
 
 <p>Default: <code>null</code></p>
 
-The elements of this item must match *at least one* of the following properties:
+<p>The value of this property must match <em>at least one</em> of the following schemas:</p>
+
 
 <h6>(string, enum)</h6>
 
@@ -7599,12 +7575,12 @@ The elements of this item must match *at least one* of the following properties:
 to the field.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>left</code></li>
-<li><code>right</code></li>
+<li><code>"left"</code></li>
+<li><code>"right"</code></li>
 
 </ul>
 
@@ -7628,10 +7604,7 @@ depending on the field type.</p>
 
 <div class="json-schema">
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -7669,7 +7642,8 @@ depending on the field type.</p>
 
 <div class="json-schema">
 
-The elements of this item must match *exactly one* of the following properties:
+<p>The value of this property must match <em>exactly one</em> of the following schemas:</p>
+
 
 <h6>(null)</h6>
 
@@ -7806,14 +7780,14 @@ reject reason (<code>allow_reject_reason</code>).</p>
 <p>The current delivery status.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>unknown</code></li>
-<li><code>not_delivered</code></li>
-<li><code>delivered</code></li>
-<li><code>deferred</code></li>
+<li><code>"unknown"</code></li>
+<li><code>"not_delivered"</code></li>
+<li><code>"delivered"</code></li>
+<li><code>"deferred"</code></li>
 
 </ul>
 
@@ -7827,14 +7801,14 @@ reject reason (<code>allow_reject_reason</code>).</p>
 <p>The current delivery status.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>unknown</code></li>
-<li><code>not_delivered</code></li>
-<li><code>delivered</code></li>
-<li><code>deferred</code></li>
+<li><code>"unknown"</code></li>
+<li><code>"not_delivered"</code></li>
+<li><code>"delivered"</code></li>
+<li><code>"deferred"</code></li>
 
 </ul>
 
@@ -7858,15 +7832,15 @@ interface. Furthermore, <code>pad</code> delivery is referred to as &quot;In-per
 
 <p>Default: <code>"email"</code></p>
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>email</code></li>
-<li><code>mobile</code></li>
-<li><code>email_mobile</code></li>
-<li><code>pad</code></li>
-<li><code>api</code></li>
+<li><code>"email"</code></li>
+<li><code>"mobile"</code></li>
+<li><code>"email_mobile"</code></li>
+<li><code>"pad"</code></li>
+<li><code>"api"</code></li>
 
 </ul>
 
@@ -7882,18 +7856,18 @@ interface. Furthermore, <code>pad</code> delivery is referred to as &quot;In-per
 
 <p>Default: <code>"standard"</code></p>
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>standard</code></li>
-<li><code>sms_pin</code></li>
-<li><code>se_bankid</code></li>
-<li><code>no_bankid</code></li>
-<li><code>dk_nemid</code></li>
-<li><code>fi_tupas</code></li>
-<li><code>verimi</code></li>
-<li><code>nl_idin</code></li>
+<li><code>"standard"</code></li>
+<li><code>"sms_pin"</code></li>
+<li><code>"se_bankid"</code></li>
+<li><code>"no_bankid"</code></li>
+<li><code>"dk_nemid"</code></li>
+<li><code>"fi_tupas"</code></li>
+<li><code>"verimi"</code></li>
+<li><code>"nl_idin"</code></li>
 
 </ul>
 
@@ -7909,18 +7883,18 @@ interface. Furthermore, <code>pad</code> delivery is referred to as &quot;In-per
 
 <p>Default: <code>"standard"</code></p>
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>standard</code></li>
-<li><code>sms_pin</code></li>
-<li><code>se_bankid</code></li>
-<li><code>no_bankid</code></li>
-<li><code>dk_nemid</code></li>
-<li><code>fi_tupas</code></li>
-<li><code>verimi</code></li>
-<li><code>nl_idin</code></li>
+<li><code>"standard"</code></li>
+<li><code>"sms_pin"</code></li>
+<li><code>"se_bankid"</code></li>
+<li><code>"no_bankid"</code></li>
+<li><code>"dk_nemid"</code></li>
+<li><code>"fi_tupas"</code></li>
+<li><code>"verimi"</code></li>
+<li><code>"nl_idin"</code></li>
 
 </ul>
 
@@ -7933,18 +7907,18 @@ interface. Furthermore, <code>pad</code> delivery is referred to as &quot;In-per
 
 <p>Default: <code>"standard"</code></p>
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>standard</code></li>
-<li><code>sms_pin</code></li>
-<li><code>se_bankid</code></li>
-<li><code>no_bankid</code></li>
-<li><code>dk_nemid</code></li>
-<li><code>fi_tupas</code></li>
-<li><code>onfido_document_check</code></li>
-<li><code>onfido_document_and_photo_check</code></li>
+<li><code>"standard"</code></li>
+<li><code>"sms_pin"</code></li>
+<li><code>"se_bankid"</code></li>
+<li><code>"no_bankid"</code></li>
+<li><code>"dk_nemid"</code></li>
+<li><code>"fi_tupas"</code></li>
+<li><code>"onfido_document_check"</code></li>
+<li><code>"onfido_document_and_photo_check"</code></li>
 
 </ul>
 
@@ -7968,16 +7942,16 @@ interface. Furthermore, <code>pad</code> delivery is referred to as &quot;In-per
 
 <p>Default: <code>"email"</code></p>
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>email</code></li>
-<li><code>mobile</code></li>
-<li><code>email_mobile</code></li>
-<li><code>email_link</code></li>
-<li><code>email_link_mobile</code></li>
-<li><code>none</code></li>
+<li><code>"email"</code></li>
+<li><code>"mobile"</code></li>
+<li><code>"email_mobile"</code></li>
+<li><code>"email_link"</code></li>
+<li><code>"email_link_mobile"</code></li>
+<li><code>"none"</code></li>
 
 </ul>
 
@@ -8030,10 +8004,7 @@ field does not have any placements.</p>
 in the document file PDF until after the document is closed.</p>
 
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -8078,10 +8049,7 @@ closed.</p>
 
 <div class="json-schema">
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -8177,7 +8145,8 @@ and will only be visible when accessing the document as the author.</p>
 
 <div class="json-schema">
 
-The elements of this item must match *exactly one* of the following properties:
+<p>The value of this property must match <em>exactly one</em> of the following schemas:</p>
+
 
 <h6>(null)</h6>
 
@@ -8341,7 +8310,8 @@ been signed by all parties, while the Scrive eSign system seals the
 document.</p>
 
 
-The elements of this item must match *exactly one* of the following properties:
+<p>The value of this property must match <em>exactly one</em> of the following schemas:</p>
+
 
 <h5>(null)</h5>
 
@@ -8481,17 +8451,17 @@ main file can also be set or changed.</p>
 be changed.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>preparation</code></li>
-<li><code>pending</code></li>
-<li><code>closed</code></li>
-<li><code>canceled</code></li>
-<li><code>timedout</code></li>
-<li><code>rejected</code></li>
-<li><code>document_error</code></li>
+<li><code>"preparation"</code></li>
+<li><code>"pending"</code></li>
+<li><code>"closed"</code></li>
+<li><code>"canceled"</code></li>
+<li><code>"timedout"</code></li>
+<li><code>"rejected"</code></li>
+<li><code>"document_error"</code></li>
 
 </ul>
 
@@ -8661,26 +8631,26 @@ been signed when using SMS confirmation.</p>
 <p>Currently supported language codes</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>da</code></li>
-<li><code>de</code></li>
-<li><code>el</code></li>
-<li><code>en</code></li>
-<li><code>es</code></li>
-<li><code>et</code></li>
-<li><code>fi</code></li>
-<li><code>fr</code></li>
-<li><code>is</code></li>
-<li><code>it</code></li>
-<li><code>lt</code></li>
-<li><code>lv</code></li>
-<li><code>nl</code></li>
-<li><code>no</code></li>
-<li><code>pt</code></li>
-<li><code>sv</code></li>
+<li><code>"da"</code></li>
+<li><code>"de"</code></li>
+<li><code>"el"</code></li>
+<li><code>"en"</code></li>
+<li><code>"es"</code></li>
+<li><code>"et"</code></li>
+<li><code>"fi"</code></li>
+<li><code>"fr"</code></li>
+<li><code>"is"</code></li>
+<li><code>"it"</code></li>
+<li><code>"lt"</code></li>
+<li><code>"lv"</code></li>
+<li><code>"nl"</code></li>
+<li><code>"no"</code></li>
+<li><code>"pt"</code></li>
+<li><code>"sv"</code></li>
 
 </ul>
 
@@ -8741,10 +8711,7 @@ application with offline capabilities.</p>
 The list API call can filter based on document tags.</p>
 
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -8823,13 +8790,13 @@ The list API call can filter based on document tags.</p>
 
 <div class="json-schema">
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>company_shared</code></li>
-<li><code>company_admin</code></li>
-<li><code>signatory</code></li>
+<li><code>"company_shared"</code></li>
+<li><code>"company_admin"</code></li>
+<li><code>"signatory"</code></li>
 
 </ul>
 
@@ -8938,10 +8905,7 @@ The user group metadata as a JSON.
 
 <div class="json-schema">
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -9147,10 +9111,7 @@ In the requests you can also provide <code>null</code> value to delete a tag.
 Other value types lead to 400 Bad Request response.</p>
 
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -9296,10 +9257,7 @@ The user group metadata as a JSON (with Inheritable Previews).
 
 <div class="json-schema">
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -9665,10 +9623,7 @@ In the requests you can also provide <code>null</code> value to delete a tag.
 Other value types lead to 400 Bad Request response.</p>
 
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -9731,25 +9686,25 @@ The JSON structured errors returned by the API.
 
 <div class="json-schema">
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>server_error</code></li>
-<li><code>request_failed</code></li>
-<li><code>endpoint_not_found</code></li>
-<li><code>invalid_authorisation</code></li>
-<li><code>insufficient_privileges</code></li>
-<li><code>resource_not_found</code></li>
-<li><code>document_action_forbidden</code></li>
-<li><code>request_parameters_missing</code></li>
-<li><code>request_parameters_parse_error</code></li>
-<li><code>request_parameters_invalid</code></li>
-<li><code>document_object_version_mismatch</code></li>
-<li><code>document_state_error</code></li>
-<li><code>signatory_state_error</code></li>
-<li><code>action_not_permitted</code></li>
-<li><code>conflict_error</code></li>
+<li><code>"server_error"</code></li>
+<li><code>"request_failed"</code></li>
+<li><code>"endpoint_not_found"</code></li>
+<li><code>"invalid_authorisation"</code></li>
+<li><code>"insufficient_privileges"</code></li>
+<li><code>"resource_not_found"</code></li>
+<li><code>"document_action_forbidden"</code></li>
+<li><code>"request_parameters_missing"</code></li>
+<li><code>"request_parameters_parse_error"</code></li>
+<li><code>"request_parameters_invalid"</code></li>
+<li><code>"document_object_version_mismatch"</code></li>
+<li><code>"document_state_error"</code></li>
+<li><code>"signatory_state_error"</code></li>
+<li><code>"action_not_permitted"</code></li>
+<li><code>"conflict_error"</code></li>
 
 </ul>
 
@@ -9767,7 +9722,7 @@ The JSON structured errors returned by the API.
 
 <div class="json-schema">
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
@@ -10119,13 +10074,13 @@ parties can sign documents, viewers only have view access, and
 approvers can additionally approve or reject.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>viewer</code></li>
-<li><code>signing_party</code></li>
-<li><code>approver</code></li>
+<li><code>"viewer"</code></li>
+<li><code>"signing_party"</code></li>
+<li><code>"approver"</code></li>
 
 </ul>
 
@@ -10162,7 +10117,8 @@ Similarly, a single field can have multiple placements on the document.</p>
 <p><strong>Note:</strong> Some field types have <em>no effect</em> without at least one placement.</p>
 
 
-The elements of this array must match *at least one* of the following properties:
+<p>The value of this array must match <em>at least one</em> of the following schemas:</p>
+
 
 <h6>SignatoryFieldName</h6>
 <code>(object)</code>
@@ -10183,11 +10139,11 @@ The elements of this array must match *at least one* of the following properties
 <p>Used to specify that this is a name field.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>name</code></li>
+<li><code>"name"</code></li>
 
 </ul>
 
@@ -10205,7 +10161,7 @@ field, otherwise the signatory may not be asked for their name on the
 signing page.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
@@ -10260,10 +10216,7 @@ field.</p>
 template in the document UI design view, and use those values.</p>
 
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -10341,7 +10294,8 @@ template in the document UI design view, and use those values.</p>
 
 <p>Default: <code>null</code></p>
 
-The elements of this item must match *at least one* of the following properties:
+<p>The value of this property must match <em>at least one</em> of the following schemas:</p>
+
 
 <h6>(string, enum)</h6>
 
@@ -10352,12 +10306,12 @@ The elements of this item must match *at least one* of the following properties:
 to the field.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>left</code></li>
-<li><code>right</code></li>
+<li><code>"left"</code></li>
+<li><code>"right"</code></li>
 
 </ul>
 
@@ -10381,10 +10335,7 @@ depending on the field type.</p>
 
 <div class="json-schema">
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -10438,12 +10389,12 @@ depending on the field type.</p>
 <p>Used to specify what type of field this is.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>email</code></li>
-<li><code>mobile</code></li>
+<li><code>"email"</code></li>
+<li><code>"mobile"</code></li>
 
 </ul>
 
@@ -10514,10 +10465,7 @@ field.</p>
 template in the document UI design view, and use those values.</p>
 
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -10595,7 +10543,8 @@ template in the document UI design view, and use those values.</p>
 
 <p>Default: <code>null</code></p>
 
-The elements of this item must match *at least one* of the following properties:
+<p>The value of this property must match <em>at least one</em> of the following schemas:</p>
+
 
 <h6>(string, enum)</h6>
 
@@ -10606,12 +10555,12 @@ The elements of this item must match *at least one* of the following properties:
 to the field.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>left</code></li>
-<li><code>right</code></li>
+<li><code>"left"</code></li>
+<li><code>"right"</code></li>
 
 </ul>
 
@@ -10635,10 +10584,7 @@ depending on the field type.</p>
 
 <div class="json-schema">
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -10689,11 +10635,11 @@ depending on the field type.</p>
 
 <div class="json-schema">
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>signature</code></li>
+<li><code>"signature"</code></li>
 
 </ul>
 
@@ -10716,7 +10662,8 @@ will be used in the Evidence Log as a reference.</p>
 
 <div class="json-schema">
 
-The elements of this item must match *at least one* of the following properties:
+<p>The value of this property must match <em>at least one</em> of the following schemas:</p>
+
 
 <h6>(null)</h6>
 
@@ -10773,10 +10720,7 @@ field.</p>
 template in the document UI design view, and use those values.</p>
 
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -10854,7 +10798,8 @@ template in the document UI design view, and use those values.</p>
 
 <p>Default: <code>null</code></p>
 
-The elements of this item must match *at least one* of the following properties:
+<p>The value of this property must match <em>at least one</em> of the following schemas:</p>
+
 
 <h6>(string, enum)</h6>
 
@@ -10865,12 +10810,12 @@ The elements of this item must match *at least one* of the following properties:
 to the field.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>left</code></li>
-<li><code>right</code></li>
+<li><code>"left"</code></li>
+<li><code>"right"</code></li>
 
 </ul>
 
@@ -10894,10 +10839,7 @@ depending on the field type.</p>
 
 <div class="json-schema">
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -10957,13 +10899,13 @@ document:</p>
 <p>Used to specify what type of field this is.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>company</code></li>
-<li><code>company_number</code></li>
-<li><code>personal_number</code></li>
+<li><code>"company"</code></li>
+<li><code>"company_number"</code></li>
+<li><code>"personal_number"</code></li>
 
 </ul>
 
@@ -11016,10 +10958,7 @@ field.</p>
 template in the document UI design view, and use those values.</p>
 
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -11097,7 +11036,8 @@ template in the document UI design view, and use those values.</p>
 
 <p>Default: <code>null</code></p>
 
-The elements of this item must match *at least one* of the following properties:
+<p>The value of this property must match <em>at least one</em> of the following schemas:</p>
+
 
 <h6>(string, enum)</h6>
 
@@ -11108,12 +11048,12 @@ The elements of this item must match *at least one* of the following properties:
 to the field.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>left</code></li>
-<li><code>right</code></li>
+<li><code>"left"</code></li>
+<li><code>"right"</code></li>
 
 </ul>
 
@@ -11137,10 +11077,7 @@ depending on the field type.</p>
 
 <div class="json-schema">
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -11194,11 +11131,11 @@ depending on the field type.</p>
 <p>Used to specify that this is a checkbox field.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>checkbox</code></li>
+<li><code>"checkbox"</code></li>
 
 </ul>
 
@@ -11306,7 +11243,7 @@ template in the document UI design view, and use those values.</p>
 The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> checkboxes.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
@@ -11326,7 +11263,7 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> checkbo
 <p>Height of placement, not used for checkboxes, must be 0.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
@@ -11344,7 +11281,7 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> checkbo
 <p>Font size of placement, not used for checkboxes, must be 0.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
@@ -11371,7 +11308,8 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> checkbo
 
 <p>Default: <code>null</code></p>
 
-The elements of this item must match *at least one* of the following properties:
+<p>The value of this property must match <em>at least one</em> of the following schemas:</p>
+
 
 <h6>(string, enum)</h6>
 
@@ -11382,12 +11320,12 @@ The elements of this item must match *at least one* of the following properties:
 to the field.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>left</code></li>
-<li><code>right</code></li>
+<li><code>"left"</code></li>
+<li><code>"right"</code></li>
 
 </ul>
 
@@ -11411,10 +11349,7 @@ depending on the field type.</p>
 
 <div class="json-schema">
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -11468,11 +11403,11 @@ depending on the field type.</p>
 <p>Used to specify that this is a radio button group field.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>radiogroup</code></li>
+<li><code>"radiogroup"</code></li>
 
 </ul>
 
@@ -11575,7 +11510,7 @@ template in the document UI design view, and use those values.</p>
 The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> radio buttons.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
@@ -11595,7 +11530,7 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> radio b
 <p>Height of placement, not used for radio buttons, must be 0.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
@@ -11613,7 +11548,7 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> radio b
 <p>Font size of placement, not used for radio buttons, must be 0.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
@@ -11641,7 +11576,8 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> radio b
 
 <p>Default: <code>null</code></p>
 
-The elements of this item must match *at least one* of the following properties:
+<p>The value of this property must match <em>at least one</em> of the following schemas:</p>
+
 
 <h6>(string, enum)</h6>
 
@@ -11652,12 +11588,12 @@ The elements of this item must match *at least one* of the following properties:
 to the field.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>left</code></li>
-<li><code>right</code></li>
+<li><code>"left"</code></li>
+<li><code>"right"</code></li>
 
 </ul>
 
@@ -11681,10 +11617,7 @@ depending on the field type.</p>
 
 <div class="json-schema">
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -11742,11 +11675,11 @@ optional regular expression-based validation mechanism via the
 <p>Used to specify that this is a custom text field.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>text</code></li>
+<li><code>"text"</code></li>
 
 </ul>
 
@@ -11809,10 +11742,7 @@ field.</p>
 template in the document UI design view, and use those values.</p>
 
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -11890,7 +11820,8 @@ template in the document UI design view, and use those values.</p>
 
 <p>Default: <code>null</code></p>
 
-The elements of this item must match *at least one* of the following properties:
+<p>The value of this property must match <em>at least one</em> of the following schemas:</p>
+
 
 <h6>(string, enum)</h6>
 
@@ -11901,12 +11832,12 @@ The elements of this item must match *at least one* of the following properties:
 to the field.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>left</code></li>
-<li><code>right</code></li>
+<li><code>"left"</code></li>
+<li><code>"right"</code></li>
 
 </ul>
 
@@ -11930,10 +11861,7 @@ depending on the field type.</p>
 
 <div class="json-schema">
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -11971,7 +11899,8 @@ depending on the field type.</p>
 
 <div class="json-schema">
 
-The elements of this item must match *exactly one* of the following properties:
+<p>The value of this property must match <em>exactly one</em> of the following schemas:</p>
+
 
 <h6>(null)</h6>
 
@@ -12108,14 +12037,14 @@ reject reason (<code>allow_reject_reason</code>).</p>
 <p>The current delivery status.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>unknown</code></li>
-<li><code>not_delivered</code></li>
-<li><code>delivered</code></li>
-<li><code>deferred</code></li>
+<li><code>"unknown"</code></li>
+<li><code>"not_delivered"</code></li>
+<li><code>"delivered"</code></li>
+<li><code>"deferred"</code></li>
 
 </ul>
 
@@ -12129,14 +12058,14 @@ reject reason (<code>allow_reject_reason</code>).</p>
 <p>The current delivery status.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>unknown</code></li>
-<li><code>not_delivered</code></li>
-<li><code>delivered</code></li>
-<li><code>deferred</code></li>
+<li><code>"unknown"</code></li>
+<li><code>"not_delivered"</code></li>
+<li><code>"delivered"</code></li>
+<li><code>"deferred"</code></li>
 
 </ul>
 
@@ -12160,15 +12089,15 @@ interface. Furthermore, <code>pad</code> delivery is referred to as &quot;In-per
 
 <p>Default: <code>"email"</code></p>
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>email</code></li>
-<li><code>mobile</code></li>
-<li><code>email_mobile</code></li>
-<li><code>pad</code></li>
-<li><code>api</code></li>
+<li><code>"email"</code></li>
+<li><code>"mobile"</code></li>
+<li><code>"email_mobile"</code></li>
+<li><code>"pad"</code></li>
+<li><code>"api"</code></li>
 
 </ul>
 
@@ -12184,18 +12113,18 @@ interface. Furthermore, <code>pad</code> delivery is referred to as &quot;In-per
 
 <p>Default: <code>"standard"</code></p>
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>standard</code></li>
-<li><code>sms_pin</code></li>
-<li><code>se_bankid</code></li>
-<li><code>no_bankid</code></li>
-<li><code>dk_nemid</code></li>
-<li><code>fi_tupas</code></li>
-<li><code>verimi</code></li>
-<li><code>nl_idin</code></li>
+<li><code>"standard"</code></li>
+<li><code>"sms_pin"</code></li>
+<li><code>"se_bankid"</code></li>
+<li><code>"no_bankid"</code></li>
+<li><code>"dk_nemid"</code></li>
+<li><code>"fi_tupas"</code></li>
+<li><code>"verimi"</code></li>
+<li><code>"nl_idin"</code></li>
 
 </ul>
 
@@ -12211,18 +12140,18 @@ interface. Furthermore, <code>pad</code> delivery is referred to as &quot;In-per
 
 <p>Default: <code>"standard"</code></p>
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>standard</code></li>
-<li><code>sms_pin</code></li>
-<li><code>se_bankid</code></li>
-<li><code>no_bankid</code></li>
-<li><code>dk_nemid</code></li>
-<li><code>fi_tupas</code></li>
-<li><code>verimi</code></li>
-<li><code>nl_idin</code></li>
+<li><code>"standard"</code></li>
+<li><code>"sms_pin"</code></li>
+<li><code>"se_bankid"</code></li>
+<li><code>"no_bankid"</code></li>
+<li><code>"dk_nemid"</code></li>
+<li><code>"fi_tupas"</code></li>
+<li><code>"verimi"</code></li>
+<li><code>"nl_idin"</code></li>
 
 </ul>
 
@@ -12235,18 +12164,18 @@ interface. Furthermore, <code>pad</code> delivery is referred to as &quot;In-per
 
 <p>Default: <code>"standard"</code></p>
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>standard</code></li>
-<li><code>sms_pin</code></li>
-<li><code>se_bankid</code></li>
-<li><code>no_bankid</code></li>
-<li><code>dk_nemid</code></li>
-<li><code>fi_tupas</code></li>
-<li><code>onfido_document_check</code></li>
-<li><code>onfido_document_and_photo_check</code></li>
+<li><code>"standard"</code></li>
+<li><code>"sms_pin"</code></li>
+<li><code>"se_bankid"</code></li>
+<li><code>"no_bankid"</code></li>
+<li><code>"dk_nemid"</code></li>
+<li><code>"fi_tupas"</code></li>
+<li><code>"onfido_document_check"</code></li>
+<li><code>"onfido_document_and_photo_check"</code></li>
 
 </ul>
 
@@ -12270,16 +12199,16 @@ interface. Furthermore, <code>pad</code> delivery is referred to as &quot;In-per
 
 <p>Default: <code>"email"</code></p>
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>email</code></li>
-<li><code>mobile</code></li>
-<li><code>email_mobile</code></li>
-<li><code>email_link</code></li>
-<li><code>email_link_mobile</code></li>
-<li><code>none</code></li>
+<li><code>"email"</code></li>
+<li><code>"mobile"</code></li>
+<li><code>"email_mobile"</code></li>
+<li><code>"email_link"</code></li>
+<li><code>"email_link_mobile"</code></li>
+<li><code>"none"</code></li>
 
 </ul>
 
@@ -12332,10 +12261,7 @@ field does not have any placements.</p>
 in the document file PDF until after the document is closed.</p>
 
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -12380,10 +12306,7 @@ closed.</p>
 
 <div class="json-schema">
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -12479,7 +12402,8 @@ and will only be visible when accessing the document as the author.</p>
 
 <div class="json-schema">
 
-The elements of this item must match *exactly one* of the following properties:
+<p>The value of this property must match <em>exactly one</em> of the following schemas:</p>
+
 
 <h6>(null)</h6>
 
@@ -12643,7 +12567,8 @@ been signed by all parties, while the Scrive eSign system seals the
 document.</p>
 
 
-The elements of this item must match *exactly one* of the following properties:
+<p>The value of this property must match <em>exactly one</em> of the following schemas:</p>
+
 
 <h4>(null)</h4>
 
@@ -12783,17 +12708,17 @@ main file can also be set or changed.</p>
 be changed.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>preparation</code></li>
-<li><code>pending</code></li>
-<li><code>closed</code></li>
-<li><code>canceled</code></li>
-<li><code>timedout</code></li>
-<li><code>rejected</code></li>
-<li><code>document_error</code></li>
+<li><code>"preparation"</code></li>
+<li><code>"pending"</code></li>
+<li><code>"closed"</code></li>
+<li><code>"canceled"</code></li>
+<li><code>"timedout"</code></li>
+<li><code>"rejected"</code></li>
+<li><code>"document_error"</code></li>
 
 </ul>
 
@@ -12963,26 +12888,26 @@ been signed when using SMS confirmation.</p>
 <p>Currently supported language codes</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>da</code></li>
-<li><code>de</code></li>
-<li><code>el</code></li>
-<li><code>en</code></li>
-<li><code>es</code></li>
-<li><code>et</code></li>
-<li><code>fi</code></li>
-<li><code>fr</code></li>
-<li><code>is</code></li>
-<li><code>it</code></li>
-<li><code>lt</code></li>
-<li><code>lv</code></li>
-<li><code>nl</code></li>
-<li><code>no</code></li>
-<li><code>pt</code></li>
-<li><code>sv</code></li>
+<li><code>"da"</code></li>
+<li><code>"de"</code></li>
+<li><code>"el"</code></li>
+<li><code>"en"</code></li>
+<li><code>"es"</code></li>
+<li><code>"et"</code></li>
+<li><code>"fi"</code></li>
+<li><code>"fr"</code></li>
+<li><code>"is"</code></li>
+<li><code>"it"</code></li>
+<li><code>"lt"</code></li>
+<li><code>"lv"</code></li>
+<li><code>"nl"</code></li>
+<li><code>"no"</code></li>
+<li><code>"pt"</code></li>
+<li><code>"sv"</code></li>
 
 </ul>
 
@@ -13043,10 +12968,7 @@ application with offline capabilities.</p>
 The list API call can filter based on document tags.</p>
 
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -13125,13 +13047,13 @@ The list API call can filter based on document tags.</p>
 
 <div class="json-schema">
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>company_shared</code></li>
-<li><code>company_admin</code></li>
-<li><code>signatory</code></li>
+<li><code>"company_shared"</code></li>
+<li><code>"company_admin"</code></li>
+<li><code>"signatory"</code></li>
 
 </ul>
 
@@ -13162,17 +13084,17 @@ main file can also be set or changed.</p>
 be changed.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>preparation</code></li>
-<li><code>pending</code></li>
-<li><code>closed</code></li>
-<li><code>canceled</code></li>
-<li><code>timedout</code></li>
-<li><code>rejected</code></li>
-<li><code>document_error</code></li>
+<li><code>"preparation"</code></li>
+<li><code>"pending"</code></li>
+<li><code>"closed"</code></li>
+<li><code>"canceled"</code></li>
+<li><code>"timedout"</code></li>
+<li><code>"rejected"</code></li>
+<li><code>"document_error"</code></li>
 
 </ul>
 
@@ -13369,13 +13291,13 @@ parties can sign documents, viewers only have view access, and
 approvers can additionally approve or reject.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>viewer</code></li>
-<li><code>signing_party</code></li>
-<li><code>approver</code></li>
+<li><code>"viewer"</code></li>
+<li><code>"signing_party"</code></li>
+<li><code>"approver"</code></li>
 
 </ul>
 
@@ -13412,7 +13334,8 @@ Similarly, a single field can have multiple placements on the document.</p>
 <p><strong>Note:</strong> Some field types have <em>no effect</em> without at least one placement.</p>
 
 
-The elements of this array must match *at least one* of the following properties:
+<p>The value of this array must match <em>at least one</em> of the following schemas:</p>
+
 
 <h4>SignatoryFieldName</h4>
 <code>(object)</code>
@@ -13433,11 +13356,11 @@ The elements of this array must match *at least one* of the following properties
 <p>Used to specify that this is a name field.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>name</code></li>
+<li><code>"name"</code></li>
 
 </ul>
 
@@ -13455,7 +13378,7 @@ field, otherwise the signatory may not be asked for their name on the
 signing page.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
@@ -13510,10 +13433,7 @@ field.</p>
 template in the document UI design view, and use those values.</p>
 
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -13591,7 +13511,8 @@ template in the document UI design view, and use those values.</p>
 
 <p>Default: <code>null</code></p>
 
-The elements of this item must match *at least one* of the following properties:
+<p>The value of this property must match <em>at least one</em> of the following schemas:</p>
+
 
 <h6>(string, enum)</h6>
 
@@ -13602,12 +13523,12 @@ The elements of this item must match *at least one* of the following properties:
 to the field.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>left</code></li>
-<li><code>right</code></li>
+<li><code>"left"</code></li>
+<li><code>"right"</code></li>
 
 </ul>
 
@@ -13631,10 +13552,7 @@ depending on the field type.</p>
 
 <div class="json-schema">
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -13688,12 +13606,12 @@ depending on the field type.</p>
 <p>Used to specify what type of field this is.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>email</code></li>
-<li><code>mobile</code></li>
+<li><code>"email"</code></li>
+<li><code>"mobile"</code></li>
 
 </ul>
 
@@ -13764,10 +13682,7 @@ field.</p>
 template in the document UI design view, and use those values.</p>
 
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -13845,7 +13760,8 @@ template in the document UI design view, and use those values.</p>
 
 <p>Default: <code>null</code></p>
 
-The elements of this item must match *at least one* of the following properties:
+<p>The value of this property must match <em>at least one</em> of the following schemas:</p>
+
 
 <h6>(string, enum)</h6>
 
@@ -13856,12 +13772,12 @@ The elements of this item must match *at least one* of the following properties:
 to the field.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>left</code></li>
-<li><code>right</code></li>
+<li><code>"left"</code></li>
+<li><code>"right"</code></li>
 
 </ul>
 
@@ -13885,10 +13801,7 @@ depending on the field type.</p>
 
 <div class="json-schema">
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -13939,11 +13852,11 @@ depending on the field type.</p>
 
 <div class="json-schema">
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>signature</code></li>
+<li><code>"signature"</code></li>
 
 </ul>
 
@@ -13966,7 +13879,8 @@ will be used in the Evidence Log as a reference.</p>
 
 <div class="json-schema">
 
-The elements of this item must match *at least one* of the following properties:
+<p>The value of this property must match <em>at least one</em> of the following schemas:</p>
+
 
 <h6>(null)</h6>
 
@@ -14023,10 +13937,7 @@ field.</p>
 template in the document UI design view, and use those values.</p>
 
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -14104,7 +14015,8 @@ template in the document UI design view, and use those values.</p>
 
 <p>Default: <code>null</code></p>
 
-The elements of this item must match *at least one* of the following properties:
+<p>The value of this property must match <em>at least one</em> of the following schemas:</p>
+
 
 <h6>(string, enum)</h6>
 
@@ -14115,12 +14027,12 @@ The elements of this item must match *at least one* of the following properties:
 to the field.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>left</code></li>
-<li><code>right</code></li>
+<li><code>"left"</code></li>
+<li><code>"right"</code></li>
 
 </ul>
 
@@ -14144,10 +14056,7 @@ depending on the field type.</p>
 
 <div class="json-schema">
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -14207,13 +14116,13 @@ document:</p>
 <p>Used to specify what type of field this is.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>company</code></li>
-<li><code>company_number</code></li>
-<li><code>personal_number</code></li>
+<li><code>"company"</code></li>
+<li><code>"company_number"</code></li>
+<li><code>"personal_number"</code></li>
 
 </ul>
 
@@ -14266,10 +14175,7 @@ field.</p>
 template in the document UI design view, and use those values.</p>
 
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -14347,7 +14253,8 @@ template in the document UI design view, and use those values.</p>
 
 <p>Default: <code>null</code></p>
 
-The elements of this item must match *at least one* of the following properties:
+<p>The value of this property must match <em>at least one</em> of the following schemas:</p>
+
 
 <h6>(string, enum)</h6>
 
@@ -14358,12 +14265,12 @@ The elements of this item must match *at least one* of the following properties:
 to the field.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>left</code></li>
-<li><code>right</code></li>
+<li><code>"left"</code></li>
+<li><code>"right"</code></li>
 
 </ul>
 
@@ -14387,10 +14294,7 @@ depending on the field type.</p>
 
 <div class="json-schema">
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -14444,11 +14348,11 @@ depending on the field type.</p>
 <p>Used to specify that this is a checkbox field.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>checkbox</code></li>
+<li><code>"checkbox"</code></li>
 
 </ul>
 
@@ -14556,7 +14460,7 @@ template in the document UI design view, and use those values.</p>
 The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> checkboxes.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
@@ -14576,7 +14480,7 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> checkbo
 <p>Height of placement, not used for checkboxes, must be 0.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
@@ -14594,7 +14498,7 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> checkbo
 <p>Font size of placement, not used for checkboxes, must be 0.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
@@ -14621,7 +14525,8 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> checkbo
 
 <p>Default: <code>null</code></p>
 
-The elements of this item must match *at least one* of the following properties:
+<p>The value of this property must match <em>at least one</em> of the following schemas:</p>
+
 
 <h6>(string, enum)</h6>
 
@@ -14632,12 +14537,12 @@ The elements of this item must match *at least one* of the following properties:
 to the field.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>left</code></li>
-<li><code>right</code></li>
+<li><code>"left"</code></li>
+<li><code>"right"</code></li>
 
 </ul>
 
@@ -14661,10 +14566,7 @@ depending on the field type.</p>
 
 <div class="json-schema">
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -14718,11 +14620,11 @@ depending on the field type.</p>
 <p>Used to specify that this is a radio button group field.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>radiogroup</code></li>
+<li><code>"radiogroup"</code></li>
 
 </ul>
 
@@ -14825,7 +14727,7 @@ template in the document UI design view, and use those values.</p>
 The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> radio buttons.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
@@ -14845,7 +14747,7 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> radio b
 <p>Height of placement, not used for radio buttons, must be 0.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
@@ -14863,7 +14765,7 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> radio b
 <p>Font size of placement, not used for radio buttons, must be 0.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
@@ -14891,7 +14793,8 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> radio b
 
 <p>Default: <code>null</code></p>
 
-The elements of this item must match *at least one* of the following properties:
+<p>The value of this property must match <em>at least one</em> of the following schemas:</p>
+
 
 <h6>(string, enum)</h6>
 
@@ -14902,12 +14805,12 @@ The elements of this item must match *at least one* of the following properties:
 to the field.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>left</code></li>
-<li><code>right</code></li>
+<li><code>"left"</code></li>
+<li><code>"right"</code></li>
 
 </ul>
 
@@ -14931,10 +14834,7 @@ depending on the field type.</p>
 
 <div class="json-schema">
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -14992,11 +14892,11 @@ optional regular expression-based validation mechanism via the
 <p>Used to specify that this is a custom text field.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>text</code></li>
+<li><code>"text"</code></li>
 
 </ul>
 
@@ -15059,10 +14959,7 @@ field.</p>
 template in the document UI design view, and use those values.</p>
 
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -15140,7 +15037,8 @@ template in the document UI design view, and use those values.</p>
 
 <p>Default: <code>null</code></p>
 
-The elements of this item must match *at least one* of the following properties:
+<p>The value of this property must match <em>at least one</em> of the following schemas:</p>
+
 
 <h6>(string, enum)</h6>
 
@@ -15151,12 +15049,12 @@ The elements of this item must match *at least one* of the following properties:
 to the field.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>left</code></li>
-<li><code>right</code></li>
+<li><code>"left"</code></li>
+<li><code>"right"</code></li>
 
 </ul>
 
@@ -15180,10 +15078,7 @@ depending on the field type.</p>
 
 <div class="json-schema">
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -15221,7 +15116,8 @@ depending on the field type.</p>
 
 <div class="json-schema">
 
-The elements of this item must match *exactly one* of the following properties:
+<p>The value of this property must match <em>exactly one</em> of the following schemas:</p>
+
 
 <h6>(null)</h6>
 
@@ -15358,14 +15254,14 @@ reject reason (<code>allow_reject_reason</code>).</p>
 <p>The current delivery status.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>unknown</code></li>
-<li><code>not_delivered</code></li>
-<li><code>delivered</code></li>
-<li><code>deferred</code></li>
+<li><code>"unknown"</code></li>
+<li><code>"not_delivered"</code></li>
+<li><code>"delivered"</code></li>
+<li><code>"deferred"</code></li>
 
 </ul>
 
@@ -15379,14 +15275,14 @@ reject reason (<code>allow_reject_reason</code>).</p>
 <p>The current delivery status.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>unknown</code></li>
-<li><code>not_delivered</code></li>
-<li><code>delivered</code></li>
-<li><code>deferred</code></li>
+<li><code>"unknown"</code></li>
+<li><code>"not_delivered"</code></li>
+<li><code>"delivered"</code></li>
+<li><code>"deferred"</code></li>
 
 </ul>
 
@@ -15410,15 +15306,15 @@ interface. Furthermore, <code>pad</code> delivery is referred to as &quot;In-per
 
 <p>Default: <code>"email"</code></p>
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>email</code></li>
-<li><code>mobile</code></li>
-<li><code>email_mobile</code></li>
-<li><code>pad</code></li>
-<li><code>api</code></li>
+<li><code>"email"</code></li>
+<li><code>"mobile"</code></li>
+<li><code>"email_mobile"</code></li>
+<li><code>"pad"</code></li>
+<li><code>"api"</code></li>
 
 </ul>
 
@@ -15434,18 +15330,18 @@ interface. Furthermore, <code>pad</code> delivery is referred to as &quot;In-per
 
 <p>Default: <code>"standard"</code></p>
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>standard</code></li>
-<li><code>sms_pin</code></li>
-<li><code>se_bankid</code></li>
-<li><code>no_bankid</code></li>
-<li><code>dk_nemid</code></li>
-<li><code>fi_tupas</code></li>
-<li><code>verimi</code></li>
-<li><code>nl_idin</code></li>
+<li><code>"standard"</code></li>
+<li><code>"sms_pin"</code></li>
+<li><code>"se_bankid"</code></li>
+<li><code>"no_bankid"</code></li>
+<li><code>"dk_nemid"</code></li>
+<li><code>"fi_tupas"</code></li>
+<li><code>"verimi"</code></li>
+<li><code>"nl_idin"</code></li>
 
 </ul>
 
@@ -15461,18 +15357,18 @@ interface. Furthermore, <code>pad</code> delivery is referred to as &quot;In-per
 
 <p>Default: <code>"standard"</code></p>
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>standard</code></li>
-<li><code>sms_pin</code></li>
-<li><code>se_bankid</code></li>
-<li><code>no_bankid</code></li>
-<li><code>dk_nemid</code></li>
-<li><code>fi_tupas</code></li>
-<li><code>verimi</code></li>
-<li><code>nl_idin</code></li>
+<li><code>"standard"</code></li>
+<li><code>"sms_pin"</code></li>
+<li><code>"se_bankid"</code></li>
+<li><code>"no_bankid"</code></li>
+<li><code>"dk_nemid"</code></li>
+<li><code>"fi_tupas"</code></li>
+<li><code>"verimi"</code></li>
+<li><code>"nl_idin"</code></li>
 
 </ul>
 
@@ -15485,18 +15381,18 @@ interface. Furthermore, <code>pad</code> delivery is referred to as &quot;In-per
 
 <p>Default: <code>"standard"</code></p>
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>standard</code></li>
-<li><code>sms_pin</code></li>
-<li><code>se_bankid</code></li>
-<li><code>no_bankid</code></li>
-<li><code>dk_nemid</code></li>
-<li><code>fi_tupas</code></li>
-<li><code>onfido_document_check</code></li>
-<li><code>onfido_document_and_photo_check</code></li>
+<li><code>"standard"</code></li>
+<li><code>"sms_pin"</code></li>
+<li><code>"se_bankid"</code></li>
+<li><code>"no_bankid"</code></li>
+<li><code>"dk_nemid"</code></li>
+<li><code>"fi_tupas"</code></li>
+<li><code>"onfido_document_check"</code></li>
+<li><code>"onfido_document_and_photo_check"</code></li>
 
 </ul>
 
@@ -15520,16 +15416,16 @@ interface. Furthermore, <code>pad</code> delivery is referred to as &quot;In-per
 
 <p>Default: <code>"email"</code></p>
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>email</code></li>
-<li><code>mobile</code></li>
-<li><code>email_mobile</code></li>
-<li><code>email_link</code></li>
-<li><code>email_link_mobile</code></li>
-<li><code>none</code></li>
+<li><code>"email"</code></li>
+<li><code>"mobile"</code></li>
+<li><code>"email_mobile"</code></li>
+<li><code>"email_link"</code></li>
+<li><code>"email_link_mobile"</code></li>
+<li><code>"none"</code></li>
 
 </ul>
 
@@ -15582,10 +15478,7 @@ field does not have any placements.</p>
 in the document file PDF until after the document is closed.</p>
 
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -15630,10 +15523,7 @@ closed.</p>
 
 <div class="json-schema">
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -15729,7 +15619,8 @@ and will only be visible when accessing the document as the author.</p>
 
 <div class="json-schema">
 
-The elements of this item must match *exactly one* of the following properties:
+<p>The value of this property must match <em>exactly one</em> of the following schemas:</p>
+
 
 <h4>(null)</h4>
 
@@ -15897,11 +15788,11 @@ when the signatory selected the negative response.</p>
 <p>Used to specify that this is a name field.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>name</code></li>
+<li><code>"name"</code></li>
 
 </ul>
 
@@ -15919,7 +15810,7 @@ field, otherwise the signatory may not be asked for their name on the
 signing page.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
@@ -15974,10 +15865,7 @@ field.</p>
 template in the document UI design view, and use those values.</p>
 
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -16055,7 +15943,8 @@ template in the document UI design view, and use those values.</p>
 
 <p>Default: <code>null</code></p>
 
-The elements of this item must match *at least one* of the following properties:
+<p>The value of this property must match <em>at least one</em> of the following schemas:</p>
+
 
 <h6>(string, enum)</h6>
 
@@ -16066,12 +15955,12 @@ The elements of this item must match *at least one* of the following properties:
 to the field.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>left</code></li>
-<li><code>right</code></li>
+<li><code>"left"</code></li>
+<li><code>"right"</code></li>
 
 </ul>
 
@@ -16095,10 +15984,7 @@ depending on the field type.</p>
 
 <div class="json-schema">
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -16178,12 +16064,12 @@ depending on the field type.</p>
 <p>Used to specify what type of field this is.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>email</code></li>
-<li><code>mobile</code></li>
+<li><code>"email"</code></li>
+<li><code>"mobile"</code></li>
 
 </ul>
 
@@ -16254,10 +16140,7 @@ field.</p>
 template in the document UI design view, and use those values.</p>
 
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -16335,7 +16218,8 @@ template in the document UI design view, and use those values.</p>
 
 <p>Default: <code>null</code></p>
 
-The elements of this item must match *at least one* of the following properties:
+<p>The value of this property must match <em>at least one</em> of the following schemas:</p>
+
 
 <h6>(string, enum)</h6>
 
@@ -16346,12 +16230,12 @@ The elements of this item must match *at least one* of the following properties:
 to the field.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>left</code></li>
-<li><code>right</code></li>
+<li><code>"left"</code></li>
+<li><code>"right"</code></li>
 
 </ul>
 
@@ -16375,10 +16259,7 @@ depending on the field type.</p>
 
 <div class="json-schema">
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -16455,11 +16336,11 @@ depending on the field type.</p>
 
 <div class="json-schema">
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>signature</code></li>
+<li><code>"signature"</code></li>
 
 </ul>
 
@@ -16482,7 +16363,8 @@ will be used in the Evidence Log as a reference.</p>
 
 <div class="json-schema">
 
-The elements of this item must match *at least one* of the following properties:
+<p>The value of this property must match <em>at least one</em> of the following schemas:</p>
+
 
 <h4>(null)</h4>
 
@@ -16539,10 +16421,7 @@ field.</p>
 template in the document UI design view, and use those values.</p>
 
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -16620,7 +16499,8 @@ template in the document UI design view, and use those values.</p>
 
 <p>Default: <code>null</code></p>
 
-The elements of this item must match *at least one* of the following properties:
+<p>The value of this property must match <em>at least one</em> of the following schemas:</p>
+
 
 <h6>(string, enum)</h6>
 
@@ -16631,12 +16511,12 @@ The elements of this item must match *at least one* of the following properties:
 to the field.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>left</code></li>
-<li><code>right</code></li>
+<li><code>"left"</code></li>
+<li><code>"right"</code></li>
 
 </ul>
 
@@ -16660,10 +16540,7 @@ depending on the field type.</p>
 
 <div class="json-schema">
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -16748,13 +16625,13 @@ document:</p>
 <p>Used to specify what type of field this is.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>company</code></li>
-<li><code>company_number</code></li>
-<li><code>personal_number</code></li>
+<li><code>"company"</code></li>
+<li><code>"company_number"</code></li>
+<li><code>"personal_number"</code></li>
 
 </ul>
 
@@ -16807,10 +16684,7 @@ field.</p>
 template in the document UI design view, and use those values.</p>
 
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -16888,7 +16762,8 @@ template in the document UI design view, and use those values.</p>
 
 <p>Default: <code>null</code></p>
 
-The elements of this item must match *at least one* of the following properties:
+<p>The value of this property must match <em>at least one</em> of the following schemas:</p>
+
 
 <h6>(string, enum)</h6>
 
@@ -16899,12 +16774,12 @@ The elements of this item must match *at least one* of the following properties:
 to the field.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>left</code></li>
-<li><code>right</code></li>
+<li><code>"left"</code></li>
+<li><code>"right"</code></li>
 
 </ul>
 
@@ -16928,10 +16803,7 @@ depending on the field type.</p>
 
 <div class="json-schema">
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -17011,11 +16883,11 @@ depending on the field type.</p>
 <p>Used to specify that this is a checkbox field.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>checkbox</code></li>
+<li><code>"checkbox"</code></li>
 
 </ul>
 
@@ -17123,7 +16995,7 @@ template in the document UI design view, and use those values.</p>
 The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> checkboxes.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
@@ -17143,7 +17015,7 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> checkbo
 <p>Height of placement, not used for checkboxes, must be 0.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
@@ -17161,7 +17033,7 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> checkbo
 <p>Font size of placement, not used for checkboxes, must be 0.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
@@ -17188,7 +17060,8 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> checkbo
 
 <p>Default: <code>null</code></p>
 
-The elements of this item must match *at least one* of the following properties:
+<p>The value of this property must match <em>at least one</em> of the following schemas:</p>
+
 
 <h6>(string, enum)</h6>
 
@@ -17199,12 +17072,12 @@ The elements of this item must match *at least one* of the following properties:
 to the field.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>left</code></li>
-<li><code>right</code></li>
+<li><code>"left"</code></li>
+<li><code>"right"</code></li>
 
 </ul>
 
@@ -17228,10 +17101,7 @@ depending on the field type.</p>
 
 <div class="json-schema">
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -17334,11 +17204,11 @@ depending on the field type.</p>
 <p>Used to specify that this is a radio button group field.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>radiogroup</code></li>
+<li><code>"radiogroup"</code></li>
 
 </ul>
 
@@ -17441,7 +17311,7 @@ template in the document UI design view, and use those values.</p>
 The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> radio buttons.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
@@ -17461,7 +17331,7 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> radio b
 <p>Height of placement, not used for radio buttons, must be 0.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
@@ -17479,7 +17349,7 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> radio b
 <p>Font size of placement, not used for radio buttons, must be 0.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
@@ -17507,7 +17377,8 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> radio b
 
 <p>Default: <code>null</code></p>
 
-The elements of this item must match *at least one* of the following properties:
+<p>The value of this property must match <em>at least one</em> of the following schemas:</p>
+
 
 <h6>(string, enum)</h6>
 
@@ -17518,12 +17389,12 @@ The elements of this item must match *at least one* of the following properties:
 to the field.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>left</code></li>
-<li><code>right</code></li>
+<li><code>"left"</code></li>
+<li><code>"right"</code></li>
 
 </ul>
 
@@ -17547,10 +17418,7 @@ depending on the field type.</p>
 
 <div class="json-schema">
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -17639,11 +17507,11 @@ optional regular expression-based validation mechanism via the
 <p>Used to specify that this is a custom text field.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>text</code></li>
+<li><code>"text"</code></li>
 
 </ul>
 
@@ -17706,10 +17574,7 @@ field.</p>
 template in the document UI design view, and use those values.</p>
 
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -17787,7 +17652,8 @@ template in the document UI design view, and use those values.</p>
 
 <p>Default: <code>null</code></p>
 
-The elements of this item must match *at least one* of the following properties:
+<p>The value of this property must match <em>at least one</em> of the following schemas:</p>
+
 
 <h6>(string, enum)</h6>
 
@@ -17798,12 +17664,12 @@ The elements of this item must match *at least one* of the following properties:
 to the field.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>left</code></li>
-<li><code>right</code></li>
+<li><code>"left"</code></li>
+<li><code>"right"</code></li>
 
 </ul>
 
@@ -17827,10 +17693,7 @@ depending on the field type.</p>
 
 <div class="json-schema">
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -17868,7 +17731,8 @@ depending on the field type.</p>
 
 <div class="json-schema">
 
-The elements of this item must match *exactly one* of the following properties:
+<p>The value of this property must match <em>exactly one</em> of the following schemas:</p>
+
 
 <h4>(null)</h4>
 
@@ -17950,12 +17814,10 @@ custom regular expression.</p>
 <p>Parameter used to filter documents for the <code>list</code> API call.</p>
 
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
-The elements of this array must match *at least one* of the following properties:
+<p>The value of this array must match <em>at least one</em> of the following schemas:</p>
+
 
 <h3>Filter by status</h3>
 <code>(object)</code>
@@ -17970,11 +17832,11 @@ The elements of this array must match *at least one* of the following properties
 
 <div class="json-schema">
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>status</code></li>
+<li><code>"status"</code></li>
 
 </ul>
 
@@ -18001,17 +17863,17 @@ main file can also be set or changed.</p>
 be changed.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>preparation</code></li>
-<li><code>pending</code></li>
-<li><code>closed</code></li>
-<li><code>canceled</code></li>
-<li><code>timedout</code></li>
-<li><code>rejected</code></li>
-<li><code>document_error</code></li>
+<li><code>"preparation"</code></li>
+<li><code>"pending"</code></li>
+<li><code>"closed"</code></li>
+<li><code>"canceled"</code></li>
+<li><code>"timedout"</code></li>
+<li><code>"rejected"</code></li>
+<li><code>"document_error"</code></li>
 
 </ul>
 
@@ -18034,11 +17896,11 @@ be changed.</p>
 
 <div class="json-schema">
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>mtime</code></li>
+<li><code>"mtime"</code></li>
 
 </ul>
 
@@ -18073,11 +17935,11 @@ be changed.</p>
 
 <div class="json-schema">
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>tag</code></li>
+<li><code>"tag"</code></li>
 
 </ul>
 
@@ -18116,11 +17978,11 @@ document author.</p>
 
 <div class="json-schema">
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>is_author</code></li>
+<li><code>"is_author"</code></li>
 
 </ul>
 
@@ -18144,11 +18006,11 @@ document author.</p>
 
 <div class="json-schema">
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>is_signable_on_pad</code></li>
+<li><code>"is_signable_on_pad"</code></li>
 
 </ul>
 
@@ -18169,11 +18031,11 @@ document author.</p>
 
 <div class="json-schema">
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>is_template</code></li>
+<li><code>"is_template"</code></li>
 
 </ul>
 
@@ -18194,11 +18056,11 @@ document author.</p>
 
 <div class="json-schema">
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>is_not_template</code></li>
+<li><code>"is_not_template"</code></li>
 
 </ul>
 
@@ -18219,11 +18081,11 @@ document author.</p>
 
 <div class="json-schema">
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>is_in_trash</code></li>
+<li><code>"is_in_trash"</code></li>
 
 </ul>
 
@@ -18244,11 +18106,11 @@ document author.</p>
 
 <div class="json-schema">
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>is_not_in_trash</code></li>
+<li><code>"is_not_in_trash"</code></li>
 
 </ul>
 
@@ -18269,11 +18131,11 @@ document author.</p>
 
 <div class="json-schema">
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>author</code></li>
+<li><code>"author"</code></li>
 
 </ul>
 
@@ -18301,11 +18163,11 @@ document author.</p>
 
 <div class="json-schema">
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>user_can_sign</code></li>
+<li><code>"user_can_sign"</code></li>
 
 </ul>
 
@@ -18333,11 +18195,11 @@ document author.</p>
 
 <div class="json-schema">
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>text</code></li>
+<li><code>"text"</code></li>
 
 </ul>
 
@@ -18392,12 +18254,12 @@ document author.</p>
 
 <p>Default: <code>"ascending"</code></p>
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>ascending</code></li>
-<li><code>descending</code></li>
+<li><code>"ascending"</code></li>
+<li><code>"descending"</code></li>
 
 </ul>
 
@@ -18408,14 +18270,14 @@ document author.</p>
 
 <div class="json-schema">
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>title</code></li>
-<li><code>status</code></li>
-<li><code>mtime</code></li>
-<li><code>author</code></li>
+<li><code>"title"</code></li>
+<li><code>"status"</code></li>
+<li><code>"mtime"</code></li>
+<li><code>"author"</code></li>
 
 </ul>
 
@@ -18455,7 +18317,8 @@ document author.</p>
 <p>Attachments that have been added to a document by the author.</p>
 
 
-The elements of this array must match *at least one* of the following properties:
+<p>The value of this array must match <em>at least one</em> of the following schemas:</p>
+
 
 <h3>(object)</h3>
 
@@ -18600,25 +18463,25 @@ The elements of this array must match *at least one* of the following properties
 available for documents.</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>initiated</code></li>
-<li><code>draft</code></li>
-<li><code>cancelled</code></li>
-<li><code>rejected</code></li>
-<li><code>timeouted</code></li>
-<li><code>problem</code></li>
-<li><code>deliveryproblem</code></li>
-<li><code>sent</code></li>
-<li><code>delivered</code></li>
-<li><code>read</code></li>
-<li><code>opened</code></li>
-<li><code>signed</code></li>
-<li><code>prolonged</code></li>
-<li><code>sealed</code></li>
-<li><code>extended</code></li>
+<li><code>"initiated"</code></li>
+<li><code>"draft"</code></li>
+<li><code>"cancelled"</code></li>
+<li><code>"rejected"</code></li>
+<li><code>"timeouted"</code></li>
+<li><code>"problem"</code></li>
+<li><code>"deliveryproblem"</code></li>
+<li><code>"sent"</code></li>
+<li><code>"delivered"</code></li>
+<li><code>"read"</code></li>
+<li><code>"opened"</code></li>
+<li><code>"signed"</code></li>
+<li><code>"prolonged"</code></li>
+<li><code>"sealed"</code></li>
+<li><code>"extended"</code></li>
 
 </ul>
 
@@ -18760,12 +18623,10 @@ documents.</p>
 <p>Parameter used to filter attachments for the <code>list</code> API call.</p>
 
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
-The elements of this array must match *at least one* of the following properties:
+<p>The value of this array must match <em>at least one</em> of the following schemas:</p>
+
 
 <h3>Filter by text</h3>
 <code>(object)</code>
@@ -18780,11 +18641,11 @@ The elements of this array must match *at least one* of the following properties
 
 <div class="json-schema">
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>text</code></li>
+<li><code>"text"</code></li>
 
 </ul>
 
@@ -19336,26 +19197,26 @@ count of documents on different stages of the process</p>
 <p>Currently supported language codes</p>
 
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>da</code></li>
-<li><code>de</code></li>
-<li><code>el</code></li>
-<li><code>en</code></li>
-<li><code>es</code></li>
-<li><code>et</code></li>
-<li><code>fi</code></li>
-<li><code>fr</code></li>
-<li><code>is</code></li>
-<li><code>it</code></li>
-<li><code>lt</code></li>
-<li><code>lv</code></li>
-<li><code>nl</code></li>
-<li><code>no</code></li>
-<li><code>pt</code></li>
-<li><code>sv</code></li>
+<li><code>"da"</code></li>
+<li><code>"de"</code></li>
+<li><code>"el"</code></li>
+<li><code>"en"</code></li>
+<li><code>"es"</code></li>
+<li><code>"et"</code></li>
+<li><code>"fi"</code></li>
+<li><code>"fr"</code></li>
+<li><code>"is"</code></li>
+<li><code>"it"</code></li>
+<li><code>"lt"</code></li>
+<li><code>"lv"</code></li>
+<li><code>"nl"</code></li>
+<li><code>"no"</code></li>
+<li><code>"pt"</code></li>
+<li><code>"sv"</code></li>
 
 </ul>
 
@@ -19573,10 +19434,7 @@ count of documents on different stages of the process</p>
 
 <div class="json-schema">
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -19782,10 +19640,7 @@ In the requests you can also provide <code>null</code> value to delete a tag.
 Other value types lead to 400 Bad Request response.</p>
 
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -19927,10 +19782,7 @@ Other value types lead to 400 Bad Request response.</p>
 
 <div class="json-schema">
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -20296,10 +20148,7 @@ In the requests you can also provide <code>null</code> value to delete a tag.
 Other value types lead to 400 Bad Request response.</p>
 
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -20951,10 +20800,7 @@ In the requests you can also provide <code>null</code> value to delete a tag.
 Other value types lead to 400 Bad Request response.</p>
 
 
-<p>Default:
-<code>
-[]
-</code></p>
+<p>Default: <br/><code class="code-block">[]</code></p>
 
 <p>All array elements must be of type:</p>
 
@@ -21033,15 +20879,15 @@ Other value types lead to 400 Bad Request response.</p>
 
 <div class="json-schema">
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>user</code></li>
-<li><code>user_group_member</code></li>
-<li><code>user_admin</code></li>
-<li><code>user_group_admin</code></li>
-<li><code>document_admin</code></li>
+<li><code>"user"</code></li>
+<li><code>"user_group_member"</code></li>
+<li><code>"user_admin"</code></li>
+<li><code>"user_group_admin"</code></li>
+<li><code>"document_admin"</code></li>
 
 </ul>
 
@@ -21059,12 +20905,12 @@ Other value types lead to 400 Bad Request response.</p>
 
 <div class="json-schema">
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>user</code></li>
-<li><code>user_group</code></li>
+<li><code>"user"</code></li>
+<li><code>"user_group"</code></li>
 
 </ul>
 
@@ -21091,13 +20937,13 @@ Other value types lead to 400 Bad Request response.</p>
 
 <div class="json-schema">
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>user</code></li>
-<li><code>user_group</code></li>
-<li><code>folder</code></li>
+<li><code>"user"</code></li>
+<li><code>"user_group"</code></li>
+<li><code>"folder"</code></li>
 
 </ul>
 
@@ -21131,14 +20977,14 @@ Other value types lead to 400 Bad Request response.</p>
 
 <div class="json-schema">
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>create</code></li>
-<li><code>delete</code></li>
-<li><code>read</code></li>
-<li><code>update</code></li>
+<li><code>"create"</code></li>
+<li><code>"delete"</code></li>
+<li><code>"read"</code></li>
+<li><code>"update"</code></li>
 
 </ul>
 
@@ -21158,14 +21004,14 @@ Other value types lead to 400 Bad Request response.</p>
 
 <div class="json-schema">
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>create</code></li>
-<li><code>delete</code></li>
-<li><code>read</code></li>
-<li><code>update</code></li>
+<li><code>"create"</code></li>
+<li><code>"delete"</code></li>
+<li><code>"read"</code></li>
+<li><code>"update"</code></li>
 
 </ul>
 
@@ -21185,14 +21031,14 @@ Other value types lead to 400 Bad Request response.</p>
 
 <div class="json-schema">
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>create</code></li>
-<li><code>delete</code></li>
-<li><code>read</code></li>
-<li><code>update</code></li>
+<li><code>"create"</code></li>
+<li><code>"delete"</code></li>
+<li><code>"read"</code></li>
+<li><code>"update"</code></li>
 
 </ul>
 
@@ -21212,14 +21058,14 @@ Other value types lead to 400 Bad Request response.</p>
 
 <div class="json-schema">
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>create</code></li>
-<li><code>delete</code></li>
-<li><code>read</code></li>
-<li><code>update</code></li>
+<li><code>"create"</code></li>
+<li><code>"delete"</code></li>
+<li><code>"read"</code></li>
+<li><code>"update"</code></li>
 
 </ul>
 
@@ -21239,14 +21085,14 @@ Other value types lead to 400 Bad Request response.</p>
 
 <div class="json-schema">
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>create</code></li>
-<li><code>delete</code></li>
-<li><code>read</code></li>
-<li><code>update</code></li>
+<li><code>"create"</code></li>
+<li><code>"delete"</code></li>
+<li><code>"read"</code></li>
+<li><code>"update"</code></li>
 
 </ul>
 
@@ -21266,14 +21112,14 @@ Other value types lead to 400 Bad Request response.</p>
 
 <div class="json-schema">
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>create</code></li>
-<li><code>delete</code></li>
-<li><code>read</code></li>
-<li><code>update</code></li>
+<li><code>"create"</code></li>
+<li><code>"delete"</code></li>
+<li><code>"read"</code></li>
+<li><code>"update"</code></li>
 
 </ul>
 
@@ -21293,14 +21139,14 @@ Other value types lead to 400 Bad Request response.</p>
 
 <div class="json-schema">
 
-<p>This element must be one of the following enum values:</p>
+<p>The value of this property must be one of the following enum values:</p>
 
 <ul>
 
-<li><code>create</code></li>
-<li><code>delete</code></li>
-<li><code>read</code></li>
-<li><code>update</code></li>
+<li><code>"create"</code></li>
+<li><code>"delete"</code></li>
+<li><code>"read"</code></li>
+<li><code>"update"</code></li>
 
 </ul>
 
