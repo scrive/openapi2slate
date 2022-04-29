@@ -18,32 +18,30 @@ function renderTitle(schema, name, octothorpes, isRequired) {
 	if (name) {
 		text.push('<code>' + name + '</code> ')
 	} else if (schema.title) {
-		text.push(schema.title + '</h' + hLevel + '>\n')
+		text.push(schema.title)
 	}
+
+	var properties = []
 	if (schema.type) {
-		if (schema.title) {
-			text.push('<code>')
-		}
-		text.push('(')
-		text.push(schema.type)
-		if (schema.enum) {
-			text.push(', enum')
-		}
-		if (isRequired) {
-			text.push(', required')
-		}
-		if (schema.readOnly) {
-			text.push(', read only')
-		}
-		text.push(')')
-		if (schema.title) {
-			text.push('</code>')
-		}
+		properties.push(schema.type)
+	}
+	if (schema.enum) {
+		properties.push('enum')
+	}
+	if (isRequired) {
+		properties.push('required')
+	}
+	if (schema.readOnly) {
+		properties.push('read only')
+	}
+
+	if (properties.length > 0) {
+		text.push('<code>(' + properties.join(', ') + ')</code>')
 	} else if (schema['$ref']) {
 		text.push('(' + schema['$ref'].substr(14) + ')')
 	}
-  if (name || !schema.title) {
-    text.push('</h' + hLevel + '>')
-  }
-	return text.join('')
+
+	text.push('</h' + hLevel + '>\n')
+
+	return text.join(' ')
 }

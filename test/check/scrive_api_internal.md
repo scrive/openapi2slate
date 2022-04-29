@@ -5712,7 +5712,8 @@ It is a core data structure used throughout the Scrive Document API.</p>
 
 <p>This object has the following properties:</p>
 
-<h4><code>id</code> (string, read only)</h4>
+<h4> <code>id</code>  <code>(string, read only)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -5723,7 +5724,8 @@ It is a core data structure used throughout the Scrive Document API.</p>
 
 </div>
 
-<h4><code>title</code> (string)</h4>
+<h4> <code>title</code>  <code>(string)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -5735,7 +5737,8 @@ The title will be used in messages sent to the document’s parties.</p>
 
 </div>
 
-<h4><code>parties</code> (array)</h4>
+<h4> <code>parties</code>  <code>(array)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -5748,8 +5751,8 @@ on the PDF, etc.</p>
 
 <p>All array elements must be of type:</p>
 
-<h5>Signatory</h5>
-<code>(object)</code>
+<h5> Signatory <code>(object)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -5760,7 +5763,8 @@ party to a document.</p>
 
 <p>This object has the following properties:</p>
 
-<h6><code>id</code> (string, read only)</h6>
+<h6> <code>id</code>  <code>(string, read only)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -5771,7 +5775,8 @@ party to a document.</p>
 
 </div>
 
-<h6><code>user_id</code> (string,null, read only)</h6>
+<h6> <code>user_id</code>  <code>(string,null, read only)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -5782,7 +5787,8 @@ here.</p>
 
 </div>
 
-<h6><code>is_author</code> (boolean, read only)</h6>
+<h6> <code>is_author</code>  <code>(boolean, read only)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -5792,7 +5798,8 @@ here.</p>
 
 </div>
 
-<h6><code>is_signatory</code> (boolean)</h6>
+<h6> <code>is_signatory</code>  <code>(boolean)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -5807,7 +5814,8 @@ inconsistent (this is done for backwards compatibility).</p>
 
 </div>
 
-<h6><code>signatory_role</code> <code>(string, enum)</code></h6>
+<h6> <code>signatory_role</code>  <code>(string, enum)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -5829,7 +5837,8 @@ approvers can additionally approve or reject.</p>
 
 </div>
 
-<h6><code>fields</code> (array)</h6>
+<h6> <code>fields</code>  <code>(array)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -5863,8 +5872,8 @@ Similarly, a single field can have multiple placements on the document.</p>
 <p>The value of this array must match <em>at least one</em> of the following schemas:</p>
 
 
-<h6>SignatoryFieldName</h6>
-<code>(object)</code>
+<h6> SignatoryFieldName <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -5874,7 +5883,8 @@ Similarly, a single field can have multiple placements on the document.</p>
 
 <p>This object has the following properties:</p>
 
-<h6><code>type</code> (string, enum, required)</h6>
+<h6> <code>type</code>  <code>(string, enum, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -5892,7 +5902,8 @@ Similarly, a single field can have multiple placements on the document.</p>
 
 </div>
 
-<h6><code>order</code> (integer, enum, required)</h6>
+<h6> <code>order</code>  <code>(integer, enum, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -5915,7 +5926,8 @@ signing page.</p>
 
 </div>
 
-<h6><code>value</code> (string)</h6>
+<h6> <code>value</code>  <code>(string)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -5927,7 +5939,8 @@ signing page.</p>
 
 </div>
 
-<h6><code>is_obligatory</code> (boolean)</h6>
+<h6> <code>is_obligatory</code>  <code>(boolean)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -5936,7 +5949,8 @@ signing page.</p>
 
 </div>
 
-<h6><code>should_be_filled_by_sender</code> (boolean)</h6>
+<h6> <code>should_be_filled_by_sender</code>  <code>(boolean)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -5945,7 +5959,8 @@ signing page.</p>
 
 </div>
 
-<h6><code>placements</code> <code>(array)</code></h6>
+<h6> <code>placements</code>  <code>(array)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -5963,14 +5978,16 @@ template in the document UI design view, and use those values.</p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>xrel</code> (number, required)</h6>
+<h6> <code>xrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -5980,7 +5997,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>yrel</code> (number, required)</h6>
+<h6> <code>yrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -5990,7 +6008,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>wrel</code> (number, required)</h6>
+<h6> <code>wrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6000,7 +6019,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>hrel</code> (number, required)</h6>
+<h6> <code>hrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6010,7 +6030,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>fsrel</code> (number, required)</h6>
+<h6> <code>fsrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6020,7 +6041,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>page</code> (integer, required)</h6>
+<h6> <code>page</code>  <code>(integer, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6030,7 +6052,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>tip</code> </h6>
+<h6> <code>tip</code>  </h6>
+
 
 
 <div class="json-schema">
@@ -6040,7 +6063,8 @@ template in the document UI design view, and use those values.</p>
 <p>The value of this property must match <em>at least one</em> of the following schemas:</p>
 
 
-<h6>(string, enum)</h6>
+<h6> <code>(string, enum)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6060,7 +6084,8 @@ to the field.</p>
 
 </div>
 
-<h6>(null)</h6>
+<h6> <code>(null)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6073,7 +6098,8 @@ depending on the field type.</p>
 
 </div>
 
-<h6><code>anchors</code> <code>(array)</code></h6>
+<h6> <code>anchors</code>  <code>(array)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6082,28 +6108,27 @@ depending on the field type.</p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>text</code> (string)</h6>
+<h6> <code>text</code>  <code>(string)</code> </h6>
 
-
-<div class="json-schema">
-
-</div>
-
-<h6><code>index</code> (integer)</h6>
 
 
 <div class="json-schema">
 
 </div>
 
-</div>
+<h6> <code>index</code>  <code>(integer)</code> </h6>
+
+
+
+<div class="json-schema">
 
 </div>
 
@@ -6113,8 +6138,12 @@ depending on the field type.</p>
 
 </div>
 
-<h6>SignatoryFieldEmailMobile</h6>
-<code>(object)</code>
+</div>
+
+</div>
+
+<h6> SignatoryFieldEmailMobile <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6124,7 +6153,8 @@ depending on the field type.</p>
 
 <p>This object has the following properties:</p>
 
-<h6><code>type</code> (string, enum, required)</h6>
+<h6> <code>type</code>  <code>(string, enum, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6143,7 +6173,8 @@ depending on the field type.</p>
 
 </div>
 
-<h6><code>value</code> (string)</h6>
+<h6> <code>value</code>  <code>(string)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6158,7 +6189,8 @@ back to information set in account settings.</p>
 
 </div>
 
-<h6><code>is_obligatory</code> (boolean)</h6>
+<h6> <code>is_obligatory</code>  <code>(boolean)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6167,7 +6199,8 @@ back to information set in account settings.</p>
 
 </div>
 
-<h6><code>should_be_filled_by_sender</code> (boolean)</h6>
+<h6> <code>should_be_filled_by_sender</code>  <code>(boolean)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6176,7 +6209,8 @@ back to information set in account settings.</p>
 
 </div>
 
-<h6><code>editable_by_signatory</code> (boolean)</h6>
+<h6> <code>editable_by_signatory</code>  <code>(boolean)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6194,7 +6228,8 @@ that this may affect your desired workflow.</p>
 
 </div>
 
-<h6><code>placements</code> <code>(array)</code></h6>
+<h6> <code>placements</code>  <code>(array)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6212,14 +6247,16 @@ template in the document UI design view, and use those values.</p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>xrel</code> (number, required)</h6>
+<h6> <code>xrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6229,7 +6266,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>yrel</code> (number, required)</h6>
+<h6> <code>yrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6239,7 +6277,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>wrel</code> (number, required)</h6>
+<h6> <code>wrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6249,7 +6288,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>hrel</code> (number, required)</h6>
+<h6> <code>hrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6259,7 +6299,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>fsrel</code> (number, required)</h6>
+<h6> <code>fsrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6269,7 +6310,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>page</code> (integer, required)</h6>
+<h6> <code>page</code>  <code>(integer, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6279,7 +6321,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>tip</code> </h6>
+<h6> <code>tip</code>  </h6>
+
 
 
 <div class="json-schema">
@@ -6289,7 +6332,8 @@ template in the document UI design view, and use those values.</p>
 <p>The value of this property must match <em>at least one</em> of the following schemas:</p>
 
 
-<h6>(string, enum)</h6>
+<h6> <code>(string, enum)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6309,7 +6353,8 @@ to the field.</p>
 
 </div>
 
-<h6>(null)</h6>
+<h6> <code>(null)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6322,7 +6367,8 @@ depending on the field type.</p>
 
 </div>
 
-<h6><code>anchors</code> <code>(array)</code></h6>
+<h6> <code>anchors</code>  <code>(array)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6331,28 +6377,27 @@ depending on the field type.</p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>text</code> (string)</h6>
+<h6> <code>text</code>  <code>(string)</code> </h6>
 
-
-<div class="json-schema">
-
-</div>
-
-<h6><code>index</code> (integer)</h6>
 
 
 <div class="json-schema">
 
 </div>
 
-</div>
+<h6> <code>index</code>  <code>(integer)</code> </h6>
+
+
+
+<div class="json-schema">
 
 </div>
 
@@ -6362,8 +6407,12 @@ depending on the field type.</p>
 
 </div>
 
-<h6>SignatoryFieldSignature</h6>
-<code>(object)</code>
+</div>
+
+</div>
+
+<h6> SignatoryFieldSignature <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6373,7 +6422,8 @@ depending on the field type.</p>
 
 <p>This object has the following properties:</p>
 
-<h6><code>type</code> (string, enum, required)</h6>
+<h6> <code>type</code>  <code>(string, enum, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6388,7 +6438,8 @@ depending on the field type.</p>
 
 </div>
 
-<h6><code>name</code> (string, required)</h6>
+<h6> <code>name</code>  <code>(string, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6400,7 +6451,8 @@ will be used in the Evidence Log as a reference.</p>
 
 </div>
 
-<h6><code>signature</code> </h6>
+<h6> <code>signature</code>  <code>(read only)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6408,7 +6460,8 @@ will be used in the Evidence Log as a reference.</p>
 <p>The value of this property must match <em>at least one</em> of the following schemas:</p>
 
 
-<h6>(null)</h6>
+<h6> <code>(null)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6418,7 +6471,8 @@ will be used in the Evidence Log as a reference.</p>
 
 </div>
 
-<h6>(string)</h6>
+<h6> <code>(string)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6430,7 +6484,8 @@ will be used in the Evidence Log as a reference.</p>
 
 </div>
 
-<h6><code>is_obligatory</code> (boolean)</h6>
+<h6> <code>is_obligatory</code>  <code>(boolean)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6439,7 +6494,8 @@ will be used in the Evidence Log as a reference.</p>
 
 </div>
 
-<h6><code>should_be_filled_by_sender</code> (boolean)</h6>
+<h6> <code>should_be_filled_by_sender</code>  <code>(boolean)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6448,7 +6504,8 @@ will be used in the Evidence Log as a reference.</p>
 
 </div>
 
-<h6><code>placements</code> <code>(array)</code></h6>
+<h6> <code>placements</code>  <code>(array)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6467,14 +6524,16 @@ template in the document UI design view, and use those values.</p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>xrel</code> (number, required)</h6>
+<h6> <code>xrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6484,7 +6543,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>yrel</code> (number, required)</h6>
+<h6> <code>yrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6494,7 +6554,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>wrel</code> (number, required)</h6>
+<h6> <code>wrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6504,7 +6565,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>hrel</code> (number, required)</h6>
+<h6> <code>hrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6514,7 +6576,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>fsrel</code> (number, required)</h6>
+<h6> <code>fsrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6524,7 +6587,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>page</code> (integer, required)</h6>
+<h6> <code>page</code>  <code>(integer, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6534,7 +6598,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>tip</code> </h6>
+<h6> <code>tip</code>  </h6>
+
 
 
 <div class="json-schema">
@@ -6544,7 +6609,8 @@ template in the document UI design view, and use those values.</p>
 <p>The value of this property must match <em>at least one</em> of the following schemas:</p>
 
 
-<h6>(string, enum)</h6>
+<h6> <code>(string, enum)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6564,7 +6630,8 @@ to the field.</p>
 
 </div>
 
-<h6>(null)</h6>
+<h6> <code>(null)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6577,7 +6644,8 @@ depending on the field type.</p>
 
 </div>
 
-<h6><code>anchors</code> <code>(array)</code></h6>
+<h6> <code>anchors</code>  <code>(array)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6586,28 +6654,27 @@ depending on the field type.</p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>text</code> (string)</h6>
+<h6> <code>text</code>  <code>(string)</code> </h6>
 
-
-<div class="json-schema">
-
-</div>
-
-<h6><code>index</code> (integer)</h6>
 
 
 <div class="json-schema">
 
 </div>
 
-</div>
+<h6> <code>index</code>  <code>(integer)</code> </h6>
+
+
+
+<div class="json-schema">
 
 </div>
 
@@ -6617,8 +6684,12 @@ depending on the field type.</p>
 
 </div>
 
-<h6>SignatoryFieldStandard</h6>
-<code>(object)</code>
+</div>
+
+</div>
+
+<h6> SignatoryFieldStandard <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6634,7 +6705,8 @@ document:</p>
 
 <p>This object has the following properties:</p>
 
-<h6><code>type</code> (string, enum, required)</h6>
+<h6> <code>type</code>  <code>(string, enum, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6654,7 +6726,8 @@ document:</p>
 
 </div>
 
-<h6><code>value</code> (string)</h6>
+<h6> <code>value</code>  <code>(string)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6669,7 +6742,8 @@ back to information set in account settings.</p>
 
 </div>
 
-<h6><code>is_obligatory</code> (boolean)</h6>
+<h6> <code>is_obligatory</code>  <code>(boolean)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6678,7 +6752,8 @@ back to information set in account settings.</p>
 
 </div>
 
-<h6><code>should_be_filled_by_sender</code> (boolean)</h6>
+<h6> <code>should_be_filled_by_sender</code>  <code>(boolean)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6687,7 +6762,8 @@ back to information set in account settings.</p>
 
 </div>
 
-<h6><code>placements</code> <code>(array)</code></h6>
+<h6> <code>placements</code>  <code>(array)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6705,14 +6781,16 @@ template in the document UI design view, and use those values.</p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>xrel</code> (number, required)</h6>
+<h6> <code>xrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6722,7 +6800,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>yrel</code> (number, required)</h6>
+<h6> <code>yrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6732,7 +6811,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>wrel</code> (number, required)</h6>
+<h6> <code>wrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6742,7 +6822,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>hrel</code> (number, required)</h6>
+<h6> <code>hrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6752,7 +6833,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>fsrel</code> (number, required)</h6>
+<h6> <code>fsrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6762,7 +6844,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>page</code> (integer, required)</h6>
+<h6> <code>page</code>  <code>(integer, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6772,7 +6855,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>tip</code> </h6>
+<h6> <code>tip</code>  </h6>
+
 
 
 <div class="json-schema">
@@ -6782,7 +6866,8 @@ template in the document UI design view, and use those values.</p>
 <p>The value of this property must match <em>at least one</em> of the following schemas:</p>
 
 
-<h6>(string, enum)</h6>
+<h6> <code>(string, enum)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6802,7 +6887,8 @@ to the field.</p>
 
 </div>
 
-<h6>(null)</h6>
+<h6> <code>(null)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6815,7 +6901,8 @@ depending on the field type.</p>
 
 </div>
 
-<h6><code>anchors</code> <code>(array)</code></h6>
+<h6> <code>anchors</code>  <code>(array)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6824,28 +6911,27 @@ depending on the field type.</p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>text</code> (string)</h6>
+<h6> <code>text</code>  <code>(string)</code> </h6>
 
-
-<div class="json-schema">
-
-</div>
-
-<h6><code>index</code> (integer)</h6>
 
 
 <div class="json-schema">
 
 </div>
 
-</div>
+<h6> <code>index</code>  <code>(integer)</code> </h6>
+
+
+
+<div class="json-schema">
 
 </div>
 
@@ -6855,8 +6941,12 @@ depending on the field type.</p>
 
 </div>
 
-<h6>SignatoryFieldCheckbox</h6>
-<code>(object)</code>
+</div>
+
+</div>
+
+<h6> SignatoryFieldCheckbox <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6866,7 +6956,8 @@ depending on the field type.</p>
 
 <p>This object has the following properties:</p>
 
-<h6><code>type</code> (string, enum, required)</h6>
+<h6> <code>type</code>  <code>(string, enum, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6884,7 +6975,8 @@ depending on the field type.</p>
 
 </div>
 
-<h6><code>name</code> (string, required)</h6>
+<h6> <code>name</code>  <code>(string, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6896,7 +6988,8 @@ used in the Evidence Log as a reference.</p>
 
 </div>
 
-<h6><code>is_checked</code> (boolean)</h6>
+<h6> <code>is_checked</code>  <code>(boolean)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6910,7 +7003,8 @@ pre-checking the checkbox for the signatory.</p>
 
 </div>
 
-<h6><code>is_obligatory</code> (boolean)</h6>
+<h6> <code>is_obligatory</code>  <code>(boolean)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6923,7 +7017,8 @@ the document.</p>
 
 </div>
 
-<h6><code>should_be_filled_by_sender</code> (boolean)</h6>
+<h6> <code>should_be_filled_by_sender</code>  <code>(boolean)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6932,7 +7027,8 @@ the document.</p>
 
 </div>
 
-<h6><code>placements</code> (array)</h6>
+<h6> <code>placements</code>  <code>(array)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6949,14 +7045,16 @@ template in the document UI design view, and use those values.</p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>xrel</code> (number, required)</h6>
+<h6> <code>xrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6966,7 +7064,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>yrel</code> (number, required)</h6>
+<h6> <code>yrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6976,7 +7075,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>wrel</code> (number, enum, required)</h6>
+<h6> <code>wrel</code>  <code>(number, enum, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -6998,7 +7098,8 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> checkbo
 
 </div>
 
-<h6><code>hrel</code> (number, enum, required)</h6>
+<h6> <code>hrel</code>  <code>(number, enum, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -7016,7 +7117,8 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> checkbo
 
 </div>
 
-<h6><code>fsrel</code> (number, enum, required)</h6>
+<h6> <code>fsrel</code>  <code>(number, enum, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -7034,7 +7136,8 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> checkbo
 
 </div>
 
-<h6><code>page</code> (integer, required)</h6>
+<h6> <code>page</code>  <code>(integer, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -7044,7 +7147,8 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> checkbo
 
 </div>
 
-<h6><code>tip</code> </h6>
+<h6> <code>tip</code>  </h6>
+
 
 
 <div class="json-schema">
@@ -7054,7 +7158,8 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> checkbo
 <p>The value of this property must match <em>at least one</em> of the following schemas:</p>
 
 
-<h6>(string, enum)</h6>
+<h6> <code>(string, enum)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -7074,7 +7179,8 @@ to the field.</p>
 
 </div>
 
-<h6>(null)</h6>
+<h6> <code>(null)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -7087,7 +7193,8 @@ depending on the field type.</p>
 
 </div>
 
-<h6><code>anchors</code> <code>(array)</code></h6>
+<h6> <code>anchors</code>  <code>(array)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -7096,28 +7203,27 @@ depending on the field type.</p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>text</code> (string)</h6>
+<h6> <code>text</code>  <code>(string)</code> </h6>
 
-
-<div class="json-schema">
-
-</div>
-
-<h6><code>index</code> (integer)</h6>
 
 
 <div class="json-schema">
 
 </div>
 
-</div>
+<h6> <code>index</code>  <code>(integer)</code> </h6>
+
+
+
+<div class="json-schema">
 
 </div>
 
@@ -7127,8 +7233,12 @@ depending on the field type.</p>
 
 </div>
 
-<h6>SignatoryFieldRadiogroup</h6>
-<code>(object)</code>
+</div>
+
+</div>
+
+<h6> SignatoryFieldRadiogroup <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -7138,7 +7248,8 @@ depending on the field type.</p>
 
 <p>This object has the following properties:</p>
 
-<h6><code>type</code> (string, enum, required)</h6>
+<h6> <code>type</code>  <code>(string, enum, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -7156,7 +7267,8 @@ depending on the field type.</p>
 
 </div>
 
-<h6><code>name</code> (string, required)</h6>
+<h6> <code>name</code>  <code>(string, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -7168,7 +7280,8 @@ used in the Evidence Log as a reference.</p>
 
 </div>
 
-<h6><code>values</code> (array, required)</h6>
+<h6> <code>values</code>  <code>(array, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -7185,7 +7298,8 @@ Each item must be unique and not an empty string.</strong></p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(string)</h6>
+<h6> <code>(string)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -7197,7 +7311,8 @@ Each item must be unique and not an empty string.</strong></p>
 
 </div>
 
-<h6><code>placements</code> (array, required)</h6>
+<h6> <code>placements</code>  <code>(array, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -7216,14 +7331,16 @@ template in the document UI design view, and use those values.</p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>xrel</code> (number, required)</h6>
+<h6> <code>xrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -7233,7 +7350,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>yrel</code> (number, required)</h6>
+<h6> <code>yrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -7243,7 +7361,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>wrel</code> (number, enum, required)</h6>
+<h6> <code>wrel</code>  <code>(number, enum, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -7265,7 +7384,8 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> radio b
 
 </div>
 
-<h6><code>hrel</code> (number, enum, required)</h6>
+<h6> <code>hrel</code>  <code>(number, enum, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -7283,7 +7403,8 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> radio b
 
 </div>
 
-<h6><code>fsrel</code> (number, enum, required)</h6>
+<h6> <code>fsrel</code>  <code>(number, enum, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -7301,7 +7422,8 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> radio b
 
 </div>
 
-<h6><code>page</code> (integer, required)</h6>
+<h6> <code>page</code>  <code>(integer, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -7312,7 +7434,8 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> radio b
 
 </div>
 
-<h6><code>tip</code> </h6>
+<h6> <code>tip</code>  </h6>
+
 
 
 <div class="json-schema">
@@ -7322,7 +7445,8 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> radio b
 <p>The value of this property must match <em>at least one</em> of the following schemas:</p>
 
 
-<h6>(string, enum)</h6>
+<h6> <code>(string, enum)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -7342,7 +7466,8 @@ to the field.</p>
 
 </div>
 
-<h6>(null)</h6>
+<h6> <code>(null)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -7355,7 +7480,8 @@ depending on the field type.</p>
 
 </div>
 
-<h6><code>anchors</code> <code>(array)</code></h6>
+<h6> <code>anchors</code>  <code>(array)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -7364,28 +7490,27 @@ depending on the field type.</p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>text</code> (string)</h6>
+<h6> <code>text</code>  <code>(string)</code> </h6>
 
-
-<div class="json-schema">
-
-</div>
-
-<h6><code>index</code> (integer)</h6>
 
 
 <div class="json-schema">
 
 </div>
 
-</div>
+<h6> <code>index</code>  <code>(integer)</code> </h6>
+
+
+
+<div class="json-schema">
 
 </div>
 
@@ -7395,8 +7520,12 @@ depending on the field type.</p>
 
 </div>
 
-<h6>SignatoryFieldCustomText</h6>
-<code>(object)</code>
+</div>
+
+</div>
+
+<h6> SignatoryFieldCustomText <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -7410,7 +7539,8 @@ optional regular expression-based validation mechanism via the
 
 <p>This object has the following properties:</p>
 
-<h6><code>type</code> (string, enum, required)</h6>
+<h6> <code>type</code>  <code>(string, enum, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -7428,7 +7558,8 @@ optional regular expression-based validation mechanism via the
 
 </div>
 
-<h6><code>name</code> (string, required)</h6>
+<h6> <code>name</code>  <code>(string, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -7440,7 +7571,8 @@ also be used in the Evidence Log as a reference.</p>
 
 </div>
 
-<h6><code>value</code> (string)</h6>
+<h6> <code>value</code>  <code>(string)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -7452,7 +7584,8 @@ also be used in the Evidence Log as a reference.</p>
 
 </div>
 
-<h6><code>is_obligatory</code> (boolean)</h6>
+<h6> <code>is_obligatory</code>  <code>(boolean)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -7461,7 +7594,8 @@ also be used in the Evidence Log as a reference.</p>
 
 </div>
 
-<h6><code>should_be_filled_by_sender</code> (boolean)</h6>
+<h6> <code>should_be_filled_by_sender</code>  <code>(boolean)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -7470,7 +7604,8 @@ also be used in the Evidence Log as a reference.</p>
 
 </div>
 
-<h6><code>placements</code> <code>(array)</code></h6>
+<h6> <code>placements</code>  <code>(array)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -7489,14 +7624,16 @@ template in the document UI design view, and use those values.</p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>xrel</code> (number, required)</h6>
+<h6> <code>xrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -7506,7 +7643,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>yrel</code> (number, required)</h6>
+<h6> <code>yrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -7516,7 +7654,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>wrel</code> (number, required)</h6>
+<h6> <code>wrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -7526,7 +7665,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>hrel</code> (number, required)</h6>
+<h6> <code>hrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -7536,7 +7676,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>fsrel</code> (number, required)</h6>
+<h6> <code>fsrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -7546,7 +7687,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>page</code> (integer, required)</h6>
+<h6> <code>page</code>  <code>(integer, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -7556,7 +7698,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>tip</code> </h6>
+<h6> <code>tip</code>  </h6>
+
 
 
 <div class="json-schema">
@@ -7566,7 +7709,8 @@ template in the document UI design view, and use those values.</p>
 <p>The value of this property must match <em>at least one</em> of the following schemas:</p>
 
 
-<h6>(string, enum)</h6>
+<h6> <code>(string, enum)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -7586,7 +7730,8 @@ to the field.</p>
 
 </div>
 
-<h6>(null)</h6>
+<h6> <code>(null)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -7599,7 +7744,8 @@ depending on the field type.</p>
 
 </div>
 
-<h6><code>anchors</code> <code>(array)</code></h6>
+<h6> <code>anchors</code>  <code>(array)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -7608,28 +7754,27 @@ depending on the field type.</p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>text</code> (string)</h6>
+<h6> <code>text</code>  <code>(string)</code> </h6>
 
-
-<div class="json-schema">
-
-</div>
-
-<h6><code>index</code> (integer)</h6>
 
 
 <div class="json-schema">
 
 </div>
 
-</div>
+<h6> <code>index</code>  <code>(integer)</code> </h6>
+
+
+
+<div class="json-schema">
 
 </div>
 
@@ -7637,7 +7782,12 @@ depending on the field type.</p>
 
 </div>
 
-<h6><code>custom_validation</code> </h6>
+</div>
+
+</div>
+
+<h6> <code>custom_validation</code>  </h6>
+
 
 
 <div class="json-schema">
@@ -7645,15 +7795,16 @@ depending on the field type.</p>
 <p>The value of this property must match <em>exactly one</em> of the following schemas:</p>
 
 
-<h6>(null)</h6>
+<h6> <code>(null)</code> </h6>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h6>SignatoryFieldCustomValidation</h6>
-<code>(object)</code>
+<h6> SignatoryFieldCustomValidation <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -7664,7 +7815,8 @@ custom regular expression.</p>
 
 <p>This object has the following properties:</p>
 
-<h6><code>pattern</code> (string, required)</h6>
+<h6> <code>pattern</code>  <code>(string, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -7674,7 +7826,8 @@ custom regular expression.</p>
 
 </div>
 
-<h6><code>positive_example</code> (string, required)</h6>
+<h6> <code>positive_example</code>  <code>(string, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -7684,7 +7837,8 @@ custom regular expression.</p>
 
 </div>
 
-<h6><code>tooltip</code> (string, required)</h6>
+<h6> <code>tooltip</code>  <code>(string, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -7702,7 +7856,8 @@ custom regular expression.</p>
 
 </div>
 
-<h6><code>sign_order</code> (integer)</h6>
+<h6> <code>sign_order</code>  <code>(integer)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -7711,35 +7866,40 @@ custom regular expression.</p>
 
 </div>
 
-<h6><code>sign_time</code> (string,null, read only)</h6>
+<h6> <code>sign_time</code>  <code>(string,null, read only)</code> </h6>
 
-
-<div class="json-schema">
-
-</div>
-
-<h6><code>seen_time</code> (string,null, read only)</h6>
 
 
 <div class="json-schema">
 
 </div>
 
-<h6><code>read_invitation_time</code> (string,null, read only)</h6>
+<h6> <code>seen_time</code>  <code>(string,null, read only)</code> </h6>
 
-
-<div class="json-schema">
-
-</div>
-
-<h6><code>rejected_time</code> (string,null, read only)</h6>
 
 
 <div class="json-schema">
 
 </div>
 
-<h6><code>rejection_reason</code> (string,null, read only)</h6>
+<h6> <code>read_invitation_time</code>  <code>(string,null, read only)</code> </h6>
+
+
+
+<div class="json-schema">
+
+</div>
+
+<h6> <code>rejected_time</code>  <code>(string,null, read only)</code> </h6>
+
+
+
+<div class="json-schema">
+
+</div>
+
+<h6> <code>rejection_reason</code>  <code>(string,null, read only)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -7752,7 +7912,8 @@ reject reason (<code>allow_reject_reason</code>).</p>
 
 </div>
 
-<h6><code>sign_success_redirect_url</code> (string,null)</h6>
+<h6> <code>sign_success_redirect_url</code>  <code>(string,null)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -7762,7 +7923,8 @@ reject reason (<code>allow_reject_reason</code>).</p>
 
 </div>
 
-<h6><code>reject_redirect_url</code> (string,null)</h6>
+<h6> <code>reject_redirect_url</code>  <code>(string,null)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -7772,28 +7934,8 @@ reject reason (<code>allow_reject_reason</code>).</p>
 
 </div>
 
-<h6><code>email_delivery_status</code> <code>(string, enum)</code></h6>
+<h6> <code>email_delivery_status</code>  <code>(string, enum)</code> </h6>
 
-
-<div class="json-schema">
-
-<p>The current delivery status.</p>
-
-
-<p>The value of this property must be one of the following enum values:</p>
-
-<ul>
-
-<li><code>"unknown"</code></li>
-<li><code>"not_delivered"</code></li>
-<li><code>"delivered"</code></li>
-<li><code>"deferred"</code></li>
-
-</ul>
-
-</div>
-
-<h6><code>mobile_delivery_status</code> <code>(string, enum)</code></h6>
 
 
 <div class="json-schema">
@@ -7814,14 +7956,38 @@ reject reason (<code>allow_reject_reason</code>).</p>
 
 </div>
 
-<h6><code>csv</code> (array,null)</h6>
+<h6> <code>mobile_delivery_status</code>  <code>(string, enum)</code> </h6>
+
+
+
+<div class="json-schema">
+
+<p>The current delivery status.</p>
+
+
+<p>The value of this property must be one of the following enum values:</p>
+
+<ul>
+
+<li><code>"unknown"</code></li>
+<li><code>"not_delivered"</code></li>
+<li><code>"delivered"</code></li>
+<li><code>"deferred"</code></li>
+
+</ul>
+
+</div>
+
+<h6> <code>csv</code>  <code>(array,null)</code> </h6>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h6><code>delivery_method</code> (string, enum)</h6>
+<h6> <code>delivery_method</code>  <code>(string, enum)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -7846,7 +8012,8 @@ interface. Furthermore, <code>pad</code> delivery is referred to as &quot;In-per
 
 </div>
 
-<h6><code>authentication_method_to_view</code> (string, enum)</h6>
+<h6> <code>authentication_method_to_view</code>  <code>(string, enum)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -7873,7 +8040,8 @@ interface. Furthermore, <code>pad</code> delivery is referred to as &quot;In-per
 
 </div>
 
-<h6><code>authentication_method_to_view_archived</code> (string, enum)</h6>
+<h6> <code>authentication_method_to_view_archived</code>  <code>(string, enum)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -7900,7 +8068,8 @@ interface. Furthermore, <code>pad</code> delivery is referred to as &quot;In-per
 
 </div>
 
-<h6><code>authentication_method_to_sign</code> (string, enum)</h6>
+<h6> <code>authentication_method_to_sign</code>  <code>(string, enum)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -7924,7 +8093,8 @@ interface. Furthermore, <code>pad</code> delivery is referred to as &quot;In-per
 
 </div>
 
-<h6><code>confirmation_delivery_method</code> (string, enum)</h6>
+<h6> <code>confirmation_delivery_method</code>  <code>(string, enum)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -7957,7 +8127,8 @@ interface. Furthermore, <code>pad</code> delivery is referred to as &quot;In-per
 
 </div>
 
-<h6><code>allows_highlighting</code> (boolean)</h6>
+<h6> <code>allows_highlighting</code>  <code>(boolean)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -7975,7 +8146,8 @@ assist contract review.</p>
 
 </div>
 
-<h6><code>hide_personal_number</code> (boolean)</h6>
+<h6> <code>hide_personal_number</code>  <code>(boolean)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -7994,7 +8166,8 @@ field does not have any placements.</p>
 
 </div>
 
-<h6><code>highlighted_pages</code> (array, read only)</h6>
+<h6> <code>highlighted_pages</code>  <code>(array, read only)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -8008,14 +8181,16 @@ in the document file PDF until after the document is closed.</p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>page</code> (integer)</h6>
+<h6> <code>page</code>  <code>(integer)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -8026,7 +8201,8 @@ Each signatory can only have one highlight per page.</p>
 
 </div>
 
-<h6><code>file_id</code> (string)</h6>
+<h6> <code>file_id</code>  <code>(string)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -8044,7 +8220,8 @@ closed.</p>
 
 </div>
 
-<h6><code>attachments</code> (array)</h6>
+<h6> <code>attachments</code>  <code>(array)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -8053,7 +8230,8 @@ closed.</p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -8064,7 +8242,8 @@ Attachments requested from viewing only parties have no effect.</p>
 
 <p>This object has the following properties:</p>
 
-<h6><code>name</code> (string)</h6>
+<h6> <code>name</code>  <code>(string)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -8075,7 +8254,8 @@ Will be visible to the signatory when signing the document.</p>
 
 </div>
 
-<h6><code>description</code> (string)</h6>
+<h6> <code>description</code>  <code>(string)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -8087,7 +8267,8 @@ the attachment name.</p>
 
 </div>
 
-<h6><code>required</code> (boolean)</h6>
+<h6> <code>required</code>  <code>(boolean)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -8101,17 +8282,8 @@ when signing.</p>
 
 </div>
 
-<h6><code>file_id</code> (string)</h6>
+<h6> <code>file_id</code>  <code>(string)</code> </h6>
 
-
-<div class="json-schema">
-
-<p>Will be present if and when the party uploads this attachment.</p>
-
-
-</div>
-
-<h6><code>file_name</code> (string)</h6>
 
 
 <div class="json-schema">
@@ -8121,11 +8293,23 @@ when signing.</p>
 
 </div>
 
+<h6> <code>file_name</code>  <code>(string)</code> </h6>
+
+
+
+<div class="json-schema">
+
+<p>Will be present if and when the party uploads this attachment.</p>
+
+
+</div>
+
 </div>
 
 </div>
 
-<h6><code>api_delivery_url</code> (string,null)</h6>
+<h6> <code>api_delivery_url</code>  <code>(string,null)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -8140,7 +8324,8 @@ and will only be visible when accessing the document as the author.</p>
 
 </div>
 
-<h6><code>consent_module</code> </h6>
+<h6> <code>consent_module</code>  </h6>
+
 
 
 <div class="json-schema">
@@ -8148,14 +8333,16 @@ and will only be visible when accessing the document as the author.</p>
 <p>The value of this property must match <em>exactly one</em> of the following schemas:</p>
 
 
-<h6>(null)</h6>
+<h6> <code>(null)</code> </h6>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -8167,7 +8354,8 @@ or the negative option specified.</p>
 
 <p>This object has the following properties:</p>
 
-<h6><code>title</code> (string)</h6>
+<h6> <code>title</code>  <code>(string)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -8177,21 +8365,24 @@ or the negative option specified.</p>
 
 </div>
 
-<h6><code>questions</code> (array)</h6>
+<h6> <code>questions</code>  <code>(array)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>title</code> (string)</h6>
+<h6> <code>title</code>  <code>(string)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -8201,21 +8392,24 @@ or the negative option specified.</p>
 
 </div>
 
-<h6><code>positive_option</code> (string)</h6>
+<h6> <code>positive_option</code>  <code>(string)</code> </h6>
 
-
-<div class="json-schema">
-
-</div>
-
-<h6><code>negative_option</code> (string)</h6>
 
 
 <div class="json-schema">
 
 </div>
 
-<h6><code>response</code> (boolean)</h6>
+<h6> <code>negative_option</code>  <code>(string)</code> </h6>
+
+
+
+<div class="json-schema">
+
+</div>
+
+<h6> <code>response</code>  <code>(boolean)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -8227,7 +8421,8 @@ when the signatory selected the negative response.</p>
 
 </div>
 
-<h6><code>detailed_description</code> (object)</h6>
+<h6> <code>detailed_description</code>  <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -8237,7 +8432,8 @@ when the signatory selected the negative response.</p>
 
 <p>The <code>detailed_description</code> object has the following properties:</p>
 
-<h6><code>title</code> (string)</h6>
+<h6> <code>title</code>  <code>(string)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -8247,7 +8443,8 @@ when the signatory selected the negative response.</p>
 
 </div>
 
-<h6><code>text</code> (string)</h6>
+<h6> <code>text</code>  <code>(string)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -8271,7 +8468,8 @@ when the signatory selected the negative response.</p>
 
 </div>
 
-<h4><code>file</code> <code>(object)</code></h4>
+<h4> <code>file</code>  <code>(object)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -8282,23 +8480,26 @@ when the signatory selected the negative response.</p>
 
 <p>The <code>file</code> object has the following properties:</p>
 
-<h5><code>id</code> (string, read only)</h5>
+<h5> <code>id</code>  <code>(string, read only)</code> </h5>
 
-
-<div class="json-schema">
-
-</div>
-
-<h5><code>name</code> (string, read only)</h5>
 
 
 <div class="json-schema">
 
 </div>
 
+<h5> <code>name</code>  <code>(string, read only)</code> </h5>
+
+
+
+<div class="json-schema">
+
 </div>
 
-<h4><code>sealed_file</code> </h4>
+</div>
+
+<h4> <code>sealed_file</code>  </h4>
+
 
 
 <div class="json-schema">
@@ -8313,15 +8514,16 @@ document.</p>
 <p>The value of this property must match <em>exactly one</em> of the following schemas:</p>
 
 
-<h5>(null)</h5>
+<h5> <code>(null)</code> </h5>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h5>File</h5>
-<code>(object)</code>
+<h5> File <code>(object)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -8332,25 +8534,28 @@ document.</p>
 
 <p>This object has the following properties:</p>
 
-<h6><code>id</code> (string, read only)</h6>
+<h6> <code>id</code>  <code>(string, read only)</code> </h6>
 
-
-<div class="json-schema">
-
-</div>
-
-<h6><code>name</code> (string, read only)</h6>
 
 
 <div class="json-schema">
 
 </div>
 
+<h6> <code>name</code>  <code>(string, read only)</code> </h6>
+
+
+
+<div class="json-schema">
+
+</div>
+
 </div>
 
 </div>
 
-<h4><code>author_attachments</code> (array, read only)</h4>
+<h4> <code>author_attachments</code>  <code>(array, read only)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -8362,46 +8567,52 @@ attachments&quot; (<code>/{document_id}/setattachments</code>) API call.</p>
 
 <p>All array elements must be of type:</p>
 
-<h5>(object)</h5>
+<h5> <code>(object)</code> </h5>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>name</code> (string, read only)</h6>
+<h6> <code>name</code>  <code>(string, read only)</code> </h6>
 
-
-<div class="json-schema">
-
-</div>
-
-<h6><code>required</code> (boolean, read only)</h6>
 
 
 <div class="json-schema">
 
 </div>
 
-<h6><code>add_to_sealed_file</code> (boolean, read only)</h6>
+<h6> <code>required</code>  <code>(boolean, read only)</code> </h6>
 
-
-<div class="json-schema">
-
-</div>
-
-<h6><code>file_id</code> (string)</h6>
 
 
 <div class="json-schema">
 
 </div>
 
+<h6> <code>add_to_sealed_file</code>  <code>(boolean, read only)</code> </h6>
+
+
+
+<div class="json-schema">
+
+</div>
+
+<h6> <code>file_id</code>  <code>(string)</code> </h6>
+
+
+
+<div class="json-schema">
+
+</div>
+
 </div>
 
 </div>
 
-<h4><code>ctime</code> (string, read only)</h4>
+<h4> <code>ctime</code>  <code>(string, read only)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -8411,7 +8622,8 @@ attachments&quot; (<code>/{document_id}/setattachments</code>) API call.</p>
 
 </div>
 
-<h4><code>mtime</code> (string, read only)</h4>
+<h4> <code>mtime</code>  <code>(string, read only)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -8421,7 +8633,8 @@ attachments&quot; (<code>/{document_id}/setattachments</code>) API call.</p>
 
 </div>
 
-<h4><code>timeout_time</code> (string,null, read only)</h4>
+<h4> <code>timeout_time</code>  <code>(string,null, read only)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -8431,14 +8644,16 @@ attachments&quot; (<code>/{document_id}/setattachments</code>) API call.</p>
 
 </div>
 
-<h4><code>auto_remind_time</code> (string,null, read only)</h4>
+<h4> <code>auto_remind_time</code>  <code>(string,null, read only)</code> </h4>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h4><code>status</code> <code>(string, enum)</code></h4>
+<h4> <code>status</code>  <code>(string, enum)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -8467,7 +8682,8 @@ be changed.</p>
 
 </div>
 
-<h4><code>days_to_sign</code> (integer)</h4>
+<h4> <code>days_to_sign</code>  <code>(integer)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -8476,21 +8692,24 @@ be changed.</p>
 
 </div>
 
-<h4><code>days_to_remind</code> (integer,null)</h4>
+<h4> <code>days_to_remind</code>  <code>(integer,null)</code> </h4>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h4><code>display_options</code> (object)</h4>
+<h4> <code>display_options</code>  <code>(object)</code> </h4>
+
 
 
 <div class="json-schema">
 
 <p>The <code>display_options</code> object has the following properties:</p>
 
-<h5><code>show_header</code> (boolean)</h5>
+<h5> <code>show_header</code>  <code>(boolean)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -8500,7 +8719,8 @@ be changed.</p>
 
 </div>
 
-<h5><code>show_pdf_download</code> (boolean)</h5>
+<h5> <code>show_pdf_download</code>  <code>(boolean)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -8510,7 +8730,8 @@ be changed.</p>
 
 </div>
 
-<h5><code>show_reject_option</code> (boolean)</h5>
+<h5> <code>show_reject_option</code>  <code>(boolean)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -8520,7 +8741,8 @@ be changed.</p>
 
 </div>
 
-<h5><code>allow_reject_reason</code> (boolean)</h5>
+<h5> <code>allow_reject_reason</code>  <code>(boolean)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -8531,7 +8753,8 @@ rejecting a document.</p>
 
 </div>
 
-<h5><code>show_footer</code> (boolean)</h5>
+<h5> <code>show_footer</code>  <code>(boolean)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -8541,7 +8764,8 @@ rejecting a document.</p>
 
 </div>
 
-<h5><code>document_is_receipt</code> (boolean)</h5>
+<h5> <code>document_is_receipt</code>  <code>(boolean)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -8555,7 +8779,8 @@ necessary.</p>
 
 </div>
 
-<h5><code>show_arrow</code> (boolean)</h5>
+<h5> <code>show_arrow</code>  <code>(boolean)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -8567,7 +8792,8 @@ necessary.</p>
 
 </div>
 
-<h4><code>invitation_message</code> (string)</h4>
+<h4> <code>invitation_message</code>  <code>(string)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -8581,7 +8807,8 @@ process when using email invitation.</p>
 
 </div>
 
-<h4><code>sms_invitation_message</code> (string)</h4>
+<h4> <code>sms_invitation_message</code>  <code>(string)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -8595,7 +8822,8 @@ process when using SMS invitation.</p>
 
 </div>
 
-<h4><code>confirmation_message</code> (string)</h4>
+<h4> <code>confirmation_message</code>  <code>(string)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -8609,7 +8837,8 @@ been signed.</p>
 
 </div>
 
-<h4><code>sms_confirmation_message</code> (string)</h4>
+<h4> <code>sms_confirmation_message</code>  <code>(string)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -8623,7 +8852,8 @@ been signed when using SMS confirmation.</p>
 
 </div>
 
-<h4><code>lang</code> <code>(string, enum)</code></h4>
+<h4> <code>lang</code>  <code>(string, enum)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -8656,7 +8886,8 @@ been signed when using SMS confirmation.</p>
 
 </div>
 
-<h4><code>api_callback_url</code> (string,null)</h4>
+<h4> <code>api_callback_url</code>  <code>(string,null)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -8667,7 +8898,8 @@ been signed when using SMS confirmation.</p>
 
 </div>
 
-<h4><code>object_version</code> (integer, read only)</h4>
+<h4> <code>object_version</code>  <code>(integer, read only)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -8687,21 +8919,24 @@ application with offline capabilities.</p>
 
 </div>
 
-<h4><code>access_token</code> (string, read only)</h4>
+<h4> <code>access_token</code>  <code>(string, read only)</code> </h4>
 
-
-<div class="json-schema">
-
-</div>
-
-<h4><code>timezone</code> (string)</h4>
 
 
 <div class="json-schema">
 
 </div>
 
-<h4><code>tags</code> (array)</h4>
+<h4> <code>timezone</code>  <code>(string)</code> </h4>
+
+
+
+<div class="json-schema">
+
+</div>
+
+<h4> <code>tags</code>  <code>(array)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -8715,39 +8950,44 @@ The list API call can filter based on document tags.</p>
 
 <p>All array elements must be of type:</p>
 
-<h5>(object)</h5>
+<h5> <code>(object)</code> </h5>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>name</code> (string)</h6>
+<h6> <code>name</code>  <code>(string)</code> </h6>
 
-
-<div class="json-schema">
-
-</div>
-
-<h6><code>value</code> (string)</h6>
 
 
 <div class="json-schema">
 
 </div>
 
-</div>
+<h6> <code>value</code>  <code>(string)</code> </h6>
 
-</div>
-
-<h4><code>is_template</code> (boolean)</h4>
 
 
 <div class="json-schema">
 
 </div>
 
-<h4><code>is_saved</code> (boolean)</h4>
+</div>
+
+</div>
+
+<h4> <code>is_template</code>  <code>(boolean)</code> </h4>
+
+
+
+<div class="json-schema">
+
+</div>
+
+<h4> <code>is_saved</code>  <code>(boolean)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -8757,35 +8997,40 @@ The list API call can filter based on document tags.</p>
 
 </div>
 
-<h4><code>is_shared</code> (boolean, read only)</h4>
+<h4> <code>is_shared</code>  <code>(boolean, read only)</code> </h4>
 
-
-<div class="json-schema">
-
-</div>
-
-<h4><code>is_trashed</code> (boolean, read only)</h4>
 
 
 <div class="json-schema">
 
 </div>
 
-<h4><code>is_deleted</code> (boolean, read only)</h4>
+<h4> <code>is_trashed</code>  <code>(boolean, read only)</code> </h4>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h4><code>viewer</code> (object)</h4>
+<h4> <code>is_deleted</code>  <code>(boolean, read only)</code> </h4>
+
+
+
+<div class="json-schema">
+
+</div>
+
+<h4> <code>viewer</code>  <code>(object)</code> </h4>
+
 
 
 <div class="json-schema">
 
 <p>The <code>viewer</code> object has the following properties:</p>
 
-<h5><code>role</code> (string, enum)</h5>
+<h5> <code>role</code>  <code>(string, enum)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -8802,7 +9047,8 @@ The list API call can filter based on document tags.</p>
 
 </div>
 
-<h5><code>signatory_id</code> (string)</h5>
+<h5> <code>signatory_id</code>  <code>(string)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -8879,28 +9125,32 @@ The user group metadata as a JSON.
 
 <p>This object has the following properties:</p>
 
-<h4><code>id</code> (string)</h4>
+<h4> <code>id</code>  <code>(string)</code> </h4>
 
-
-<div class="json-schema">
-
-</div>
-
-<h4><code>parent_id</code> (string)</h4>
 
 
 <div class="json-schema">
 
 </div>
 
-<h4><code>name</code> (string)</h4>
+<h4> <code>parent_id</code>  <code>(string)</code> </h4>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h4><code>children</code> (array)</h4>
+<h4> <code>name</code>  <code>(string)</code> </h4>
+
+
+
+<div class="json-schema">
+
+</div>
+
+<h4> <code>children</code>  <code>(array)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -8909,32 +9159,36 @@ The user group metadata as a JSON.
 
 <p>All array elements must be of type:</p>
 
-<h5>(object)</h5>
+<h5> <code>(object)</code> </h5>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>id</code> (string)</h6>
+<h6> <code>id</code>  <code>(string)</code> </h6>
 
-
-<div class="json-schema">
-
-</div>
-
-<h6><code>name</code> (string)</h6>
 
 
 <div class="json-schema">
 
 </div>
 
+<h6> <code>name</code>  <code>(string)</code> </h6>
+
+
+
+<div class="json-schema">
+
+</div>
+
 </div>
 
 </div>
 
-<h4><code>settings</code> <code>(object)</code></h4>
+<h4> <code>settings</code>  <code>(object)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -8944,21 +9198,24 @@ The user group metadata as a JSON.
 
 <p>The <code>settings</code> object has the following properties:</p>
 
-<h5><code>inherited_from</code> (string)</h5>
+<h5> <code>inherited_from</code>  <code>(string)</code> </h5>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h5><code>data_retention_policy</code> (object)</h5>
+<h5> <code>data_retention_policy</code>  <code>(object)</code> </h5>
+
 
 
 <div class="json-schema">
 
 <p>The <code>data_retention_policy</code> object has the following properties:</p>
 
-<h6><code>idle_doc_timeout_preparation</code> (integer)</h6>
+<h6> <code>idle_doc_timeout_preparation</code>  <code>(integer)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -8968,7 +9225,8 @@ The user group metadata as a JSON.
 
 </div>
 
-<h6><code>idle_doc_timeout_closed</code> (integer)</h6>
+<h6> <code>idle_doc_timeout_closed</code>  <code>(integer)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -8978,7 +9236,8 @@ The user group metadata as a JSON.
 
 </div>
 
-<h6><code>idle_doc_timeout_canceled</code> (integer)</h6>
+<h6> <code>idle_doc_timeout_canceled</code>  <code>(integer)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -8988,7 +9247,8 @@ The user group metadata as a JSON.
 
 </div>
 
-<h6><code>idle_doc_timeout_timedout</code> (integer)</h6>
+<h6> <code>idle_doc_timeout_timedout</code>  <code>(integer)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -8998,7 +9258,8 @@ The user group metadata as a JSON.
 
 </div>
 
-<h6><code>idle_doc_timeout_rejected</code> (integer)</h6>
+<h6> <code>idle_doc_timeout_rejected</code>  <code>(integer)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -9008,7 +9269,8 @@ The user group metadata as a JSON.
 
 </div>
 
-<h6><code>idle_doc_timeout_error</code> (integer)</h6>
+<h6> <code>idle_doc_timeout_error</code>  <code>(integer)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -9018,7 +9280,8 @@ The user group metadata as a JSON.
 
 </div>
 
-<h6><code>immediate_trash</code> (boolean)</h6>
+<h6> <code>immediate_trash</code>  <code>(boolean)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -9029,7 +9292,8 @@ The user group metadata as a JSON.
 
 </div>
 
-<h4><code>contact_details</code> <code>(object)</code></h4>
+<h4> <code>contact_details</code>  <code>(object)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -9039,67 +9303,76 @@ The user group metadata as a JSON.
 
 <p>The <code>contact_details</code> object has the following properties:</p>
 
-<h5><code>inherited_from</code> (string)</h5>
+<h5> <code>inherited_from</code>  <code>(string)</code> </h5>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h5><code>address</code> (object)</h5>
+<h5> <code>address</code>  <code>(object)</code> </h5>
+
 
 
 <div class="json-schema">
 
 <p>The <code>address</code> object has the following properties:</p>
 
-<h6><code>company_number</code> (string)</h6>
+<h6> <code>company_number</code>  <code>(string)</code> </h6>
 
-
-<div class="json-schema">
-
-</div>
-
-<h6><code>company_name</code> (string)</h6>
 
 
 <div class="json-schema">
 
 </div>
 
-<h6><code>address</code> (string)</h6>
+<h6> <code>company_name</code>  <code>(string)</code> </h6>
 
-
-<div class="json-schema">
-
-</div>
-
-<h6><code>zip</code> (string)</h6>
 
 
 <div class="json-schema">
 
 </div>
 
-<h6><code>city</code> (string)</h6>
+<h6> <code>address</code>  <code>(string)</code> </h6>
 
-
-<div class="json-schema">
-
-</div>
-
-<h6><code>country</code> (string)</h6>
 
 
 <div class="json-schema">
 
 </div>
 
+<h6> <code>zip</code>  <code>(string)</code> </h6>
+
+
+
+<div class="json-schema">
+
+</div>
+
+<h6> <code>city</code>  <code>(string)</code> </h6>
+
+
+
+<div class="json-schema">
+
+</div>
+
+<h6> <code>country</code>  <code>(string)</code> </h6>
+
+
+
+<div class="json-schema">
+
+</div>
+
 </div>
 
 </div>
 
-<h4><code>tags</code> <code>(array)</code></h4>
+<h4> <code>tags</code>  <code>(array)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -9115,21 +9388,24 @@ Other value types lead to 400 Bad Request response.</p>
 
 <p>All array elements must be of type:</p>
 
-<h5>(object)</h5>
+<h5> <code>(object)</code> </h5>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>name</code> (string)</h6>
+<h6> <code>name</code>  <code>(string)</code> </h6>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h6><code>value</code> (string)</h6>
+<h6> <code>value</code>  <code>(string)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -9231,28 +9507,32 @@ The user group metadata as a JSON (with Inheritable Previews).
 
 <p>This object has the following properties:</p>
 
-<h4><code>id</code> (string)</h4>
+<h4> <code>id</code>  <code>(string)</code> </h4>
 
-
-<div class="json-schema">
-
-</div>
-
-<h4><code>parent_id</code> (string)</h4>
 
 
 <div class="json-schema">
 
 </div>
 
-<h4><code>name</code> (string)</h4>
+<h4> <code>parent_id</code>  <code>(string)</code> </h4>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h4><code>children</code> (array)</h4>
+<h4> <code>name</code>  <code>(string)</code> </h4>
+
+
+
+<div class="json-schema">
+
+</div>
+
+<h4> <code>children</code>  <code>(array)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -9261,32 +9541,36 @@ The user group metadata as a JSON (with Inheritable Previews).
 
 <p>All array elements must be of type:</p>
 
-<h5>(object)</h5>
+<h5> <code>(object)</code> </h5>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>id</code> (string)</h6>
+<h6> <code>id</code>  <code>(string)</code> </h6>
 
-
-<div class="json-schema">
-
-</div>
-
-<h6><code>name</code> (string)</h6>
 
 
 <div class="json-schema">
 
 </div>
 
+<h6> <code>name</code>  <code>(string)</code> </h6>
+
+
+
+<div class="json-schema">
+
+</div>
+
 </div>
 
 </div>
 
-<h4><code>settings</code> <code>(object)</code></h4>
+<h4> <code>settings</code>  <code>(object)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -9296,21 +9580,24 @@ The user group metadata as a JSON (with Inheritable Previews).
 
 <p>The <code>settings</code> object has the following properties:</p>
 
-<h5><code>inherited_from</code> (string)</h5>
+<h5> <code>inherited_from</code>  <code>(string)</code> </h5>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h5><code>data_retention_policy</code> (object)</h5>
+<h5> <code>data_retention_policy</code>  <code>(object)</code> </h5>
+
 
 
 <div class="json-schema">
 
 <p>The <code>data_retention_policy</code> object has the following properties:</p>
 
-<h6><code>idle_doc_timeout_preparation</code> (integer)</h6>
+<h6> <code>idle_doc_timeout_preparation</code>  <code>(integer)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -9320,7 +9607,8 @@ The user group metadata as a JSON (with Inheritable Previews).
 
 </div>
 
-<h6><code>idle_doc_timeout_closed</code> (integer)</h6>
+<h6> <code>idle_doc_timeout_closed</code>  <code>(integer)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -9330,7 +9618,8 @@ The user group metadata as a JSON (with Inheritable Previews).
 
 </div>
 
-<h6><code>idle_doc_timeout_canceled</code> (integer)</h6>
+<h6> <code>idle_doc_timeout_canceled</code>  <code>(integer)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -9340,7 +9629,8 @@ The user group metadata as a JSON (with Inheritable Previews).
 
 </div>
 
-<h6><code>idle_doc_timeout_timedout</code> (integer)</h6>
+<h6> <code>idle_doc_timeout_timedout</code>  <code>(integer)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -9350,7 +9640,8 @@ The user group metadata as a JSON (with Inheritable Previews).
 
 </div>
 
-<h6><code>idle_doc_timeout_rejected</code> (integer)</h6>
+<h6> <code>idle_doc_timeout_rejected</code>  <code>(integer)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -9360,7 +9651,8 @@ The user group metadata as a JSON (with Inheritable Previews).
 
 </div>
 
-<h6><code>idle_doc_timeout_error</code> (integer)</h6>
+<h6> <code>idle_doc_timeout_error</code>  <code>(integer)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -9370,7 +9662,8 @@ The user group metadata as a JSON (with Inheritable Previews).
 
 </div>
 
-<h6><code>immediate_trash</code> (boolean)</h6>
+<h6> <code>immediate_trash</code>  <code>(boolean)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -9379,28 +9672,32 @@ The user group metadata as a JSON (with Inheritable Previews).
 
 </div>
 
-<h5><code>inheritable_preview</code> (object)</h5>
+<h5> <code>inheritable_preview</code>  <code>(object)</code> </h5>
+
 
 
 <div class="json-schema">
 
 <p>The <code>inheritable_preview</code> object has the following properties:</p>
 
-<h6><code>inherited_from</code> (string)</h6>
+<h6> <code>inherited_from</code>  <code>(string)</code> </h6>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h6><code>data_retention_policy</code> (object)</h6>
+<h6> <code>data_retention_policy</code>  <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>The <code>data_retention_policy</code> object has the following properties:</p>
 
-<h6><code>idle_doc_timeout_preparation</code> (integer)</h6>
+<h6> <code>idle_doc_timeout_preparation</code>  <code>(integer)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -9410,7 +9707,8 @@ The user group metadata as a JSON (with Inheritable Previews).
 
 </div>
 
-<h6><code>idle_doc_timeout_closed</code> (integer)</h6>
+<h6> <code>idle_doc_timeout_closed</code>  <code>(integer)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -9420,7 +9718,8 @@ The user group metadata as a JSON (with Inheritable Previews).
 
 </div>
 
-<h6><code>idle_doc_timeout_canceled</code> (integer)</h6>
+<h6> <code>idle_doc_timeout_canceled</code>  <code>(integer)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -9430,7 +9729,8 @@ The user group metadata as a JSON (with Inheritable Previews).
 
 </div>
 
-<h6><code>idle_doc_timeout_timedout</code> (integer)</h6>
+<h6> <code>idle_doc_timeout_timedout</code>  <code>(integer)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -9440,7 +9740,8 @@ The user group metadata as a JSON (with Inheritable Previews).
 
 </div>
 
-<h6><code>idle_doc_timeout_rejected</code> (integer)</h6>
+<h6> <code>idle_doc_timeout_rejected</code>  <code>(integer)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -9450,7 +9751,8 @@ The user group metadata as a JSON (with Inheritable Previews).
 
 </div>
 
-<h6><code>idle_doc_timeout_error</code> (integer)</h6>
+<h6> <code>idle_doc_timeout_error</code>  <code>(integer)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -9460,7 +9762,8 @@ The user group metadata as a JSON (with Inheritable Previews).
 
 </div>
 
-<h6><code>immediate_trash</code> (boolean)</h6>
+<h6> <code>immediate_trash</code>  <code>(boolean)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -9473,7 +9776,8 @@ The user group metadata as a JSON (with Inheritable Previews).
 
 </div>
 
-<h4><code>contact_details</code> <code>(object)</code></h4>
+<h4> <code>contact_details</code>  <code>(object)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -9484,134 +9788,152 @@ Preview).</p>
 
 <p>The <code>contact_details</code> object has the following properties:</p>
 
-<h5><code>inherited_from</code> (string)</h5>
+<h5> <code>inherited_from</code>  <code>(string)</code> </h5>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h5><code>address</code> (object)</h5>
+<h5> <code>address</code>  <code>(object)</code> </h5>
+
 
 
 <div class="json-schema">
 
 <p>The <code>address</code> object has the following properties:</p>
 
-<h6><code>company_number</code> (string)</h6>
+<h6> <code>company_number</code>  <code>(string)</code> </h6>
 
-
-<div class="json-schema">
-
-</div>
-
-<h6><code>company_name</code> (string)</h6>
 
 
 <div class="json-schema">
 
 </div>
 
-<h6><code>address</code> (string)</h6>
+<h6> <code>company_name</code>  <code>(string)</code> </h6>
 
-
-<div class="json-schema">
-
-</div>
-
-<h6><code>zip</code> (string)</h6>
 
 
 <div class="json-schema">
 
 </div>
 
-<h6><code>city</code> (string)</h6>
+<h6> <code>address</code>  <code>(string)</code> </h6>
 
-
-<div class="json-schema">
-
-</div>
-
-<h6><code>country</code> (string)</h6>
 
 
 <div class="json-schema">
 
 </div>
 
+<h6> <code>zip</code>  <code>(string)</code> </h6>
+
+
+
+<div class="json-schema">
+
 </div>
 
-<h5><code>inheritable_preview</code> (object)</h5>
+<h6> <code>city</code>  <code>(string)</code> </h6>
+
+
+
+<div class="json-schema">
+
+</div>
+
+<h6> <code>country</code>  <code>(string)</code> </h6>
+
+
+
+<div class="json-schema">
+
+</div>
+
+</div>
+
+<h5> <code>inheritable_preview</code>  <code>(object)</code> </h5>
+
 
 
 <div class="json-schema">
 
 <p>The <code>inheritable_preview</code> object has the following properties:</p>
 
-<h6><code>inherited_from</code> (string)</h6>
+<h6> <code>inherited_from</code>  <code>(string)</code> </h6>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h6><code>address</code> (object)</h6>
+<h6> <code>address</code>  <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>The <code>address</code> object has the following properties:</p>
 
-<h6><code>company_number</code> (string)</h6>
+<h6> <code>company_number</code>  <code>(string)</code> </h6>
 
-
-<div class="json-schema">
-
-</div>
-
-<h6><code>company_name</code> (string)</h6>
 
 
 <div class="json-schema">
 
 </div>
 
-<h6><code>address</code> (string)</h6>
+<h6> <code>company_name</code>  <code>(string)</code> </h6>
 
-
-<div class="json-schema">
-
-</div>
-
-<h6><code>zip</code> (string)</h6>
 
 
 <div class="json-schema">
 
 </div>
 
-<h6><code>city</code> (string)</h6>
+<h6> <code>address</code>  <code>(string)</code> </h6>
 
-
-<div class="json-schema">
-
-</div>
-
-<h6><code>country</code> (string)</h6>
 
 
 <div class="json-schema">
 
 </div>
 
+<h6> <code>zip</code>  <code>(string)</code> </h6>
+
+
+
+<div class="json-schema">
+
 </div>
+
+<h6> <code>city</code>  <code>(string)</code> </h6>
+
+
+
+<div class="json-schema">
+
+</div>
+
+<h6> <code>country</code>  <code>(string)</code> </h6>
+
+
+
+<div class="json-schema">
 
 </div>
 
 </div>
 
-<h4><code>tags</code> <code>(array)</code></h4>
+</div>
+
+</div>
+
+<h4> <code>tags</code>  <code>(array)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -9627,21 +9949,24 @@ Other value types lead to 400 Bad Request response.</p>
 
 <p>All array elements must be of type:</p>
 
-<h5>(object)</h5>
+<h5> <code>(object)</code> </h5>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>name</code> (string)</h6>
+<h6> <code>name</code>  <code>(string)</code> </h6>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h6><code>value</code> (string)</h6>
+<h6> <code>value</code>  <code>(string)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -9681,7 +10006,8 @@ The JSON structured errors returned by the API.
 
 <p>This object has the following properties:</p>
 
-<h4><code>error_type</code> (string, enum)</h4>
+<h4> <code>error_type</code>  <code>(string, enum)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -9710,14 +10036,16 @@ The JSON structured errors returned by the API.
 
 </div>
 
-<h4><code>error_message</code> (string)</h4>
+<h4> <code>error_message</code>  <code>(string)</code> </h4>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h4><code>http_code</code> (integer, enum)</h4>
+<h4> <code>http_code</code>  <code>(integer, enum)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -9969,7 +10297,8 @@ It is a core data structure used throughout the Scrive Document API.</p>
 
 <p>This object has the following properties:</p>
 
-<h3><code>id</code> (string, read only)</h3>
+<h3> <code>id</code>  <code>(string, read only)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -9980,7 +10309,8 @@ It is a core data structure used throughout the Scrive Document API.</p>
 
 </div>
 
-<h3><code>title</code> (string)</h3>
+<h3> <code>title</code>  <code>(string)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -9992,7 +10322,8 @@ The title will be used in messages sent to the document’s parties.</p>
 
 </div>
 
-<h3><code>parties</code> (array)</h3>
+<h3> <code>parties</code>  <code>(array)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -10005,8 +10336,8 @@ on the PDF, etc.</p>
 
 <p>All array elements must be of type:</p>
 
-<h4>Signatory</h4>
-<code>(object)</code>
+<h4> Signatory <code>(object)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -10017,7 +10348,8 @@ party to a document.</p>
 
 <p>This object has the following properties:</p>
 
-<h5><code>id</code> (string, read only)</h5>
+<h5> <code>id</code>  <code>(string, read only)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -10028,7 +10360,8 @@ party to a document.</p>
 
 </div>
 
-<h5><code>user_id</code> (string,null, read only)</h5>
+<h5> <code>user_id</code>  <code>(string,null, read only)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -10039,7 +10372,8 @@ here.</p>
 
 </div>
 
-<h5><code>is_author</code> (boolean, read only)</h5>
+<h5> <code>is_author</code>  <code>(boolean, read only)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -10049,7 +10383,8 @@ here.</p>
 
 </div>
 
-<h5><code>is_signatory</code> (boolean)</h5>
+<h5> <code>is_signatory</code>  <code>(boolean)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -10064,7 +10399,8 @@ inconsistent (this is done for backwards compatibility).</p>
 
 </div>
 
-<h5><code>signatory_role</code> <code>(string, enum)</code></h5>
+<h5> <code>signatory_role</code>  <code>(string, enum)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -10086,7 +10422,8 @@ approvers can additionally approve or reject.</p>
 
 </div>
 
-<h5><code>fields</code> (array)</h5>
+<h5> <code>fields</code>  <code>(array)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -10120,8 +10457,8 @@ Similarly, a single field can have multiple placements on the document.</p>
 <p>The value of this array must match <em>at least one</em> of the following schemas:</p>
 
 
-<h6>SignatoryFieldName</h6>
-<code>(object)</code>
+<h6> SignatoryFieldName <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10131,7 +10468,8 @@ Similarly, a single field can have multiple placements on the document.</p>
 
 <p>This object has the following properties:</p>
 
-<h6><code>type</code> (string, enum, required)</h6>
+<h6> <code>type</code>  <code>(string, enum, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10149,7 +10487,8 @@ Similarly, a single field can have multiple placements on the document.</p>
 
 </div>
 
-<h6><code>order</code> (integer, enum, required)</h6>
+<h6> <code>order</code>  <code>(integer, enum, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10172,7 +10511,8 @@ signing page.</p>
 
 </div>
 
-<h6><code>value</code> (string)</h6>
+<h6> <code>value</code>  <code>(string)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10184,7 +10524,8 @@ signing page.</p>
 
 </div>
 
-<h6><code>is_obligatory</code> (boolean)</h6>
+<h6> <code>is_obligatory</code>  <code>(boolean)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10193,7 +10534,8 @@ signing page.</p>
 
 </div>
 
-<h6><code>should_be_filled_by_sender</code> (boolean)</h6>
+<h6> <code>should_be_filled_by_sender</code>  <code>(boolean)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10202,7 +10544,8 @@ signing page.</p>
 
 </div>
 
-<h6><code>placements</code> <code>(array)</code></h6>
+<h6> <code>placements</code>  <code>(array)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10220,14 +10563,16 @@ template in the document UI design view, and use those values.</p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>xrel</code> (number, required)</h6>
+<h6> <code>xrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10237,7 +10582,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>yrel</code> (number, required)</h6>
+<h6> <code>yrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10247,7 +10593,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>wrel</code> (number, required)</h6>
+<h6> <code>wrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10257,7 +10604,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>hrel</code> (number, required)</h6>
+<h6> <code>hrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10267,7 +10615,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>fsrel</code> (number, required)</h6>
+<h6> <code>fsrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10277,7 +10626,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>page</code> (integer, required)</h6>
+<h6> <code>page</code>  <code>(integer, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10287,7 +10637,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>tip</code> </h6>
+<h6> <code>tip</code>  </h6>
+
 
 
 <div class="json-schema">
@@ -10297,7 +10648,8 @@ template in the document UI design view, and use those values.</p>
 <p>The value of this property must match <em>at least one</em> of the following schemas:</p>
 
 
-<h6>(string, enum)</h6>
+<h6> <code>(string, enum)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10317,7 +10669,8 @@ to the field.</p>
 
 </div>
 
-<h6>(null)</h6>
+<h6> <code>(null)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10330,7 +10683,8 @@ depending on the field type.</p>
 
 </div>
 
-<h6><code>anchors</code> <code>(array)</code></h6>
+<h6> <code>anchors</code>  <code>(array)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10339,28 +10693,27 @@ depending on the field type.</p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>text</code> (string)</h6>
+<h6> <code>text</code>  <code>(string)</code> </h6>
 
-
-<div class="json-schema">
-
-</div>
-
-<h6><code>index</code> (integer)</h6>
 
 
 <div class="json-schema">
 
 </div>
 
-</div>
+<h6> <code>index</code>  <code>(integer)</code> </h6>
+
+
+
+<div class="json-schema">
 
 </div>
 
@@ -10370,8 +10723,12 @@ depending on the field type.</p>
 
 </div>
 
-<h6>SignatoryFieldEmailMobile</h6>
-<code>(object)</code>
+</div>
+
+</div>
+
+<h6> SignatoryFieldEmailMobile <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10381,7 +10738,8 @@ depending on the field type.</p>
 
 <p>This object has the following properties:</p>
 
-<h6><code>type</code> (string, enum, required)</h6>
+<h6> <code>type</code>  <code>(string, enum, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10400,7 +10758,8 @@ depending on the field type.</p>
 
 </div>
 
-<h6><code>value</code> (string)</h6>
+<h6> <code>value</code>  <code>(string)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10415,7 +10774,8 @@ back to information set in account settings.</p>
 
 </div>
 
-<h6><code>is_obligatory</code> (boolean)</h6>
+<h6> <code>is_obligatory</code>  <code>(boolean)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10424,7 +10784,8 @@ back to information set in account settings.</p>
 
 </div>
 
-<h6><code>should_be_filled_by_sender</code> (boolean)</h6>
+<h6> <code>should_be_filled_by_sender</code>  <code>(boolean)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10433,7 +10794,8 @@ back to information set in account settings.</p>
 
 </div>
 
-<h6><code>editable_by_signatory</code> (boolean)</h6>
+<h6> <code>editable_by_signatory</code>  <code>(boolean)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10451,7 +10813,8 @@ that this may affect your desired workflow.</p>
 
 </div>
 
-<h6><code>placements</code> <code>(array)</code></h6>
+<h6> <code>placements</code>  <code>(array)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10469,14 +10832,16 @@ template in the document UI design view, and use those values.</p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>xrel</code> (number, required)</h6>
+<h6> <code>xrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10486,7 +10851,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>yrel</code> (number, required)</h6>
+<h6> <code>yrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10496,7 +10862,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>wrel</code> (number, required)</h6>
+<h6> <code>wrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10506,7 +10873,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>hrel</code> (number, required)</h6>
+<h6> <code>hrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10516,7 +10884,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>fsrel</code> (number, required)</h6>
+<h6> <code>fsrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10526,7 +10895,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>page</code> (integer, required)</h6>
+<h6> <code>page</code>  <code>(integer, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10536,7 +10906,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>tip</code> </h6>
+<h6> <code>tip</code>  </h6>
+
 
 
 <div class="json-schema">
@@ -10546,7 +10917,8 @@ template in the document UI design view, and use those values.</p>
 <p>The value of this property must match <em>at least one</em> of the following schemas:</p>
 
 
-<h6>(string, enum)</h6>
+<h6> <code>(string, enum)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10566,7 +10938,8 @@ to the field.</p>
 
 </div>
 
-<h6>(null)</h6>
+<h6> <code>(null)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10579,7 +10952,8 @@ depending on the field type.</p>
 
 </div>
 
-<h6><code>anchors</code> <code>(array)</code></h6>
+<h6> <code>anchors</code>  <code>(array)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10588,28 +10962,27 @@ depending on the field type.</p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>text</code> (string)</h6>
+<h6> <code>text</code>  <code>(string)</code> </h6>
 
-
-<div class="json-schema">
-
-</div>
-
-<h6><code>index</code> (integer)</h6>
 
 
 <div class="json-schema">
 
 </div>
 
-</div>
+<h6> <code>index</code>  <code>(integer)</code> </h6>
+
+
+
+<div class="json-schema">
 
 </div>
 
@@ -10619,8 +10992,12 @@ depending on the field type.</p>
 
 </div>
 
-<h6>SignatoryFieldSignature</h6>
-<code>(object)</code>
+</div>
+
+</div>
+
+<h6> SignatoryFieldSignature <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10630,7 +11007,8 @@ depending on the field type.</p>
 
 <p>This object has the following properties:</p>
 
-<h6><code>type</code> (string, enum, required)</h6>
+<h6> <code>type</code>  <code>(string, enum, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10645,7 +11023,8 @@ depending on the field type.</p>
 
 </div>
 
-<h6><code>name</code> (string, required)</h6>
+<h6> <code>name</code>  <code>(string, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10657,7 +11036,8 @@ will be used in the Evidence Log as a reference.</p>
 
 </div>
 
-<h6><code>signature</code> </h6>
+<h6> <code>signature</code>  <code>(read only)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10665,7 +11045,8 @@ will be used in the Evidence Log as a reference.</p>
 <p>The value of this property must match <em>at least one</em> of the following schemas:</p>
 
 
-<h6>(null)</h6>
+<h6> <code>(null)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10675,7 +11056,8 @@ will be used in the Evidence Log as a reference.</p>
 
 </div>
 
-<h6>(string)</h6>
+<h6> <code>(string)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10687,7 +11069,8 @@ will be used in the Evidence Log as a reference.</p>
 
 </div>
 
-<h6><code>is_obligatory</code> (boolean)</h6>
+<h6> <code>is_obligatory</code>  <code>(boolean)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10696,7 +11079,8 @@ will be used in the Evidence Log as a reference.</p>
 
 </div>
 
-<h6><code>should_be_filled_by_sender</code> (boolean)</h6>
+<h6> <code>should_be_filled_by_sender</code>  <code>(boolean)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10705,7 +11089,8 @@ will be used in the Evidence Log as a reference.</p>
 
 </div>
 
-<h6><code>placements</code> <code>(array)</code></h6>
+<h6> <code>placements</code>  <code>(array)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10724,14 +11109,16 @@ template in the document UI design view, and use those values.</p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>xrel</code> (number, required)</h6>
+<h6> <code>xrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10741,7 +11128,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>yrel</code> (number, required)</h6>
+<h6> <code>yrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10751,7 +11139,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>wrel</code> (number, required)</h6>
+<h6> <code>wrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10761,7 +11150,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>hrel</code> (number, required)</h6>
+<h6> <code>hrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10771,7 +11161,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>fsrel</code> (number, required)</h6>
+<h6> <code>fsrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10781,7 +11172,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>page</code> (integer, required)</h6>
+<h6> <code>page</code>  <code>(integer, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10791,7 +11183,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>tip</code> </h6>
+<h6> <code>tip</code>  </h6>
+
 
 
 <div class="json-schema">
@@ -10801,7 +11194,8 @@ template in the document UI design view, and use those values.</p>
 <p>The value of this property must match <em>at least one</em> of the following schemas:</p>
 
 
-<h6>(string, enum)</h6>
+<h6> <code>(string, enum)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10821,7 +11215,8 @@ to the field.</p>
 
 </div>
 
-<h6>(null)</h6>
+<h6> <code>(null)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10834,7 +11229,8 @@ depending on the field type.</p>
 
 </div>
 
-<h6><code>anchors</code> <code>(array)</code></h6>
+<h6> <code>anchors</code>  <code>(array)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10843,28 +11239,27 @@ depending on the field type.</p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>text</code> (string)</h6>
+<h6> <code>text</code>  <code>(string)</code> </h6>
 
-
-<div class="json-schema">
-
-</div>
-
-<h6><code>index</code> (integer)</h6>
 
 
 <div class="json-schema">
 
 </div>
 
-</div>
+<h6> <code>index</code>  <code>(integer)</code> </h6>
+
+
+
+<div class="json-schema">
 
 </div>
 
@@ -10874,8 +11269,12 @@ depending on the field type.</p>
 
 </div>
 
-<h6>SignatoryFieldStandard</h6>
-<code>(object)</code>
+</div>
+
+</div>
+
+<h6> SignatoryFieldStandard <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10891,7 +11290,8 @@ document:</p>
 
 <p>This object has the following properties:</p>
 
-<h6><code>type</code> (string, enum, required)</h6>
+<h6> <code>type</code>  <code>(string, enum, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10911,7 +11311,8 @@ document:</p>
 
 </div>
 
-<h6><code>value</code> (string)</h6>
+<h6> <code>value</code>  <code>(string)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10926,7 +11327,8 @@ back to information set in account settings.</p>
 
 </div>
 
-<h6><code>is_obligatory</code> (boolean)</h6>
+<h6> <code>is_obligatory</code>  <code>(boolean)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10935,7 +11337,8 @@ back to information set in account settings.</p>
 
 </div>
 
-<h6><code>should_be_filled_by_sender</code> (boolean)</h6>
+<h6> <code>should_be_filled_by_sender</code>  <code>(boolean)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10944,7 +11347,8 @@ back to information set in account settings.</p>
 
 </div>
 
-<h6><code>placements</code> <code>(array)</code></h6>
+<h6> <code>placements</code>  <code>(array)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10962,14 +11366,16 @@ template in the document UI design view, and use those values.</p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>xrel</code> (number, required)</h6>
+<h6> <code>xrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10979,7 +11385,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>yrel</code> (number, required)</h6>
+<h6> <code>yrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10989,7 +11396,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>wrel</code> (number, required)</h6>
+<h6> <code>wrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -10999,7 +11407,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>hrel</code> (number, required)</h6>
+<h6> <code>hrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11009,7 +11418,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>fsrel</code> (number, required)</h6>
+<h6> <code>fsrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11019,7 +11429,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>page</code> (integer, required)</h6>
+<h6> <code>page</code>  <code>(integer, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11029,7 +11440,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>tip</code> </h6>
+<h6> <code>tip</code>  </h6>
+
 
 
 <div class="json-schema">
@@ -11039,7 +11451,8 @@ template in the document UI design view, and use those values.</p>
 <p>The value of this property must match <em>at least one</em> of the following schemas:</p>
 
 
-<h6>(string, enum)</h6>
+<h6> <code>(string, enum)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11059,7 +11472,8 @@ to the field.</p>
 
 </div>
 
-<h6>(null)</h6>
+<h6> <code>(null)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11072,7 +11486,8 @@ depending on the field type.</p>
 
 </div>
 
-<h6><code>anchors</code> <code>(array)</code></h6>
+<h6> <code>anchors</code>  <code>(array)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11081,28 +11496,27 @@ depending on the field type.</p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>text</code> (string)</h6>
+<h6> <code>text</code>  <code>(string)</code> </h6>
 
-
-<div class="json-schema">
-
-</div>
-
-<h6><code>index</code> (integer)</h6>
 
 
 <div class="json-schema">
 
 </div>
 
-</div>
+<h6> <code>index</code>  <code>(integer)</code> </h6>
+
+
+
+<div class="json-schema">
 
 </div>
 
@@ -11112,8 +11526,12 @@ depending on the field type.</p>
 
 </div>
 
-<h6>SignatoryFieldCheckbox</h6>
-<code>(object)</code>
+</div>
+
+</div>
+
+<h6> SignatoryFieldCheckbox <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11123,7 +11541,8 @@ depending on the field type.</p>
 
 <p>This object has the following properties:</p>
 
-<h6><code>type</code> (string, enum, required)</h6>
+<h6> <code>type</code>  <code>(string, enum, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11141,7 +11560,8 @@ depending on the field type.</p>
 
 </div>
 
-<h6><code>name</code> (string, required)</h6>
+<h6> <code>name</code>  <code>(string, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11153,7 +11573,8 @@ used in the Evidence Log as a reference.</p>
 
 </div>
 
-<h6><code>is_checked</code> (boolean)</h6>
+<h6> <code>is_checked</code>  <code>(boolean)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11167,7 +11588,8 @@ pre-checking the checkbox for the signatory.</p>
 
 </div>
 
-<h6><code>is_obligatory</code> (boolean)</h6>
+<h6> <code>is_obligatory</code>  <code>(boolean)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11180,7 +11602,8 @@ the document.</p>
 
 </div>
 
-<h6><code>should_be_filled_by_sender</code> (boolean)</h6>
+<h6> <code>should_be_filled_by_sender</code>  <code>(boolean)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11189,7 +11612,8 @@ the document.</p>
 
 </div>
 
-<h6><code>placements</code> (array)</h6>
+<h6> <code>placements</code>  <code>(array)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11206,14 +11630,16 @@ template in the document UI design view, and use those values.</p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>xrel</code> (number, required)</h6>
+<h6> <code>xrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11223,7 +11649,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>yrel</code> (number, required)</h6>
+<h6> <code>yrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11233,7 +11660,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>wrel</code> (number, enum, required)</h6>
+<h6> <code>wrel</code>  <code>(number, enum, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11255,7 +11683,8 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> checkbo
 
 </div>
 
-<h6><code>hrel</code> (number, enum, required)</h6>
+<h6> <code>hrel</code>  <code>(number, enum, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11273,7 +11702,8 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> checkbo
 
 </div>
 
-<h6><code>fsrel</code> (number, enum, required)</h6>
+<h6> <code>fsrel</code>  <code>(number, enum, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11291,7 +11721,8 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> checkbo
 
 </div>
 
-<h6><code>page</code> (integer, required)</h6>
+<h6> <code>page</code>  <code>(integer, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11301,7 +11732,8 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> checkbo
 
 </div>
 
-<h6><code>tip</code> </h6>
+<h6> <code>tip</code>  </h6>
+
 
 
 <div class="json-schema">
@@ -11311,7 +11743,8 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> checkbo
 <p>The value of this property must match <em>at least one</em> of the following schemas:</p>
 
 
-<h6>(string, enum)</h6>
+<h6> <code>(string, enum)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11331,7 +11764,8 @@ to the field.</p>
 
 </div>
 
-<h6>(null)</h6>
+<h6> <code>(null)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11344,7 +11778,8 @@ depending on the field type.</p>
 
 </div>
 
-<h6><code>anchors</code> <code>(array)</code></h6>
+<h6> <code>anchors</code>  <code>(array)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11353,28 +11788,27 @@ depending on the field type.</p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>text</code> (string)</h6>
+<h6> <code>text</code>  <code>(string)</code> </h6>
 
-
-<div class="json-schema">
-
-</div>
-
-<h6><code>index</code> (integer)</h6>
 
 
 <div class="json-schema">
 
 </div>
 
-</div>
+<h6> <code>index</code>  <code>(integer)</code> </h6>
+
+
+
+<div class="json-schema">
 
 </div>
 
@@ -11384,8 +11818,12 @@ depending on the field type.</p>
 
 </div>
 
-<h6>SignatoryFieldRadiogroup</h6>
-<code>(object)</code>
+</div>
+
+</div>
+
+<h6> SignatoryFieldRadiogroup <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11395,7 +11833,8 @@ depending on the field type.</p>
 
 <p>This object has the following properties:</p>
 
-<h6><code>type</code> (string, enum, required)</h6>
+<h6> <code>type</code>  <code>(string, enum, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11413,7 +11852,8 @@ depending on the field type.</p>
 
 </div>
 
-<h6><code>name</code> (string, required)</h6>
+<h6> <code>name</code>  <code>(string, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11425,7 +11865,8 @@ used in the Evidence Log as a reference.</p>
 
 </div>
 
-<h6><code>values</code> (array, required)</h6>
+<h6> <code>values</code>  <code>(array, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11442,7 +11883,8 @@ Each item must be unique and not an empty string.</strong></p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(string)</h6>
+<h6> <code>(string)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11454,7 +11896,8 @@ Each item must be unique and not an empty string.</strong></p>
 
 </div>
 
-<h6><code>placements</code> (array, required)</h6>
+<h6> <code>placements</code>  <code>(array, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11473,14 +11916,16 @@ template in the document UI design view, and use those values.</p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>xrel</code> (number, required)</h6>
+<h6> <code>xrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11490,7 +11935,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>yrel</code> (number, required)</h6>
+<h6> <code>yrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11500,7 +11946,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>wrel</code> (number, enum, required)</h6>
+<h6> <code>wrel</code>  <code>(number, enum, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11522,7 +11969,8 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> radio b
 
 </div>
 
-<h6><code>hrel</code> (number, enum, required)</h6>
+<h6> <code>hrel</code>  <code>(number, enum, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11540,7 +11988,8 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> radio b
 
 </div>
 
-<h6><code>fsrel</code> (number, enum, required)</h6>
+<h6> <code>fsrel</code>  <code>(number, enum, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11558,7 +12007,8 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> radio b
 
 </div>
 
-<h6><code>page</code> (integer, required)</h6>
+<h6> <code>page</code>  <code>(integer, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11569,7 +12019,8 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> radio b
 
 </div>
 
-<h6><code>tip</code> </h6>
+<h6> <code>tip</code>  </h6>
+
 
 
 <div class="json-schema">
@@ -11579,7 +12030,8 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> radio b
 <p>The value of this property must match <em>at least one</em> of the following schemas:</p>
 
 
-<h6>(string, enum)</h6>
+<h6> <code>(string, enum)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11599,7 +12051,8 @@ to the field.</p>
 
 </div>
 
-<h6>(null)</h6>
+<h6> <code>(null)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11612,7 +12065,8 @@ depending on the field type.</p>
 
 </div>
 
-<h6><code>anchors</code> <code>(array)</code></h6>
+<h6> <code>anchors</code>  <code>(array)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11621,28 +12075,27 @@ depending on the field type.</p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>text</code> (string)</h6>
+<h6> <code>text</code>  <code>(string)</code> </h6>
 
-
-<div class="json-schema">
-
-</div>
-
-<h6><code>index</code> (integer)</h6>
 
 
 <div class="json-schema">
 
 </div>
 
-</div>
+<h6> <code>index</code>  <code>(integer)</code> </h6>
+
+
+
+<div class="json-schema">
 
 </div>
 
@@ -11652,8 +12105,12 @@ depending on the field type.</p>
 
 </div>
 
-<h6>SignatoryFieldCustomText</h6>
-<code>(object)</code>
+</div>
+
+</div>
+
+<h6> SignatoryFieldCustomText <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11667,7 +12124,8 @@ optional regular expression-based validation mechanism via the
 
 <p>This object has the following properties:</p>
 
-<h6><code>type</code> (string, enum, required)</h6>
+<h6> <code>type</code>  <code>(string, enum, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11685,7 +12143,8 @@ optional regular expression-based validation mechanism via the
 
 </div>
 
-<h6><code>name</code> (string, required)</h6>
+<h6> <code>name</code>  <code>(string, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11697,7 +12156,8 @@ also be used in the Evidence Log as a reference.</p>
 
 </div>
 
-<h6><code>value</code> (string)</h6>
+<h6> <code>value</code>  <code>(string)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11709,7 +12169,8 @@ also be used in the Evidence Log as a reference.</p>
 
 </div>
 
-<h6><code>is_obligatory</code> (boolean)</h6>
+<h6> <code>is_obligatory</code>  <code>(boolean)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11718,7 +12179,8 @@ also be used in the Evidence Log as a reference.</p>
 
 </div>
 
-<h6><code>should_be_filled_by_sender</code> (boolean)</h6>
+<h6> <code>should_be_filled_by_sender</code>  <code>(boolean)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11727,7 +12189,8 @@ also be used in the Evidence Log as a reference.</p>
 
 </div>
 
-<h6><code>placements</code> <code>(array)</code></h6>
+<h6> <code>placements</code>  <code>(array)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11746,14 +12209,16 @@ template in the document UI design view, and use those values.</p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>xrel</code> (number, required)</h6>
+<h6> <code>xrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11763,7 +12228,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>yrel</code> (number, required)</h6>
+<h6> <code>yrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11773,7 +12239,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>wrel</code> (number, required)</h6>
+<h6> <code>wrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11783,7 +12250,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>hrel</code> (number, required)</h6>
+<h6> <code>hrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11793,7 +12261,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>fsrel</code> (number, required)</h6>
+<h6> <code>fsrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11803,7 +12272,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>page</code> (integer, required)</h6>
+<h6> <code>page</code>  <code>(integer, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11813,7 +12283,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>tip</code> </h6>
+<h6> <code>tip</code>  </h6>
+
 
 
 <div class="json-schema">
@@ -11823,7 +12294,8 @@ template in the document UI design view, and use those values.</p>
 <p>The value of this property must match <em>at least one</em> of the following schemas:</p>
 
 
-<h6>(string, enum)</h6>
+<h6> <code>(string, enum)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11843,7 +12315,8 @@ to the field.</p>
 
 </div>
 
-<h6>(null)</h6>
+<h6> <code>(null)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11856,7 +12329,8 @@ depending on the field type.</p>
 
 </div>
 
-<h6><code>anchors</code> <code>(array)</code></h6>
+<h6> <code>anchors</code>  <code>(array)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11865,28 +12339,27 @@ depending on the field type.</p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>text</code> (string)</h6>
+<h6> <code>text</code>  <code>(string)</code> </h6>
 
-
-<div class="json-schema">
-
-</div>
-
-<h6><code>index</code> (integer)</h6>
 
 
 <div class="json-schema">
 
 </div>
 
-</div>
+<h6> <code>index</code>  <code>(integer)</code> </h6>
+
+
+
+<div class="json-schema">
 
 </div>
 
@@ -11894,7 +12367,12 @@ depending on the field type.</p>
 
 </div>
 
-<h6><code>custom_validation</code> </h6>
+</div>
+
+</div>
+
+<h6> <code>custom_validation</code>  </h6>
+
 
 
 <div class="json-schema">
@@ -11902,15 +12380,16 @@ depending on the field type.</p>
 <p>The value of this property must match <em>exactly one</em> of the following schemas:</p>
 
 
-<h6>(null)</h6>
+<h6> <code>(null)</code> </h6>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h6>SignatoryFieldCustomValidation</h6>
-<code>(object)</code>
+<h6> SignatoryFieldCustomValidation <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11921,7 +12400,8 @@ custom regular expression.</p>
 
 <p>This object has the following properties:</p>
 
-<h6><code>pattern</code> (string, required)</h6>
+<h6> <code>pattern</code>  <code>(string, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11931,7 +12411,8 @@ custom regular expression.</p>
 
 </div>
 
-<h6><code>positive_example</code> (string, required)</h6>
+<h6> <code>positive_example</code>  <code>(string, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11941,7 +12422,8 @@ custom regular expression.</p>
 
 </div>
 
-<h6><code>tooltip</code> (string, required)</h6>
+<h6> <code>tooltip</code>  <code>(string, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -11959,7 +12441,8 @@ custom regular expression.</p>
 
 </div>
 
-<h5><code>sign_order</code> (integer)</h5>
+<h5> <code>sign_order</code>  <code>(integer)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -11968,35 +12451,40 @@ custom regular expression.</p>
 
 </div>
 
-<h5><code>sign_time</code> (string,null, read only)</h5>
+<h5> <code>sign_time</code>  <code>(string,null, read only)</code> </h5>
 
-
-<div class="json-schema">
-
-</div>
-
-<h5><code>seen_time</code> (string,null, read only)</h5>
 
 
 <div class="json-schema">
 
 </div>
 
-<h5><code>read_invitation_time</code> (string,null, read only)</h5>
+<h5> <code>seen_time</code>  <code>(string,null, read only)</code> </h5>
 
-
-<div class="json-schema">
-
-</div>
-
-<h5><code>rejected_time</code> (string,null, read only)</h5>
 
 
 <div class="json-schema">
 
 </div>
 
-<h5><code>rejection_reason</code> (string,null, read only)</h5>
+<h5> <code>read_invitation_time</code>  <code>(string,null, read only)</code> </h5>
+
+
+
+<div class="json-schema">
+
+</div>
+
+<h5> <code>rejected_time</code>  <code>(string,null, read only)</code> </h5>
+
+
+
+<div class="json-schema">
+
+</div>
+
+<h5> <code>rejection_reason</code>  <code>(string,null, read only)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -12009,7 +12497,8 @@ reject reason (<code>allow_reject_reason</code>).</p>
 
 </div>
 
-<h5><code>sign_success_redirect_url</code> (string,null)</h5>
+<h5> <code>sign_success_redirect_url</code>  <code>(string,null)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -12019,7 +12508,8 @@ reject reason (<code>allow_reject_reason</code>).</p>
 
 </div>
 
-<h5><code>reject_redirect_url</code> (string,null)</h5>
+<h5> <code>reject_redirect_url</code>  <code>(string,null)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -12029,28 +12519,8 @@ reject reason (<code>allow_reject_reason</code>).</p>
 
 </div>
 
-<h5><code>email_delivery_status</code> <code>(string, enum)</code></h5>
+<h5> <code>email_delivery_status</code>  <code>(string, enum)</code> </h5>
 
-
-<div class="json-schema">
-
-<p>The current delivery status.</p>
-
-
-<p>The value of this property must be one of the following enum values:</p>
-
-<ul>
-
-<li><code>"unknown"</code></li>
-<li><code>"not_delivered"</code></li>
-<li><code>"delivered"</code></li>
-<li><code>"deferred"</code></li>
-
-</ul>
-
-</div>
-
-<h5><code>mobile_delivery_status</code> <code>(string, enum)</code></h5>
 
 
 <div class="json-schema">
@@ -12071,14 +12541,38 @@ reject reason (<code>allow_reject_reason</code>).</p>
 
 </div>
 
-<h5><code>csv</code> (array,null)</h5>
+<h5> <code>mobile_delivery_status</code>  <code>(string, enum)</code> </h5>
+
+
+
+<div class="json-schema">
+
+<p>The current delivery status.</p>
+
+
+<p>The value of this property must be one of the following enum values:</p>
+
+<ul>
+
+<li><code>"unknown"</code></li>
+<li><code>"not_delivered"</code></li>
+<li><code>"delivered"</code></li>
+<li><code>"deferred"</code></li>
+
+</ul>
+
+</div>
+
+<h5> <code>csv</code>  <code>(array,null)</code> </h5>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h5><code>delivery_method</code> (string, enum)</h5>
+<h5> <code>delivery_method</code>  <code>(string, enum)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -12103,7 +12597,8 @@ interface. Furthermore, <code>pad</code> delivery is referred to as &quot;In-per
 
 </div>
 
-<h5><code>authentication_method_to_view</code> (string, enum)</h5>
+<h5> <code>authentication_method_to_view</code>  <code>(string, enum)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -12130,7 +12625,8 @@ interface. Furthermore, <code>pad</code> delivery is referred to as &quot;In-per
 
 </div>
 
-<h5><code>authentication_method_to_view_archived</code> (string, enum)</h5>
+<h5> <code>authentication_method_to_view_archived</code>  <code>(string, enum)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -12157,7 +12653,8 @@ interface. Furthermore, <code>pad</code> delivery is referred to as &quot;In-per
 
 </div>
 
-<h5><code>authentication_method_to_sign</code> (string, enum)</h5>
+<h5> <code>authentication_method_to_sign</code>  <code>(string, enum)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -12181,7 +12678,8 @@ interface. Furthermore, <code>pad</code> delivery is referred to as &quot;In-per
 
 </div>
 
-<h5><code>confirmation_delivery_method</code> (string, enum)</h5>
+<h5> <code>confirmation_delivery_method</code>  <code>(string, enum)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -12214,7 +12712,8 @@ interface. Furthermore, <code>pad</code> delivery is referred to as &quot;In-per
 
 </div>
 
-<h5><code>allows_highlighting</code> (boolean)</h5>
+<h5> <code>allows_highlighting</code>  <code>(boolean)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -12232,7 +12731,8 @@ assist contract review.</p>
 
 </div>
 
-<h5><code>hide_personal_number</code> (boolean)</h5>
+<h5> <code>hide_personal_number</code>  <code>(boolean)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -12251,7 +12751,8 @@ field does not have any placements.</p>
 
 </div>
 
-<h5><code>highlighted_pages</code> (array, read only)</h5>
+<h5> <code>highlighted_pages</code>  <code>(array, read only)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -12265,14 +12766,16 @@ in the document file PDF until after the document is closed.</p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>page</code> (integer)</h6>
+<h6> <code>page</code>  <code>(integer)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -12283,7 +12786,8 @@ Each signatory can only have one highlight per page.</p>
 
 </div>
 
-<h6><code>file_id</code> (string)</h6>
+<h6> <code>file_id</code>  <code>(string)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -12301,7 +12805,8 @@ closed.</p>
 
 </div>
 
-<h5><code>attachments</code> (array)</h5>
+<h5> <code>attachments</code>  <code>(array)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -12310,7 +12815,8 @@ closed.</p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -12321,7 +12827,8 @@ Attachments requested from viewing only parties have no effect.</p>
 
 <p>This object has the following properties:</p>
 
-<h6><code>name</code> (string)</h6>
+<h6> <code>name</code>  <code>(string)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -12332,7 +12839,8 @@ Will be visible to the signatory when signing the document.</p>
 
 </div>
 
-<h6><code>description</code> (string)</h6>
+<h6> <code>description</code>  <code>(string)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -12344,7 +12852,8 @@ the attachment name.</p>
 
 </div>
 
-<h6><code>required</code> (boolean)</h6>
+<h6> <code>required</code>  <code>(boolean)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -12358,17 +12867,8 @@ when signing.</p>
 
 </div>
 
-<h6><code>file_id</code> (string)</h6>
+<h6> <code>file_id</code>  <code>(string)</code> </h6>
 
-
-<div class="json-schema">
-
-<p>Will be present if and when the party uploads this attachment.</p>
-
-
-</div>
-
-<h6><code>file_name</code> (string)</h6>
 
 
 <div class="json-schema">
@@ -12378,11 +12878,23 @@ when signing.</p>
 
 </div>
 
+<h6> <code>file_name</code>  <code>(string)</code> </h6>
+
+
+
+<div class="json-schema">
+
+<p>Will be present if and when the party uploads this attachment.</p>
+
+
+</div>
+
 </div>
 
 </div>
 
-<h5><code>api_delivery_url</code> (string,null)</h5>
+<h5> <code>api_delivery_url</code>  <code>(string,null)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -12397,7 +12909,8 @@ and will only be visible when accessing the document as the author.</p>
 
 </div>
 
-<h5><code>consent_module</code> </h5>
+<h5> <code>consent_module</code>  </h5>
+
 
 
 <div class="json-schema">
@@ -12405,14 +12918,16 @@ and will only be visible when accessing the document as the author.</p>
 <p>The value of this property must match <em>exactly one</em> of the following schemas:</p>
 
 
-<h6>(null)</h6>
+<h6> <code>(null)</code> </h6>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -12424,7 +12939,8 @@ or the negative option specified.</p>
 
 <p>This object has the following properties:</p>
 
-<h6><code>title</code> (string)</h6>
+<h6> <code>title</code>  <code>(string)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -12434,21 +12950,24 @@ or the negative option specified.</p>
 
 </div>
 
-<h6><code>questions</code> (array)</h6>
+<h6> <code>questions</code>  <code>(array)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>title</code> (string)</h6>
+<h6> <code>title</code>  <code>(string)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -12458,21 +12977,24 @@ or the negative option specified.</p>
 
 </div>
 
-<h6><code>positive_option</code> (string)</h6>
+<h6> <code>positive_option</code>  <code>(string)</code> </h6>
 
-
-<div class="json-schema">
-
-</div>
-
-<h6><code>negative_option</code> (string)</h6>
 
 
 <div class="json-schema">
 
 </div>
 
-<h6><code>response</code> (boolean)</h6>
+<h6> <code>negative_option</code>  <code>(string)</code> </h6>
+
+
+
+<div class="json-schema">
+
+</div>
+
+<h6> <code>response</code>  <code>(boolean)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -12484,7 +13006,8 @@ when the signatory selected the negative response.</p>
 
 </div>
 
-<h6><code>detailed_description</code> (object)</h6>
+<h6> <code>detailed_description</code>  <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -12494,7 +13017,8 @@ when the signatory selected the negative response.</p>
 
 <p>The <code>detailed_description</code> object has the following properties:</p>
 
-<h6><code>title</code> (string)</h6>
+<h6> <code>title</code>  <code>(string)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -12504,7 +13028,8 @@ when the signatory selected the negative response.</p>
 
 </div>
 
-<h6><code>text</code> (string)</h6>
+<h6> <code>text</code>  <code>(string)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -12528,7 +13053,8 @@ when the signatory selected the negative response.</p>
 
 </div>
 
-<h3><code>file</code> <code>(object)</code></h3>
+<h3> <code>file</code>  <code>(object)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -12539,23 +13065,26 @@ when the signatory selected the negative response.</p>
 
 <p>The <code>file</code> object has the following properties:</p>
 
-<h4><code>id</code> (string, read only)</h4>
+<h4> <code>id</code>  <code>(string, read only)</code> </h4>
 
-
-<div class="json-schema">
-
-</div>
-
-<h4><code>name</code> (string, read only)</h4>
 
 
 <div class="json-schema">
 
 </div>
 
+<h4> <code>name</code>  <code>(string, read only)</code> </h4>
+
+
+
+<div class="json-schema">
+
 </div>
 
-<h3><code>sealed_file</code> </h3>
+</div>
+
+<h3> <code>sealed_file</code>  </h3>
+
 
 
 <div class="json-schema">
@@ -12570,15 +13099,16 @@ document.</p>
 <p>The value of this property must match <em>exactly one</em> of the following schemas:</p>
 
 
-<h4>(null)</h4>
+<h4> <code>(null)</code> </h4>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h4>File</h4>
-<code>(object)</code>
+<h4> File <code>(object)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -12589,25 +13119,28 @@ document.</p>
 
 <p>This object has the following properties:</p>
 
-<h5><code>id</code> (string, read only)</h5>
+<h5> <code>id</code>  <code>(string, read only)</code> </h5>
 
-
-<div class="json-schema">
-
-</div>
-
-<h5><code>name</code> (string, read only)</h5>
 
 
 <div class="json-schema">
 
 </div>
 
+<h5> <code>name</code>  <code>(string, read only)</code> </h5>
+
+
+
+<div class="json-schema">
+
+</div>
+
 </div>
 
 </div>
 
-<h3><code>author_attachments</code> (array, read only)</h3>
+<h3> <code>author_attachments</code>  <code>(array, read only)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -12619,46 +13152,52 @@ attachments&quot; (<code>/{document_id}/setattachments</code>) API call.</p>
 
 <p>All array elements must be of type:</p>
 
-<h4>(object)</h4>
+<h4> <code>(object)</code> </h4>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h5><code>name</code> (string, read only)</h5>
+<h5> <code>name</code>  <code>(string, read only)</code> </h5>
 
-
-<div class="json-schema">
-
-</div>
-
-<h5><code>required</code> (boolean, read only)</h5>
 
 
 <div class="json-schema">
 
 </div>
 
-<h5><code>add_to_sealed_file</code> (boolean, read only)</h5>
+<h5> <code>required</code>  <code>(boolean, read only)</code> </h5>
 
-
-<div class="json-schema">
-
-</div>
-
-<h5><code>file_id</code> (string)</h5>
 
 
 <div class="json-schema">
 
 </div>
 
+<h5> <code>add_to_sealed_file</code>  <code>(boolean, read only)</code> </h5>
+
+
+
+<div class="json-schema">
+
+</div>
+
+<h5> <code>file_id</code>  <code>(string)</code> </h5>
+
+
+
+<div class="json-schema">
+
+</div>
+
 </div>
 
 </div>
 
-<h3><code>ctime</code> (string, read only)</h3>
+<h3> <code>ctime</code>  <code>(string, read only)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -12668,7 +13207,8 @@ attachments&quot; (<code>/{document_id}/setattachments</code>) API call.</p>
 
 </div>
 
-<h3><code>mtime</code> (string, read only)</h3>
+<h3> <code>mtime</code>  <code>(string, read only)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -12678,7 +13218,8 @@ attachments&quot; (<code>/{document_id}/setattachments</code>) API call.</p>
 
 </div>
 
-<h3><code>timeout_time</code> (string,null, read only)</h3>
+<h3> <code>timeout_time</code>  <code>(string,null, read only)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -12688,14 +13229,16 @@ attachments&quot; (<code>/{document_id}/setattachments</code>) API call.</p>
 
 </div>
 
-<h3><code>auto_remind_time</code> (string,null, read only)</h3>
+<h3> <code>auto_remind_time</code>  <code>(string,null, read only)</code> </h3>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h3><code>status</code> <code>(string, enum)</code></h3>
+<h3> <code>status</code>  <code>(string, enum)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -12724,7 +13267,8 @@ be changed.</p>
 
 </div>
 
-<h3><code>days_to_sign</code> (integer)</h3>
+<h3> <code>days_to_sign</code>  <code>(integer)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -12733,21 +13277,24 @@ be changed.</p>
 
 </div>
 
-<h3><code>days_to_remind</code> (integer,null)</h3>
+<h3> <code>days_to_remind</code>  <code>(integer,null)</code> </h3>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h3><code>display_options</code> (object)</h3>
+<h3> <code>display_options</code>  <code>(object)</code> </h3>
+
 
 
 <div class="json-schema">
 
 <p>The <code>display_options</code> object has the following properties:</p>
 
-<h4><code>show_header</code> (boolean)</h4>
+<h4> <code>show_header</code>  <code>(boolean)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -12757,7 +13304,8 @@ be changed.</p>
 
 </div>
 
-<h4><code>show_pdf_download</code> (boolean)</h4>
+<h4> <code>show_pdf_download</code>  <code>(boolean)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -12767,7 +13315,8 @@ be changed.</p>
 
 </div>
 
-<h4><code>show_reject_option</code> (boolean)</h4>
+<h4> <code>show_reject_option</code>  <code>(boolean)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -12777,7 +13326,8 @@ be changed.</p>
 
 </div>
 
-<h4><code>allow_reject_reason</code> (boolean)</h4>
+<h4> <code>allow_reject_reason</code>  <code>(boolean)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -12788,7 +13338,8 @@ rejecting a document.</p>
 
 </div>
 
-<h4><code>show_footer</code> (boolean)</h4>
+<h4> <code>show_footer</code>  <code>(boolean)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -12798,7 +13349,8 @@ rejecting a document.</p>
 
 </div>
 
-<h4><code>document_is_receipt</code> (boolean)</h4>
+<h4> <code>document_is_receipt</code>  <code>(boolean)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -12812,7 +13364,8 @@ necessary.</p>
 
 </div>
 
-<h4><code>show_arrow</code> (boolean)</h4>
+<h4> <code>show_arrow</code>  <code>(boolean)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -12824,7 +13377,8 @@ necessary.</p>
 
 </div>
 
-<h3><code>invitation_message</code> (string)</h3>
+<h3> <code>invitation_message</code>  <code>(string)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -12838,7 +13392,8 @@ process when using email invitation.</p>
 
 </div>
 
-<h3><code>sms_invitation_message</code> (string)</h3>
+<h3> <code>sms_invitation_message</code>  <code>(string)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -12852,7 +13407,8 @@ process when using SMS invitation.</p>
 
 </div>
 
-<h3><code>confirmation_message</code> (string)</h3>
+<h3> <code>confirmation_message</code>  <code>(string)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -12866,7 +13422,8 @@ been signed.</p>
 
 </div>
 
-<h3><code>sms_confirmation_message</code> (string)</h3>
+<h3> <code>sms_confirmation_message</code>  <code>(string)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -12880,7 +13437,8 @@ been signed when using SMS confirmation.</p>
 
 </div>
 
-<h3><code>lang</code> <code>(string, enum)</code></h3>
+<h3> <code>lang</code>  <code>(string, enum)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -12913,7 +13471,8 @@ been signed when using SMS confirmation.</p>
 
 </div>
 
-<h3><code>api_callback_url</code> (string,null)</h3>
+<h3> <code>api_callback_url</code>  <code>(string,null)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -12924,7 +13483,8 @@ been signed when using SMS confirmation.</p>
 
 </div>
 
-<h3><code>object_version</code> (integer, read only)</h3>
+<h3> <code>object_version</code>  <code>(integer, read only)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -12944,21 +13504,24 @@ application with offline capabilities.</p>
 
 </div>
 
-<h3><code>access_token</code> (string, read only)</h3>
+<h3> <code>access_token</code>  <code>(string, read only)</code> </h3>
 
-
-<div class="json-schema">
-
-</div>
-
-<h3><code>timezone</code> (string)</h3>
 
 
 <div class="json-schema">
 
 </div>
 
-<h3><code>tags</code> (array)</h3>
+<h3> <code>timezone</code>  <code>(string)</code> </h3>
+
+
+
+<div class="json-schema">
+
+</div>
+
+<h3> <code>tags</code>  <code>(array)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -12972,39 +13535,44 @@ The list API call can filter based on document tags.</p>
 
 <p>All array elements must be of type:</p>
 
-<h4>(object)</h4>
+<h4> <code>(object)</code> </h4>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h5><code>name</code> (string)</h5>
+<h5> <code>name</code>  <code>(string)</code> </h5>
 
-
-<div class="json-schema">
-
-</div>
-
-<h5><code>value</code> (string)</h5>
 
 
 <div class="json-schema">
 
 </div>
 
-</div>
+<h5> <code>value</code>  <code>(string)</code> </h5>
 
-</div>
-
-<h3><code>is_template</code> (boolean)</h3>
 
 
 <div class="json-schema">
 
 </div>
 
-<h3><code>is_saved</code> (boolean)</h3>
+</div>
+
+</div>
+
+<h3> <code>is_template</code>  <code>(boolean)</code> </h3>
+
+
+
+<div class="json-schema">
+
+</div>
+
+<h3> <code>is_saved</code>  <code>(boolean)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -13014,35 +13582,40 @@ The list API call can filter based on document tags.</p>
 
 </div>
 
-<h3><code>is_shared</code> (boolean, read only)</h3>
+<h3> <code>is_shared</code>  <code>(boolean, read only)</code> </h3>
 
-
-<div class="json-schema">
-
-</div>
-
-<h3><code>is_trashed</code> (boolean, read only)</h3>
 
 
 <div class="json-schema">
 
 </div>
 
-<h3><code>is_deleted</code> (boolean, read only)</h3>
+<h3> <code>is_trashed</code>  <code>(boolean, read only)</code> </h3>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h3><code>viewer</code> (object)</h3>
+<h3> <code>is_deleted</code>  <code>(boolean, read only)</code> </h3>
+
+
+
+<div class="json-schema">
+
+</div>
+
+<h3> <code>viewer</code>  <code>(object)</code> </h3>
+
 
 
 <div class="json-schema">
 
 <p>The <code>viewer</code> object has the following properties:</p>
 
-<h4><code>role</code> (string, enum)</h4>
+<h4> <code>role</code>  <code>(string, enum)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -13059,7 +13632,8 @@ The list API call can filter based on document tags.</p>
 
 </div>
 
-<h4><code>signatory_id</code> (string)</h4>
+<h4> <code>signatory_id</code>  <code>(string)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -13234,7 +13808,8 @@ party to a document.</p>
 
 <p>This object has the following properties:</p>
 
-<h3><code>id</code> (string, read only)</h3>
+<h3> <code>id</code>  <code>(string, read only)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -13245,7 +13820,8 @@ party to a document.</p>
 
 </div>
 
-<h3><code>user_id</code> (string,null, read only)</h3>
+<h3> <code>user_id</code>  <code>(string,null, read only)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -13256,7 +13832,8 @@ here.</p>
 
 </div>
 
-<h3><code>is_author</code> (boolean, read only)</h3>
+<h3> <code>is_author</code>  <code>(boolean, read only)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -13266,7 +13843,8 @@ here.</p>
 
 </div>
 
-<h3><code>is_signatory</code> (boolean)</h3>
+<h3> <code>is_signatory</code>  <code>(boolean)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -13281,7 +13859,8 @@ inconsistent (this is done for backwards compatibility).</p>
 
 </div>
 
-<h3><code>signatory_role</code> <code>(string, enum)</code></h3>
+<h3> <code>signatory_role</code>  <code>(string, enum)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -13303,7 +13882,8 @@ approvers can additionally approve or reject.</p>
 
 </div>
 
-<h3><code>fields</code> (array)</h3>
+<h3> <code>fields</code>  <code>(array)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -13337,8 +13917,8 @@ Similarly, a single field can have multiple placements on the document.</p>
 <p>The value of this array must match <em>at least one</em> of the following schemas:</p>
 
 
-<h4>SignatoryFieldName</h4>
-<code>(object)</code>
+<h4> SignatoryFieldName <code>(object)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -13348,7 +13928,8 @@ Similarly, a single field can have multiple placements on the document.</p>
 
 <p>This object has the following properties:</p>
 
-<h5><code>type</code> (string, enum, required)</h5>
+<h5> <code>type</code>  <code>(string, enum, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -13366,7 +13947,8 @@ Similarly, a single field can have multiple placements on the document.</p>
 
 </div>
 
-<h5><code>order</code> (integer, enum, required)</h5>
+<h5> <code>order</code>  <code>(integer, enum, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -13389,7 +13971,8 @@ signing page.</p>
 
 </div>
 
-<h5><code>value</code> (string)</h5>
+<h5> <code>value</code>  <code>(string)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -13401,7 +13984,8 @@ signing page.</p>
 
 </div>
 
-<h5><code>is_obligatory</code> (boolean)</h5>
+<h5> <code>is_obligatory</code>  <code>(boolean)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -13410,7 +13994,8 @@ signing page.</p>
 
 </div>
 
-<h5><code>should_be_filled_by_sender</code> (boolean)</h5>
+<h5> <code>should_be_filled_by_sender</code>  <code>(boolean)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -13419,7 +14004,8 @@ signing page.</p>
 
 </div>
 
-<h5><code>placements</code> <code>(array)</code></h5>
+<h5> <code>placements</code>  <code>(array)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -13437,14 +14023,16 @@ template in the document UI design view, and use those values.</p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>xrel</code> (number, required)</h6>
+<h6> <code>xrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -13454,7 +14042,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>yrel</code> (number, required)</h6>
+<h6> <code>yrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -13464,7 +14053,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>wrel</code> (number, required)</h6>
+<h6> <code>wrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -13474,7 +14064,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>hrel</code> (number, required)</h6>
+<h6> <code>hrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -13484,7 +14075,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>fsrel</code> (number, required)</h6>
+<h6> <code>fsrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -13494,7 +14086,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>page</code> (integer, required)</h6>
+<h6> <code>page</code>  <code>(integer, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -13504,7 +14097,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>tip</code> </h6>
+<h6> <code>tip</code>  </h6>
+
 
 
 <div class="json-schema">
@@ -13514,7 +14108,8 @@ template in the document UI design view, and use those values.</p>
 <p>The value of this property must match <em>at least one</em> of the following schemas:</p>
 
 
-<h6>(string, enum)</h6>
+<h6> <code>(string, enum)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -13534,7 +14129,8 @@ to the field.</p>
 
 </div>
 
-<h6>(null)</h6>
+<h6> <code>(null)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -13547,7 +14143,8 @@ depending on the field type.</p>
 
 </div>
 
-<h6><code>anchors</code> <code>(array)</code></h6>
+<h6> <code>anchors</code>  <code>(array)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -13556,28 +14153,27 @@ depending on the field type.</p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>text</code> (string)</h6>
+<h6> <code>text</code>  <code>(string)</code> </h6>
 
-
-<div class="json-schema">
-
-</div>
-
-<h6><code>index</code> (integer)</h6>
 
 
 <div class="json-schema">
 
 </div>
 
-</div>
+<h6> <code>index</code>  <code>(integer)</code> </h6>
+
+
+
+<div class="json-schema">
 
 </div>
 
@@ -13587,8 +14183,12 @@ depending on the field type.</p>
 
 </div>
 
-<h4>SignatoryFieldEmailMobile</h4>
-<code>(object)</code>
+</div>
+
+</div>
+
+<h4> SignatoryFieldEmailMobile <code>(object)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -13598,7 +14198,8 @@ depending on the field type.</p>
 
 <p>This object has the following properties:</p>
 
-<h5><code>type</code> (string, enum, required)</h5>
+<h5> <code>type</code>  <code>(string, enum, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -13617,7 +14218,8 @@ depending on the field type.</p>
 
 </div>
 
-<h5><code>value</code> (string)</h5>
+<h5> <code>value</code>  <code>(string)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -13632,7 +14234,8 @@ back to information set in account settings.</p>
 
 </div>
 
-<h5><code>is_obligatory</code> (boolean)</h5>
+<h5> <code>is_obligatory</code>  <code>(boolean)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -13641,7 +14244,8 @@ back to information set in account settings.</p>
 
 </div>
 
-<h5><code>should_be_filled_by_sender</code> (boolean)</h5>
+<h5> <code>should_be_filled_by_sender</code>  <code>(boolean)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -13650,7 +14254,8 @@ back to information set in account settings.</p>
 
 </div>
 
-<h5><code>editable_by_signatory</code> (boolean)</h5>
+<h5> <code>editable_by_signatory</code>  <code>(boolean)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -13668,7 +14273,8 @@ that this may affect your desired workflow.</p>
 
 </div>
 
-<h5><code>placements</code> <code>(array)</code></h5>
+<h5> <code>placements</code>  <code>(array)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -13686,14 +14292,16 @@ template in the document UI design view, and use those values.</p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>xrel</code> (number, required)</h6>
+<h6> <code>xrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -13703,7 +14311,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>yrel</code> (number, required)</h6>
+<h6> <code>yrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -13713,7 +14322,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>wrel</code> (number, required)</h6>
+<h6> <code>wrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -13723,7 +14333,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>hrel</code> (number, required)</h6>
+<h6> <code>hrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -13733,7 +14344,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>fsrel</code> (number, required)</h6>
+<h6> <code>fsrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -13743,7 +14355,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>page</code> (integer, required)</h6>
+<h6> <code>page</code>  <code>(integer, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -13753,7 +14366,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>tip</code> </h6>
+<h6> <code>tip</code>  </h6>
+
 
 
 <div class="json-schema">
@@ -13763,7 +14377,8 @@ template in the document UI design view, and use those values.</p>
 <p>The value of this property must match <em>at least one</em> of the following schemas:</p>
 
 
-<h6>(string, enum)</h6>
+<h6> <code>(string, enum)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -13783,7 +14398,8 @@ to the field.</p>
 
 </div>
 
-<h6>(null)</h6>
+<h6> <code>(null)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -13796,7 +14412,8 @@ depending on the field type.</p>
 
 </div>
 
-<h6><code>anchors</code> <code>(array)</code></h6>
+<h6> <code>anchors</code>  <code>(array)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -13805,28 +14422,27 @@ depending on the field type.</p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>text</code> (string)</h6>
+<h6> <code>text</code>  <code>(string)</code> </h6>
 
-
-<div class="json-schema">
-
-</div>
-
-<h6><code>index</code> (integer)</h6>
 
 
 <div class="json-schema">
 
 </div>
 
-</div>
+<h6> <code>index</code>  <code>(integer)</code> </h6>
+
+
+
+<div class="json-schema">
 
 </div>
 
@@ -13836,8 +14452,12 @@ depending on the field type.</p>
 
 </div>
 
-<h4>SignatoryFieldSignature</h4>
-<code>(object)</code>
+</div>
+
+</div>
+
+<h4> SignatoryFieldSignature <code>(object)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -13847,7 +14467,8 @@ depending on the field type.</p>
 
 <p>This object has the following properties:</p>
 
-<h5><code>type</code> (string, enum, required)</h5>
+<h5> <code>type</code>  <code>(string, enum, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -13862,7 +14483,8 @@ depending on the field type.</p>
 
 </div>
 
-<h5><code>name</code> (string, required)</h5>
+<h5> <code>name</code>  <code>(string, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -13874,7 +14496,8 @@ will be used in the Evidence Log as a reference.</p>
 
 </div>
 
-<h5><code>signature</code> </h5>
+<h5> <code>signature</code>  <code>(read only)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -13882,7 +14505,8 @@ will be used in the Evidence Log as a reference.</p>
 <p>The value of this property must match <em>at least one</em> of the following schemas:</p>
 
 
-<h6>(null)</h6>
+<h6> <code>(null)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -13892,7 +14516,8 @@ will be used in the Evidence Log as a reference.</p>
 
 </div>
 
-<h6>(string)</h6>
+<h6> <code>(string)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -13904,7 +14529,8 @@ will be used in the Evidence Log as a reference.</p>
 
 </div>
 
-<h5><code>is_obligatory</code> (boolean)</h5>
+<h5> <code>is_obligatory</code>  <code>(boolean)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -13913,7 +14539,8 @@ will be used in the Evidence Log as a reference.</p>
 
 </div>
 
-<h5><code>should_be_filled_by_sender</code> (boolean)</h5>
+<h5> <code>should_be_filled_by_sender</code>  <code>(boolean)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -13922,7 +14549,8 @@ will be used in the Evidence Log as a reference.</p>
 
 </div>
 
-<h5><code>placements</code> <code>(array)</code></h5>
+<h5> <code>placements</code>  <code>(array)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -13941,14 +14569,16 @@ template in the document UI design view, and use those values.</p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>xrel</code> (number, required)</h6>
+<h6> <code>xrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -13958,7 +14588,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>yrel</code> (number, required)</h6>
+<h6> <code>yrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -13968,7 +14599,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>wrel</code> (number, required)</h6>
+<h6> <code>wrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -13978,7 +14610,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>hrel</code> (number, required)</h6>
+<h6> <code>hrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -13988,7 +14621,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>fsrel</code> (number, required)</h6>
+<h6> <code>fsrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -13998,7 +14632,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>page</code> (integer, required)</h6>
+<h6> <code>page</code>  <code>(integer, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -14008,7 +14643,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>tip</code> </h6>
+<h6> <code>tip</code>  </h6>
+
 
 
 <div class="json-schema">
@@ -14018,7 +14654,8 @@ template in the document UI design view, and use those values.</p>
 <p>The value of this property must match <em>at least one</em> of the following schemas:</p>
 
 
-<h6>(string, enum)</h6>
+<h6> <code>(string, enum)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -14038,7 +14675,8 @@ to the field.</p>
 
 </div>
 
-<h6>(null)</h6>
+<h6> <code>(null)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -14051,7 +14689,8 @@ depending on the field type.</p>
 
 </div>
 
-<h6><code>anchors</code> <code>(array)</code></h6>
+<h6> <code>anchors</code>  <code>(array)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -14060,28 +14699,27 @@ depending on the field type.</p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>text</code> (string)</h6>
+<h6> <code>text</code>  <code>(string)</code> </h6>
 
-
-<div class="json-schema">
-
-</div>
-
-<h6><code>index</code> (integer)</h6>
 
 
 <div class="json-schema">
 
 </div>
 
-</div>
+<h6> <code>index</code>  <code>(integer)</code> </h6>
+
+
+
+<div class="json-schema">
 
 </div>
 
@@ -14091,8 +14729,12 @@ depending on the field type.</p>
 
 </div>
 
-<h4>SignatoryFieldStandard</h4>
-<code>(object)</code>
+</div>
+
+</div>
+
+<h4> SignatoryFieldStandard <code>(object)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -14108,7 +14750,8 @@ document:</p>
 
 <p>This object has the following properties:</p>
 
-<h5><code>type</code> (string, enum, required)</h5>
+<h5> <code>type</code>  <code>(string, enum, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -14128,7 +14771,8 @@ document:</p>
 
 </div>
 
-<h5><code>value</code> (string)</h5>
+<h5> <code>value</code>  <code>(string)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -14143,7 +14787,8 @@ back to information set in account settings.</p>
 
 </div>
 
-<h5><code>is_obligatory</code> (boolean)</h5>
+<h5> <code>is_obligatory</code>  <code>(boolean)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -14152,7 +14797,8 @@ back to information set in account settings.</p>
 
 </div>
 
-<h5><code>should_be_filled_by_sender</code> (boolean)</h5>
+<h5> <code>should_be_filled_by_sender</code>  <code>(boolean)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -14161,7 +14807,8 @@ back to information set in account settings.</p>
 
 </div>
 
-<h5><code>placements</code> <code>(array)</code></h5>
+<h5> <code>placements</code>  <code>(array)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -14179,14 +14826,16 @@ template in the document UI design view, and use those values.</p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>xrel</code> (number, required)</h6>
+<h6> <code>xrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -14196,7 +14845,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>yrel</code> (number, required)</h6>
+<h6> <code>yrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -14206,7 +14856,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>wrel</code> (number, required)</h6>
+<h6> <code>wrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -14216,7 +14867,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>hrel</code> (number, required)</h6>
+<h6> <code>hrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -14226,7 +14878,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>fsrel</code> (number, required)</h6>
+<h6> <code>fsrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -14236,7 +14889,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>page</code> (integer, required)</h6>
+<h6> <code>page</code>  <code>(integer, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -14246,7 +14900,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>tip</code> </h6>
+<h6> <code>tip</code>  </h6>
+
 
 
 <div class="json-schema">
@@ -14256,7 +14911,8 @@ template in the document UI design view, and use those values.</p>
 <p>The value of this property must match <em>at least one</em> of the following schemas:</p>
 
 
-<h6>(string, enum)</h6>
+<h6> <code>(string, enum)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -14276,7 +14932,8 @@ to the field.</p>
 
 </div>
 
-<h6>(null)</h6>
+<h6> <code>(null)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -14289,7 +14946,8 @@ depending on the field type.</p>
 
 </div>
 
-<h6><code>anchors</code> <code>(array)</code></h6>
+<h6> <code>anchors</code>  <code>(array)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -14298,28 +14956,27 @@ depending on the field type.</p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>text</code> (string)</h6>
+<h6> <code>text</code>  <code>(string)</code> </h6>
 
-
-<div class="json-schema">
-
-</div>
-
-<h6><code>index</code> (integer)</h6>
 
 
 <div class="json-schema">
 
 </div>
 
-</div>
+<h6> <code>index</code>  <code>(integer)</code> </h6>
+
+
+
+<div class="json-schema">
 
 </div>
 
@@ -14329,8 +14986,12 @@ depending on the field type.</p>
 
 </div>
 
-<h4>SignatoryFieldCheckbox</h4>
-<code>(object)</code>
+</div>
+
+</div>
+
+<h4> SignatoryFieldCheckbox <code>(object)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -14340,7 +15001,8 @@ depending on the field type.</p>
 
 <p>This object has the following properties:</p>
 
-<h5><code>type</code> (string, enum, required)</h5>
+<h5> <code>type</code>  <code>(string, enum, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -14358,7 +15020,8 @@ depending on the field type.</p>
 
 </div>
 
-<h5><code>name</code> (string, required)</h5>
+<h5> <code>name</code>  <code>(string, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -14370,7 +15033,8 @@ used in the Evidence Log as a reference.</p>
 
 </div>
 
-<h5><code>is_checked</code> (boolean)</h5>
+<h5> <code>is_checked</code>  <code>(boolean)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -14384,7 +15048,8 @@ pre-checking the checkbox for the signatory.</p>
 
 </div>
 
-<h5><code>is_obligatory</code> (boolean)</h5>
+<h5> <code>is_obligatory</code>  <code>(boolean)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -14397,7 +15062,8 @@ the document.</p>
 
 </div>
 
-<h5><code>should_be_filled_by_sender</code> (boolean)</h5>
+<h5> <code>should_be_filled_by_sender</code>  <code>(boolean)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -14406,7 +15072,8 @@ the document.</p>
 
 </div>
 
-<h5><code>placements</code> (array)</h5>
+<h5> <code>placements</code>  <code>(array)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -14423,14 +15090,16 @@ template in the document UI design view, and use those values.</p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>xrel</code> (number, required)</h6>
+<h6> <code>xrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -14440,7 +15109,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>yrel</code> (number, required)</h6>
+<h6> <code>yrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -14450,7 +15120,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>wrel</code> (number, enum, required)</h6>
+<h6> <code>wrel</code>  <code>(number, enum, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -14472,7 +15143,8 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> checkbo
 
 </div>
 
-<h6><code>hrel</code> (number, enum, required)</h6>
+<h6> <code>hrel</code>  <code>(number, enum, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -14490,7 +15162,8 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> checkbo
 
 </div>
 
-<h6><code>fsrel</code> (number, enum, required)</h6>
+<h6> <code>fsrel</code>  <code>(number, enum, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -14508,7 +15181,8 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> checkbo
 
 </div>
 
-<h6><code>page</code> (integer, required)</h6>
+<h6> <code>page</code>  <code>(integer, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -14518,7 +15192,8 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> checkbo
 
 </div>
 
-<h6><code>tip</code> </h6>
+<h6> <code>tip</code>  </h6>
+
 
 
 <div class="json-schema">
@@ -14528,7 +15203,8 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> checkbo
 <p>The value of this property must match <em>at least one</em> of the following schemas:</p>
 
 
-<h6>(string, enum)</h6>
+<h6> <code>(string, enum)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -14548,7 +15224,8 @@ to the field.</p>
 
 </div>
 
-<h6>(null)</h6>
+<h6> <code>(null)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -14561,7 +15238,8 @@ depending on the field type.</p>
 
 </div>
 
-<h6><code>anchors</code> <code>(array)</code></h6>
+<h6> <code>anchors</code>  <code>(array)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -14570,28 +15248,27 @@ depending on the field type.</p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>text</code> (string)</h6>
+<h6> <code>text</code>  <code>(string)</code> </h6>
 
-
-<div class="json-schema">
-
-</div>
-
-<h6><code>index</code> (integer)</h6>
 
 
 <div class="json-schema">
 
 </div>
 
-</div>
+<h6> <code>index</code>  <code>(integer)</code> </h6>
+
+
+
+<div class="json-schema">
 
 </div>
 
@@ -14601,8 +15278,12 @@ depending on the field type.</p>
 
 </div>
 
-<h4>SignatoryFieldRadiogroup</h4>
-<code>(object)</code>
+</div>
+
+</div>
+
+<h4> SignatoryFieldRadiogroup <code>(object)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -14612,7 +15293,8 @@ depending on the field type.</p>
 
 <p>This object has the following properties:</p>
 
-<h5><code>type</code> (string, enum, required)</h5>
+<h5> <code>type</code>  <code>(string, enum, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -14630,7 +15312,8 @@ depending on the field type.</p>
 
 </div>
 
-<h5><code>name</code> (string, required)</h5>
+<h5> <code>name</code>  <code>(string, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -14642,7 +15325,8 @@ used in the Evidence Log as a reference.</p>
 
 </div>
 
-<h5><code>values</code> (array, required)</h5>
+<h5> <code>values</code>  <code>(array, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -14659,7 +15343,8 @@ Each item must be unique and not an empty string.</strong></p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(string)</h6>
+<h6> <code>(string)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -14671,7 +15356,8 @@ Each item must be unique and not an empty string.</strong></p>
 
 </div>
 
-<h5><code>placements</code> (array, required)</h5>
+<h5> <code>placements</code>  <code>(array, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -14690,14 +15376,16 @@ template in the document UI design view, and use those values.</p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>xrel</code> (number, required)</h6>
+<h6> <code>xrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -14707,7 +15395,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>yrel</code> (number, required)</h6>
+<h6> <code>yrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -14717,7 +15406,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>wrel</code> (number, enum, required)</h6>
+<h6> <code>wrel</code>  <code>(number, enum, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -14739,7 +15429,8 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> radio b
 
 </div>
 
-<h6><code>hrel</code> (number, enum, required)</h6>
+<h6> <code>hrel</code>  <code>(number, enum, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -14757,7 +15448,8 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> radio b
 
 </div>
 
-<h6><code>fsrel</code> (number, enum, required)</h6>
+<h6> <code>fsrel</code>  <code>(number, enum, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -14775,7 +15467,8 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> radio b
 
 </div>
 
-<h6><code>page</code> (integer, required)</h6>
+<h6> <code>page</code>  <code>(integer, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -14786,7 +15479,8 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> radio b
 
 </div>
 
-<h6><code>tip</code> </h6>
+<h6> <code>tip</code>  </h6>
+
 
 
 <div class="json-schema">
@@ -14796,7 +15490,8 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> radio b
 <p>The value of this property must match <em>at least one</em> of the following schemas:</p>
 
 
-<h6>(string, enum)</h6>
+<h6> <code>(string, enum)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -14816,7 +15511,8 @@ to the field.</p>
 
 </div>
 
-<h6>(null)</h6>
+<h6> <code>(null)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -14829,7 +15525,8 @@ depending on the field type.</p>
 
 </div>
 
-<h6><code>anchors</code> <code>(array)</code></h6>
+<h6> <code>anchors</code>  <code>(array)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -14838,28 +15535,27 @@ depending on the field type.</p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>text</code> (string)</h6>
+<h6> <code>text</code>  <code>(string)</code> </h6>
 
-
-<div class="json-schema">
-
-</div>
-
-<h6><code>index</code> (integer)</h6>
 
 
 <div class="json-schema">
 
 </div>
 
-</div>
+<h6> <code>index</code>  <code>(integer)</code> </h6>
+
+
+
+<div class="json-schema">
 
 </div>
 
@@ -14869,8 +15565,12 @@ depending on the field type.</p>
 
 </div>
 
-<h4>SignatoryFieldCustomText</h4>
-<code>(object)</code>
+</div>
+
+</div>
+
+<h4> SignatoryFieldCustomText <code>(object)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -14884,7 +15584,8 @@ optional regular expression-based validation mechanism via the
 
 <p>This object has the following properties:</p>
 
-<h5><code>type</code> (string, enum, required)</h5>
+<h5> <code>type</code>  <code>(string, enum, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -14902,7 +15603,8 @@ optional regular expression-based validation mechanism via the
 
 </div>
 
-<h5><code>name</code> (string, required)</h5>
+<h5> <code>name</code>  <code>(string, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -14914,7 +15616,8 @@ also be used in the Evidence Log as a reference.</p>
 
 </div>
 
-<h5><code>value</code> (string)</h5>
+<h5> <code>value</code>  <code>(string)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -14926,7 +15629,8 @@ also be used in the Evidence Log as a reference.</p>
 
 </div>
 
-<h5><code>is_obligatory</code> (boolean)</h5>
+<h5> <code>is_obligatory</code>  <code>(boolean)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -14935,7 +15639,8 @@ also be used in the Evidence Log as a reference.</p>
 
 </div>
 
-<h5><code>should_be_filled_by_sender</code> (boolean)</h5>
+<h5> <code>should_be_filled_by_sender</code>  <code>(boolean)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -14944,7 +15649,8 @@ also be used in the Evidence Log as a reference.</p>
 
 </div>
 
-<h5><code>placements</code> <code>(array)</code></h5>
+<h5> <code>placements</code>  <code>(array)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -14963,14 +15669,16 @@ template in the document UI design view, and use those values.</p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>xrel</code> (number, required)</h6>
+<h6> <code>xrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -14980,7 +15688,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>yrel</code> (number, required)</h6>
+<h6> <code>yrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -14990,7 +15699,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>wrel</code> (number, required)</h6>
+<h6> <code>wrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -15000,7 +15710,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>hrel</code> (number, required)</h6>
+<h6> <code>hrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -15010,7 +15721,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>fsrel</code> (number, required)</h6>
+<h6> <code>fsrel</code>  <code>(number, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -15020,7 +15732,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>page</code> (integer, required)</h6>
+<h6> <code>page</code>  <code>(integer, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -15030,7 +15743,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h6><code>tip</code> </h6>
+<h6> <code>tip</code>  </h6>
+
 
 
 <div class="json-schema">
@@ -15040,7 +15754,8 @@ template in the document UI design view, and use those values.</p>
 <p>The value of this property must match <em>at least one</em> of the following schemas:</p>
 
 
-<h6>(string, enum)</h6>
+<h6> <code>(string, enum)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -15060,7 +15775,8 @@ to the field.</p>
 
 </div>
 
-<h6>(null)</h6>
+<h6> <code>(null)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -15073,7 +15789,8 @@ depending on the field type.</p>
 
 </div>
 
-<h6><code>anchors</code> <code>(array)</code></h6>
+<h6> <code>anchors</code>  <code>(array)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -15082,28 +15799,27 @@ depending on the field type.</p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>text</code> (string)</h6>
+<h6> <code>text</code>  <code>(string)</code> </h6>
 
-
-<div class="json-schema">
-
-</div>
-
-<h6><code>index</code> (integer)</h6>
 
 
 <div class="json-schema">
 
 </div>
 
-</div>
+<h6> <code>index</code>  <code>(integer)</code> </h6>
+
+
+
+<div class="json-schema">
 
 </div>
 
@@ -15111,7 +15827,12 @@ depending on the field type.</p>
 
 </div>
 
-<h5><code>custom_validation</code> </h5>
+</div>
+
+</div>
+
+<h5> <code>custom_validation</code>  </h5>
+
 
 
 <div class="json-schema">
@@ -15119,15 +15840,16 @@ depending on the field type.</p>
 <p>The value of this property must match <em>exactly one</em> of the following schemas:</p>
 
 
-<h6>(null)</h6>
+<h6> <code>(null)</code> </h6>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h6>SignatoryFieldCustomValidation</h6>
-<code>(object)</code>
+<h6> SignatoryFieldCustomValidation <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -15138,7 +15860,8 @@ custom regular expression.</p>
 
 <p>This object has the following properties:</p>
 
-<h6><code>pattern</code> (string, required)</h6>
+<h6> <code>pattern</code>  <code>(string, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -15148,7 +15871,8 @@ custom regular expression.</p>
 
 </div>
 
-<h6><code>positive_example</code> (string, required)</h6>
+<h6> <code>positive_example</code>  <code>(string, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -15158,7 +15882,8 @@ custom regular expression.</p>
 
 </div>
 
-<h6><code>tooltip</code> (string, required)</h6>
+<h6> <code>tooltip</code>  <code>(string, required)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -15176,7 +15901,8 @@ custom regular expression.</p>
 
 </div>
 
-<h3><code>sign_order</code> (integer)</h3>
+<h3> <code>sign_order</code>  <code>(integer)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -15185,35 +15911,40 @@ custom regular expression.</p>
 
 </div>
 
-<h3><code>sign_time</code> (string,null, read only)</h3>
+<h3> <code>sign_time</code>  <code>(string,null, read only)</code> </h3>
 
-
-<div class="json-schema">
-
-</div>
-
-<h3><code>seen_time</code> (string,null, read only)</h3>
 
 
 <div class="json-schema">
 
 </div>
 
-<h3><code>read_invitation_time</code> (string,null, read only)</h3>
+<h3> <code>seen_time</code>  <code>(string,null, read only)</code> </h3>
 
-
-<div class="json-schema">
-
-</div>
-
-<h3><code>rejected_time</code> (string,null, read only)</h3>
 
 
 <div class="json-schema">
 
 </div>
 
-<h3><code>rejection_reason</code> (string,null, read only)</h3>
+<h3> <code>read_invitation_time</code>  <code>(string,null, read only)</code> </h3>
+
+
+
+<div class="json-schema">
+
+</div>
+
+<h3> <code>rejected_time</code>  <code>(string,null, read only)</code> </h3>
+
+
+
+<div class="json-schema">
+
+</div>
+
+<h3> <code>rejection_reason</code>  <code>(string,null, read only)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -15226,7 +15957,8 @@ reject reason (<code>allow_reject_reason</code>).</p>
 
 </div>
 
-<h3><code>sign_success_redirect_url</code> (string,null)</h3>
+<h3> <code>sign_success_redirect_url</code>  <code>(string,null)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -15236,7 +15968,8 @@ reject reason (<code>allow_reject_reason</code>).</p>
 
 </div>
 
-<h3><code>reject_redirect_url</code> (string,null)</h3>
+<h3> <code>reject_redirect_url</code>  <code>(string,null)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -15246,28 +15979,8 @@ reject reason (<code>allow_reject_reason</code>).</p>
 
 </div>
 
-<h3><code>email_delivery_status</code> <code>(string, enum)</code></h3>
+<h3> <code>email_delivery_status</code>  <code>(string, enum)</code> </h3>
 
-
-<div class="json-schema">
-
-<p>The current delivery status.</p>
-
-
-<p>The value of this property must be one of the following enum values:</p>
-
-<ul>
-
-<li><code>"unknown"</code></li>
-<li><code>"not_delivered"</code></li>
-<li><code>"delivered"</code></li>
-<li><code>"deferred"</code></li>
-
-</ul>
-
-</div>
-
-<h3><code>mobile_delivery_status</code> <code>(string, enum)</code></h3>
 
 
 <div class="json-schema">
@@ -15288,14 +16001,38 @@ reject reason (<code>allow_reject_reason</code>).</p>
 
 </div>
 
-<h3><code>csv</code> (array,null)</h3>
+<h3> <code>mobile_delivery_status</code>  <code>(string, enum)</code> </h3>
+
+
+
+<div class="json-schema">
+
+<p>The current delivery status.</p>
+
+
+<p>The value of this property must be one of the following enum values:</p>
+
+<ul>
+
+<li><code>"unknown"</code></li>
+<li><code>"not_delivered"</code></li>
+<li><code>"delivered"</code></li>
+<li><code>"deferred"</code></li>
+
+</ul>
+
+</div>
+
+<h3> <code>csv</code>  <code>(array,null)</code> </h3>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h3><code>delivery_method</code> (string, enum)</h3>
+<h3> <code>delivery_method</code>  <code>(string, enum)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -15320,7 +16057,8 @@ interface. Furthermore, <code>pad</code> delivery is referred to as &quot;In-per
 
 </div>
 
-<h3><code>authentication_method_to_view</code> (string, enum)</h3>
+<h3> <code>authentication_method_to_view</code>  <code>(string, enum)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -15347,7 +16085,8 @@ interface. Furthermore, <code>pad</code> delivery is referred to as &quot;In-per
 
 </div>
 
-<h3><code>authentication_method_to_view_archived</code> (string, enum)</h3>
+<h3> <code>authentication_method_to_view_archived</code>  <code>(string, enum)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -15374,7 +16113,8 @@ interface. Furthermore, <code>pad</code> delivery is referred to as &quot;In-per
 
 </div>
 
-<h3><code>authentication_method_to_sign</code> (string, enum)</h3>
+<h3> <code>authentication_method_to_sign</code>  <code>(string, enum)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -15398,7 +16138,8 @@ interface. Furthermore, <code>pad</code> delivery is referred to as &quot;In-per
 
 </div>
 
-<h3><code>confirmation_delivery_method</code> (string, enum)</h3>
+<h3> <code>confirmation_delivery_method</code>  <code>(string, enum)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -15431,7 +16172,8 @@ interface. Furthermore, <code>pad</code> delivery is referred to as &quot;In-per
 
 </div>
 
-<h3><code>allows_highlighting</code> (boolean)</h3>
+<h3> <code>allows_highlighting</code>  <code>(boolean)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -15449,7 +16191,8 @@ assist contract review.</p>
 
 </div>
 
-<h3><code>hide_personal_number</code> (boolean)</h3>
+<h3> <code>hide_personal_number</code>  <code>(boolean)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -15468,7 +16211,8 @@ field does not have any placements.</p>
 
 </div>
 
-<h3><code>highlighted_pages</code> (array, read only)</h3>
+<h3> <code>highlighted_pages</code>  <code>(array, read only)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -15482,14 +16226,16 @@ in the document file PDF until after the document is closed.</p>
 
 <p>All array elements must be of type:</p>
 
-<h4>(object)</h4>
+<h4> <code>(object)</code> </h4>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h5><code>page</code> (integer)</h5>
+<h5> <code>page</code>  <code>(integer)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -15500,7 +16246,8 @@ Each signatory can only have one highlight per page.</p>
 
 </div>
 
-<h5><code>file_id</code> (string)</h5>
+<h5> <code>file_id</code>  <code>(string)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -15518,7 +16265,8 @@ closed.</p>
 
 </div>
 
-<h3><code>attachments</code> (array)</h3>
+<h3> <code>attachments</code>  <code>(array)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -15527,7 +16275,8 @@ closed.</p>
 
 <p>All array elements must be of type:</p>
 
-<h4>(object)</h4>
+<h4> <code>(object)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -15538,7 +16287,8 @@ Attachments requested from viewing only parties have no effect.</p>
 
 <p>This object has the following properties:</p>
 
-<h5><code>name</code> (string)</h5>
+<h5> <code>name</code>  <code>(string)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -15549,7 +16299,8 @@ Will be visible to the signatory when signing the document.</p>
 
 </div>
 
-<h5><code>description</code> (string)</h5>
+<h5> <code>description</code>  <code>(string)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -15561,7 +16312,8 @@ the attachment name.</p>
 
 </div>
 
-<h5><code>required</code> (boolean)</h5>
+<h5> <code>required</code>  <code>(boolean)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -15575,17 +16327,8 @@ when signing.</p>
 
 </div>
 
-<h5><code>file_id</code> (string)</h5>
+<h5> <code>file_id</code>  <code>(string)</code> </h5>
 
-
-<div class="json-schema">
-
-<p>Will be present if and when the party uploads this attachment.</p>
-
-
-</div>
-
-<h5><code>file_name</code> (string)</h5>
 
 
 <div class="json-schema">
@@ -15595,11 +16338,23 @@ when signing.</p>
 
 </div>
 
+<h5> <code>file_name</code>  <code>(string)</code> </h5>
+
+
+
+<div class="json-schema">
+
+<p>Will be present if and when the party uploads this attachment.</p>
+
+
+</div>
+
 </div>
 
 </div>
 
-<h3><code>api_delivery_url</code> (string,null)</h3>
+<h3> <code>api_delivery_url</code>  <code>(string,null)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -15614,7 +16369,8 @@ and will only be visible when accessing the document as the author.</p>
 
 </div>
 
-<h3><code>consent_module</code> </h3>
+<h3> <code>consent_module</code>  </h3>
+
 
 
 <div class="json-schema">
@@ -15622,14 +16378,16 @@ and will only be visible when accessing the document as the author.</p>
 <p>The value of this property must match <em>exactly one</em> of the following schemas:</p>
 
 
-<h4>(null)</h4>
+<h4> <code>(null)</code> </h4>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h4>(object)</h4>
+<h4> <code>(object)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -15641,7 +16399,8 @@ or the negative option specified.</p>
 
 <p>This object has the following properties:</p>
 
-<h5><code>title</code> (string)</h5>
+<h5> <code>title</code>  <code>(string)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -15651,21 +16410,24 @@ or the negative option specified.</p>
 
 </div>
 
-<h5><code>questions</code> (array)</h5>
+<h5> <code>questions</code>  <code>(array)</code> </h5>
+
 
 
 <div class="json-schema">
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>title</code> (string)</h6>
+<h6> <code>title</code>  <code>(string)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -15675,21 +16437,24 @@ or the negative option specified.</p>
 
 </div>
 
-<h6><code>positive_option</code> (string)</h6>
+<h6> <code>positive_option</code>  <code>(string)</code> </h6>
 
-
-<div class="json-schema">
-
-</div>
-
-<h6><code>negative_option</code> (string)</h6>
 
 
 <div class="json-schema">
 
 </div>
 
-<h6><code>response</code> (boolean)</h6>
+<h6> <code>negative_option</code>  <code>(string)</code> </h6>
+
+
+
+<div class="json-schema">
+
+</div>
+
+<h6> <code>response</code>  <code>(boolean)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -15701,7 +16466,8 @@ when the signatory selected the negative response.</p>
 
 </div>
 
-<h6><code>detailed_description</code> (object)</h6>
+<h6> <code>detailed_description</code>  <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -15711,7 +16477,8 @@ when the signatory selected the negative response.</p>
 
 <p>The <code>detailed_description</code> object has the following properties:</p>
 
-<h6><code>title</code> (string)</h6>
+<h6> <code>title</code>  <code>(string)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -15721,7 +16488,8 @@ when the signatory selected the negative response.</p>
 
 </div>
 
-<h6><code>text</code> (string)</h6>
+<h6> <code>text</code>  <code>(string)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -15780,7 +16548,8 @@ when the signatory selected the negative response.</p>
 
 <p>This object has the following properties:</p>
 
-<h3><code>type</code> (string, enum, required)</h3>
+<h3> <code>type</code>  <code>(string, enum, required)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -15798,7 +16567,8 @@ when the signatory selected the negative response.</p>
 
 </div>
 
-<h3><code>order</code> (integer, enum, required)</h3>
+<h3> <code>order</code>  <code>(integer, enum, required)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -15821,7 +16591,8 @@ signing page.</p>
 
 </div>
 
-<h3><code>value</code> (string)</h3>
+<h3> <code>value</code>  <code>(string)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -15833,7 +16604,8 @@ signing page.</p>
 
 </div>
 
-<h3><code>is_obligatory</code> (boolean)</h3>
+<h3> <code>is_obligatory</code>  <code>(boolean)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -15842,7 +16614,8 @@ signing page.</p>
 
 </div>
 
-<h3><code>should_be_filled_by_sender</code> (boolean)</h3>
+<h3> <code>should_be_filled_by_sender</code>  <code>(boolean)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -15851,7 +16624,8 @@ signing page.</p>
 
 </div>
 
-<h3><code>placements</code> <code>(array)</code></h3>
+<h3> <code>placements</code>  <code>(array)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -15869,14 +16643,16 @@ template in the document UI design view, and use those values.</p>
 
 <p>All array elements must be of type:</p>
 
-<h4>(object)</h4>
+<h4> <code>(object)</code> </h4>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h5><code>xrel</code> (number, required)</h5>
+<h5> <code>xrel</code>  <code>(number, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -15886,7 +16662,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h5><code>yrel</code> (number, required)</h5>
+<h5> <code>yrel</code>  <code>(number, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -15896,7 +16673,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h5><code>wrel</code> (number, required)</h5>
+<h5> <code>wrel</code>  <code>(number, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -15906,7 +16684,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h5><code>hrel</code> (number, required)</h5>
+<h5> <code>hrel</code>  <code>(number, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -15916,7 +16695,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h5><code>fsrel</code> (number, required)</h5>
+<h5> <code>fsrel</code>  <code>(number, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -15926,7 +16706,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h5><code>page</code> (integer, required)</h5>
+<h5> <code>page</code>  <code>(integer, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -15936,7 +16717,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h5><code>tip</code> </h5>
+<h5> <code>tip</code>  </h5>
+
 
 
 <div class="json-schema">
@@ -15946,7 +16728,8 @@ template in the document UI design view, and use those values.</p>
 <p>The value of this property must match <em>at least one</em> of the following schemas:</p>
 
 
-<h6>(string, enum)</h6>
+<h6> <code>(string, enum)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -15966,7 +16749,8 @@ to the field.</p>
 
 </div>
 
-<h6>(null)</h6>
+<h6> <code>(null)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -15979,7 +16763,8 @@ depending on the field type.</p>
 
 </div>
 
-<h5><code>anchors</code> <code>(array)</code></h5>
+<h5> <code>anchors</code>  <code>(array)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -15988,21 +16773,24 @@ depending on the field type.</p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>text</code> (string)</h6>
+<h6> <code>text</code>  <code>(string)</code> </h6>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h6><code>index</code> (integer)</h6>
+<h6> <code>index</code>  <code>(integer)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -16056,7 +16844,8 @@ depending on the field type.</p>
 
 <p>This object has the following properties:</p>
 
-<h3><code>type</code> (string, enum, required)</h3>
+<h3> <code>type</code>  <code>(string, enum, required)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -16075,7 +16864,8 @@ depending on the field type.</p>
 
 </div>
 
-<h3><code>value</code> (string)</h3>
+<h3> <code>value</code>  <code>(string)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -16090,7 +16880,8 @@ back to information set in account settings.</p>
 
 </div>
 
-<h3><code>is_obligatory</code> (boolean)</h3>
+<h3> <code>is_obligatory</code>  <code>(boolean)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -16099,7 +16890,8 @@ back to information set in account settings.</p>
 
 </div>
 
-<h3><code>should_be_filled_by_sender</code> (boolean)</h3>
+<h3> <code>should_be_filled_by_sender</code>  <code>(boolean)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -16108,7 +16900,8 @@ back to information set in account settings.</p>
 
 </div>
 
-<h3><code>editable_by_signatory</code> (boolean)</h3>
+<h3> <code>editable_by_signatory</code>  <code>(boolean)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -16126,7 +16919,8 @@ that this may affect your desired workflow.</p>
 
 </div>
 
-<h3><code>placements</code> <code>(array)</code></h3>
+<h3> <code>placements</code>  <code>(array)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -16144,14 +16938,16 @@ template in the document UI design view, and use those values.</p>
 
 <p>All array elements must be of type:</p>
 
-<h4>(object)</h4>
+<h4> <code>(object)</code> </h4>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h5><code>xrel</code> (number, required)</h5>
+<h5> <code>xrel</code>  <code>(number, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -16161,7 +16957,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h5><code>yrel</code> (number, required)</h5>
+<h5> <code>yrel</code>  <code>(number, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -16171,7 +16968,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h5><code>wrel</code> (number, required)</h5>
+<h5> <code>wrel</code>  <code>(number, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -16181,7 +16979,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h5><code>hrel</code> (number, required)</h5>
+<h5> <code>hrel</code>  <code>(number, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -16191,7 +16990,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h5><code>fsrel</code> (number, required)</h5>
+<h5> <code>fsrel</code>  <code>(number, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -16201,7 +17001,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h5><code>page</code> (integer, required)</h5>
+<h5> <code>page</code>  <code>(integer, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -16211,7 +17012,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h5><code>tip</code> </h5>
+<h5> <code>tip</code>  </h5>
+
 
 
 <div class="json-schema">
@@ -16221,7 +17023,8 @@ template in the document UI design view, and use those values.</p>
 <p>The value of this property must match <em>at least one</em> of the following schemas:</p>
 
 
-<h6>(string, enum)</h6>
+<h6> <code>(string, enum)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -16241,7 +17044,8 @@ to the field.</p>
 
 </div>
 
-<h6>(null)</h6>
+<h6> <code>(null)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -16254,7 +17058,8 @@ depending on the field type.</p>
 
 </div>
 
-<h5><code>anchors</code> <code>(array)</code></h5>
+<h5> <code>anchors</code>  <code>(array)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -16263,21 +17068,24 @@ depending on the field type.</p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>text</code> (string)</h6>
+<h6> <code>text</code>  <code>(string)</code> </h6>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h6><code>index</code> (integer)</h6>
+<h6> <code>index</code>  <code>(integer)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -16331,7 +17139,8 @@ depending on the field type.</p>
 
 <p>This object has the following properties:</p>
 
-<h3><code>type</code> (string, enum, required)</h3>
+<h3> <code>type</code>  <code>(string, enum, required)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -16346,7 +17155,8 @@ depending on the field type.</p>
 
 </div>
 
-<h3><code>name</code> (string, required)</h3>
+<h3> <code>name</code>  <code>(string, required)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -16358,7 +17168,8 @@ will be used in the Evidence Log as a reference.</p>
 
 </div>
 
-<h3><code>signature</code> </h3>
+<h3> <code>signature</code>  <code>(read only)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -16366,7 +17177,8 @@ will be used in the Evidence Log as a reference.</p>
 <p>The value of this property must match <em>at least one</em> of the following schemas:</p>
 
 
-<h4>(null)</h4>
+<h4> <code>(null)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -16376,7 +17188,8 @@ will be used in the Evidence Log as a reference.</p>
 
 </div>
 
-<h4>(string)</h4>
+<h4> <code>(string)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -16388,7 +17201,8 @@ will be used in the Evidence Log as a reference.</p>
 
 </div>
 
-<h3><code>is_obligatory</code> (boolean)</h3>
+<h3> <code>is_obligatory</code>  <code>(boolean)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -16397,7 +17211,8 @@ will be used in the Evidence Log as a reference.</p>
 
 </div>
 
-<h3><code>should_be_filled_by_sender</code> (boolean)</h3>
+<h3> <code>should_be_filled_by_sender</code>  <code>(boolean)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -16406,7 +17221,8 @@ will be used in the Evidence Log as a reference.</p>
 
 </div>
 
-<h3><code>placements</code> <code>(array)</code></h3>
+<h3> <code>placements</code>  <code>(array)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -16425,14 +17241,16 @@ template in the document UI design view, and use those values.</p>
 
 <p>All array elements must be of type:</p>
 
-<h4>(object)</h4>
+<h4> <code>(object)</code> </h4>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h5><code>xrel</code> (number, required)</h5>
+<h5> <code>xrel</code>  <code>(number, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -16442,7 +17260,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h5><code>yrel</code> (number, required)</h5>
+<h5> <code>yrel</code>  <code>(number, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -16452,7 +17271,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h5><code>wrel</code> (number, required)</h5>
+<h5> <code>wrel</code>  <code>(number, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -16462,7 +17282,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h5><code>hrel</code> (number, required)</h5>
+<h5> <code>hrel</code>  <code>(number, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -16472,7 +17293,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h5><code>fsrel</code> (number, required)</h5>
+<h5> <code>fsrel</code>  <code>(number, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -16482,7 +17304,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h5><code>page</code> (integer, required)</h5>
+<h5> <code>page</code>  <code>(integer, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -16492,7 +17315,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h5><code>tip</code> </h5>
+<h5> <code>tip</code>  </h5>
+
 
 
 <div class="json-schema">
@@ -16502,7 +17326,8 @@ template in the document UI design view, and use those values.</p>
 <p>The value of this property must match <em>at least one</em> of the following schemas:</p>
 
 
-<h6>(string, enum)</h6>
+<h6> <code>(string, enum)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -16522,7 +17347,8 @@ to the field.</p>
 
 </div>
 
-<h6>(null)</h6>
+<h6> <code>(null)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -16535,7 +17361,8 @@ depending on the field type.</p>
 
 </div>
 
-<h5><code>anchors</code> <code>(array)</code></h5>
+<h5> <code>anchors</code>  <code>(array)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -16544,21 +17371,24 @@ depending on the field type.</p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>text</code> (string)</h6>
+<h6> <code>text</code>  <code>(string)</code> </h6>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h6><code>index</code> (integer)</h6>
+<h6> <code>index</code>  <code>(integer)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -16617,7 +17447,8 @@ document:</p>
 
 <p>This object has the following properties:</p>
 
-<h3><code>type</code> (string, enum, required)</h3>
+<h3> <code>type</code>  <code>(string, enum, required)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -16637,7 +17468,8 @@ document:</p>
 
 </div>
 
-<h3><code>value</code> (string)</h3>
+<h3> <code>value</code>  <code>(string)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -16652,7 +17484,8 @@ back to information set in account settings.</p>
 
 </div>
 
-<h3><code>is_obligatory</code> (boolean)</h3>
+<h3> <code>is_obligatory</code>  <code>(boolean)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -16661,7 +17494,8 @@ back to information set in account settings.</p>
 
 </div>
 
-<h3><code>should_be_filled_by_sender</code> (boolean)</h3>
+<h3> <code>should_be_filled_by_sender</code>  <code>(boolean)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -16670,7 +17504,8 @@ back to information set in account settings.</p>
 
 </div>
 
-<h3><code>placements</code> <code>(array)</code></h3>
+<h3> <code>placements</code>  <code>(array)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -16688,14 +17523,16 @@ template in the document UI design view, and use those values.</p>
 
 <p>All array elements must be of type:</p>
 
-<h4>(object)</h4>
+<h4> <code>(object)</code> </h4>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h5><code>xrel</code> (number, required)</h5>
+<h5> <code>xrel</code>  <code>(number, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -16705,7 +17542,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h5><code>yrel</code> (number, required)</h5>
+<h5> <code>yrel</code>  <code>(number, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -16715,7 +17553,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h5><code>wrel</code> (number, required)</h5>
+<h5> <code>wrel</code>  <code>(number, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -16725,7 +17564,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h5><code>hrel</code> (number, required)</h5>
+<h5> <code>hrel</code>  <code>(number, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -16735,7 +17575,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h5><code>fsrel</code> (number, required)</h5>
+<h5> <code>fsrel</code>  <code>(number, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -16745,7 +17586,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h5><code>page</code> (integer, required)</h5>
+<h5> <code>page</code>  <code>(integer, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -16755,7 +17597,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h5><code>tip</code> </h5>
+<h5> <code>tip</code>  </h5>
+
 
 
 <div class="json-schema">
@@ -16765,7 +17608,8 @@ template in the document UI design view, and use those values.</p>
 <p>The value of this property must match <em>at least one</em> of the following schemas:</p>
 
 
-<h6>(string, enum)</h6>
+<h6> <code>(string, enum)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -16785,7 +17629,8 @@ to the field.</p>
 
 </div>
 
-<h6>(null)</h6>
+<h6> <code>(null)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -16798,7 +17643,8 @@ depending on the field type.</p>
 
 </div>
 
-<h5><code>anchors</code> <code>(array)</code></h5>
+<h5> <code>anchors</code>  <code>(array)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -16807,21 +17653,24 @@ depending on the field type.</p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>text</code> (string)</h6>
+<h6> <code>text</code>  <code>(string)</code> </h6>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h6><code>index</code> (integer)</h6>
+<h6> <code>index</code>  <code>(integer)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -16875,7 +17724,8 @@ depending on the field type.</p>
 
 <p>This object has the following properties:</p>
 
-<h3><code>type</code> (string, enum, required)</h3>
+<h3> <code>type</code>  <code>(string, enum, required)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -16893,7 +17743,8 @@ depending on the field type.</p>
 
 </div>
 
-<h3><code>name</code> (string, required)</h3>
+<h3> <code>name</code>  <code>(string, required)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -16905,7 +17756,8 @@ used in the Evidence Log as a reference.</p>
 
 </div>
 
-<h3><code>is_checked</code> (boolean)</h3>
+<h3> <code>is_checked</code>  <code>(boolean)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -16919,7 +17771,8 @@ pre-checking the checkbox for the signatory.</p>
 
 </div>
 
-<h3><code>is_obligatory</code> (boolean)</h3>
+<h3> <code>is_obligatory</code>  <code>(boolean)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -16932,7 +17785,8 @@ the document.</p>
 
 </div>
 
-<h3><code>should_be_filled_by_sender</code> (boolean)</h3>
+<h3> <code>should_be_filled_by_sender</code>  <code>(boolean)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -16941,7 +17795,8 @@ the document.</p>
 
 </div>
 
-<h3><code>placements</code> (array)</h3>
+<h3> <code>placements</code>  <code>(array)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -16958,14 +17813,16 @@ template in the document UI design view, and use those values.</p>
 
 <p>All array elements must be of type:</p>
 
-<h4>(object)</h4>
+<h4> <code>(object)</code> </h4>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h5><code>xrel</code> (number, required)</h5>
+<h5> <code>xrel</code>  <code>(number, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -16975,7 +17832,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h5><code>yrel</code> (number, required)</h5>
+<h5> <code>yrel</code>  <code>(number, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -16985,7 +17843,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h5><code>wrel</code> (number, enum, required)</h5>
+<h5> <code>wrel</code>  <code>(number, enum, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -17007,7 +17866,8 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> checkbo
 
 </div>
 
-<h5><code>hrel</code> (number, enum, required)</h5>
+<h5> <code>hrel</code>  <code>(number, enum, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -17025,7 +17885,8 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> checkbo
 
 </div>
 
-<h5><code>fsrel</code> (number, enum, required)</h5>
+<h5> <code>fsrel</code>  <code>(number, enum, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -17043,7 +17904,8 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> checkbo
 
 </div>
 
-<h5><code>page</code> (integer, required)</h5>
+<h5> <code>page</code>  <code>(integer, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -17053,7 +17915,8 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> checkbo
 
 </div>
 
-<h5><code>tip</code> </h5>
+<h5> <code>tip</code>  </h5>
+
 
 
 <div class="json-schema">
@@ -17063,7 +17926,8 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> checkbo
 <p>The value of this property must match <em>at least one</em> of the following schemas:</p>
 
 
-<h6>(string, enum)</h6>
+<h6> <code>(string, enum)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -17083,7 +17947,8 @@ to the field.</p>
 
 </div>
 
-<h6>(null)</h6>
+<h6> <code>(null)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -17096,7 +17961,8 @@ depending on the field type.</p>
 
 </div>
 
-<h5><code>anchors</code> <code>(array)</code></h5>
+<h5> <code>anchors</code>  <code>(array)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -17105,21 +17971,24 @@ depending on the field type.</p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>text</code> (string)</h6>
+<h6> <code>text</code>  <code>(string)</code> </h6>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h6><code>index</code> (integer)</h6>
+<h6> <code>index</code>  <code>(integer)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -17196,7 +18065,8 @@ depending on the field type.</p>
 
 <p>This object has the following properties:</p>
 
-<h3><code>type</code> (string, enum, required)</h3>
+<h3> <code>type</code>  <code>(string, enum, required)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -17214,7 +18084,8 @@ depending on the field type.</p>
 
 </div>
 
-<h3><code>name</code> (string, required)</h3>
+<h3> <code>name</code>  <code>(string, required)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -17226,7 +18097,8 @@ used in the Evidence Log as a reference.</p>
 
 </div>
 
-<h3><code>values</code> (array, required)</h3>
+<h3> <code>values</code>  <code>(array, required)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -17243,7 +18115,8 @@ Each item must be unique and not an empty string.</strong></p>
 
 <p>All array elements must be of type:</p>
 
-<h4>(string)</h4>
+<h4> <code>(string)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -17255,7 +18128,8 @@ Each item must be unique and not an empty string.</strong></p>
 
 </div>
 
-<h3><code>placements</code> (array, required)</h3>
+<h3> <code>placements</code>  <code>(array, required)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -17274,14 +18148,16 @@ template in the document UI design view, and use those values.</p>
 
 <p>All array elements must be of type:</p>
 
-<h4>(object)</h4>
+<h4> <code>(object)</code> </h4>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h5><code>xrel</code> (number, required)</h5>
+<h5> <code>xrel</code>  <code>(number, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -17291,7 +18167,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h5><code>yrel</code> (number, required)</h5>
+<h5> <code>yrel</code>  <code>(number, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -17301,7 +18178,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h5><code>wrel</code> (number, enum, required)</h5>
+<h5> <code>wrel</code>  <code>(number, enum, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -17323,7 +18201,8 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> radio b
 
 </div>
 
-<h5><code>hrel</code> (number, enum, required)</h5>
+<h5> <code>hrel</code>  <code>(number, enum, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -17341,7 +18220,8 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> radio b
 
 </div>
 
-<h5><code>fsrel</code> (number, enum, required)</h5>
+<h5> <code>fsrel</code>  <code>(number, enum, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -17359,7 +18239,8 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> radio b
 
 </div>
 
-<h5><code>page</code> (integer, required)</h5>
+<h5> <code>page</code>  <code>(integer, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -17370,7 +18251,8 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> radio b
 
 </div>
 
-<h5><code>tip</code> </h5>
+<h5> <code>tip</code>  </h5>
+
 
 
 <div class="json-schema">
@@ -17380,7 +18262,8 @@ The numbers represent <em>small</em>, <em>medium</em> and <em>large</em> radio b
 <p>The value of this property must match <em>at least one</em> of the following schemas:</p>
 
 
-<h6>(string, enum)</h6>
+<h6> <code>(string, enum)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -17400,7 +18283,8 @@ to the field.</p>
 
 </div>
 
-<h6>(null)</h6>
+<h6> <code>(null)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -17413,7 +18297,8 @@ depending on the field type.</p>
 
 </div>
 
-<h5><code>anchors</code> <code>(array)</code></h5>
+<h5> <code>anchors</code>  <code>(array)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -17422,21 +18307,24 @@ depending on the field type.</p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>text</code> (string)</h6>
+<h6> <code>text</code>  <code>(string)</code> </h6>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h6><code>index</code> (integer)</h6>
+<h6> <code>index</code>  <code>(integer)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -17499,7 +18387,8 @@ optional regular expression-based validation mechanism via the
 
 <p>This object has the following properties:</p>
 
-<h3><code>type</code> (string, enum, required)</h3>
+<h3> <code>type</code>  <code>(string, enum, required)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -17517,7 +18406,8 @@ optional regular expression-based validation mechanism via the
 
 </div>
 
-<h3><code>name</code> (string, required)</h3>
+<h3> <code>name</code>  <code>(string, required)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -17529,7 +18419,8 @@ also be used in the Evidence Log as a reference.</p>
 
 </div>
 
-<h3><code>value</code> (string)</h3>
+<h3> <code>value</code>  <code>(string)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -17541,7 +18432,8 @@ also be used in the Evidence Log as a reference.</p>
 
 </div>
 
-<h3><code>is_obligatory</code> (boolean)</h3>
+<h3> <code>is_obligatory</code>  <code>(boolean)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -17550,7 +18442,8 @@ also be used in the Evidence Log as a reference.</p>
 
 </div>
 
-<h3><code>should_be_filled_by_sender</code> (boolean)</h3>
+<h3> <code>should_be_filled_by_sender</code>  <code>(boolean)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -17559,7 +18452,8 @@ also be used in the Evidence Log as a reference.</p>
 
 </div>
 
-<h3><code>placements</code> <code>(array)</code></h3>
+<h3> <code>placements</code>  <code>(array)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -17578,14 +18472,16 @@ template in the document UI design view, and use those values.</p>
 
 <p>All array elements must be of type:</p>
 
-<h4>(object)</h4>
+<h4> <code>(object)</code> </h4>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h5><code>xrel</code> (number, required)</h5>
+<h5> <code>xrel</code>  <code>(number, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -17595,7 +18491,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h5><code>yrel</code> (number, required)</h5>
+<h5> <code>yrel</code>  <code>(number, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -17605,7 +18502,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h5><code>wrel</code> (number, required)</h5>
+<h5> <code>wrel</code>  <code>(number, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -17615,7 +18513,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h5><code>hrel</code> (number, required)</h5>
+<h5> <code>hrel</code>  <code>(number, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -17625,7 +18524,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h5><code>fsrel</code> (number, required)</h5>
+<h5> <code>fsrel</code>  <code>(number, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -17635,7 +18535,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h5><code>page</code> (integer, required)</h5>
+<h5> <code>page</code>  <code>(integer, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -17645,7 +18546,8 @@ template in the document UI design view, and use those values.</p>
 
 </div>
 
-<h5><code>tip</code> </h5>
+<h5> <code>tip</code>  </h5>
+
 
 
 <div class="json-schema">
@@ -17655,7 +18557,8 @@ template in the document UI design view, and use those values.</p>
 <p>The value of this property must match <em>at least one</em> of the following schemas:</p>
 
 
-<h6>(string, enum)</h6>
+<h6> <code>(string, enum)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -17675,7 +18578,8 @@ to the field.</p>
 
 </div>
 
-<h6>(null)</h6>
+<h6> <code>(null)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -17688,7 +18592,8 @@ depending on the field type.</p>
 
 </div>
 
-<h5><code>anchors</code> <code>(array)</code></h5>
+<h5> <code>anchors</code>  <code>(array)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -17697,28 +18602,27 @@ depending on the field type.</p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>text</code> (string)</h6>
+<h6> <code>text</code>  <code>(string)</code> </h6>
 
-
-<div class="json-schema">
-
-</div>
-
-<h6><code>index</code> (integer)</h6>
 
 
 <div class="json-schema">
 
 </div>
 
-</div>
+<h6> <code>index</code>  <code>(integer)</code> </h6>
+
+
+
+<div class="json-schema">
 
 </div>
 
@@ -17726,7 +18630,12 @@ depending on the field type.</p>
 
 </div>
 
-<h3><code>custom_validation</code> </h3>
+</div>
+
+</div>
+
+<h3> <code>custom_validation</code>  </h3>
+
 
 
 <div class="json-schema">
@@ -17734,15 +18643,16 @@ depending on the field type.</p>
 <p>The value of this property must match <em>exactly one</em> of the following schemas:</p>
 
 
-<h4>(null)</h4>
+<h4> <code>(null)</code> </h4>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h4>SignatoryFieldCustomValidation</h4>
-<code>(object)</code>
+<h4> SignatoryFieldCustomValidation <code>(object)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -17753,7 +18663,8 @@ custom regular expression.</p>
 
 <p>This object has the following properties:</p>
 
-<h5><code>pattern</code> (string, required)</h5>
+<h5> <code>pattern</code>  <code>(string, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -17763,7 +18674,8 @@ custom regular expression.</p>
 
 </div>
 
-<h5><code>positive_example</code> (string, required)</h5>
+<h5> <code>positive_example</code>  <code>(string, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -17773,7 +18685,8 @@ custom regular expression.</p>
 
 </div>
 
-<h5><code>tooltip</code> (string, required)</h5>
+<h5> <code>tooltip</code>  <code>(string, required)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -17819,15 +18732,16 @@ custom regular expression.</p>
 <p>The value of this array must match <em>at least one</em> of the following schemas:</p>
 
 
-<h3>Filter by status</h3>
-<code>(object)</code>
+<h3> Filter by status <code>(object)</code> </h3>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h4><code>filter_by</code> (string, enum)</h4>
+<h4> <code>filter_by</code>  <code>(string, enum)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -17842,15 +18756,16 @@ custom regular expression.</p>
 
 </div>
 
-<h4><code>statuses</code> (array)</h4>
+<h4> <code>statuses</code>  <code>(array)</code> </h4>
+
 
 
 <div class="json-schema">
 
 <p>All array elements must be of type:</p>
 
-<h5>Document Status</h5>
-<code>(string, enum)</code>
+<h5> Document Status <code>(string, enum)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -17883,15 +18798,16 @@ be changed.</p>
 
 </div>
 
-<h3>Filter by mtime</h3>
-<code>(object)</code>
+<h3> Filter by mtime <code>(object)</code> </h3>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h4><code>filter_by</code> (string, enum)</h4>
+<h4> <code>filter_by</code>  <code>(string, enum)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -17906,31 +18822,34 @@ be changed.</p>
 
 </div>
 
-<h4><code>start_time</code> (string)</h4>
+<h4> <code>start_time</code>  <code>(string)</code> </h4>
 
-
-<div class="json-schema">
-
-</div>
-
-<h4><code>end_time</code> (string)</h4>
 
 
 <div class="json-schema">
 
 </div>
 
+<h4> <code>end_time</code>  <code>(string)</code> </h4>
+
+
+
+<div class="json-schema">
+
 </div>
 
-<h3>Filter by tag</h3>
-<code>(object)</code>
+</div>
+
+<h3> Filter by tag <code>(object)</code> </h3>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h4><code>filter_by</code> (string, enum)</h4>
+<h4> <code>filter_by</code>  <code>(string, enum)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -17945,24 +18864,26 @@ be changed.</p>
 
 </div>
 
-<h4><code>value</code> (string)</h4>
+<h4> <code>value</code>  <code>(string)</code> </h4>
 
-
-<div class="json-schema">
-
-</div>
-
-<h4><code>name</code> (string)</h4>
 
 
 <div class="json-schema">
 
 </div>
 
+<h4> <code>name</code>  <code>(string)</code> </h4>
+
+
+
+<div class="json-schema">
+
 </div>
 
-<h3>Filter by author</h3>
-<code>(object)</code>
+</div>
+
+<h3> Filter by author <code>(object)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -17973,7 +18894,8 @@ document author.</p>
 
 <p>This object has the following properties:</p>
 
-<h4><code>filter_by</code> (string, enum)</h4>
+<h4> <code>filter_by</code>  <code>(string, enum)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -17990,8 +18912,8 @@ document author.</p>
 
 </div>
 
-<h3>Signable on pad</h3>
-<code>(object)</code>
+<h3> Signable on pad <code>(object)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -18001,7 +18923,8 @@ document author.</p>
 
 <p>This object has the following properties:</p>
 
-<h4><code>filter_by</code> (string, enum)</h4>
+<h4> <code>filter_by</code>  <code>(string, enum)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -18018,15 +18941,16 @@ document author.</p>
 
 </div>
 
-<h3>Only templates</h3>
-<code>(object)</code>
+<h3> Only templates <code>(object)</code> </h3>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h4><code>filter_by</code> (string, enum)</h4>
+<h4> <code>filter_by</code>  <code>(string, enum)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -18043,15 +18967,16 @@ document author.</p>
 
 </div>
 
-<h3>Only non-templates</h3>
-<code>(object)</code>
+<h3> Only non-templates <code>(object)</code> </h3>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h4><code>filter_by</code> (string, enum)</h4>
+<h4> <code>filter_by</code>  <code>(string, enum)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -18068,15 +18993,16 @@ document author.</p>
 
 </div>
 
-<h3>In trash</h3>
-<code>(object)</code>
+<h3> In trash <code>(object)</code> </h3>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h4><code>filter_by</code> (string, enum)</h4>
+<h4> <code>filter_by</code>  <code>(string, enum)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -18093,15 +19019,16 @@ document author.</p>
 
 </div>
 
-<h3>Not in trash</h3>
-<code>(object)</code>
+<h3> Not in trash <code>(object)</code> </h3>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h4><code>filter_by</code> (string, enum)</h4>
+<h4> <code>filter_by</code>  <code>(string, enum)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -18118,15 +19045,16 @@ document author.</p>
 
 </div>
 
-<h3>Filter by author id</h3>
-<code>(object)</code>
+<h3> Filter by author id <code>(object)</code> </h3>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h4><code>filter_by</code> (string, enum)</h4>
+<h4> <code>filter_by</code>  <code>(string, enum)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -18141,7 +19069,8 @@ document author.</p>
 
 </div>
 
-<h4><code>user_id</code> (string)</h4>
+<h4> <code>user_id</code>  <code>(string)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -18150,15 +19079,16 @@ document author.</p>
 
 </div>
 
-<h3>Signable by user</h3>
-<code>(object)</code>
+<h3> Signable by user <code>(object)</code> </h3>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h4><code>filter_by</code> (string, enum)</h4>
+<h4> <code>filter_by</code>  <code>(string, enum)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -18173,7 +19103,8 @@ document author.</p>
 
 </div>
 
-<h4><code>user_id</code> (string)</h4>
+<h4> <code>user_id</code>  <code>(string)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -18182,15 +19113,16 @@ document author.</p>
 
 </div>
 
-<h3>Filter by text</h3>
-<code>(object)</code>
+<h3> Filter by text <code>(object)</code> </h3>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h4><code>filter_by</code> (string, enum)</h4>
+<h4> <code>filter_by</code>  <code>(string, enum)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -18205,7 +19137,8 @@ document author.</p>
 
 </div>
 
-<h4><code>text</code> (string)</h4>
+<h4> <code>text</code>  <code>(string)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -18240,14 +19173,16 @@ document author.</p>
 
 <p>All array elements must be of type:</p>
 
-<h3>(object)</h3>
+<h3> <code>(object)</code> </h3>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h4><code>order</code> (string, enum)</h4>
+<h4> <code>order</code>  <code>(string, enum)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -18265,7 +19200,8 @@ document author.</p>
 
 </div>
 
-<h4><code>sort_by</code> (string, enum, required)</h4>
+<h4> <code>sort_by</code>  <code>(string, enum, required)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -18320,7 +19256,8 @@ document author.</p>
 <p>The value of this array must match <em>at least one</em> of the following schemas:</p>
 
 
-<h3>(object)</h3>
+<h3> <code>(object)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -18330,21 +19267,24 @@ document author.</p>
 
 <p>This object has the following properties:</p>
 
-<h4><code>name</code> (string, required)</h4>
+<h4> <code>name</code>  <code>(string, required)</code> </h4>
 
-
-<div class="json-schema">
-
-</div>
-
-<h4><code>required</code> (boolean, required)</h4>
 
 
 <div class="json-schema">
 
 </div>
 
-<h4><code>add_to_sealed_file</code> (boolean, required)</h4>
+<h4> <code>required</code>  <code>(boolean, required)</code> </h4>
+
+
+
+<div class="json-schema">
+
+</div>
+
+<h4> <code>add_to_sealed_file</code>  <code>(boolean, required)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -18354,7 +19294,8 @@ document author.</p>
 
 </div>
 
-<h4><code>file_param</code> (string, required)</h4>
+<h4> <code>file_param</code>  <code>(string, required)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -18366,7 +19307,8 @@ document author.</p>
 
 </div>
 
-<h3>(object)</h3>
+<h3> <code>(object)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -18376,21 +19318,24 @@ document author.</p>
 
 <p>This object has the following properties:</p>
 
-<h4><code>name</code> (string, required)</h4>
+<h4> <code>name</code>  <code>(string, required)</code> </h4>
 
-
-<div class="json-schema">
-
-</div>
-
-<h4><code>required</code> (boolean, required)</h4>
 
 
 <div class="json-schema">
 
 </div>
 
-<h4><code>add_to_sealed_file</code> (boolean, required)</h4>
+<h4> <code>required</code>  <code>(boolean, required)</code> </h4>
+
+
+
+<div class="json-schema">
+
+</div>
+
+<h4> <code>add_to_sealed_file</code>  <code>(boolean, required)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -18400,7 +19345,8 @@ document author.</p>
 
 </div>
 
-<h4><code>file_id</code> (integer, required)</h4>
+<h4> <code>file_id</code>  <code>(integer, required)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -18440,21 +19386,24 @@ document author.</p>
 
 <p>This object has the following properties:</p>
 
-<h3><code>events</code> (array)</h3>
+<h3> <code>events</code>  <code>(array)</code> </h3>
+
 
 
 <div class="json-schema">
 
 <p>All array elements must be of type:</p>
 
-<h4>(object)</h4>
+<h4> <code>(object)</code> </h4>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h5><code>status</code> (string, enum)</h5>
+<h5> <code>status</code>  <code>(string, enum)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -18487,14 +19436,16 @@ available for documents.</p>
 
 </div>
 
-<h5><code>time</code> (string)</h5>
+<h5> <code>time</code>  <code>(string)</code> </h5>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h5><code>text</code> (string)</h5>
+<h5> <code>text</code>  <code>(string)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -18504,7 +19455,8 @@ available for documents.</p>
 
 </div>
 
-<h5><code>party</code> (string)</h5>
+<h5> <code>party</code>  <code>(string)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -18546,7 +19498,8 @@ documents.</p>
 
 <p>This object has the following properties:</p>
 
-<h3><code>id</code> (string, read only)</h3>
+<h3> <code>id</code>  <code>(string, read only)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -18557,7 +19510,8 @@ documents.</p>
 
 </div>
 
-<h3><code>title</code> (string, read only)</h3>
+<h3> <code>title</code>  <code>(string, read only)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -18568,7 +19522,8 @@ documents.</p>
 
 </div>
 
-<h3><code>file</code> (string, read only)</h3>
+<h3> <code>file</code>  <code>(string, read only)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -18578,7 +19533,8 @@ documents.</p>
 
 </div>
 
-<h3><code>shared</code> (boolean)</h3>
+<h3> <code>shared</code>  <code>(boolean)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -18589,7 +19545,8 @@ documents.</p>
 
 </div>
 
-<h3><code>time</code> (string, read only)</h3>
+<h3> <code>time</code>  <code>(string, read only)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -18628,15 +19585,16 @@ documents.</p>
 <p>The value of this array must match <em>at least one</em> of the following schemas:</p>
 
 
-<h3>Filter by text</h3>
-<code>(object)</code>
+<h3> Filter by text <code>(object)</code> </h3>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h4><code>filter_by</code> (string, enum)</h4>
+<h4> <code>filter_by</code>  <code>(string, enum)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -18651,7 +19609,8 @@ documents.</p>
 
 </div>
 
-<h4><code>text</code> (string)</h4>
+<h4> <code>text</code>  <code>(string)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -18686,7 +19645,8 @@ documents.</p>
 
 <p>This object has the following properties:</p>
 
-<h3><code>immediate_trash</code> (boolean)</h3>
+<h3> <code>immediate_trash</code>  <code>(boolean)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -18696,7 +19656,8 @@ documents.</p>
 
 </div>
 
-<h3><code>idle_doc_timeout_preparation</code> (integer)</h3>
+<h3> <code>idle_doc_timeout_preparation</code>  <code>(integer)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -18706,7 +19667,8 @@ documents.</p>
 
 </div>
 
-<h3><code>idle_doc_timeout_closed</code> (integer)</h3>
+<h3> <code>idle_doc_timeout_closed</code>  <code>(integer)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -18716,7 +19678,8 @@ documents.</p>
 
 </div>
 
-<h3><code>idle_doc_timeout_canceled</code> (integer)</h3>
+<h3> <code>idle_doc_timeout_canceled</code>  <code>(integer)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -18726,7 +19689,8 @@ documents.</p>
 
 </div>
 
-<h3><code>idle_doc_timeout_timedout</code> (integer)</h3>
+<h3> <code>idle_doc_timeout_timedout</code>  <code>(integer)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -18736,7 +19700,8 @@ documents.</p>
 
 </div>
 
-<h3><code>idle_doc_timeout_rejected</code> (integer)</h3>
+<h3> <code>idle_doc_timeout_rejected</code>  <code>(integer)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -18746,7 +19711,8 @@ documents.</p>
 
 </div>
 
-<h3><code>idle_doc_timeout_error</code> (integer)</h3>
+<h3> <code>idle_doc_timeout_error</code>  <code>(integer)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -18787,7 +19753,8 @@ documents.</p>
 
 <p>This object has the following properties:</p>
 
-<h3><code>company_data_retention_policy</code> <code>(object)</code></h3>
+<h3> <code>company_data_retention_policy</code>  <code>(object)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -18797,7 +19764,8 @@ documents.</p>
 
 <p>The <code>company_data_retention_policy</code> object has the following properties:</p>
 
-<h4><code>immediate_trash</code> (boolean)</h4>
+<h4> <code>immediate_trash</code>  <code>(boolean)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -18807,7 +19775,8 @@ documents.</p>
 
 </div>
 
-<h4><code>idle_doc_timeout_preparation</code> (integer)</h4>
+<h4> <code>idle_doc_timeout_preparation</code>  <code>(integer)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -18817,7 +19786,8 @@ documents.</p>
 
 </div>
 
-<h4><code>idle_doc_timeout_closed</code> (integer)</h4>
+<h4> <code>idle_doc_timeout_closed</code>  <code>(integer)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -18827,7 +19797,8 @@ documents.</p>
 
 </div>
 
-<h4><code>idle_doc_timeout_canceled</code> (integer)</h4>
+<h4> <code>idle_doc_timeout_canceled</code>  <code>(integer)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -18837,7 +19808,8 @@ documents.</p>
 
 </div>
 
-<h4><code>idle_doc_timeout_timedout</code> (integer)</h4>
+<h4> <code>idle_doc_timeout_timedout</code>  <code>(integer)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -18847,7 +19819,8 @@ documents.</p>
 
 </div>
 
-<h4><code>idle_doc_timeout_rejected</code> (integer)</h4>
+<h4> <code>idle_doc_timeout_rejected</code>  <code>(integer)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -18857,7 +19830,8 @@ documents.</p>
 
 </div>
 
-<h4><code>idle_doc_timeout_error</code> (integer)</h4>
+<h4> <code>idle_doc_timeout_error</code>  <code>(integer)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -18869,7 +19843,8 @@ documents.</p>
 
 </div>
 
-<h3><code>data_retention_policy</code> <code>(object)</code></h3>
+<h3> <code>data_retention_policy</code>  <code>(object)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -18879,7 +19854,8 @@ documents.</p>
 
 <p>The <code>data_retention_policy</code> object has the following properties:</p>
 
-<h4><code>immediate_trash</code> (boolean)</h4>
+<h4> <code>immediate_trash</code>  <code>(boolean)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -18889,7 +19865,8 @@ documents.</p>
 
 </div>
 
-<h4><code>idle_doc_timeout_preparation</code> (integer)</h4>
+<h4> <code>idle_doc_timeout_preparation</code>  <code>(integer)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -18899,7 +19876,8 @@ documents.</p>
 
 </div>
 
-<h4><code>idle_doc_timeout_closed</code> (integer)</h4>
+<h4> <code>idle_doc_timeout_closed</code>  <code>(integer)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -18909,7 +19887,8 @@ documents.</p>
 
 </div>
 
-<h4><code>idle_doc_timeout_canceled</code> (integer)</h4>
+<h4> <code>idle_doc_timeout_canceled</code>  <code>(integer)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -18919,7 +19898,8 @@ documents.</p>
 
 </div>
 
-<h4><code>idle_doc_timeout_timedout</code> (integer)</h4>
+<h4> <code>idle_doc_timeout_timedout</code>  <code>(integer)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -18929,7 +19909,8 @@ documents.</p>
 
 </div>
 
-<h4><code>idle_doc_timeout_rejected</code> (integer)</h4>
+<h4> <code>idle_doc_timeout_rejected</code>  <code>(integer)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -18939,7 +19920,8 @@ documents.</p>
 
 </div>
 
-<h4><code>idle_doc_timeout_error</code> (integer)</h4>
+<h4> <code>idle_doc_timeout_error</code>  <code>(integer)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -18961,28 +19943,32 @@ documents.</p>
 
 <p>This object has the following properties:</p>
 
-<h3><code>apitoken</code> (string)</h3>
+<h3> <code>apitoken</code>  <code>(string)</code> </h3>
 
-
-<div class="json-schema">
-
-</div>
-
-<h3><code>apisecret</code> (string)</h3>
 
 
 <div class="json-schema">
 
 </div>
 
-<h3><code>accesstoken</code> (string)</h3>
+<h3> <code>apisecret</code>  <code>(string)</code> </h3>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h3><code>accesssecret</code> (string)</h3>
+<h3> <code>accesstoken</code>  <code>(string)</code> </h3>
+
+
+
+<div class="json-schema">
+
+</div>
+
+<h3> <code>accesssecret</code>  <code>(string)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -19031,49 +20017,56 @@ count of documents on different stages of the process</p>
 
 <p>This object has the following properties:</p>
 
-<h3><code>stats</code> (array)</h3>
+<h3> <code>stats</code>  <code>(array)</code> </h3>
+
 
 
 <div class="json-schema">
 
 <p>All array elements must be of type:</p>
 
-<h4>(object)</h4>
+<h4> <code>(object)</code> </h4>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h5><code>date</code> (string)</h5>
+<h5> <code>date</code>  <code>(string)</code> </h5>
 
-
-<div class="json-schema">
-
-</div>
-
-<h5><code>sent</code> (integer)</h5>
 
 
 <div class="json-schema">
 
 </div>
 
-<h5><code>closed</code> (integer)</h5>
+<h5> <code>sent</code>  <code>(integer)</code> </h5>
 
-
-<div class="json-schema">
-
-</div>
-
-<h5><code>signatures</code> (integer)</h5>
 
 
 <div class="json-schema">
 
 </div>
 
-<h5><code>user_stats</code> (array)</h5>
+<h5> <code>closed</code>  <code>(integer)</code> </h5>
+
+
+
+<div class="json-schema">
+
+</div>
+
+<h5> <code>signatures</code>  <code>(integer)</code> </h5>
+
+
+
+<div class="json-schema">
+
+</div>
+
+<h5> <code>user_stats</code>  <code>(array)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -19083,49 +20076,56 @@ count of documents on different stages of the process</p>
 
 <p>All array elements must be of type:</p>
 
-<h6>(object)</h6>
+<h6> <code>(object)</code> </h6>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h6><code>date</code> (string)</h6>
+<h6> <code>date</code>  <code>(string)</code> </h6>
 
-
-<div class="json-schema">
-
-</div>
-
-<h6><code>email</code> (string)</h6>
 
 
 <div class="json-schema">
 
 </div>
 
-<h6><code>name</code> (string)</h6>
+<h6> <code>email</code>  <code>(string)</code> </h6>
 
-
-<div class="json-schema">
-
-</div>
-
-<h6><code>sent</code> (integer)</h6>
 
 
 <div class="json-schema">
 
 </div>
 
-<h6><code>closed</code> (integer)</h6>
+<h6> <code>name</code>  <code>(string)</code> </h6>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h6><code>signatures</code> (integer)</h6>
+<h6> <code>sent</code>  <code>(integer)</code> </h6>
+
+
+
+<div class="json-schema">
+
+</div>
+
+<h6> <code>closed</code>  <code>(integer)</code> </h6>
+
+
+
+<div class="json-schema">
+
+</div>
+
+<h6> <code>signatures</code>  <code>(integer)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -19165,21 +20165,24 @@ count of documents on different stages of the process</p>
 
 <p>This object has the following properties:</p>
 
-<h3><code>login_token</code> (string)</h3>
+<h3> <code>login_token</code>  <code>(string)</code> </h3>
 
-
-<div class="json-schema">
-
-</div>
-
-<h3><code>qr_code</code> (string)</h3>
 
 
 <div class="json-schema">
 
 </div>
 
-<h3><code>expiration_time</code> (string)</h3>
+<h3> <code>qr_code</code>  <code>(string)</code> </h3>
+
+
+
+<div class="json-schema">
+
+</div>
+
+<h3> <code>expiration_time</code>  <code>(string)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -19253,91 +20256,104 @@ count of documents on different stages of the process</p>
 
 <p>This object has the following properties:</p>
 
-<h3><code>id</code> (string)</h3>
+<h3> <code>id</code>  <code>(string)</code> </h3>
 
-
-<div class="json-schema">
-
-</div>
-
-<h3><code>fstname</code> (string)</h3>
 
 
 <div class="json-schema">
 
 </div>
 
-<h3><code>sndname</code> (string)</h3>
+<h3> <code>fstname</code>  <code>(string)</code> </h3>
 
-
-<div class="json-schema">
-
-</div>
-
-<h3><code>email</code> (string)</h3>
 
 
 <div class="json-schema">
 
 </div>
 
-<h3><code>sysauth</code> (string)</h3>
+<h3> <code>sndname</code>  <code>(string)</code> </h3>
 
-
-<div class="json-schema">
-
-</div>
-
-<h3><code>home_folder_id</code> (string)</h3>
 
 
 <div class="json-schema">
 
 </div>
 
-<h3><code>twofactor_active</code> (boolean)</h3>
+<h3> <code>email</code>  <code>(string)</code> </h3>
 
-
-<div class="json-schema">
-
-</div>
-
-<h3><code>twofactor_is_mandatory</code> (boolean)</h3>
 
 
 <div class="json-schema">
 
 </div>
 
-<h3><code>personalnumber</code> (string)</h3>
+<h3> <code>sysauth</code>  <code>(string)</code> </h3>
 
-
-<div class="json-schema">
-
-</div>
-
-<h3><code>phone</code> (string)</h3>
 
 
 <div class="json-schema">
 
 </div>
 
-<h3><code>companyadmin</code> (boolean)</h3>
+<h3> <code>home_folder_id</code>  <code>(string)</code> </h3>
 
-
-<div class="json-schema">
-
-</div>
-
-<h3><code>companyposition</code> (string)</h3>
 
 
 <div class="json-schema">
 
 </div>
 
-<h3><code>lang</code> (string)</h3>
+<h3> <code>twofactor_active</code>  <code>(boolean)</code> </h3>
+
+
+
+<div class="json-schema">
+
+</div>
+
+<h3> <code>twofactor_is_mandatory</code>  <code>(boolean)</code> </h3>
+
+
+
+<div class="json-schema">
+
+</div>
+
+<h3> <code>personalnumber</code>  <code>(string)</code> </h3>
+
+
+
+<div class="json-schema">
+
+</div>
+
+<h3> <code>phone</code>  <code>(string)</code> </h3>
+
+
+
+<div class="json-schema">
+
+</div>
+
+<h3> <code>companyadmin</code>  <code>(boolean)</code> </h3>
+
+
+
+<div class="json-schema">
+
+</div>
+
+<h3> <code>companyposition</code>  <code>(string)</code> </h3>
+
+
+
+<div class="json-schema">
+
+</div>
+
+<h3> <code>lang</code>  <code>(string)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -19408,28 +20424,32 @@ count of documents on different stages of the process</p>
 
 <p>This object has the following properties:</p>
 
-<h3><code>id</code> (string)</h3>
+<h3> <code>id</code>  <code>(string)</code> </h3>
 
-
-<div class="json-schema">
-
-</div>
-
-<h3><code>parent_id</code> (string)</h3>
 
 
 <div class="json-schema">
 
 </div>
 
-<h3><code>name</code> (string)</h3>
+<h3> <code>parent_id</code>  <code>(string)</code> </h3>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h3><code>children</code> (array)</h3>
+<h3> <code>name</code>  <code>(string)</code> </h3>
+
+
+
+<div class="json-schema">
+
+</div>
+
+<h3> <code>children</code>  <code>(array)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -19438,32 +20458,36 @@ count of documents on different stages of the process</p>
 
 <p>All array elements must be of type:</p>
 
-<h4>(object)</h4>
+<h4> <code>(object)</code> </h4>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h5><code>id</code> (string)</h5>
+<h5> <code>id</code>  <code>(string)</code> </h5>
 
-
-<div class="json-schema">
-
-</div>
-
-<h5><code>name</code> (string)</h5>
 
 
 <div class="json-schema">
 
 </div>
 
+<h5> <code>name</code>  <code>(string)</code> </h5>
+
+
+
+<div class="json-schema">
+
+</div>
+
 </div>
 
 </div>
 
-<h3><code>settings</code> <code>(object)</code></h3>
+<h3> <code>settings</code>  <code>(object)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -19473,21 +20497,24 @@ count of documents on different stages of the process</p>
 
 <p>The <code>settings</code> object has the following properties:</p>
 
-<h4><code>inherited_from</code> (string)</h4>
+<h4> <code>inherited_from</code>  <code>(string)</code> </h4>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h4><code>data_retention_policy</code> (object)</h4>
+<h4> <code>data_retention_policy</code>  <code>(object)</code> </h4>
+
 
 
 <div class="json-schema">
 
 <p>The <code>data_retention_policy</code> object has the following properties:</p>
 
-<h5><code>idle_doc_timeout_preparation</code> (integer)</h5>
+<h5> <code>idle_doc_timeout_preparation</code>  <code>(integer)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -19497,7 +20524,8 @@ count of documents on different stages of the process</p>
 
 </div>
 
-<h5><code>idle_doc_timeout_closed</code> (integer)</h5>
+<h5> <code>idle_doc_timeout_closed</code>  <code>(integer)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -19507,7 +20535,8 @@ count of documents on different stages of the process</p>
 
 </div>
 
-<h5><code>idle_doc_timeout_canceled</code> (integer)</h5>
+<h5> <code>idle_doc_timeout_canceled</code>  <code>(integer)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -19517,7 +20546,8 @@ count of documents on different stages of the process</p>
 
 </div>
 
-<h5><code>idle_doc_timeout_timedout</code> (integer)</h5>
+<h5> <code>idle_doc_timeout_timedout</code>  <code>(integer)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -19527,7 +20557,8 @@ count of documents on different stages of the process</p>
 
 </div>
 
-<h5><code>idle_doc_timeout_rejected</code> (integer)</h5>
+<h5> <code>idle_doc_timeout_rejected</code>  <code>(integer)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -19537,7 +20568,8 @@ count of documents on different stages of the process</p>
 
 </div>
 
-<h5><code>idle_doc_timeout_error</code> (integer)</h5>
+<h5> <code>idle_doc_timeout_error</code>  <code>(integer)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -19547,7 +20579,8 @@ count of documents on different stages of the process</p>
 
 </div>
 
-<h5><code>immediate_trash</code> (boolean)</h5>
+<h5> <code>immediate_trash</code>  <code>(boolean)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -19558,7 +20591,8 @@ count of documents on different stages of the process</p>
 
 </div>
 
-<h3><code>contact_details</code> <code>(object)</code></h3>
+<h3> <code>contact_details</code>  <code>(object)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -19568,67 +20602,76 @@ count of documents on different stages of the process</p>
 
 <p>The <code>contact_details</code> object has the following properties:</p>
 
-<h4><code>inherited_from</code> (string)</h4>
+<h4> <code>inherited_from</code>  <code>(string)</code> </h4>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h4><code>address</code> (object)</h4>
+<h4> <code>address</code>  <code>(object)</code> </h4>
+
 
 
 <div class="json-schema">
 
 <p>The <code>address</code> object has the following properties:</p>
 
-<h5><code>company_number</code> (string)</h5>
+<h5> <code>company_number</code>  <code>(string)</code> </h5>
 
-
-<div class="json-schema">
-
-</div>
-
-<h5><code>company_name</code> (string)</h5>
 
 
 <div class="json-schema">
 
 </div>
 
-<h5><code>address</code> (string)</h5>
+<h5> <code>company_name</code>  <code>(string)</code> </h5>
 
-
-<div class="json-schema">
-
-</div>
-
-<h5><code>zip</code> (string)</h5>
 
 
 <div class="json-schema">
 
 </div>
 
-<h5><code>city</code> (string)</h5>
+<h5> <code>address</code>  <code>(string)</code> </h5>
 
-
-<div class="json-schema">
-
-</div>
-
-<h5><code>country</code> (string)</h5>
 
 
 <div class="json-schema">
 
 </div>
 
+<h5> <code>zip</code>  <code>(string)</code> </h5>
+
+
+
+<div class="json-schema">
+
+</div>
+
+<h5> <code>city</code>  <code>(string)</code> </h5>
+
+
+
+<div class="json-schema">
+
+</div>
+
+<h5> <code>country</code>  <code>(string)</code> </h5>
+
+
+
+<div class="json-schema">
+
+</div>
+
 </div>
 
 </div>
 
-<h3><code>tags</code> <code>(array)</code></h3>
+<h3> <code>tags</code>  <code>(array)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -19644,21 +20687,24 @@ Other value types lead to 400 Bad Request response.</p>
 
 <p>All array elements must be of type:</p>
 
-<h4>(object)</h4>
+<h4> <code>(object)</code> </h4>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h5><code>name</code> (string)</h5>
+<h5> <code>name</code>  <code>(string)</code> </h5>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h5><code>value</code> (string)</h5>
+<h5> <code>value</code>  <code>(string)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -19756,28 +20802,32 @@ Other value types lead to 400 Bad Request response.</p>
 
 <p>This object has the following properties:</p>
 
-<h3><code>id</code> (string)</h3>
+<h3> <code>id</code>  <code>(string)</code> </h3>
 
-
-<div class="json-schema">
-
-</div>
-
-<h3><code>parent_id</code> (string)</h3>
 
 
 <div class="json-schema">
 
 </div>
 
-<h3><code>name</code> (string)</h3>
+<h3> <code>parent_id</code>  <code>(string)</code> </h3>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h3><code>children</code> (array)</h3>
+<h3> <code>name</code>  <code>(string)</code> </h3>
+
+
+
+<div class="json-schema">
+
+</div>
+
+<h3> <code>children</code>  <code>(array)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -19786,32 +20836,36 @@ Other value types lead to 400 Bad Request response.</p>
 
 <p>All array elements must be of type:</p>
 
-<h4>(object)</h4>
+<h4> <code>(object)</code> </h4>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h5><code>id</code> (string)</h5>
+<h5> <code>id</code>  <code>(string)</code> </h5>
 
-
-<div class="json-schema">
-
-</div>
-
-<h5><code>name</code> (string)</h5>
 
 
 <div class="json-schema">
 
 </div>
 
+<h5> <code>name</code>  <code>(string)</code> </h5>
+
+
+
+<div class="json-schema">
+
+</div>
+
 </div>
 
 </div>
 
-<h3><code>settings</code> <code>(object)</code></h3>
+<h3> <code>settings</code>  <code>(object)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -19821,21 +20875,24 @@ Other value types lead to 400 Bad Request response.</p>
 
 <p>The <code>settings</code> object has the following properties:</p>
 
-<h4><code>inherited_from</code> (string)</h4>
+<h4> <code>inherited_from</code>  <code>(string)</code> </h4>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h4><code>data_retention_policy</code> (object)</h4>
+<h4> <code>data_retention_policy</code>  <code>(object)</code> </h4>
+
 
 
 <div class="json-schema">
 
 <p>The <code>data_retention_policy</code> object has the following properties:</p>
 
-<h5><code>idle_doc_timeout_preparation</code> (integer)</h5>
+<h5> <code>idle_doc_timeout_preparation</code>  <code>(integer)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -19845,7 +20902,8 @@ Other value types lead to 400 Bad Request response.</p>
 
 </div>
 
-<h5><code>idle_doc_timeout_closed</code> (integer)</h5>
+<h5> <code>idle_doc_timeout_closed</code>  <code>(integer)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -19855,7 +20913,8 @@ Other value types lead to 400 Bad Request response.</p>
 
 </div>
 
-<h5><code>idle_doc_timeout_canceled</code> (integer)</h5>
+<h5> <code>idle_doc_timeout_canceled</code>  <code>(integer)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -19865,7 +20924,8 @@ Other value types lead to 400 Bad Request response.</p>
 
 </div>
 
-<h5><code>idle_doc_timeout_timedout</code> (integer)</h5>
+<h5> <code>idle_doc_timeout_timedout</code>  <code>(integer)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -19875,7 +20935,8 @@ Other value types lead to 400 Bad Request response.</p>
 
 </div>
 
-<h5><code>idle_doc_timeout_rejected</code> (integer)</h5>
+<h5> <code>idle_doc_timeout_rejected</code>  <code>(integer)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -19885,7 +20946,8 @@ Other value types lead to 400 Bad Request response.</p>
 
 </div>
 
-<h5><code>idle_doc_timeout_error</code> (integer)</h5>
+<h5> <code>idle_doc_timeout_error</code>  <code>(integer)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -19895,7 +20957,8 @@ Other value types lead to 400 Bad Request response.</p>
 
 </div>
 
-<h5><code>immediate_trash</code> (boolean)</h5>
+<h5> <code>immediate_trash</code>  <code>(boolean)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -19904,28 +20967,32 @@ Other value types lead to 400 Bad Request response.</p>
 
 </div>
 
-<h4><code>inheritable_preview</code> (object)</h4>
+<h4> <code>inheritable_preview</code>  <code>(object)</code> </h4>
+
 
 
 <div class="json-schema">
 
 <p>The <code>inheritable_preview</code> object has the following properties:</p>
 
-<h5><code>inherited_from</code> (string)</h5>
+<h5> <code>inherited_from</code>  <code>(string)</code> </h5>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h5><code>data_retention_policy</code> (object)</h5>
+<h5> <code>data_retention_policy</code>  <code>(object)</code> </h5>
+
 
 
 <div class="json-schema">
 
 <p>The <code>data_retention_policy</code> object has the following properties:</p>
 
-<h6><code>idle_doc_timeout_preparation</code> (integer)</h6>
+<h6> <code>idle_doc_timeout_preparation</code>  <code>(integer)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -19935,7 +21002,8 @@ Other value types lead to 400 Bad Request response.</p>
 
 </div>
 
-<h6><code>idle_doc_timeout_closed</code> (integer)</h6>
+<h6> <code>idle_doc_timeout_closed</code>  <code>(integer)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -19945,7 +21013,8 @@ Other value types lead to 400 Bad Request response.</p>
 
 </div>
 
-<h6><code>idle_doc_timeout_canceled</code> (integer)</h6>
+<h6> <code>idle_doc_timeout_canceled</code>  <code>(integer)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -19955,7 +21024,8 @@ Other value types lead to 400 Bad Request response.</p>
 
 </div>
 
-<h6><code>idle_doc_timeout_timedout</code> (integer)</h6>
+<h6> <code>idle_doc_timeout_timedout</code>  <code>(integer)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -19965,7 +21035,8 @@ Other value types lead to 400 Bad Request response.</p>
 
 </div>
 
-<h6><code>idle_doc_timeout_rejected</code> (integer)</h6>
+<h6> <code>idle_doc_timeout_rejected</code>  <code>(integer)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -19975,7 +21046,8 @@ Other value types lead to 400 Bad Request response.</p>
 
 </div>
 
-<h6><code>idle_doc_timeout_error</code> (integer)</h6>
+<h6> <code>idle_doc_timeout_error</code>  <code>(integer)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -19985,7 +21057,8 @@ Other value types lead to 400 Bad Request response.</p>
 
 </div>
 
-<h6><code>immediate_trash</code> (boolean)</h6>
+<h6> <code>immediate_trash</code>  <code>(boolean)</code> </h6>
+
 
 
 <div class="json-schema">
@@ -19998,7 +21071,8 @@ Other value types lead to 400 Bad Request response.</p>
 
 </div>
 
-<h3><code>contact_details</code> <code>(object)</code></h3>
+<h3> <code>contact_details</code>  <code>(object)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -20009,134 +21083,152 @@ Preview).</p>
 
 <p>The <code>contact_details</code> object has the following properties:</p>
 
-<h4><code>inherited_from</code> (string)</h4>
+<h4> <code>inherited_from</code>  <code>(string)</code> </h4>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h4><code>address</code> (object)</h4>
+<h4> <code>address</code>  <code>(object)</code> </h4>
+
 
 
 <div class="json-schema">
 
 <p>The <code>address</code> object has the following properties:</p>
 
-<h5><code>company_number</code> (string)</h5>
+<h5> <code>company_number</code>  <code>(string)</code> </h5>
 
-
-<div class="json-schema">
-
-</div>
-
-<h5><code>company_name</code> (string)</h5>
 
 
 <div class="json-schema">
 
 </div>
 
-<h5><code>address</code> (string)</h5>
+<h5> <code>company_name</code>  <code>(string)</code> </h5>
 
-
-<div class="json-schema">
-
-</div>
-
-<h5><code>zip</code> (string)</h5>
 
 
 <div class="json-schema">
 
 </div>
 
-<h5><code>city</code> (string)</h5>
+<h5> <code>address</code>  <code>(string)</code> </h5>
 
-
-<div class="json-schema">
-
-</div>
-
-<h5><code>country</code> (string)</h5>
 
 
 <div class="json-schema">
 
 </div>
 
+<h5> <code>zip</code>  <code>(string)</code> </h5>
+
+
+
+<div class="json-schema">
+
 </div>
 
-<h4><code>inheritable_preview</code> (object)</h4>
+<h5> <code>city</code>  <code>(string)</code> </h5>
+
+
+
+<div class="json-schema">
+
+</div>
+
+<h5> <code>country</code>  <code>(string)</code> </h5>
+
+
+
+<div class="json-schema">
+
+</div>
+
+</div>
+
+<h4> <code>inheritable_preview</code>  <code>(object)</code> </h4>
+
 
 
 <div class="json-schema">
 
 <p>The <code>inheritable_preview</code> object has the following properties:</p>
 
-<h5><code>inherited_from</code> (string)</h5>
+<h5> <code>inherited_from</code>  <code>(string)</code> </h5>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h5><code>address</code> (object)</h5>
+<h5> <code>address</code>  <code>(object)</code> </h5>
+
 
 
 <div class="json-schema">
 
 <p>The <code>address</code> object has the following properties:</p>
 
-<h6><code>company_number</code> (string)</h6>
+<h6> <code>company_number</code>  <code>(string)</code> </h6>
 
-
-<div class="json-schema">
-
-</div>
-
-<h6><code>company_name</code> (string)</h6>
 
 
 <div class="json-schema">
 
 </div>
 
-<h6><code>address</code> (string)</h6>
+<h6> <code>company_name</code>  <code>(string)</code> </h6>
 
-
-<div class="json-schema">
-
-</div>
-
-<h6><code>zip</code> (string)</h6>
 
 
 <div class="json-schema">
 
 </div>
 
-<h6><code>city</code> (string)</h6>
+<h6> <code>address</code>  <code>(string)</code> </h6>
 
-
-<div class="json-schema">
-
-</div>
-
-<h6><code>country</code> (string)</h6>
 
 
 <div class="json-schema">
 
 </div>
 
+<h6> <code>zip</code>  <code>(string)</code> </h6>
+
+
+
+<div class="json-schema">
+
 </div>
+
+<h6> <code>city</code>  <code>(string)</code> </h6>
+
+
+
+<div class="json-schema">
+
+</div>
+
+<h6> <code>country</code>  <code>(string)</code> </h6>
+
+
+
+<div class="json-schema">
 
 </div>
 
 </div>
 
-<h3><code>tags</code> <code>(array)</code></h3>
+</div>
+
+</div>
+
+<h3> <code>tags</code>  <code>(array)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -20152,21 +21244,24 @@ Other value types lead to 400 Bad Request response.</p>
 
 <p>All array elements must be of type:</p>
 
-<h4>(object)</h4>
+<h4> <code>(object)</code> </h4>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h5><code>name</code> (string)</h5>
+<h5> <code>name</code>  <code>(string)</code> </h5>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h5><code>value</code> (string)</h5>
+<h5> <code>value</code>  <code>(string)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -20209,21 +21304,24 @@ Other value types lead to 400 Bad Request response.</p>
 
 <p>This object has the following properties:</p>
 
-<h3><code>inherited_from</code> (string)</h3>
+<h3> <code>inherited_from</code>  <code>(string)</code> </h3>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h3><code>data_retention_policy</code> (object)</h3>
+<h3> <code>data_retention_policy</code>  <code>(object)</code> </h3>
+
 
 
 <div class="json-schema">
 
 <p>The <code>data_retention_policy</code> object has the following properties:</p>
 
-<h4><code>idle_doc_timeout_preparation</code> (integer)</h4>
+<h4> <code>idle_doc_timeout_preparation</code>  <code>(integer)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -20233,7 +21331,8 @@ Other value types lead to 400 Bad Request response.</p>
 
 </div>
 
-<h4><code>idle_doc_timeout_closed</code> (integer)</h4>
+<h4> <code>idle_doc_timeout_closed</code>  <code>(integer)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -20243,7 +21342,8 @@ Other value types lead to 400 Bad Request response.</p>
 
 </div>
 
-<h4><code>idle_doc_timeout_canceled</code> (integer)</h4>
+<h4> <code>idle_doc_timeout_canceled</code>  <code>(integer)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -20253,7 +21353,8 @@ Other value types lead to 400 Bad Request response.</p>
 
 </div>
 
-<h4><code>idle_doc_timeout_timedout</code> (integer)</h4>
+<h4> <code>idle_doc_timeout_timedout</code>  <code>(integer)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -20263,7 +21364,8 @@ Other value types lead to 400 Bad Request response.</p>
 
 </div>
 
-<h4><code>idle_doc_timeout_rejected</code> (integer)</h4>
+<h4> <code>idle_doc_timeout_rejected</code>  <code>(integer)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -20273,7 +21375,8 @@ Other value types lead to 400 Bad Request response.</p>
 
 </div>
 
-<h4><code>idle_doc_timeout_error</code> (integer)</h4>
+<h4> <code>idle_doc_timeout_error</code>  <code>(integer)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -20283,7 +21386,8 @@ Other value types lead to 400 Bad Request response.</p>
 
 </div>
 
-<h4><code>immediate_trash</code> (boolean)</h4>
+<h4> <code>immediate_trash</code>  <code>(boolean)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -20336,21 +21440,24 @@ Other value types lead to 400 Bad Request response.</p>
 
 <p>This object has the following properties:</p>
 
-<h3><code>inherited_from</code> (string)</h3>
+<h3> <code>inherited_from</code>  <code>(string)</code> </h3>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h3><code>data_retention_policy</code> (object)</h3>
+<h3> <code>data_retention_policy</code>  <code>(object)</code> </h3>
+
 
 
 <div class="json-schema">
 
 <p>The <code>data_retention_policy</code> object has the following properties:</p>
 
-<h4><code>idle_doc_timeout_preparation</code> (integer)</h4>
+<h4> <code>idle_doc_timeout_preparation</code>  <code>(integer)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -20360,7 +21467,8 @@ Other value types lead to 400 Bad Request response.</p>
 
 </div>
 
-<h4><code>idle_doc_timeout_closed</code> (integer)</h4>
+<h4> <code>idle_doc_timeout_closed</code>  <code>(integer)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -20370,7 +21478,8 @@ Other value types lead to 400 Bad Request response.</p>
 
 </div>
 
-<h4><code>idle_doc_timeout_canceled</code> (integer)</h4>
+<h4> <code>idle_doc_timeout_canceled</code>  <code>(integer)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -20380,7 +21489,8 @@ Other value types lead to 400 Bad Request response.</p>
 
 </div>
 
-<h4><code>idle_doc_timeout_timedout</code> (integer)</h4>
+<h4> <code>idle_doc_timeout_timedout</code>  <code>(integer)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -20390,7 +21500,8 @@ Other value types lead to 400 Bad Request response.</p>
 
 </div>
 
-<h4><code>idle_doc_timeout_rejected</code> (integer)</h4>
+<h4> <code>idle_doc_timeout_rejected</code>  <code>(integer)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -20400,7 +21511,8 @@ Other value types lead to 400 Bad Request response.</p>
 
 </div>
 
-<h4><code>idle_doc_timeout_error</code> (integer)</h4>
+<h4> <code>idle_doc_timeout_error</code>  <code>(integer)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -20410,7 +21522,8 @@ Other value types lead to 400 Bad Request response.</p>
 
 </div>
 
-<h4><code>immediate_trash</code> (boolean)</h4>
+<h4> <code>immediate_trash</code>  <code>(boolean)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -20419,28 +21532,32 @@ Other value types lead to 400 Bad Request response.</p>
 
 </div>
 
-<h3><code>inheritable_preview</code> (object)</h3>
+<h3> <code>inheritable_preview</code>  <code>(object)</code> </h3>
+
 
 
 <div class="json-schema">
 
 <p>The <code>inheritable_preview</code> object has the following properties:</p>
 
-<h4><code>inherited_from</code> (string)</h4>
+<h4> <code>inherited_from</code>  <code>(string)</code> </h4>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h4><code>data_retention_policy</code> (object)</h4>
+<h4> <code>data_retention_policy</code>  <code>(object)</code> </h4>
+
 
 
 <div class="json-schema">
 
 <p>The <code>data_retention_policy</code> object has the following properties:</p>
 
-<h5><code>idle_doc_timeout_preparation</code> (integer)</h5>
+<h5> <code>idle_doc_timeout_preparation</code>  <code>(integer)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -20450,7 +21567,8 @@ Other value types lead to 400 Bad Request response.</p>
 
 </div>
 
-<h5><code>idle_doc_timeout_closed</code> (integer)</h5>
+<h5> <code>idle_doc_timeout_closed</code>  <code>(integer)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -20460,7 +21578,8 @@ Other value types lead to 400 Bad Request response.</p>
 
 </div>
 
-<h5><code>idle_doc_timeout_canceled</code> (integer)</h5>
+<h5> <code>idle_doc_timeout_canceled</code>  <code>(integer)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -20470,7 +21589,8 @@ Other value types lead to 400 Bad Request response.</p>
 
 </div>
 
-<h5><code>idle_doc_timeout_timedout</code> (integer)</h5>
+<h5> <code>idle_doc_timeout_timedout</code>  <code>(integer)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -20480,7 +21600,8 @@ Other value types lead to 400 Bad Request response.</p>
 
 </div>
 
-<h5><code>idle_doc_timeout_rejected</code> (integer)</h5>
+<h5> <code>idle_doc_timeout_rejected</code>  <code>(integer)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -20490,7 +21611,8 @@ Other value types lead to 400 Bad Request response.</p>
 
 </div>
 
-<h5><code>idle_doc_timeout_error</code> (integer)</h5>
+<h5> <code>idle_doc_timeout_error</code>  <code>(integer)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -20500,7 +21622,8 @@ Other value types lead to 400 Bad Request response.</p>
 
 </div>
 
-<h5><code>immediate_trash</code> (boolean)</h5>
+<h5> <code>immediate_trash</code>  <code>(boolean)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -20542,56 +21665,64 @@ Other value types lead to 400 Bad Request response.</p>
 
 <p>This object has the following properties:</p>
 
-<h3><code>inherited_from</code> (string)</h3>
+<h3> <code>inherited_from</code>  <code>(string)</code> </h3>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h3><code>address</code> (object)</h3>
+<h3> <code>address</code>  <code>(object)</code> </h3>
+
 
 
 <div class="json-schema">
 
 <p>The <code>address</code> object has the following properties:</p>
 
-<h4><code>company_number</code> (string)</h4>
+<h4> <code>company_number</code>  <code>(string)</code> </h4>
 
-
-<div class="json-schema">
-
-</div>
-
-<h4><code>company_name</code> (string)</h4>
 
 
 <div class="json-schema">
 
 </div>
 
-<h4><code>address</code> (string)</h4>
+<h4> <code>company_name</code>  <code>(string)</code> </h4>
 
-
-<div class="json-schema">
-
-</div>
-
-<h4><code>zip</code> (string)</h4>
 
 
 <div class="json-schema">
 
 </div>
 
-<h4><code>city</code> (string)</h4>
+<h4> <code>address</code>  <code>(string)</code> </h4>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h4><code>country</code> (string)</h4>
+<h4> <code>zip</code>  <code>(string)</code> </h4>
+
+
+
+<div class="json-schema">
+
+</div>
+
+<h4> <code>city</code>  <code>(string)</code> </h4>
+
+
+
+<div class="json-schema">
+
+</div>
+
+<h4> <code>country</code>  <code>(string)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -20643,121 +21774,138 @@ Preview).</p>
 
 <p>This object has the following properties:</p>
 
-<h3><code>inherited_from</code> (string)</h3>
+<h3> <code>inherited_from</code>  <code>(string)</code> </h3>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h3><code>address</code> (object)</h3>
+<h3> <code>address</code>  <code>(object)</code> </h3>
+
 
 
 <div class="json-schema">
 
 <p>The <code>address</code> object has the following properties:</p>
 
-<h4><code>company_number</code> (string)</h4>
+<h4> <code>company_number</code>  <code>(string)</code> </h4>
 
-
-<div class="json-schema">
-
-</div>
-
-<h4><code>company_name</code> (string)</h4>
 
 
 <div class="json-schema">
 
 </div>
 
-<h4><code>address</code> (string)</h4>
+<h4> <code>company_name</code>  <code>(string)</code> </h4>
 
-
-<div class="json-schema">
-
-</div>
-
-<h4><code>zip</code> (string)</h4>
 
 
 <div class="json-schema">
 
 </div>
 
-<h4><code>city</code> (string)</h4>
+<h4> <code>address</code>  <code>(string)</code> </h4>
 
-
-<div class="json-schema">
-
-</div>
-
-<h4><code>country</code> (string)</h4>
 
 
 <div class="json-schema">
 
 </div>
 
+<h4> <code>zip</code>  <code>(string)</code> </h4>
+
+
+
+<div class="json-schema">
+
 </div>
 
-<h3><code>inheritable_preview</code> (object)</h3>
+<h4> <code>city</code>  <code>(string)</code> </h4>
+
+
+
+<div class="json-schema">
+
+</div>
+
+<h4> <code>country</code>  <code>(string)</code> </h4>
+
+
+
+<div class="json-schema">
+
+</div>
+
+</div>
+
+<h3> <code>inheritable_preview</code>  <code>(object)</code> </h3>
+
 
 
 <div class="json-schema">
 
 <p>The <code>inheritable_preview</code> object has the following properties:</p>
 
-<h4><code>inherited_from</code> (string)</h4>
+<h4> <code>inherited_from</code>  <code>(string)</code> </h4>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h4><code>address</code> (object)</h4>
+<h4> <code>address</code>  <code>(object)</code> </h4>
+
 
 
 <div class="json-schema">
 
 <p>The <code>address</code> object has the following properties:</p>
 
-<h5><code>company_number</code> (string)</h5>
+<h5> <code>company_number</code>  <code>(string)</code> </h5>
 
-
-<div class="json-schema">
-
-</div>
-
-<h5><code>company_name</code> (string)</h5>
 
 
 <div class="json-schema">
 
 </div>
 
-<h5><code>address</code> (string)</h5>
+<h5> <code>company_name</code>  <code>(string)</code> </h5>
 
-
-<div class="json-schema">
-
-</div>
-
-<h5><code>zip</code> (string)</h5>
 
 
 <div class="json-schema">
 
 </div>
 
-<h5><code>city</code> (string)</h5>
+<h5> <code>address</code>  <code>(string)</code> </h5>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h5><code>country</code> (string)</h5>
+<h5> <code>zip</code>  <code>(string)</code> </h5>
+
+
+
+<div class="json-schema">
+
+</div>
+
+<h5> <code>city</code>  <code>(string)</code> </h5>
+
+
+
+<div class="json-schema">
+
+</div>
+
+<h5> <code>country</code>  <code>(string)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -20804,21 +21952,24 @@ Other value types lead to 400 Bad Request response.</p>
 
 <p>All array elements must be of type:</p>
 
-<h3>(object)</h3>
+<h3> <code>(object)</code> </h3>
+
 
 
 <div class="json-schema">
 
 <p>This object has the following properties:</p>
 
-<h4><code>name</code> (string)</h4>
+<h4> <code>name</code>  <code>(string)</code> </h4>
+
 
 
 <div class="json-schema">
 
 </div>
 
-<h4><code>value</code> (string)</h4>
+<h4> <code>value</code>  <code>(string)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -20860,21 +22011,24 @@ Other value types lead to 400 Bad Request response.</p>
 
 <p>This object has the following properties:</p>
 
-<h3><code>id</code> (string)</h3>
+<h3> <code>id</code>  <code>(string)</code> </h3>
 
-
-<div class="json-schema">
-
-</div>
-
-<h3><code>is_generated</code> (boolean)</h3>
 
 
 <div class="json-schema">
 
 </div>
 
-<h3><code>role_type</code> (string, enum)</h3>
+<h3> <code>is_generated</code>  <code>(boolean)</code> </h3>
+
+
+
+<div class="json-schema">
+
+</div>
+
+<h3> <code>role_type</code>  <code>(string, enum)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -20893,14 +22047,16 @@ Other value types lead to 400 Bad Request response.</p>
 
 </div>
 
-<h3><code>source</code> (object)</h3>
+<h3> <code>source</code>  <code>(object)</code> </h3>
+
 
 
 <div class="json-schema">
 
 <p>The <code>source</code> object has the following properties:</p>
 
-<h4><code>type</code> (string, enum)</h4>
+<h4> <code>type</code>  <code>(string, enum)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -20916,7 +22072,8 @@ Other value types lead to 400 Bad Request response.</p>
 
 </div>
 
-<h4><code>id</code> (string)</h4>
+<h4> <code>id</code>  <code>(string)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -20925,14 +22082,16 @@ Other value types lead to 400 Bad Request response.</p>
 
 </div>
 
-<h3><code>target</code> (object)</h3>
+<h3> <code>target</code>  <code>(object)</code> </h3>
+
 
 
 <div class="json-schema">
 
 <p>The <code>target</code> object has the following properties:</p>
 
-<h4><code>type</code> (string, enum)</h4>
+<h4> <code>type</code>  <code>(string, enum)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -20949,7 +22108,8 @@ Other value types lead to 400 Bad Request response.</p>
 
 </div>
 
-<h4><code>id</code> (string)</h4>
+<h4> <code>id</code>  <code>(string)</code> </h4>
+
 
 
 <div class="json-schema">
@@ -20958,21 +22118,24 @@ Other value types lead to 400 Bad Request response.</p>
 
 </div>
 
-<h3><code>allowed_actions</code> (object)</h3>
+<h3> <code>allowed_actions</code>  <code>(object)</code> </h3>
+
 
 
 <div class="json-schema">
 
 <p>The <code>allowed_actions</code> object has the following properties:</p>
 
-<h4><code>document</code> (array)</h4>
+<h4> <code>document</code>  <code>(array)</code> </h4>
+
 
 
 <div class="json-schema">
 
 <p>All array elements must be of type:</p>
 
-<h5>(string, enum)</h5>
+<h5> <code>(string, enum)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -20992,14 +22155,16 @@ Other value types lead to 400 Bad Request response.</p>
 
 </div>
 
-<h4><code>folder_policy</code> (array)</h4>
+<h4> <code>folder_policy</code>  <code>(array)</code> </h4>
+
 
 
 <div class="json-schema">
 
 <p>All array elements must be of type:</p>
 
-<h5>(string, enum)</h5>
+<h5> <code>(string, enum)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -21019,14 +22184,16 @@ Other value types lead to 400 Bad Request response.</p>
 
 </div>
 
-<h4><code>user</code> (array)</h4>
+<h4> <code>user</code>  <code>(array)</code> </h4>
+
 
 
 <div class="json-schema">
 
 <p>All array elements must be of type:</p>
 
-<h5>(string, enum)</h5>
+<h5> <code>(string, enum)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -21046,14 +22213,16 @@ Other value types lead to 400 Bad Request response.</p>
 
 </div>
 
-<h4><code>user_group</code> (array)</h4>
+<h4> <code>user_group</code>  <code>(array)</code> </h4>
+
 
 
 <div class="json-schema">
 
 <p>All array elements must be of type:</p>
 
-<h5>(string, enum)</h5>
+<h5> <code>(string, enum)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -21073,14 +22242,16 @@ Other value types lead to 400 Bad Request response.</p>
 
 </div>
 
-<h4><code>user_group_policy</code> (array)</h4>
+<h4> <code>user_group_policy</code>  <code>(array)</code> </h4>
+
 
 
 <div class="json-schema">
 
 <p>All array elements must be of type:</p>
 
-<h5>(string, enum)</h5>
+<h5> <code>(string, enum)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -21100,14 +22271,16 @@ Other value types lead to 400 Bad Request response.</p>
 
 </div>
 
-<h4><code>user_personal_token</code> (array)</h4>
+<h4> <code>user_personal_token</code>  <code>(array)</code> </h4>
+
 
 
 <div class="json-schema">
 
 <p>All array elements must be of type:</p>
 
-<h5>(string, enum)</h5>
+<h5> <code>(string, enum)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -21127,14 +22300,16 @@ Other value types lead to 400 Bad Request response.</p>
 
 </div>
 
-<h4><code>user_policy</code> (array)</h4>
+<h4> <code>user_policy</code>  <code>(array)</code> </h4>
+
 
 
 <div class="json-schema">
 
 <p>All array elements must be of type:</p>
 
-<h5>(string, enum)</h5>
+<h5> <code>(string, enum)</code> </h5>
+
 
 
 <div class="json-schema">
@@ -21199,21 +22374,24 @@ Other value types lead to 400 Bad Request response.</p>
 
 <p>This object has the following properties:</p>
 
-<h3><code>id</code> (string, required)</h3>
+<h3> <code>id</code>  <code>(string, required)</code> </h3>
 
-
-<div class="json-schema">
-
-</div>
-
-<h3><code>name</code> (string, required)</h3>
 
 
 <div class="json-schema">
 
 </div>
 
-<h3><code>home_for_user</code> (string)</h3>
+<h3> <code>name</code>  <code>(string, required)</code> </h3>
+
+
+
+<div class="json-schema">
+
+</div>
+
+<h3> <code>home_for_user</code>  <code>(string)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -21223,7 +22401,8 @@ Other value types lead to 400 Bad Request response.</p>
 
 </div>
 
-<h3><code>home_for_user_group</code> (string)</h3>
+<h3> <code>home_for_user_group</code>  <code>(string)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -21233,7 +22412,8 @@ Other value types lead to 400 Bad Request response.</p>
 
 </div>
 
-<h3><code>parent_id</code> (string)</h3>
+<h3> <code>parent_id</code>  <code>(string)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -21244,7 +22424,8 @@ or null if the requested folder is root.</p>
 
 </div>
 
-<h3><code>children</code> (array)</h3>
+<h3> <code>children</code>  <code>(array)</code> </h3>
+
 
 
 <div class="json-schema">
@@ -21254,7 +22435,8 @@ or null if the requested folder is root.</p>
 
 <p>All array elements must be of type:</p>
 
-<h4>(Folder)</h4>
+<h4> <code>(Folder)</code> </h4>
+
 
 
 <div class="json-schema">

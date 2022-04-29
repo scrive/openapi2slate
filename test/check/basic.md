@@ -115,7 +115,8 @@ Response description
 
 <p>This object has the following properties:</p>
 
-<h4><code>id</code> (string, read only)</h4>
+<h4> <code>id</code>  <code>(string, read only)</code> </h4>
+
 
 
 <div class="json-schema">
