@@ -31,6 +31,16 @@ module.exports = {
 	}
 }
 
+function renderValue(value) {
+	if (typeof value == "object" && value !== null) {
+		return '<br/><code class="code-block">' + JSON.stringify(value, null, 2) + '</code>'
+	} else if (Array.isArray(value) == "array") {
+		return '<br /><code class="code-block">' + JSON.stringify(value, null, 1) + '</code>'
+	} else {
+		return '<code>' + JSON.stringify(value) + '</code>'
+	}
+}
+
 function renderSchema(schema, name, octothorpes, isTopLevel, isRequired) {
   var titleText = ''
   if(isTopLevel) {
@@ -53,14 +63,12 @@ function renderSchema(schema, name, octothorpes, isTopLevel, isRequired) {
 		text.push( Markdown.render(schema.description) )
 	}
 
+	if (schema.const !== undefined) {
+		text.push('<p>Value: ' + renderValue(schema.const) + '</p>')
+	}
+
 	if (schema.default !== undefined) {
-		if (schema.default === null
-			|| [ "boolean", "number", "string" ].indexOf(typeof schema.default) !== -1
-		) {
-			text.push('<p>Default: <code>' + JSON.stringify(schema.default) + '</code></p>')
-		} else {
-			text.push('<p>Default:\n<code>\n' + JSON.stringify(schema.default, null, 2) + '\n</code></p>')
-		}
+		text.push('<p>Default: ' + renderValue(schema.default) + '</p>')
 	}
 
 	if (schema.type == 'object') {
@@ -68,14 +76,14 @@ function renderSchema(schema, name, octothorpes, isTopLevel, isRequired) {
 	} else if (schema.type == 'array') {
 		text = text.concat(renderArraySchema(schema, name, 1 + octothorpes))
 	} else if (schema.enum) {
-		text.push('<p>This element must be one of the following enum values:</p>')
+		text.push('<p>The value of this property must be one of the following enum values:</p>')
 		text.push('<ul>')
 		text.push(schema.enum.map(function(enumItem) {
-			return '<li><code>' + enumItem + '</code></li>'
+			return '<li>' + renderValue(enumItem) + '</li>'
 		}).join('\n'))
 		text.push('</ul>')
 	} else {
-		text = text.concat(renderItemsValidation(schema, 'item', 1 + octothorpes))
+		text = text.concat(renderItemsValidation(schema, 'property', 1 + octothorpes))
 	}
 
 	var restrictions = Validation.render(schema)
@@ -121,17 +129,20 @@ function renderArraySchema(schema, name, octothorpes) {
 function renderItemsValidation(schema, type, octothorpes) {
 	var text = []
 	var validationItems = []
+
+	var content = schema.type == "array" ? "elements" : "value";
+
 	if (schema.allOf) {
-		text.push('The elements of this ' + type + ' must match *all* of the following properties:')
+		text.push(Markdown.render('The ' + content + ' of this ' + type + ' must match *all* of the following schemas:'))
 		validationItems = schema.allOf
 	} else if (schema.anyOf) {
-		text.push('The elements of this ' + type + ' must match *at least one* of the following properties:')
+		text.push(Markdown.render('The ' + content + ' of this ' + type + ' must match *at least one* of the following schemas:'))
 		validationItems = schema.anyOf
 	} else if (schema.oneOf) {
-		text.push('The elements of this ' + type + ' must match *exactly one* of the following properties:')
+		text.push(Markdown.render('The ' + content + ' of this ' + type + ' must match *exactly one* of the following schemas:'))
 		validationItems = schema.oneOf
 	} else if (schema.not) {
-		text.push('The elements of this ' + type + ' must *not* match the following properties:')
+		text.push(Markdown.render('The ' + content + ' of this ' + type + ' must *not* match the following schemas:'))
 		validationItems = schema.not
 	}
 	if (validationItems.length > 0) {
