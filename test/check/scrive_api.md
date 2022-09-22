@@ -5416,7 +5416,7 @@ Similarly, a single field can have multiple placements on the document.</p>
 <p><strong>Note:</strong> Some field types have <em>no effect</em> without at least one placement.</p>
 
 
-<p>The value of this array must match <em>at least one</em> of the following schemas:</p>
+<p>Each element of this array must match <em>at least one</em> of the following schemas:</p>
 
 
 <h6> SignatoryFieldName <code>(object)</code> </h6>
@@ -10001,7 +10001,7 @@ Similarly, a single field can have multiple placements on the document.</p>
 <p><strong>Note:</strong> Some field types have <em>no effect</em> without at least one placement.</p>
 
 
-<p>The value of this array must match <em>at least one</em> of the following schemas:</p>
+<p>Each element of this array must match <em>at least one</em> of the following schemas:</p>
 
 
 <h6> SignatoryFieldName <code>(object)</code> </h6>
@@ -13461,7 +13461,7 @@ Similarly, a single field can have multiple placements on the document.</p>
 <p><strong>Note:</strong> Some field types have <em>no effect</em> without at least one placement.</p>
 
 
-<p>The value of this array must match <em>at least one</em> of the following schemas:</p>
+<p>Each element of this array must match <em>at least one</em> of the following schemas:</p>
 
 
 <h4> SignatoryFieldName <code>(object)</code> </h4>
@@ -18276,7 +18276,7 @@ custom regular expression.</p>
 
 <p>Default: <br/><code class="code-block">[]</code></p>
 
-<p>The value of this array must match <em>at least one</em> of the following schemas:</p>
+<p>Each element of this array must match <em>at least one</em> of the following schemas:</p>
 
 
 <h3> Filter by status <code>(object)</code> </h3>
@@ -18800,7 +18800,7 @@ document author.</p>
 <p>Attachments that have been added to a document by the author.</p>
 
 
-<p>The value of this array must match <em>at least one</em> of the following schemas:</p>
+<p>Each element of this array must match <em>at least one</em> of the following schemas:</p>
 
 
 <h3> <code>(object)</code> </h3>
@@ -19129,7 +19129,7 @@ documents.</p>
 
 <p>Default: <br/><code class="code-block">[]</code></p>
 
-<p>The value of this array must match <em>at least one</em> of the following schemas:</p>
+<p>Each element of this array must match <em>at least one</em> of the following schemas:</p>
 
 
 <h3> Filter by text <code>(object)</code> </h3>

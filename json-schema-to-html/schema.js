@@ -130,19 +130,19 @@ function renderItemsValidation(schema, type, octothorpes) {
 	var text = []
 	var validationItems = []
 
-	var content = schema.type == "array" ? "elements" : "value";
+	var content = type == "array" ? "Each element" : "The value";
 
 	if (schema.allOf) {
-		text.push(Markdown.render('The ' + content + ' of this ' + type + ' must match *all* of the following schemas:'))
+		text.push(Markdown.render(content + ' of this ' + type + ' must match *all* of the following schemas:'))
 		validationItems = schema.allOf
 	} else if (schema.anyOf) {
-		text.push(Markdown.render('The ' + content + ' of this ' + type + ' must match *at least one* of the following schemas:'))
+		text.push(Markdown.render(content + ' of this ' + type + ' must match *at least one* of the following schemas:'))
 		validationItems = schema.anyOf
 	} else if (schema.oneOf) {
-		text.push(Markdown.render('The ' + content + ' of this ' + type + ' must match *exactly one* of the following schemas:'))
+		text.push(Markdown.render(content + ' of this ' + type + ' must match *exactly one* of the following schemas:'))
 		validationItems = schema.oneOf
 	} else if (schema.not) {
-		text.push(Markdown.render('The ' + content + ' of this ' + type + ' must *not* match the following schemas:'))
+		text.push(Markdown.render(content + ' of this ' + type + ' must *not* match the following schemas:'))
 		validationItems = schema.not
 	}
 	if (validationItems.length > 0) {
